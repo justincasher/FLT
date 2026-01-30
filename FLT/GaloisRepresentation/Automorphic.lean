@@ -6,6 +6,7 @@ Authors: Edison Xie, Kevin Buzzard
 import FLT.AutomorphicForm.QuaternionAlgebra.HeckeOperators.Concrete
 import FLT.DedekindDomain.IntegralClosure
 import FLT.Deformations.RepresentationTheory.GaloisRep
+import FLT.Mathlib.Algebra.Central.TensorProduct
 import Mathlib.NumberTheory.Cyclotomic.CyclotomicCharacter
 import Mathlib.NumberTheory.Padics.Complex
 import Mathlib.RingTheory.SimpleRing.Principal
@@ -92,7 +93,10 @@ instance {F E D : Type*}
     [Field F]
     [Field E] [Algebra F E]
     [Ring D] [Algebra F D] [IsQuaternionAlgebra F D] :
-    IsQuaternionAlgebra E (E ⊗[F] D) := sorry -- Ask Edison?
+    IsQuaternionAlgebra E (E ⊗[F] D) where
+  isSimpleRing := inferInstance
+  isCentral := inferInstance
+  dim_four := by rw [Module.rank_baseChange, IsQuaternionAlgebra.dim_four, Cardinal.lift_ofNat]
 
 variable {p : ℕ} [Fact p.Prime] in
 noncomputable instance : NormedSpace ℚ_[p] (PadicAlgCl p) := spectralNorm.normedSpace ..
