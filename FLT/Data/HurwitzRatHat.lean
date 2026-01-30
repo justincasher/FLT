@@ -45,8 +45,19 @@ noncomputable instance : Ring D^ := Algebra.TensorProduct.instRing
 noncomputable abbrev j₁ : D →ₐ[ℤ] D^ := Algebra.TensorProduct.includeLeft
 -- (Algebra.TensorProduct.assoc ℤ ℚ 𝓞 ZHat).symm.trans Algebra.TensorProduct.includeLeft
 
+private instance : Module.IsTorsionFree ℤ 𝓞 := by
+  haveI : Module ℚ (Quaternion ℝ) := Module.compHom _ (algebraMap ℚ ℝ)
+  haveI : IsAddTorsionFree (Quaternion ℝ) := IsAddTorsionFree.of_module_rat (Quaternion ℝ)
+  exact Function.Injective.moduleIsTorsionFree Hurwitz.toQuaternion
+    Hurwitz.toQuaternion_injective (fun r m => Hurwitz.toQuaternion_zsmul m r)
+
+private noncomputable instance : Module.Flat ℤ D := by
+  show Module.Flat ℤ (ℚ ⊗[ℤ] 𝓞)
+  infer_instance
+
 lemma injective_hRat :
-    Function.Injective j₁ := sorry -- flatness
+    Function.Injective j₁ :=
+  Algebra.TensorProduct.includeLeft_injective Int.cast_injective
 
 /-- The inclusion from the profinite Hurwitz quaternions to to 𝔸+𝔸i+𝔸j+𝔸k,
 with 𝔸 the finite adeles of ℚ. -/
@@ -54,12 +65,51 @@ noncomputable abbrev j₂ : 𝓞^ →ₐ[ℤ] D^ :=
   ((Algebra.TensorProduct.assoc ℤ ℤ ℚ 𝓞 ZHat).symm : ℚ ⊗ 𝓞^ ≃ₐ[ℤ] D ⊗ ZHat).toAlgHom.comp
   (Algebra.TensorProduct.includeRight : 𝓞^ →ₐ[ℤ] ℚ ⊗ 𝓞^)
 
+private noncomputable instance : Module.Flat ℤ 𝓞^ := by
+  show Module.Flat ℤ (𝓞 ⊗[ℤ] ZHat)
+  infer_instance
+
 lemma injective_zHat :
-    Function.Injective j₂ := sorry -- flatness
+    Function.Injective j₂ :=
+  ((Algebra.TensorProduct.assoc ℤ ℤ ℚ 𝓞 ZHat).symm.injective).comp
+    (Algebra.TensorProduct.includeRight_injective Int.cast_injective)
 
 -- should I rearrange tensors? Not sure if D^ should be (ℚ ⊗ 𝓞) ⊗ ℤhat or ℚ ⊗ (𝓞 ⊗ Zhat)
 lemma canonicalForm (z : D^) : ∃ (N : ℕ+) (z' : 𝓞^), z = j₁ ((N⁻¹ : ℚ) ⊗ₜ 1 : D) * j₂ z' := by
-  sorry
+  set α := Algebra.TensorProduct.assoc ℤ ℤ ℚ 𝓞 ZHat
+  -- Key identity: α.symm(q ⊗ z') = j₁(q ⊗ 1) * j₂(z')
+  have key : ∀ (q : ℚ) (z' : 𝓞^),
+      α.symm (q ⊗ₜ z') = j₁ (q ⊗ₜ (1 : 𝓞) : D) * j₂ z' := by
+    intro q z'
+    have h1 : (q ⊗ₜ z' : ℚ ⊗[ℤ] 𝓞^) = (q ⊗ₜ (1 : 𝓞^)) * ((1 : ℚ) ⊗ₜ z') := by
+      simp [Algebra.TensorProduct.tmul_mul_tmul]
+    rw [h1, map_mul]
+    rfl
+  -- Suffices to clear denominators in ℚ ⊗ 𝓞^
+  suffices ∀ (w : ℚ ⊗[ℤ] 𝓞^), ∃ (N : ℕ+) (z' : 𝓞^), w = (↑N : ℚ)⁻¹ ⊗ₜ z' by
+    obtain ⟨N, z', hN⟩ := this (α z)
+    exact ⟨N, z', by rw [← key, ← hN, AlgEquiv.symm_apply_apply]⟩
+  intro w
+  induction w using TensorProduct.induction_on with
+  | zero => exact ⟨1, 0, by simp⟩
+  | tmul q z' =>
+    refine ⟨⟨q.den, q.den_pos⟩, q.num • z', ?_⟩
+    simp only [PNat.mk_coe, ← zsmul_eq_mul]
+    rw [TensorProduct.tmul_smul, TensorProduct.smul_tmul']
+    simp only [zsmul_eq_mul, ← q.mul_den_eq_num, mul_assoc,
+      ne_eq, Nat.cast_eq_zero, Rat.den_ne_zero, not_false_eq_true,
+        mul_one, mul_inv_cancel₀]
+  | add x y hx hy =>
+    obtain ⟨N₁, z₁, rfl⟩ := hx
+    obtain ⟨N₂, z₂, rfl⟩ := hy
+    refine ⟨N₁ * N₂, (↑N₁ : ℤ) • z₂ + (↑N₂ : ℤ) • z₁, ?_⟩
+    simp only [TensorProduct.tmul_add, ← zsmul_eq_mul,
+      TensorProduct.tmul_smul, TensorProduct.smul_tmul']
+    simp only [PNat.mul_coe, Nat.cast_mul, mul_inv_rev, zsmul_eq_mul, Int.cast_natCast,
+      ne_eq, Nat.cast_eq_zero, PNat.ne_zero, not_false_eq_true, mul_inv_cancel_left₀]
+    rw [add_comm]
+    congr 1
+    simp [mul_comm]
 
 lemma completed_units (z : D^ˣ) : ∃ (u : Dˣ) (v : 𝓞^ˣ), (z : D^) = j₁ u * j₂ v := sorry
 

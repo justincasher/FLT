@@ -177,7 +177,101 @@ def actionTensorCAlg'2 :
   (actionTensorCAlg' G E).comp (SubalgebraClass.val _)
 
 instance : Module ℝ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ := inferInstance
-instance : Module ℂ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ := sorry
+instance : Module ℂ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ where
+  smul z f := ⟨z • ⇑f, (contDiff_const_smul z).contMDiff.comp f.contMDiff⟩
+  one_smul f := by ext x; exact one_smul ℂ (f x)
+  mul_smul r s f := by ext x; exact mul_smul r s (f x)
+  smul_zero r := by ext x; exact smul_zero r
+  smul_add r f g := by ext x; exact smul_add r (f x) (g x)
+  add_smul r s f := by ext x; exact add_smul r s (f x)
+  zero_smul f := by ext x; exact zero_smul ℂ (f x)
+
+instance : IsScalarTower ℝ ℂ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ :=
+  ⟨fun r z f => by ext x; exact smul_assoc r z (f x)⟩
+
+instance : SMulCommClass ℂ ℝ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ :=
+  ⟨fun z r f => by ext x; exact smul_comm z r (f x)⟩
+
+/-- Inclusion of ℝ-valued smooth functions into ℂ-valued smooth functions via ofReal. -/
+private noncomputable def smoothOfReal :
+    C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ →ₗ[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ where
+  toFun f := ⟨fun x => ↑(f x), Complex.ofRealCLM.contDiff.contMDiff.comp f.contMDiff⟩
+  map_add' f g := by ext x; simp [Complex.ofReal_add]
+  map_smul' r f := by ext x; exact ContinuousLinearMap.map_smul Complex.ofRealCLM r (f x)
+
+/-- Taking real parts of ℂ-valued smooth functions. -/
+private noncomputable def smoothRe :
+    C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ →ₗ[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ where
+  toFun g := ⟨fun x => (g x).re, Complex.reCLM.contDiff.contMDiff.comp g.contMDiff⟩
+  map_add' f g := by ext x; exact Complex.add_re (f x) (g x)
+  map_smul' r f := by ext x; exact ContinuousLinearMap.map_smul Complex.reCLM r (f x)
+
+/-- Taking imaginary parts of ℂ-valued smooth functions. -/
+private noncomputable def smoothIm :
+    C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ →ₗ[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ where
+  toFun g := ⟨fun x => (g x).im, Complex.imCLM.contDiff.contMDiff.comp g.contMDiff⟩
+  map_add' f g := by ext x; exact Complex.add_im (f x) (g x)
+  map_smul' r f := by ext x; exact ContinuousLinearMap.map_smul Complex.imCLM r (f x)
+
+/-- Forward map: ℂ ⊗[ℝ] C^∞(G, ℝ) →ₗ[ℂ] C^∞(G, ℂ), sending z ⊗ f ↦ z • ι(f). -/
+private noncomputable def smoothComplexFwd :
+    ℂ ⊗[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ →ₗ[ℂ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ :=
+  TensorProduct.AlgebraTensorModule.lift
+    { toFun := fun z =>
+        { toFun := fun f => z • smoothOfReal G E f
+          map_add' := fun f g => by rw [map_add, smul_add]
+          map_smul' := fun r f => by
+            simp only [RingHom.id_apply]
+            rw [map_smul]
+            exact smul_comm z r (smoothOfReal G E f) }
+      map_add' := fun z w => by ext f; exact add_smul z w _
+      map_smul' := fun c z => by ext f; exact mul_smul c z _ }
+
+/-- Backward map: C^∞(G, ℂ) →ₗ[ℝ] ℂ ⊗[ℝ] C^∞(G, ℝ), sending g ↦ 1 ⊗ re(g) + I ⊗ im(g). -/
+private noncomputable def smoothComplexBack :
+    C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ →ₗ[ℝ] ℂ ⊗[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ where
+  toFun g := 1 ⊗ₜ smoothRe G E g + Complex.I ⊗ₜ smoothIm G E g
+  map_add' g₁ g₂ := by simp only [map_add, TensorProduct.tmul_add]; abel
+  map_smul' r g := by
+    simp only [map_smul, RingHom.id_apply]
+    rw [smul_add, ← TensorProduct.tmul_smul, ← TensorProduct.tmul_smul]
+
+/-- ℂ-linear equivalence between ℂ ⊗[ℝ] C^∞(G, ℝ) and C^∞(G, ℂ). -/
+private noncomputable def smoothComplexEquiv :
+    ℂ ⊗[ℝ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℝ), ℝ⟯ ≃ₗ[ℂ] C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ where
+  __ := smoothComplexFwd G E
+  invFun := smoothComplexBack G E
+  left_inv t := by
+    induction t using TensorProduct.induction_on with
+    | zero => simp
+    | tmul z f =>
+      change (smoothComplexBack G E) ((smoothComplexFwd G E) (z ⊗ₜ f)) = z ⊗ₜ f
+      simp only [smoothComplexFwd, TensorProduct.AlgebraTensorModule.lift_tmul]
+      show 1 ⊗ₜ smoothRe G E (z • smoothOfReal G E f) +
+           Complex.I ⊗ₜ smoothIm G E (z • smoothOfReal G E f) = z ⊗ₜ f
+      have hre : smoothRe G E (z • smoothOfReal G E f) = z.re • f := by
+        ext x; show (z * ↑(f x)).re = z.re * f x
+        simp [Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im]
+      have him : smoothIm G E (z • smoothOfReal G E f) = z.im • f := by
+        ext x; show (z * ↑(f x)).im = z.im * f x
+        simp [Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im]
+      rw [hre, him, TensorProduct.tmul_smul, TensorProduct.tmul_smul,
+          TensorProduct.smul_tmul', TensorProduct.smul_tmul',
+          ← TensorProduct.add_tmul]
+      congr 1
+      simp [Complex.real_smul, mul_one, Complex.re_add_im]
+    | add t₁ t₂ ih₁ ih₂ =>
+      change (smoothComplexBack G E) ((smoothComplexFwd G E) (t₁ + t₂)) = t₁ + t₂
+      rw [map_add, map_add]; exact congr_arg₂ _ ih₁ ih₂
+  right_inv g := by
+    change (smoothComplexFwd G E) ((smoothComplexBack G E) g) = g
+    simp only [smoothComplexBack, LinearMap.coe_mk, AddHom.coe_mk,
+               smoothComplexFwd, map_add, TensorProduct.AlgebraTensorModule.lift_tmul]
+    ext x
+    dsimp [smoothOfReal, smoothRe, smoothIm]
+    show (1 * ↑(g x).re + Complex.I * ↑(g x).im) = g x
+    rw [one_mul, mul_comm]
+    exact Complex.re_add_im (g x)
 
 def Alg := UniversalEnvelopingAlgebra ℂ (ℂ ⊗[ℝ] LeftInvariantDerivation 𝓘(ℝ, E) G)
 instance : Semiring (Alg G E) := inferInstanceAs (Semiring (UniversalEnvelopingAlgebra ..))
@@ -187,7 +281,8 @@ def Z := Subalgebra.center ℂ (Alg G E)
 instance : CommSemiring (Z G E) := inferInstanceAs (CommSemiring (Subalgebra.center ..))
 instance : AddCommMonoid (Z G E) := inferInstanceAs (AddCommMonoid (Subalgebra.center ..))
 
-def actionTensorCAlg'3 : Z G E →ₐ[ℂ] Module.End ℂ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ := sorry
+def actionTensorCAlg'3 : Z G E →ₐ[ℂ] Module.End ℂ C^∞⟮𝓘(ℝ, E), G; 𝓘(ℝ, ℂ), ℂ⟯ :=
+  ((smoothComplexEquiv G E).conjAlgEquiv (R := ℂ)).toAlgHom.comp (actionTensorCAlg'2 G E)
 
 
 -- algebra needs to be done

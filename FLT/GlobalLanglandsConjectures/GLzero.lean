@@ -45,7 +45,8 @@ State them first.
 
 namespace AutomorphicForm
 
-def GLn.Weight.IsTrivial {n : ℕ} (ρ : Weight n) : Prop := sorry -- (ρ = trivial 1d rep)
+def GLn.Weight.IsTrivial {n : ℕ} (ρ : Weight n) : Prop :=
+  ∀ g, ρ.w.rho g = 1
 
 open GLn
 
@@ -58,10 +59,7 @@ def ofComplex (c : ℂ) : AutomorphicFormForGLnOverQ 0 ρ := {
     toFun := fun _ => c,
     is_smooth := {
       continuous := by continuity
-      loc_cst := by
-        rw [IsLocallyConstant]
-        sorry
-        -- aesop -- used to work
+      loc_cst := fun _ => IsLocallyConstant.const _
       smooth := by simp [contMDiff_const]
     }
     is_periodic := by simp
@@ -83,7 +81,9 @@ def ofComplex (c : ℂ) : AutomorphicFormForGLnOverQ 0 ρ := {
       }
       apply Exists.intro U
       exact {
-          is_open := by sorry -- used to be simp but there's a timeout
+          is_open := by
+            convert isOpen_univ
+            exact Set.eq_univ_of_forall fun x => Subsingleton.elim x 1
           is_compact := by aesop
           finite_level := by simp
       }
@@ -116,18 +116,30 @@ namespace GLn
 def ofComplex (z : ℂ) {n : ℕ} (ρ : Weight n) (hρ : ρ.IsTrivial) :
     AutomorphicFormForGLnOverQ n ρ where
       toFun _ := z
-      is_smooth := sorry
-      is_periodic := sorry
-      is_slowly_increasing := sorry
+      is_smooth := {
+        continuous := by continuity
+        loc_cst := fun _ => IsLocallyConstant.const _
+        smooth := by simp [contMDiff_const]
+      }
+      is_periodic := by simp
+      is_slowly_increasing x := ⟨‖z‖, 0, by simp⟩
       is_finite_cod := sorry -- needs a better name
       has_finite_level := sorry -- needs a better name
 
 -- no idea why it's not computable
 noncomputable def classification (ρ : Weight 0) : AutomorphicFormForGLnOverQ 0 ρ ≃ ℂ where
   toFun f := f 1
-  invFun z := ofComplex z ρ sorry
-  left_inv := sorry
-  right_inv := sorry
+  invFun z := ofComplex z ρ (fun g => by rw [Subsingleton.eq_one g, map_one])
+  left_inv := by
+    rw [Function.LeftInverse]
+    simp only [ofComplex]
+    intro x
+    have h : x.toFun = fun _ => x.toFun 1 :=
+      funext fun g ↦ congrArg x.toFun <| Subsingleton.eq_one g
+    simp_rw [← h]
+  right_inv := by
+    rw [Function.RightInverse, Function.LeftInverse]
+    simp [ofComplex]
 
 -- Can this be beefed up to an isomorphism of complex
 -- vector spaces?
