@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\title{\textbf{The Fundamental Theorem of Calculus}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Preliminaries}
+
+Throughout, let $f\colon [a,b]\to\mathbb{R}$ be a function and let the Riemann integral be denoted by $\int_a^b f(x)\,dx$. We recall that a function $F$ is an \emph{antiderivative} of $f$ on $[a,b]$ if $F'(x)=f(x)$ for every $x\in(a,b)$.
+
+\section{Statement}
+
+The Fundamental Theorem of Calculus consists of two closely related parts.
+
+\begin{theorem}[First Fundamental Theorem of Calculus]
+Let $f\colon [a,b]\to\mathbb{R}$ be a continuous function. Define the function $F\colon [a,b]\to\mathbb{R}$ by
+\[
+    F(x) = \int_a^x f(t)\,dt.
+\]
+Then $F$ is differentiable on $(a,b)$, and for every $x\in(a,b)$,
+\[
+    F'(x) = f(x).
+\]
+\end{theorem}
+
+\begin{theorem}[Second Fundamental Theorem of Calculus]
+Let $f\colon [a,b]\to\mathbb{R}$ be a Riemann-integrable function, and let $F\colon [a,b]\to\mathbb{R}$ be a continuous function such that $F'(x)=f(x)$ for all $x\in(a,b)$. Then
+\[
+    \int_a^b f(x)\,dx = F(b) - F(a).
+\]
+\end{theorem}
+
+\section{Proof of the First Fundamental Theorem}
+
+\begin{proof}
+Fix $x\in(a,b)$. We wish to show that
+\[
+    \lim_{h\to 0} \frac{F(x+h)-F(x)}{h} = f(x).
+\]
+By the definition of $F$,
+\[
+    F(x+h)-F(x) = \int_a^{x+h} f(t)\,dt - \int_a^x f(t)\,dt = \int_x^{x+h} f(t)\,dt.
+\]
+Therefore,
+\[
+    \frac{F(x+h)-F(x)}{h} = \frac{1}{h}\int_x^{x+h} f(t)\,dt.
+\]
+
+Since $f$ is continuous at $x$, for every $\varepsilon>0$ there exists $\delta>0$ such that
+\[
+    |t-x|<\delta \implies |f(t)-f(x)|<\varepsilon.
+\]
+Now suppose $0<|h|<\delta$. For all $t$ between $x$ and $x+h$, we have $|t-x|\le|h|<\delta$, so $|f(t)-f(x)|<\varepsilon$. Hence
+\begin{align*}
+    \left|\frac{F(x+h)-F(x)}{h} - f(x)\right|
+    &= \left|\frac{1}{h}\int_x^{x+h} f(t)\,dt - f(x)\right| \\[6pt]
+    &= \left|\frac{1}{h}\int_x^{x+h} f(t)\,dt - \frac{1}{h}\int_x^{x+h} f(x)\,dt\right| \\[6pt]
+    &= \left|\frac{1}{h}\int_x^{x+h} \bigl(f(t)-f(x)\bigr)\,dt\right| \\[6pt]
+    &\le \frac{1}{|h|}\left|\int_x^{x+h} |f(t)-f(x)|\,dt\right| \\[6pt]
+    &< \frac{1}{|h|}\cdot |h|\cdot\varepsilon = \varepsilon.
+\end{align*}
+Since $\varepsilon>0$ was arbitrary, we conclude that
+\[
+    F'(x) = \lim_{h\to 0}\frac{F(x+h)-F(x)}{h} = f(x). \qedhere
+\]
+\end{proof}
+
+\section{Proof of the Second Fundamental Theorem}
+
+\begin{proof}
+Let $P = \{x_0, x_1, \ldots, x_n\}$ be any partition of $[a,b]$ with $a=x_0 < x_1 < \cdots < x_n = b$. By the \emph{Mean Value Theorem}, for each subinterval $[x_{i-1},x_i]$ there exists a point $c_i\in(x_{i-1},x_i)$ such that
+\[
+    F(x_i)-F(x_{i-1}) = F'(c_i)(x_i - x_{i-1}) = f(c_i)\,\Delta x_i,
+\]
+where $\Delta x_i = x_i - x_{i-1}$.
+
+Summing over all subintervals, a telescoping sum gives
+\[
+    F(b)-F(a) = \sum_{i=1}^n \bigl(F(x_i)-F(x_{i-1})\bigr) = \sum_{i=1}^n f(c_i)\,\Delta x_i.
+\]
+The right-hand side is a Riemann sum for $f$ on $[a,b]$. Since $f$ is Riemann-integrable, as the mesh $\|P\|\to 0$ the Riemann sums converge to $\int_a^b f(x)\,dx$. But the left-hand side $F(b)-F(a)$ is a constant independent of the partition, so
+\[
+    F(b)-F(a) = \int_a^b f(x)\,dx. \qedhere
+\]
+\end{proof}
+
+\section{Remark}
+
+Together, the two parts of the Fundamental Theorem establish that differentiation and integration are inverse operations: the first part shows that integrating and then differentiating recovers the original function, while the second part shows that definite integrals can be evaluated by finding antiderivatives. This result is the cornerstone of calculus and provides the primary practical method for computing integrals.
+
+\end{document}
