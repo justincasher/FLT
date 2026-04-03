@@ -6,14 +6,14 @@
   "notes": "",
   "entries": [
     {
+      "label": "def:antiderivative",
+      "kind": "definition",
+      "title": "Antiderivative"
+    },
+    {
       "label": "def:continuous_on",
       "kind": "definition",
       "title": "Continuous on a closed interval"
-    },
-    {
-      "label": "def:interval_integral",
-      "kind": "definition",
-      "title": "Interval integral"
     },
     {
       "label": "def:has_deriv_at",
@@ -21,9 +21,9 @@
       "title": "Has derivative at a point"
     },
     {
-      "label": "def:antiderivative",
+      "label": "def:interval_integral",
       "kind": "definition",
-      "title": "Antiderivative"
+      "title": "Interval integral"
     },
     {
       "label": "lem:continuous_integrable",
@@ -36,14 +36,14 @@
       "title": "Integral bound"
     },
     {
-      "label": "lem:uniform_continuity",
-      "kind": "lemma",
-      "title": "Uniform continuity on compact intervals"
-    },
-    {
       "label": "lem:mean_value_theorem",
       "kind": "lemma",
       "title": "Mean Value Theorem"
+    },
+    {
+      "label": "lem:uniform_continuity",
+      "kind": "lemma",
+      "title": "Uniform continuity on compact intervals"
     },
     {
       "label": "lem:zero_deriv_constant",
