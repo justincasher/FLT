@@ -1,0 +1,10 @@
+{
+  "label": "def:has_deriv_at",
+  "kind": "definition",
+  "title": "Has derivative at a point",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "We say $F : \\mathbb{R} \\to \\mathbb{R}$ \\emph{has derivative} $f'$ \\emph{at} $x$ if\n  \\[\n    \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h} = f'.\n  \\]",
+  "proof": null
+}

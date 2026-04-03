@@ -1,0 +1,10 @@
+{
+  "label": "def:continuous_on",
+  "kind": "definition",
+  "title": "Continuous on a closed interval",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "Let $f : [a,b] \\to \\mathbb{R}$. We say $f$ is \\emph{continuous on $[a,b]$} if $f$ is\n  continuous at every point of $[a,b]$ (with respect to the subspace topology).",
+  "proof": null
+}

@@ -1,0 +1,12 @@
+{
+  "label": "lem:mean_value_theorem",
+  "kind": "lemma",
+  "title": "Mean Value Theorem",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:has_deriv_at"
+  ],
+  "statement": "Let $F : [a,b] \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$.\n  Then there exists $c \\in (a,b)$ such that\n  \\[\n    F(b) - F(a) = F'(c) \\cdot (b - a).\n  \\]",
+  "proof": "Standard application of Rolle's theorem to the auxiliary function\n  $g(x) = F(x) - F(a) - \\frac{F(b)-F(a)}{b-a}(x-a)$."
+}

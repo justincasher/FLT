@@ -1,0 +1,16 @@
+{
+  "label": "thm:ftc2",
+  "kind": "theorem",
+  "title": "Second Fundamental Theorem of Calculus",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:continuous_on",
+    "def:interval_integral",
+    "def:antiderivative",
+    "thm:ftc1",
+    "lem:zero_deriv_constant"
+  ],
+  "statement": "Let $f : [a,b] \\to \\mathbb{R}$ be continuous on $[a,b]$, and let $F$ be any antiderivative\n  of $f$ on $[a,b]$. Then\n  \\[\n    \\int_a^b f(x)\\,dx = F(b) - F(a).\n  \\]",
+  "proof": "By Theorem~\\ref{thm:ftc1}, the function $G(x) = \\int_a^x f(t)\\,dt$ is an antiderivative\n  of $f$. Since both $F$ and $G$ are antiderivatives, $(F - G)'(x) = 0$ for all $x \\in (a,b)$.\n  By Lemma~\\ref{lem:zero_deriv_constant}, $F - G$ is constant on $[a,b]$: say\n  $F(x) - G(x) = C$ for all $x \\in [a,b]$. Then\n  \\[\n    F(b) - F(a) = (G(b) + C) - (G(a) + C) = G(b) - G(a)\n    = \\int_a^b f(t)\\,dt - 0 = \\int_a^b f(t)\\,dt. \\qedhere\n  \\]"
+}

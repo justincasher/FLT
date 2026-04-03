@@ -1,0 +1,17 @@
+{
+  "label": "thm:ftc1",
+  "kind": "theorem",
+  "title": "First Fundamental Theorem of Calculus",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:continuous_on",
+    "def:interval_integral",
+    "def:has_deriv_at",
+    "lem:continuous_integrable",
+    "lem:integral_bound",
+    "lem:uniform_continuity"
+  ],
+  "statement": "Let $f : [a,b] \\to \\mathbb{R}$ be continuous on $[a,b]$. Define $F : [a,b] \\to \\mathbb{R}$ by\n  \\[\n    F(x) = \\int_a^x f(t)\\,dt.\n  \\]\n  Then $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$ for every $x \\in (a,b)$.",
+  "proof": "Fix $x \\in (a,b)$. We wish to show\n  \\[\n    \\lim_{h \\to 0} \\frac{F(x+h) - F(x)}{h} = f(x).\n  \\]\n  By additivity of the integral,\n  \\[\n    F(x+h) - F(x) = \\int_x^{x+h} f(t)\\,dt,\n  \\]\n  so\n  \\[\n    \\frac{F(x+h) - F(x)}{h} = \\frac{1}{h}\\int_x^{x+h} f(t)\\,dt.\n  \\]\n  Since $f(x) = \\frac{1}{h}\\int_x^{x+h} f(x)\\,dt$, we get\n  \\[\n    \\left|\\frac{F(x+h) - F(x)}{h} - f(x)\\right|\n    = \\left|\\frac{1}{h}\\int_x^{x+h} (f(t) - f(x))\\,dt\\right|.\n  \\]\n  By Lemma~\\ref{lem:uniform_continuity} (or just continuity at $x$), given $\\varepsilon > 0$\n  there exists $\\delta > 0$ such that $|t - x| < \\delta$ implies $|f(t) - f(x)| < \\varepsilon$.\n  For $0 < |h| < \\delta$, every $t$ between $x$ and $x+h$ satisfies $|t - x| \\le |h| < \\delta$,\n  so by Lemma~\\ref{lem:integral_bound},\n  \\[\n    \\left|\\frac{1}{h}\\int_x^{x+h} (f(t) - f(x))\\,dt\\right|\n    \\le \\frac{1}{|h|} \\cdot \\varepsilon \\cdot |h| = \\varepsilon.\n  \\]\n  Since $\\varepsilon > 0$ was arbitrary, $F'(x) = f(x)$."
+}

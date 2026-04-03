@@ -1,0 +1,13 @@
+{
+  "label": "lem:continuous_integrable",
+  "kind": "lemma",
+  "title": "Continuous functions are integrable",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:continuous_on",
+    "def:interval_integral"
+  ],
+  "statement": "If $f : [a,b] \\to \\mathbb{R}$ is continuous on the compact interval $[a,b]$, then $f$\n  is integrable on $[a,b]$.",
+  "proof": "A continuous function on a compact set is bounded and measurable, hence integrable\n  with respect to the Lebesgue measure."
+}

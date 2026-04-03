@@ -1,0 +1,12 @@
+{
+  "label": "def:antiderivative",
+  "kind": "definition",
+  "title": "Antiderivative",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:has_deriv_at"
+  ],
+  "statement": "A function $F : [a,b] \\to \\mathbb{R}$ is an \\emph{antiderivative} of\n  $f : [a,b] \\to \\mathbb{R}$ if $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$\n  for all $x \\in (a,b)$.",
+  "proof": null
+}

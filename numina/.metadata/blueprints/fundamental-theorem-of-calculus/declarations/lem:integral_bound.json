@@ -1,0 +1,12 @@
+{
+  "label": "lem:integral_bound",
+  "kind": "lemma",
+  "title": "Integral bound",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:interval_integral"
+  ],
+  "statement": "If $f$ is integrable on $[a,b]$ and $|f(x)| \\le M$ for all $x \\in [a,b]$, then\n  \\[\n    \\left|\\int_a^b f(x)\\,dx\\right| \\le M \\cdot (b - a).\n  \\]",
+  "proof": "This follows from the monotonicity of the integral:\n  $-M \\le f(x) \\le M$ implies $-M(b-a) \\le \\int_a^b f \\le M(b-a)$."
+}
