@@ -1,7 +1,7 @@
 \chapter{The Fundamental Theorem of Calculus}
 
 This blueprint presents a proof of both parts of the Fundamental Theorem of Calculus (FTC).
-We work over $\R$ with the standard Lebesgue measure and the interval integral.
+We work over $\R$ with the Riemann integral on closed intervals $[a,b]$.
 
 \section{Preliminaries}
 
@@ -15,9 +15,10 @@ We work over $\R$ with the standard Lebesgue measure and the interval integral.
 \begin{definition}[Interval integral]
   \label{def:interval_integral}
   \uses{}
-  For a function $f : \R \to \R$ and $a, b \in \R$, the \emph{interval integral}
-  $\int_a^b f(x)\,dx$ is defined as $\int_a^b f\,d\mu$ where $\mu$ is the Lebesgue measure.
-  By convention, $\int_a^b f = -\int_b^a f$ when $a > b$.
+  For a function $f : [a,b] \to \R$, the \emph{Riemann integral}
+  $\int_a^b f(x)\,dx$ is defined as the common limit of upper and lower Riemann sums
+  over partitions of $[a,b]$, when this limit exists. We say $f$ is
+  \emph{Riemann-integrable} on $[a,b]$ if this integral exists.
 \end{definition}
 
 \begin{definition}[Has derivative at]
@@ -33,7 +34,7 @@ We work over $\R$ with the standard Lebesgue measure and the interval integral.
   \label{def:antiderivative}
   \uses{def:has_deriv_at}
   A function $F : [a,b] \to \R$ is an \emph{antiderivative} of $f : [a,b] \to \R$ if
-  $F$ is differentiable on $[a,b]$ and $F'(x) = f(x)$ for all $x \in [a,b]$.
+  $F'(x) = f(x)$ for every $x \in (a,b)$.
 \end{definition}
 
 \section{Key lemmas}
@@ -42,11 +43,11 @@ We work over $\R$ with the standard Lebesgue measure and the interval integral.
   \label{lem:continuous_integrable}
   \uses{def:continuous_on, def:interval_integral}
   If $f : [a,b] \to \R$ is continuous on the compact interval $[a,b]$, then $f$ is
-  integrable on $[a,b]$.
+  Riemann-integrable on $[a,b]$.
 \end{lemma}
 \begin{proof}
-  A continuous function on a compact set is bounded and measurable, hence integrable
-  with respect to the Lebesgue measure.
+  A continuous function on a compact interval is bounded and uniformly continuous,
+  from which one can show the upper and lower Riemann sums converge to a common limit.
 \end{proof}
 
 \begin{lemma}[Integral bounds]
@@ -62,71 +63,102 @@ We work over $\R$ with the standard Lebesgue measure and the interval integral.
   $-M \le f(x) \le M$ implies $-M(b-a) \le \int_a^b f \le M(b-a)$.
 \end{proof}
 
-\begin{lemma}[Continuous functions satisfy the $\varepsilon$-$\delta$ property uniformly on compact sets]
-  \label{lem:uniform_continuity}
-  \uses{def:continuous_on}
-  If $f$ is continuous on the compact interval $[a,b]$, then $f$ is uniformly continuous
-  on $[a,b]$: for every $\varepsilon > 0$ there exists $\delta > 0$ such that
-  $|x - y| < \delta$ implies $|f(x) - f(y)| < \varepsilon$ for all $x, y \in [a,b]$.
+\begin{lemma}[Mean Value Theorem]
+  \label{lem:mean_value_theorem}
+  \uses{def:has_deriv_at, def:continuous_on}
+  Let $F : [a,b] \to \R$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+  Then there exists $c \in (a,b)$ such that
+  \[
+    F(b) - F(a) = F'(c)(b - a).
+  \]
 \end{lemma}
 \begin{proof}
-  This is the Heine--Cantor theorem: continuous functions on compact metric spaces are
-  uniformly continuous.
+  Apply Rolle's theorem to the auxiliary function
+  $g(x) = F(x) - F(a) - \frac{F(b)-F(a)}{b-a}(x-a)$.
 \end{proof}
 
 \section{First Fundamental Theorem of Calculus}
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
   \label{thm:ftc1}
-  \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable, lem:integral_bound, lem:uniform_continuity}
+  \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable, lem:integral_bound}
   Let $f : [a,b] \to \R$ be continuous on $[a,b]$. Define $F : [a,b] \to \R$ by
   \[
     F(x) = \int_a^x f(t)\,dt.
   \]
-  Then $F$ is differentiable on $[a,b]$ and $F'(x) = f(x)$ for all $x \in [a,b]$.
+  Then $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$ for every $x \in (a,b)$.
 \end{theorem}
 \begin{proof}
-  Fix $x \in [a,b]$. We must show
+  Fix $x \in (a,b)$. We wish to show that
   \[
     \lim_{h \to 0} \frac{F(x+h) - F(x)}{h} = f(x).
   \]
-  We have
+  By the definition of $F$,
+  \[
+    F(x+h) - F(x) = \int_a^{x+h} f(t)\,dt - \int_a^x f(t)\,dt = \int_x^{x+h} f(t)\,dt.
+  \]
+  Therefore,
   \[
     \frac{F(x+h) - F(x)}{h} = \frac{1}{h}\int_x^{x+h} f(t)\,dt.
   \]
-  Since $f(x) = \frac{1}{h}\int_x^{x+h} f(x)\,dt$, we get
+
+  Since $f$ is continuous at $x$, for every $\varepsilon > 0$ there exists $\delta > 0$ such that
   \[
+    |t - x| < \delta \implies |f(t) - f(x)| < \varepsilon.
+  \]
+  Now suppose $0 < |h| < \delta$. For all $t$ between $x$ and $x+h$, we have
+  $|t - x| \le |h| < \delta$, so $|f(t) - f(x)| < \varepsilon$. Hence
+  \begin{align*}
     \left|\frac{F(x+h) - F(x)}{h} - f(x)\right|
-    = \left|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right|.
-  \]
-  By Lemma~\ref{lem:uniform_continuity}, given $\varepsilon > 0$, there exists $\delta > 0$
-  such that $|t - x| < \delta$ implies $|f(t) - f(x)| < \varepsilon$. For $|h| < \delta$,
-  by Lemma~\ref{lem:integral_bound},
+    &= \left|\frac{1}{h}\int_x^{x+h} f(t)\,dt - f(x)\right| \\[6pt]
+    &= \left|\frac{1}{h}\int_x^{x+h} f(t)\,dt - \frac{1}{h}\int_x^{x+h} f(x)\,dt\right| \\[6pt]
+    &= \left|\frac{1}{h}\int_x^{x+h} \bigl(f(t) - f(x)\bigr)\,dt\right| \\[6pt]
+    &\le \frac{1}{|h|}\left|\int_x^{x+h} |f(t) - f(x)|\,dt\right| \\[6pt]
+    &< \frac{1}{|h|} \cdot |h| \cdot \varepsilon = \varepsilon.
+  \end{align*}
+  Since $\varepsilon > 0$ was arbitrary, we conclude that
   \[
-    \left|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right| \le \varepsilon.
+    F'(x) = \lim_{h \to 0}\frac{F(x+h) - F(x)}{h} = f(x). \qedhere
   \]
-  Hence $F'(x) = f(x)$.
 \end{proof}
 
 \section{Second Fundamental Theorem of Calculus}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
   \label{thm:ftc2}
-  \uses{def:continuous_on, def:interval_integral, def:antiderivative, lem:continuous_integrable}
-  Let $f : [a,b] \to \R$ be continuous on $[a,b]$, and let $F$ be any antiderivative of $f$
-  on $[a,b]$. Then
+  \uses{def:interval_integral, def:antiderivative, def:continuous_on, lem:continuous_integrable, lem:mean_value_theorem}
+  Let $f : [a,b] \to \R$ be Riemann-integrable, and let $F : [a,b] \to \R$ be a continuous
+  function such that $F'(x) = f(x)$ for all $x \in (a,b)$. Then
   \[
     \int_a^b f(x)\,dx = F(b) - F(a).
   \]
 \end{theorem}
 \begin{proof}
-  \uses{thm:ftc1}
-  By Theorem~\ref{thm:ftc1}, the function $G(x) = \int_a^x f(t)\,dt$ is an antiderivative
-  of $f$. Since $F$ is also an antiderivative of $f$, we have $(F - G)' = 0$ on $[a,b]$.
-  By the mean value theorem, $F - G$ is constant on $[a,b]$, say $F(x) - G(x) = C$
-  for all $x \in [a,b]$. Then
+  Let $P = \{x_0, x_1, \ldots, x_n\}$ be any partition of $[a,b]$ with
+  $a = x_0 < x_1 < \cdots < x_n = b$. By the Mean Value Theorem
+  (Lemma~\ref{lem:mean_value_theorem}), for each subinterval $[x_{i-1}, x_i]$ there
+  exists a point $c_i \in (x_{i-1}, x_i)$ such that
   \[
-    F(b) - F(a) = (G(b) + C) - (G(a) + C) = G(b) - G(a) = \int_a^b f(t)\,dt - 0
-    = \int_a^b f(t)\,dt. \qedhere
+    F(x_i) - F(x_{i-1}) = F'(c_i)(x_i - x_{i-1}) = f(c_i)\,\Delta x_i,
+  \]
+  where $\Delta x_i = x_i - x_{i-1}$.
+
+  Summing over all subintervals, a telescoping sum gives
+  \[
+    F(b) - F(a) = \sum_{i=1}^n \bigl(F(x_i) - F(x_{i-1})\bigr) = \sum_{i=1}^n f(c_i)\,\Delta x_i.
+  \]
+  The right-hand side is a Riemann sum for $f$ on $[a,b]$. Since $f$ is Riemann-integrable,
+  as the mesh $\|P\| \to 0$ the Riemann sums converge to $\int_a^b f(x)\,dx$. But the
+  left-hand side $F(b) - F(a)$ is a constant independent of the partition, so
+  \[
+    F(b) - F(a) = \int_a^b f(x)\,dx. \qedhere
   \]
 \end{proof}
+
+\section{Remark}
+
+Together, the two parts of the Fundamental Theorem establish that differentiation and
+integration are inverse operations: the first part shows that integrating and then
+differentiating recovers the original function, while the second part shows that definite
+integrals can be evaluated by finding antiderivatives. This result is the cornerstone of
+calculus and provides the primary practical method for computing integrals.
