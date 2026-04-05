@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "For a function $f : \\mathbb{R} \\to \\mathbb{R}$ and $a, b \\in \\mathbb{R}$, the\n  \\emph{interval integral} $\\int_a^b f(x)\\,dx$ is defined as $\\int_a^b f\\,d\\mu$ where\n  $\\mu$ is the Lebesgue measure. By convention, $\\int_a^b f = -\\int_b^a f$ when $a > b$.",
+  "statement": "For a function $f : \\mathbb{R} \\to \\mathbb{R}$ and $a, b \\in \\mathbb{R}$, the \\emph{interval integral} $\\int_a^b f(x)\\,dx$ is defined as $\\int_a^b f\\,d\\mu$ where $\\mu$ is the Lebesgue measure. By convention, $\\int_a^b f = -\\int_b^a f$ when $a > b$.",
   "proof": null
 }
