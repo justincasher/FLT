@@ -59,6 +59,61 @@
       "label": "thm:ftc2",
       "kind": "theorem",
       "title": "Second Fundamental Theorem of Calculus"
+    },
+    {
+      "label": "def:antiderivative",
+      "kind": "definition",
+      "title": "Antiderivative"
+    },
+    {
+      "label": "def:continuous_on",
+      "kind": "definition",
+      "title": "Continuous on a closed interval"
+    },
+    {
+      "label": "def:has_deriv_at",
+      "kind": "definition",
+      "title": "Has derivative at a point"
+    },
+    {
+      "label": "def:interval_integral",
+      "kind": "definition",
+      "title": "Interval integral"
+    },
+    {
+      "label": "lem:continuous_integrable",
+      "kind": "lemma",
+      "title": "Continuous functions are integrable"
+    },
+    {
+      "label": "lem:integral_bound",
+      "kind": "lemma",
+      "title": "Integral bound"
+    },
+    {
+      "label": "lem:mean_value_theorem",
+      "kind": "lemma",
+      "title": "Mean Value Theorem"
+    },
+    {
+      "label": "lem:uniform_continuity",
+      "kind": "lemma",
+      "title": "Uniform continuity on compact intervals"
+    },
+    {
+      "label": "lem:zero_deriv_constant",
+      "kind": "lemma",
+      "title": "Zero derivative implies constant"
+    },
+    {
+      "label": "thm:ftc1",
+      "kind": "theorem",
+      "title": "First Fundamental Theorem of Calculus"
+    },
+    {
+      "label": "thm:ftc2",
+      "kind": "theorem",
+      "title": "Second Fundamental Theorem of Calculus"
     }
   ]
 }
