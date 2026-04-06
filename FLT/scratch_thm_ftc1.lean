@@ -69,12 +69,12 @@ theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
     (x : ℝ) (hx : x ∈ Ioo (min a b) (max a b)) :
     HasDerivAt (fun u => ∫ t in a..u, f t) (f x) x := by
   have hx_mem : x ∈ uIcc a b := by
-    simp only [uIcc, mem_Icc, min_le_iff, le_max_iff] at hx ⊢
-    constructor <;> linarith [hx.1, hx.2]
-  have hcont_x : ContinuousAt f x :=
-    (hf x hx_mem).continuousAt (uIcc_mem_nhds hx)
+    simp only [uIcc_eq_icc_min_max]; exact Ioo_subset_Icc_self hx
+  have hx_nhds : uIcc a b ∈ 𝓝 x := by
+    simp only [uIcc_eq_icc_min_max]; exact Icc_mem_nhds hx.1 hx.2
+  have hcont_x : ContinuousAt f x := (hf x hx_mem).continuousAt hx_nhds
   have hint : IntervalIntegrable f volume a x :=
-    (hf.mono (uIcc_subset_uIcc_right hx_mem)).intervalIntegrable
+    hf.intervalIntegrable.mono_set (uIcc_subset_uIcc_left hx_mem)
   have hmeas : StronglyMeasurableAtFilter f (𝓝 x) :=
     hcont_x.stronglyMeasurableAtFilter
   exact intervalIntegral.integral_hasDerivAt_right hint hmeas hcont_x

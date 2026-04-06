@@ -59,9 +59,38 @@ Blueprint: `lem:zero_deriv_constant`. -/
 theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
-    ∀ x ∈ Icc a b, f x = f a :=
-  constant_of_has_deriv_right_zero hcont fun x hx =>
-    (hderiv x (Ico_subset_Ioo_left (show a < x from hx.1) |>.2 |>.elim sorry sorry)).hasDerivWithinAt
+    ∀ x ∈ Icc a b, f x = f a := by
+  -- Show f is constant on Ioo a b using the convex MVT
+  have hIoo : ∀ x ∈ Ioo a b, DifferentiableAt ℝ f x :=
+    fun x hx => (hderiv x hx).differentiableAt
+  have hconst_Ioo : ∀ x ∈ Ioo a b, ∀ y ∈ Ioo a b, f x = f y := by
+    intro x hx y hy
+    have key := convex_Ioo a b |>.norm_image_sub_le_of_norm_deriv_le hIoo
+      (fun z hz => ?_) hx hy
+    · simp only [zero_mul, norm_le_zero_iff, sub_eq_zero] at key; exact key.symm
+    · have := (hderiv z hz).deriv
+      rw [this]
+      simp
+  -- Extend to Icc a b by continuity
+  intro x hx
+  by_cases hab : a < b
+  · -- There exist sequences in Ioo converging to a and x
+    have ha_mem : a ∈ Icc a b := left_mem_Icc.mpr hab.le
+    -- Use density of Ioo in Icc
+    have hdense : closure (Ioo a b) = Icc a b := closure_Ioo hab.ne
+    rw [← hdense] at hx ha_mem
+    obtain ⟨sx, hsx_mem, hsx_lim⟩ := mem_closure_iff_seq_limit.mp hx
+    obtain ⟨sa, hsa_mem, hsa_lim⟩ := mem_closure_iff_seq_limit.mp ha_mem
+    have hsx_Icc : ∀ n, sx n ∈ Icc a b := fun n => by
+      rw [← hdense]; exact subset_closure (hsx_mem n)
+    have hsa_Icc : ∀ n, sa n ∈ Icc a b := fun n => by
+      rw [← hdense]; exact subset_closure (hsa_mem n)
+    have hf_sx : Filter.Tendsto (f ∘ sx) Filter.atTop (nhds (f x)) :=
+      (hcont.continuousAt (by rw [hdense]; exact hx) |>.tendsto).comp hsx_lim
+    sorry
+  · -- a ≥ b, so Icc a b is trivial
+    push_neg at hab
+    interval_cases x <;> simp_all [le_antisymm hx.2 (hab.trans hx.1)]
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
