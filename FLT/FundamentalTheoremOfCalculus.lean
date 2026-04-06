@@ -19,7 +19,7 @@ The following definitions from the blueprint correspond to existing Mathlib conc
 - `def:antiderivative` → `IsAntiderivativeOn` (defined below)
 -/
 
-open MeasureTheory Set
+open MeasureTheory Set Interval
 
 namespace FLT.FundamentalTheoremOfCalculus
 
