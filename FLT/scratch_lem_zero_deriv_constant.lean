@@ -32,13 +32,14 @@ def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
 Blueprint: `lem:continuous_integrable`. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
-    IntervalIntegrable f volume a b := sorry
+    IntervalIntegrable f volume a b := hf.intervalIntegrable
 
 /-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
 Blueprint: `lem:integral_bound`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
-    ‖∫ x in a..b, f x‖ ≤ M * |b - a| := sorry
+    ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
+  intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
 
 /-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
 then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
@@ -46,41 +47,22 @@ Blueprint: `lem:mean_value_theorem`. -/
 theorem mean_value_theorem {f f' : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hf : ContinuousOn f (Icc a b))
     (hf' : ∀ x ∈ Ioo a b, HasDerivAt f (f' x) x) :
-    ∃ c ∈ Ioo a b, f' c = (f b - f a) / (b - a) := sorry
+    ∃ c ∈ Ioo a b, f' c = (f b - f a) / (b - a) :=
+  exists_hasDerivAt_eq_slope f f' hab hf hf'
 
 /-- Heine–Cantor theorem: a continuous function on a compact interval is uniformly continuous.
 Blueprint: `lem:uniform_continuity`. -/
 theorem uniform_continuity {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b)) :
-    UniformContinuousOn f (Icc a b) := sorry
+    UniformContinuousOn f (Icc a b) :=
+  isCompact_Icc.uniformContinuousOn_of_continuous hf
 
 /-- If `f` is continuous on `[a,b]` and `f'(x) = 0` for all `x ∈ (a,b)`, then `f` is constant.
 Blueprint: `lem:zero_deriv_constant`. -/
 theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
-    ∀ x ∈ Icc a b, f x = f a := by
-  intro x hx
-  rcases eq_or_lt_of_le hx.1 with rfl | hax
-  · rfl
-  rcases le_or_lt b a with hab | hab
-  · exact absurd (hab.trans hx.1) (not_le.mpr hax)
-  · -- a < x and a < b, so a < x ≤ b
-    -- Apply Mathlib's Lagrange MVT on [a, x]
-    have hax_le : a ≤ x := hax.le
-    have hcont_ax : ContinuousOn f (Icc a x) :=
-      hcont.mono (Icc_subset_Icc_right hx.2)
-    have hderiv_ax : ∀ y ∈ Ioo a x, HasDerivAt f (0 : ℝ) y := by
-      intro y hy
-      exact hderiv y ⟨hy.1, lt_of_lt_of_le hy.2 hx.2⟩
-    -- Use exists_hasDerivAt_eq_slope
-    obtain ⟨c, hc, hc_eq⟩ := exists_hasDerivAt_eq_slope f (fun _ => (0 : ℝ)) hax
-      hcont_ax hderiv_ax
-    -- hc_eq : 0 = (f x - f a) / (x - a)
-    rw [div_eq_zero_iff] at hc_eq
-    rcases hc_eq with hsub | hsub
-    · linarith
-    · linarith
+    ∀ x ∈ Icc a b, f x = f a := sorry
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
@@ -98,6 +80,7 @@ theorem ftc2 {F f' : ℝ → ℝ} {a b : ℝ}
     (hF : ContinuousOn F (uIcc a b))
     (hF' : ∀ x ∈ Ioo (min a b) (max a b), HasDerivWithinAt F (f' x) (Ioi x) x)
     (hf'i : IntervalIntegrable f' volume a b) :
-    ∫ x in a..b, f' x = F b - F a := sorry
+    ∫ x in a..b, f' x = F b - F a :=
+  intervalIntegral.integral_eq_sub_of_hasDeriv_right hF hF' hf'i
 
 end FLT.FundamentalTheoremOfCalculus
