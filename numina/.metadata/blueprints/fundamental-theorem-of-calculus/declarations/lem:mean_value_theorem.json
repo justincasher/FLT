@@ -2,8 +2,8 @@
   "label": "lem:mean_value_theorem",
   "kind": "lemma",
   "title": "Mean Value Theorem",
-  "leanDeclaration": "",
-  "leanFile": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.mean_value_theorem",
+  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
   "uses": [
     "def:has_deriv_at",
     "def:continuous_on"

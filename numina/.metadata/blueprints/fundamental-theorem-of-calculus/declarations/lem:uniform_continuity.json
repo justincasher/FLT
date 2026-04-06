@@ -2,8 +2,8 @@
   "label": "lem:uniform_continuity",
   "kind": "lemma",
   "title": "Uniform continuity on compact sets",
-  "leanDeclaration": "",
-  "leanFile": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.uniform_continuity",
+  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
   "uses": [
     "def:continuous_on"
   ],

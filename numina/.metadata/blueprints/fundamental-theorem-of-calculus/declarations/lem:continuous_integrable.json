@@ -2,8 +2,8 @@
   "label": "lem:continuous_integrable",
   "kind": "lemma",
   "title": "Continuous functions are interval integrable",
-  "leanDeclaration": "",
-  "leanFile": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.continuous_integrable",
+  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
   "uses": [
     "def:continuous_on",
     "def:interval_integral"

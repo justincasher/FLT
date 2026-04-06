@@ -2,8 +2,8 @@
   "label": "thm:ftc1",
   "kind": "theorem",
   "title": "First Fundamental Theorem of Calculus",
-  "leanDeclaration": "",
-  "leanFile": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.ftc1",
+  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
   "uses": [
     "def:continuous_on",
     "def:interval_integral",

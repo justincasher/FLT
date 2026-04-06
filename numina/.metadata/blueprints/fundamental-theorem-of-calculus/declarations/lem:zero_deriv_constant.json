@@ -2,8 +2,8 @@
   "label": "lem:zero_deriv_constant",
   "kind": "lemma",
   "title": "Zero derivative implies constant",
-  "leanDeclaration": "",
-  "leanFile": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.zero_deriv_constant",
+  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
   "uses": [
     "def:has_deriv_at",
     "def:continuous_on",
