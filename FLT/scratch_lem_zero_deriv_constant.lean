@@ -64,18 +64,17 @@ theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
     ∀ x ∈ Icc a b, f x = f a := by
   intro x hx
-  rcases eq_or_lt_of_le hx.1 with rfl | hax'
+  rcases eq_or_lt_of_le hx.1 with rfl | hax
   · rfl
   · have hcont' : ContinuousOn f (Icc a x) :=
       hcont.mono (Icc_subset_Icc_right hx.2)
-    have hderiv' : ∀ y ∈ Ioo a x, HasDerivAt f 0 y := fun y hy =>
-      hderiv y ⟨hy.1, lt_of_lt_of_le hy.2 hx.2⟩
-    obtain ⟨c, _, hc'⟩ := exists_hasDerivAt_eq_slope f (fun _ => (0 : ℝ)) hax' hcont' hderiv'
-    have hne : x - a ≠ 0 := sub_ne_zero.mpr (ne_of_gt hax')
-    rw [eq_comm, div_eq_zero_iff] at hc'
-    rcases hc' with h | h
-    · linarith
-    · exact absurd h hne
+    have hderiv' : ∀ y ∈ Ioo a x, HasDerivAt f 0 y :=
+      fun y hy => hderiv y ⟨hy.1, hy.2.trans_le hx.2⟩
+    obtain ⟨c, _, hc⟩ := exists_hasDerivAt_eq_slope f (fun _ => (0 : ℝ)) hax hcont' hderiv'
+    simp only at hc
+    have hne : x - a ≠ 0 := sub_ne_zero.mpr hax.ne'
+    rw [eq_comm, div_eq_zero_iff] at hc
+    linarith [hc.resolve_right hne]
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.

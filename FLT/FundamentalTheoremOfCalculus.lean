@@ -62,7 +62,20 @@ Blueprint: `lem:zero_deriv_constant`. -/
 theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
-    ∀ x ∈ Icc a b, f x = f a := sorry
+    ∀ x ∈ Icc a b, f x = f a := by
+  intro x hx
+  rcases eq_or_lt_of_le hx.1 with rfl | hax'
+  · rfl
+  · have hcont' : ContinuousOn f (Icc a x) :=
+      hcont.mono (Icc_subset_Icc_right hx.2)
+    have hderiv' : ∀ y ∈ Ioo a x, HasDerivAt f 0 y := fun y hy =>
+      hderiv y ⟨hy.1, lt_of_lt_of_le hy.2 hx.2⟩
+    obtain ⟨c, _, hc'⟩ := exists_hasDerivAt_eq_slope f (fun _ => (0 : ℝ)) hax' hcont' hderiv'
+    have hne : x - a ≠ 0 := sub_ne_zero.mpr (ne_of_gt hax')
+    rw [eq_comm, div_eq_zero_iff] at hc'
+    rcases hc' with h | h
+    · linarith
+    · exact absurd h hne
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
@@ -72,10 +85,10 @@ theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
     (x : ℝ) (hx : x ∈ Ioo (min a b) (max a b)) :
     HasDerivAt (fun u => ∫ t in a..u, f t) (f x) x := by
   have hx_mem : x ∈ uIcc a b := by
-    show x ∈ Icc (min a b) (max a b)
+    change x ∈ Icc (min a b) (max a b)
     exact Ioo_subset_Icc_self hx
   have hx_nhds : uIcc a b ∈ 𝓝 x := by
-    show Icc (min a b) (max a b) ∈ 𝓝 x
+    change Icc (min a b) (max a b) ∈ 𝓝 x
     exact Icc_mem_nhds hx.1 hx.2
   have hcont_x : ContinuousAt f x := (hf x hx_mem).continuousAt hx_nhds
   have hint : IntervalIntegrable f volume a x :=
