@@ -60,21 +60,51 @@ theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
     ∀ x ∈ Icc a b, f x = f a := by
-  apply constant_of_has_deriv_right_zero hcont
   intro x hx
-  rcases eq_or_lt_of_le hx.1 with rfl | hax
-  · -- x = a: need HasDerivWithinAt f 0 (Ici a) a
-    -- We show this using the squeeze: |f(a+h) - f(a)| ≤ 0 * h for h > 0
-    -- by applying the convex MVT on [a, a+h] ⊆ [a, b] for small h
-    rw [hasDerivWithinAt_iff_tendsto]
-    rw [show (0 : ℝ) = 0 by rfl]
-    simp only [sub_zero]
-    rw [Metric.tendsto_nhdsWithin_nhds]
-    intro ε hε
-    refine ⟨ε, hε, fun y hy_dist hy_mem => ?_⟩
-    sorry
-  · -- x > a, so x ∈ Ioo a b
-    exact (hderiv x ⟨hax, hx.2⟩).hasDerivWithinAt
+  rcases le_or_lt b a with hab | hab
+  · -- a ≥ b, Icc a b ⊆ {a}, so x = a
+    have : x = a := le_antisymm (hx.2.trans hab |>.trans hx.1 |>.le.antisymm hx.1) hx.1
+    simp [this]
+  · -- a < b
+    rcases eq_or_lt_of_le hx.1 with rfl | hax
+    · rfl  -- x = a
+    · -- x > a, use continuity to reduce to Ioo
+      -- f is constant on Ioo a b
+      have hconst : ∀ y ∈ Ioo a b, ∀ z ∈ Ioo a b, f y = f z := by
+        intro y hy z hz
+        have hd : ∀ w ∈ Ioo a b, DifferentiableAt ℝ f w :=
+          fun w hw => (hderiv w hw).differentiableAt
+        have hbd : ∀ w ∈ Ioo a b, ‖deriv f w‖ ≤ 0 := by
+          intro w hw; simp [(hderiv w hw).deriv]
+        have := (convex_Ioo a b).norm_image_sub_le_of_norm_deriv_le hd hbd hy hz
+        simp only [zero_mul, norm_le_zero_iff, sub_eq_zero] at this
+        exact this.symm
+      -- f is constant on Ioo a b, say equal to some value L
+      -- We need: f x = f a. We know f is continuous on [a,b].
+      -- For x ∈ (a,b), pick a sequence in (a,b) converging to a.
+      -- f(seq_n) = f(x) for all n, and f(seq_n) → f(a) by continuity, so f(x) = f(a).
+      rcases eq_or_lt_of_le hx.2 with hxb | hxb
+      · -- x = b
+        subst hxb
+        -- pick c ∈ (a, b)
+        obtain ⟨c, hc⟩ := nonempty_Ioo.mpr hab
+        -- f is continuous at b from the left, and f = f(c) on (a,b)
+        -- Take seq in (a,b) → b, then f(seq) = f(c) → f(b) by continuity
+        -- Similarly for a
+        have hfa : f a = f c := by
+          have : ContinuousWithinAt f (Icc a b) a := hcont a (left_mem_Icc.mpr hab.le)
+          have := this.tendsto
+          -- Use a sequence (a + 1/n) converging to a
+          sorry
+        sorry
+      · -- x ∈ (a, b)
+        have hx_ioo : x ∈ Ioo a b := ⟨hax, hxb⟩
+        obtain ⟨c, hc⟩ := nonempty_Ioo.mpr hab
+        -- f(x) = f(c) for all x, c ∈ (a,b)
+        have : f x = f c := hconst x hx_ioo c hc
+        -- f(a) = lim f(seq) where seq → a from the right, seq ∈ (a,b)
+        -- f(seq_n) = f(c) so f(a) = f(c)
+        sorry
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
