@@ -60,37 +60,21 @@ theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
     ∀ x ∈ Icc a b, f x = f a := by
-  -- Show f is constant on Ioo a b using the convex MVT
-  have hIoo : ∀ x ∈ Ioo a b, DifferentiableAt ℝ f x :=
-    fun x hx => (hderiv x hx).differentiableAt
-  have hconst_Ioo : ∀ x ∈ Ioo a b, ∀ y ∈ Ioo a b, f x = f y := by
-    intro x hx y hy
-    have key := convex_Ioo a b |>.norm_image_sub_le_of_norm_deriv_le hIoo
-      (fun z hz => ?_) hx hy
-    · simp only [zero_mul, norm_le_zero_iff, sub_eq_zero] at key; exact key.symm
-    · have := (hderiv z hz).deriv
-      rw [this]
-      simp
-  -- Extend to Icc a b by continuity
+  apply constant_of_has_deriv_right_zero hcont
   intro x hx
-  by_cases hab : a < b
-  · -- There exist sequences in Ioo converging to a and x
-    have ha_mem : a ∈ Icc a b := left_mem_Icc.mpr hab.le
-    -- Use density of Ioo in Icc
-    have hdense : closure (Ioo a b) = Icc a b := closure_Ioo hab.ne
-    rw [← hdense] at hx ha_mem
-    obtain ⟨sx, hsx_mem, hsx_lim⟩ := mem_closure_iff_seq_limit.mp hx
-    obtain ⟨sa, hsa_mem, hsa_lim⟩ := mem_closure_iff_seq_limit.mp ha_mem
-    have hsx_Icc : ∀ n, sx n ∈ Icc a b := fun n => by
-      rw [← hdense]; exact subset_closure (hsx_mem n)
-    have hsa_Icc : ∀ n, sa n ∈ Icc a b := fun n => by
-      rw [← hdense]; exact subset_closure (hsa_mem n)
-    have hf_sx : Filter.Tendsto (f ∘ sx) Filter.atTop (nhds (f x)) :=
-      (hcont.continuousAt (by rw [hdense]; exact hx) |>.tendsto).comp hsx_lim
+  rcases eq_or_lt_of_le hx.1 with rfl | hax
+  · -- x = a: need HasDerivWithinAt f 0 (Ici a) a
+    -- We show this using the squeeze: |f(a+h) - f(a)| ≤ 0 * h for h > 0
+    -- by applying the convex MVT on [a, a+h] ⊆ [a, b] for small h
+    rw [hasDerivWithinAt_iff_tendsto]
+    rw [show (0 : ℝ) = 0 by rfl]
+    simp only [sub_zero]
+    rw [Metric.tendsto_nhdsWithin_nhds]
+    intro ε hε
+    refine ⟨ε, hε, fun y hy_dist hy_mem => ?_⟩
     sorry
-  · -- a ≥ b, so Icc a b is trivial
-    push_neg at hab
-    interval_cases x <;> simp_all [le_antisymm hx.2 (hab.trans hx.1)]
+  · -- x > a, so x ∈ Ioo a b
+    exact (hderiv x ⟨hax, hx.2⟩).hasDerivWithinAt
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
