@@ -77,8 +77,11 @@ theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
   have hcont_x : ContinuousAt f x := (hf x hx_mem).continuousAt hx_nhds
   have hint : IntervalIntegrable f volume a x :=
     hf.intervalIntegrable.mono_set (uIcc_subset_uIcc_left hx_mem)
-  exact intervalIntegral.integral_hasDerivAt_right hint
-    hcont_x.stronglyMeasurableAtFilter hcont_x
+  have hf_ioo : ContinuousOn f (Ioo (min a b) (max a b)) :=
+    hf.mono Ioo_subset_Icc_self
+  have hmeas : StronglyMeasurableAtFilter f (𝓝 x) volume :=
+    hf_ioo.stronglyMeasurableAtFilter isOpen_Ioo x hx
+  exact intervalIntegral.integral_hasDerivAt_right hint hmeas hcont_x
 
 /-- Second Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]` and `F` is an
 antiderivative of `f` (i.e. `F` has right derivative `f'` on `(a,b)`), then
