@@ -2,8 +2,8 @@
   "label": "def:antiderivative",
   "kind": "definition",
   "title": "Antiderivative",
-  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.IsAntiderivativeOn",
-  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
+  "leanDeclaration": "",
+  "leanFile": "",
   "uses": [
     "def:has_deriv_at",
     "def:continuous_on"

@@ -2,8 +2,8 @@
   "label": "def:interval_integral",
   "kind": "definition",
   "title": "Interval integral",
-  "leanDeclaration": "intervalIntegral",
-  "leanFile": "Mathlib",
+  "leanDeclaration": "",
+  "leanFile": "",
   "uses": [],
   "statement": "For a function $f : \\mathbb{R} \\to E$ (where $E$ is a normed space) and $a, b \\in \\mathbb{R}$, the \\emph{interval integral} $\\int_a^b f(x)\\,dx$ is defined as $\\int_{[a,b]} f\\,d\\mu - \\int_{[b,a]} f\\,d\\mu$ where $\\mu$ is a given measure (typically the Lebesgue measure). This definition is antisymmetric: $\\int_a^b f = -\\int_b^a f$. In Mathlib this is \\texttt{intervalIntegral}.",
   "proof": null

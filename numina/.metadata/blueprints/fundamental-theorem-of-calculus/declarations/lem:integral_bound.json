@@ -2,8 +2,8 @@
   "label": "lem:integral_bound",
   "kind": "lemma",
   "title": "Integral norm bound",
-  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.integral_bound",
-  "leanFile": "FLT/FundamentalTheoremOfCalculus.lean",
+  "leanDeclaration": "",
+  "leanFile": "",
   "uses": [
     "def:interval_integral"
   ],
