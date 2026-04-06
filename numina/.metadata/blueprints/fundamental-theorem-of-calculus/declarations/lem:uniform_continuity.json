@@ -1,12 +1,12 @@
 {
   "label": "lem:uniform_continuity",
   "kind": "lemma",
-  "title": "Uniform continuity on compact intervals",
+  "title": "Uniform continuity on compact sets",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "def:continuous_on"
   ],
-  "statement": "If $f$ is continuous on the compact interval $[a,b]$, then $f$ is uniformly continuous\n  on $[a,b]$: for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that\n  $|x - y| < \\delta$ implies $|f(x) - f(y)| < \\varepsilon$ for all $x, y \\in [a,b]$.",
-  "proof": "This is the Heine--Cantor theorem: continuous functions on compact metric spaces are\n  uniformly continuous."
+  "statement": "If $K$ is a compact set and $f$ is continuous on $K$, then $f$ is uniformly continuous on $K$. In Mathlib this is \\texttt{IsCompact.uniformContinuousOn\\_of\\_continuous}.",
+  "proof": "This is the Heine--Cantor theorem: continuous functions on compact metric spaces (more generally, compact uniform spaces) are uniformly continuous."
 }

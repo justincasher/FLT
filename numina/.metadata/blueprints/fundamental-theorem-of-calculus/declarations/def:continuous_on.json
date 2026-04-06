@@ -1,10 +1,10 @@
 {
   "label": "def:continuous_on",
   "kind": "definition",
-  "title": "Continuous on a closed interval",
+  "title": "Continuous on a set",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $f : [a,b] \\to \\mathbb{R}$. We say $f$ is \\emph{continuous on $[a,b]$} if $f$ is continuous at every point of $[a,b]$ (with respect to the subspace topology).",
+  "statement": "A function $f : \\alpha \\to \\beta$ between topological spaces is \\emph{continuous on} a set $s \\subseteq \\alpha$ if for every $x \\in s$, $f$ is continuous within $s$ at $x$, i.e., the filter map of $f$ along the neighborhood filter of $x$ restricted to $s$ tends to $f(x)$. In Mathlib this is \\texttt{ContinuousOn}.",
   "proof": null
 }

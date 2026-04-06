@@ -5,8 +5,9 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
-    "def:has_deriv_at"
+    "def:has_deriv_at",
+    "def:continuous_on"
   ],
-  "statement": "Let $F : [a,b] \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$.\n  Then there exists $c \\in (a,b)$ such that\n  \\[\n    F(b) - F(a) = F'(c) \\cdot (b - a).\n  \\]",
-  "proof": "Standard application of Rolle's theorem to the auxiliary function\n  $g(x) = F(x) - F(a) - \\frac{F(b)-F(a)}{b-a}(x-a)$."
+  "statement": "Let $f, g : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Then there exists $c \\in (a,b)$ such that\n\\[\n  (g(b) - g(a)) \\cdot f'(c) = (f(b) - f(a)) \\cdot g'(c).\n\\]\nTaking $g(x) = x$ gives the classical form $f(b) - f(a) = f'(c)(b-a)$. In Mathlib this is \\texttt{exists\\_ratio\\_hasDerivAt\\_eq\\_ratio\\_slope} (or related formulations).",
+  "proof": "Standard application of Rolle's theorem to an auxiliary function combining $f$ and $g$."
 }

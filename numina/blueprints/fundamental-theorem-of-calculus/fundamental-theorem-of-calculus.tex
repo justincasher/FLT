@@ -1,163 +1,139 @@
 \begin{document}
 
-hello world
+\section{Definitions}
 
-this world
-
-this is a test
-
-\begin{definition}[Antiderivative]
-\label{def:antiderivative}
-\uses{def:has_deriv_at}
-
-A function $F : [a,b] \to \mathbb{R}$ is an \emph{antiderivative} of $f : [a,b] \to \mathbb{R}$ if $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$ for all $x \in (a,b)$.
-\end{definition}
-
-\begin{definition}[Continuous on a closed interval]
+\begin{definition}[Continuous on a set]
 \label{def:continuous_on}
 
-Let $f : [a,b] \to \mathbb{R}$. We say $f$ is \emph{continuous on $[a,b]$} if $f$ is continuous at every point of $[a,b]$ (with respect to the subspace topology).
+A function $f : \alpha \to \beta$ between topological spaces is \emph{continuous on} a set $s \subseteq \alpha$ if for every $x \in s$, $f$ is continuous within $s$ at $x$, i.e., the filter map of $f$ along the neighborhood filter of $x$ restricted to $s$ tends to $f(x)$. In Mathlib this is \texttt{ContinuousOn}.
 \end{definition}
 
 \begin{definition}[Has derivative at a point]
 \label{def:has_deriv_at}
 
-We say $F : \mathbb{R} \to \mathbb{R}$ \emph{has derivative} $f'$ \emph{at} $x$ if
-\[
-    \lim_{h \to 0} \frac{F(x+h) - F(x)}{h} = f'.
-  \]
+Let $F : \mathbb{F} \to \mathbb{F}$ where $\mathbb{F}$ is a nontrivially normed field. We say $F$ \emph{has derivative} $f'$ \emph{at} $x$ if the Fr\'echet derivative of $F$ at $x$ exists and equals scalar multiplication by $f'$, i.e., $F(x + h) = F(x) + f' \cdot h + o(h)$ as $h \to 0$. In Mathlib this is \texttt{HasDerivAt}.
 \end{definition}
 
 \begin{definition}[Interval integral]
 \label{def:interval_integral}
 
-For a function $f : \mathbb{R} \to \mathbb{R}$ and $a, b \in \mathbb{R}$, the \emph{interval integral} $\int_a^b f(x)\,dx$ is defined as $\int_a^b f\,d\mu$ where $\mu$ is the Lebesgue measure. By convention, $\int_a^b f = -\int_b^a f$ when $a > b$.
+For a function $f : \mathbb{R} \to E$ (where $E$ is a normed space) and $a, b \in \mathbb{R}$, the \emph{interval integral} $\int_a^b f(x)\,dx$ is defined as $\int_{[a,b]} f\,d\mu - \int_{[b,a]} f\,d\mu$ where $\mu$ is a given measure (typically the Lebesgue measure). This definition is antisymmetric: $\int_a^b f = -\int_b^a f$. In Mathlib this is \texttt{intervalIntegral}.
 \end{definition}
 
-\begin{lemma}[Continuous functions are integrable]
+\begin{definition}[Antiderivative]
+\label{def:antiderivative}
+\uses{def:has_deriv_at, def:continuous_on}
+
+A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on $[a,b]$ if $F$ is continuous on $[a,b]$ and for every $x \in (a,b)$, $F$ has derivative $f(x)$ at $x$ (in the sense of \texttt{HasDerivAt}). There is no single Mathlib definition for this concept; it is expressed as the conjunction of \texttt{ContinuousOn F (Set.Icc a b)} and $\forall x \in (a,b),\; \texttt{HasDerivAt}\; F\; (f\; x)\; x$.
+\end{definition}
+
+\section{Supporting Lemmas}
+
+\begin{lemma}[Continuous functions are interval integrable]
 \label{lem:continuous_integrable}
 \uses{def:continuous_on, def:interval_integral}
 
-If $f : [a,b] \to \mathbb{R}$ is continuous on the compact interval $[a,b]$, then $f$
-  is integrable on $[a,b]$.
+If $f : \mathbb{R} \to E$ is continuous on the interval $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the given measure. In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
 \begin{proof}
-A continuous function on a compact set is bounded and measurable, hence integrable
-  with respect to the Lebesgue measure.
+A continuous function on a compact interval is bounded and measurable, hence integrable with respect to the Lebesgue measure. The result follows from the fact that continuous functions on compact sets are integrable.
 \end{proof}
 
-\begin{lemma}[Integral bound]
+\begin{lemma}[Integral norm bound]
 \label{lem:integral_bound}
 \uses{def:interval_integral}
 
-If $f$ is integrable on $[a,b]$ and $|f(x)| \le M$ for all $x \in [a,b]$, then
-  \[
-    \left|\int_a^b f(x)\,dx\right| \le M \cdot (b - a).
-  \]
+If $f$ and $g$ are interval integrable on $[a,b]$, $a \le b$, and $\|f(x)\| \le g(x)$ for a.e.\ $x \in [a, b]$, then
+\[
+  \left\|\int_a^b f(x)\,dx\right\| \le \int_a^b g(x)\,dx.
+\]
+In Mathlib this is \texttt{intervalIntegral.norm\_integral\_le\_of\_norm\_le}.
 \end{lemma}
 \begin{proof}
-This follows from the monotonicity of the integral:
-  $-M \le f(x) \le M$ implies $-M(b-a) \le \int_a^b f \le M(b-a)$.
+This follows from the monotonicity of the Lebesgue integral and properties of the norm.
 \end{proof}
 
 \begin{lemma}[Mean Value Theorem]
 \label{lem:mean_value_theorem}
-\uses{def:has_deriv_at}
+\uses{def:has_deriv_at, def:continuous_on}
 
-Let $F : [a,b] \to \mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
-  Then there exists $c \in (a,b)$ such that
-  \[
-    F(b) - F(a) = F'(c) \cdot (b - a).
-  \]
+Let $f, g : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Then there exists $c \in (a,b)$ such that
+\[
+  (g(b) - g(a)) \cdot f'(c) = (f(b) - f(a)) \cdot g'(c).
+\]
+Taking $g(x) = x$ gives the classical form $f(b) - f(a) = f'(c)(b-a)$. In Mathlib this is \texttt{exists\_ratio\_hasDerivAt\_eq\_ratio\_slope} (or related formulations).
 \end{lemma}
 \begin{proof}
-Standard application of Rolle's theorem to the auxiliary function
-  $g(x) = F(x) - F(a) - \frac{F(b)-F(a)}{b-a}(x-a)$.
+Standard application of Rolle's theorem to an auxiliary function combining $f$ and $g$.
 \end{proof}
 
-\begin{lemma}[Uniform continuity on compact intervals]
+\begin{lemma}[Uniform continuity on compact sets]
 \label{lem:uniform_continuity}
 \uses{def:continuous_on}
 
-If $f$ is continuous on the compact interval $[a,b]$, then $f$ is uniformly continuous
-  on $[a,b]$: for every $\varepsilon > 0$ there exists $\delta > 0$ such that
-  $|x - y| < \delta$ implies $|f(x) - f(y)| < \varepsilon$ for all $x, y \in [a,b]$.
+If $K$ is a compact set and $f$ is continuous on $K$, then $f$ is uniformly continuous on $K$. In Mathlib this is \texttt{IsCompact.uniformContinuousOn\_of\_continuous}.
 \end{lemma}
 \begin{proof}
-This is the Heine--Cantor theorem: continuous functions on compact metric spaces are
-  uniformly continuous.
+This is the Heine--Cantor theorem: continuous functions on compact metric spaces (more generally, compact uniform spaces) are uniformly continuous.
 \end{proof}
 
 \begin{lemma}[Zero derivative implies constant]
 \label{lem:zero_deriv_constant}
-\uses{lem:mean_value_theorem}
+\uses{def:has_deriv_at, def:continuous_on, lem:mean_value_theorem}
 
-Let $G : [a,b] \to \mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$
-  with $G'(x) = 0$ for all $x \in (a,b)$. Then $G$ is constant on $[a,b]$.
+Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $G'(x) = 0$ for all $x \in (a,b)$. Then $G$ is constant on $[a,b]$. In Mathlib this is \texttt{is\_const\_of\_deriv\_eq\_zero}.
 \end{lemma}
 \begin{proof}
-By the Mean Value Theorem (Lemma~\ref{lem:mean_value_theorem}), for any $x, y \in [a,b]$
-  with $x < y$, there exists $c \in (x,y)$ such that $G(y) - G(x) = G'(c)(y-x) = 0$.
+\uses{lem:mean_value_theorem}
+By the Mean Value Theorem (Lemma~\ref{lem:mean_value_theorem}), for any $x, y \in [a,b]$ with $x < y$, there exists $c \in (x,y)$ such that $G(y) - G(x) = G'(c)(y-x) = 0$.
 \end{proof}
+
+\section{Main Theorems}
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
 \label{thm:ftc1}
 \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable, lem:integral_bound, lem:uniform_continuity}
 
-Let $f : [a,b] \to \mathbb{R}$ be continuous on $[a,b]$. Define $F : [a,b] \to \mathbb{R}$ by
-  \[
-    F(x) = \int_a^x f(t)\,dt.
-  \]
-  Then $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$ for every $x \in (a,b)$.
+Let $f : \mathbb{R} \to E$ be integrable on $[a, b]$ and continuous at a point $x \in [a,b]$, with $x \in (a, b]$ or $x \in [a, b)$ as appropriate. Then the function $F(y) = \int_a^y f(t)\,dt$ has derivative $f(x)$ at $x$. More precisely, in Mathlib this is \texttt{intervalIntegral.integral\_hasDerivAt\_right}, which states that if $f$ is interval integrable on $[a, b]$, and $f$ is continuous at $x$ within $[a, b]$ (via the appropriate one-sided filter), then $\frac{d}{dx}\int_a^x f(t)\,dt = f(x)$.
 \end{theorem}
 \begin{proof}
-Fix $x \in (a,b)$. We wish to show
-  \[
-    \lim_{h \to 0} \frac{F(x+h) - F(x)}{h} = f(x).
-  \]
-  By additivity of the integral,
-  \[
-    F(x+h) - F(x) = \int_x^{x+h} f(t)\,dt,
-  \]
-  so
-  \[
-    \frac{F(x+h) - F(x)}{h} = \frac{1}{h}\int_x^{x+h} f(t)\,dt.
-  \]
-  Since $f(x) = \frac{1}{h}\int_x^{x+h} f(x)\,dt$, we get
-  \[
-    \left|\frac{F(x+h) - F(x)}{h} - f(x)\right|
-    = \left|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right|.
-  \]
-  By Lemma~\ref{lem:uniform_continuity} (or just continuity at $x$), given $\varepsilon > 0$
-  there exists $\delta > 0$ such that $|t - x| < \delta$ implies $|f(t) - f(x)| < \varepsilon$.
-  For $0 < |h| < \delta$, every $t$ between $x$ and $x+h$ satisfies $|t - x| \le |h| < \delta$,
-  so by Lemma~\ref{lem:integral_bound},
-  \[
-    \left|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right|
-    \le \frac{1}{|h|} \cdot \varepsilon \cdot |h| = \varepsilon.
-  \]
-  Since $\varepsilon > 0$ was arbitrary, $F'(x) = f(x)$.
+\uses{lem:continuous_integrable, lem:integral_bound, lem:uniform_continuity}
+Fix $x$ in the interior of $[a,b]$. We wish to show
+\[
+  \lim_{h \to 0} \frac{F(x+h) - F(x)}{h} = f(x).
+\]
+By additivity of the integral,
+\[
+  F(x+h) - F(x) = \int_x^{x+h} f(t)\,dt,
+\]
+so
+\[
+  \frac{F(x+h) - F(x)}{h} - f(x) = \frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt.
+\]
+By continuity of $f$ at $x$, given $\varepsilon > 0$ there exists $\delta > 0$ such that $|t - x| < \delta$ implies $\|f(t) - f(x)\| < \varepsilon$. For $0 < |h| < \delta$, by the integral bound (Lemma~\ref{lem:integral_bound}),
+\[
+  \left\|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right\| \le \varepsilon.
+\]
+Since $\varepsilon > 0$ was arbitrary, $F'(x) = f(x)$.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
 \label{thm:ftc2}
-\uses{def:continuous_on, def:interval_integral, def:antiderivative, thm:ftc1, lem:zero_deriv_constant}
+\uses{def:continuous_on, def:interval_integral, def:antiderivative, def:has_deriv_at}
 
-Let $f : [a,b] \to \mathbb{R}$ be continuous on $[a,b]$, and let $F$ be any antiderivative
-  of $f$ on $[a,b]$. Then
-  \[
-    \int_a^b f(x)\,dx = F(b) - F(a).
-  \]
+Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$, and let $F$ be continuous on $[a,b]$ with $F'(x) = f(x)$ (i.e., \texttt{HasDerivAt F (f x) x}) for all $x \in (a,b)$. Then
+\[
+  \int_a^b f(x)\,dx = F(b) - F(a).
+\]
+In Mathlib this is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDerivAt}.
 \end{theorem}
 \begin{proof}
-By Theorem~\ref{thm:ftc1}, the function $G(x) = \int_a^x f(t)\,dt$ is an antiderivative
-  of $f$. Since both $F$ and $G$ are antiderivatives, $(F - G)'(x) = 0$ for all $x \in (a,b)$.
-  By Lemma~\ref{lem:zero_deriv_constant}, $F - G$ is constant on $[a,b]$: say
-  $F(x) - G(x) = C$ for all $x \in [a,b]$. Then
-  \[
-    F(b) - F(a) = (G(b) + C) - (G(a) + C) = G(b) - G(a)
-    = \int_a^b f(t)\,dt - 0 = \int_a^b f(t)\,dt. \qedhere
-  \]
+\uses{thm:ftc1, lem:zero_deriv_constant, lem:continuous_integrable}
+By Theorem~\ref{thm:ftc1}, the function $G(x) = \int_a^x f(t)\,dt$ satisfies $G'(x) = f(x)$ for all $x \in (a,b)$. Since both $F$ and $G$ have the same derivative, $(F - G)'(x) = 0$ for all $x \in (a,b)$. By Lemma~\ref{lem:zero_deriv_constant}, $F - G$ is constant on $[a,b]$: say $F(x) - G(x) = C$ for all $x \in [a,b]$. Then
+\[
+  F(b) - F(a) = (G(b) + C) - (G(a) + C) = G(b) - G(a)
+  = \int_a^b f(t)\,dt - 0 = \int_a^b f(t)\,dt. \qedhere
+\]
 \end{proof}
 
 \end{document}

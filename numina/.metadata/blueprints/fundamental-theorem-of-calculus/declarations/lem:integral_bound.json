@@ -1,12 +1,12 @@
 {
   "label": "lem:integral_bound",
   "kind": "lemma",
-  "title": "Integral bound",
+  "title": "Integral norm bound",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "def:interval_integral"
   ],
-  "statement": "If $f$ is integrable on $[a,b]$ and $|f(x)| \\le M$ for all $x \\in [a,b]$, then\n  \\[\n    \\left|\\int_a^b f(x)\\,dx\\right| \\le M \\cdot (b - a).\n  \\]",
-  "proof": "This follows from the monotonicity of the integral:\n  $-M \\le f(x) \\le M$ implies $-M(b-a) \\le \\int_a^b f \\le M(b-a)$."
+  "statement": "If $f$ and $g$ are interval integrable on $[a,b]$, $a \\le b$, and $\\|f(x)\\| \\le g(x)$ for a.e.\\ $x \\in [a, b]$, then\n\\[\n  \\left\\|\\int_a^b f(x)\\,dx\\right\\| \\le \\int_a^b g(x)\\,dx.\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.norm\\_integral\\_le\\_of\\_norm\\_le}.",
+  "proof": "This follows from the monotonicity of the Lebesgue integral and properties of the norm."
 }

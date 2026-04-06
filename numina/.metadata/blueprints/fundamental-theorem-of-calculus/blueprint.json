@@ -6,14 +6,9 @@
   "notes": "",
   "entries": [
     {
-      "label": "def:antiderivative",
-      "kind": "definition",
-      "title": "Antiderivative"
-    },
-    {
       "label": "def:continuous_on",
       "kind": "definition",
-      "title": "Continuous on a closed interval"
+      "title": "Continuous on a set"
     },
     {
       "label": "def:has_deriv_at",
@@ -26,14 +21,19 @@
       "title": "Interval integral"
     },
     {
+      "label": "def:antiderivative",
+      "kind": "definition",
+      "title": "Antiderivative"
+    },
+    {
       "label": "lem:continuous_integrable",
       "kind": "lemma",
-      "title": "Continuous functions are integrable"
+      "title": "Continuous functions are interval integrable"
     },
     {
       "label": "lem:integral_bound",
       "kind": "lemma",
-      "title": "Integral bound"
+      "title": "Integral norm bound"
     },
     {
       "label": "lem:mean_value_theorem",
@@ -43,7 +43,7 @@
     {
       "label": "lem:uniform_continuity",
       "kind": "lemma",
-      "title": "Uniform continuity on compact intervals"
+      "title": "Uniform continuity on compact sets"
     },
     {
       "label": "lem:zero_deriv_constant",

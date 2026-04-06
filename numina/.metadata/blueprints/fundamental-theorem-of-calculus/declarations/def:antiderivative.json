@@ -5,8 +5,9 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
-    "def:has_deriv_at"
+    "def:has_deriv_at",
+    "def:continuous_on"
   ],
-  "statement": "A function $F : [a,b] \\to \\mathbb{R}$ is an \\emph{antiderivative} of $f : [a,b] \\to \\mathbb{R}$ if $F$ is differentiable on $(a,b)$ and $F'(x) = f(x)$ for all $x \\in (a,b)$.",
+  "statement": "A function $F : \\mathbb{R} \\to \\mathbb{R}$ is an \\emph{antiderivative} of $f$ on $[a,b]$ if $F$ is continuous on $[a,b]$ and for every $x \\in (a,b)$, $F$ has derivative $f(x)$ at $x$ (in the sense of \\texttt{HasDerivAt}). There is no single Mathlib definition for this concept; it is expressed as the conjunction of \\texttt{ContinuousOn F (Set.Icc a b)} and $\\forall x \\in (a,b),\\; \\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$.",
   "proof": null
 }

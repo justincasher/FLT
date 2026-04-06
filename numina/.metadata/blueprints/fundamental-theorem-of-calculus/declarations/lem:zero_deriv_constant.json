@@ -5,8 +5,10 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
+    "def:has_deriv_at",
+    "def:continuous_on",
     "lem:mean_value_theorem"
   ],
-  "statement": "Let $G : [a,b] \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$\n  with $G'(x) = 0$ for all $x \\in (a,b)$. Then $G$ is constant on $[a,b]$.",
-  "proof": "By the Mean Value Theorem (Lemma~\\ref{lem:mean_value_theorem}), for any $x, y \\in [a,b]$\n  with $x < y$, there exists $c \\in (x,y)$ such that $G(y) - G(x) = G'(c)(y-x) = 0$."
+  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $G'(x) = 0$ for all $x \\in (a,b)$. Then $G$ is constant on $[a,b]$. In Mathlib this is \\texttt{is\\_const\\_of\\_deriv\\_eq\\_zero}.",
+  "proof": "By the Mean Value Theorem (Lemma~\\ref{lem:mean_value_theorem}), for any $x, y \\in [a,b]$ with $x < y$, there exists $c \\in (x,y)$ such that $G(y) - G(x) = G'(c)(y-x) = 0$."
 }
