@@ -32,14 +32,13 @@ def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
 Blueprint: `lem:continuous_integrable`. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
-    IntervalIntegrable f volume a b := hf.intervalIntegrable
+    IntervalIntegrable f volume a b := sorry
 
 /-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
 Blueprint: `lem:integral_bound`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
-    ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
-  intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
+    ‖∫ x in a..b, f x‖ ≤ M * |b - a| := sorry
 
 /-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
 then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
@@ -53,7 +52,8 @@ theorem mean_value_theorem {f f' : ℝ → ℝ} {a b : ℝ} (hab : a < b)
 Blueprint: `lem:uniform_continuity`. -/
 theorem uniform_continuity {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b)) :
-    UniformContinuousOn f (Icc a b) := sorry
+    UniformContinuousOn f (Icc a b) :=
+  isCompact_Icc.uniformContinuousOn_of_continuous hf
 
 /-- If `f` is continuous on `[a,b]` and `f'(x) = 0` for all `x ∈ (a,b)`, then `f` is constant.
 Blueprint: `lem:zero_deriv_constant`. -/

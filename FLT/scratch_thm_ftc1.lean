@@ -32,14 +32,13 @@ def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
 Blueprint: `lem:continuous_integrable`. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
-    IntervalIntegrable f volume a b := hf.intervalIntegrable
+    IntervalIntegrable f volume a b := sorry
 
 /-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
 Blueprint: `lem:integral_bound`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
-    ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
-  intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
+    ‖∫ x in a..b, f x‖ ≤ M * |b - a| := sorry
 
 /-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
 then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
@@ -68,7 +67,17 @@ Blueprint: `thm:ftc1`. -/
 theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b))
     (x : ℝ) (hx : x ∈ Ioo (min a b) (max a b)) :
-    HasDerivAt (fun u => ∫ t in a..u, f t) (f x) x := sorry
+    HasDerivAt (fun u => ∫ t in a..u, f t) (f x) x := by
+  have hx_mem : x ∈ uIcc a b := by
+    simp only [uIcc, mem_Icc, min_le_iff, le_max_iff] at hx ⊢
+    constructor <;> linarith [hx.1, hx.2]
+  have hcont_x : ContinuousAt f x :=
+    (hf x hx_mem).continuousAt (uIcc_mem_nhds hx)
+  have hint : IntervalIntegrable f volume a x :=
+    (hf.mono (uIcc_subset_uIcc_right hx_mem)).intervalIntegrable
+  have hmeas : StronglyMeasurableAtFilter f (𝓝 x) :=
+    hcont_x.stronglyMeasurableAtFilter
+  exact intervalIntegral.integral_hasDerivAt_right hint hmeas hcont_x
 
 /-- Second Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]` and `F` is an
 antiderivative of `f` (i.e. `F` has right derivative `f'` on `(a,b)`), then

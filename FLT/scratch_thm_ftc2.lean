@@ -32,14 +32,13 @@ def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
 Blueprint: `lem:continuous_integrable`. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
-    IntervalIntegrable f volume a b := hf.intervalIntegrable
+    IntervalIntegrable f volume a b := sorry
 
 /-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
 Blueprint: `lem:integral_bound`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
-    ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
-  intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
+    ‖∫ x in a..b, f x‖ ≤ M * |b - a| := sorry
 
 /-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
 then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
@@ -78,6 +77,7 @@ theorem ftc2 {F f' : ℝ → ℝ} {a b : ℝ}
     (hF : ContinuousOn F (uIcc a b))
     (hF' : ∀ x ∈ Ioo (min a b) (max a b), HasDerivWithinAt F (f' x) (Ioi x) x)
     (hf'i : IntervalIntegrable f' volume a b) :
-    ∫ x in a..b, f' x = F b - F a := sorry
+    ∫ x in a..b, f' x = F b - F a :=
+  intervalIntegral.integral_eq_sub_of_hasDeriv_right hF hF' hf'i
 
 end FLT.FundamentalTheoremOfCalculus

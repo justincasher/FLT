@@ -32,14 +32,13 @@ def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
 Blueprint: `lem:continuous_integrable`. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
-    IntervalIntegrable f volume a b := hf.intervalIntegrable
+    IntervalIntegrable f volume a b := sorry
 
 /-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
 Blueprint: `lem:integral_bound`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
-    ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
-  intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
+    ‖∫ x in a..b, f x‖ ≤ M * |b - a| := sorry
 
 /-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
 then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
@@ -60,7 +59,9 @@ Blueprint: `lem:zero_deriv_constant`. -/
 theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
-    ∀ x ∈ Icc a b, f x = f a := sorry
+    ∀ x ∈ Icc a b, f x = f a :=
+  constant_of_has_deriv_right_zero hcont fun x hx =>
+    (hderiv x (Ico_subset_Ioo_left (show a < x from hx.1) |>.2 |>.elim sorry sorry)).hasDerivWithinAt
 
 /-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
 `F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
