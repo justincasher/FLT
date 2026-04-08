@@ -4,11 +4,7 @@
   "title": "First Fundamental Theorem of Calculus",
   "leanDeclaration": "",
   "leanFile": "",
-  "uses": [
-    "lem:continuous_interval_integrable",
-    "lem:strongly_measurable_interior",
-    "lem:continuous_at_interior"
-  ],
+  "uses": [],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then the function $F(u) = \\int_a^u f(t)\\,dt$ has derivative $f(x)$ at $x$. In Mathlib the core result is \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}.",
   "proof": "We establish three prerequisites for \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}: (1) $f$ is interval integrable on $[a,x]$ by Lemma~\\ref{lem:continuous_interval_integrable}; (2) $f$ is strongly measurable at the neighborhood filter of $x$ by Lemma~\\ref{lem:strongly_measurable_interior}; (3) $f$ is continuous at $x$ within $\\mathrm{Ioi}\\; x$ by Lemma~\\ref{lem:continuous_at_interior}. The result then follows directly from \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}."
 }
