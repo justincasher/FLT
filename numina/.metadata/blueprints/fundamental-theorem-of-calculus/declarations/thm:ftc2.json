@@ -7,8 +7,9 @@
   "uses": [
     "def:continuous_on",
     "def:interval_integral",
-    "def:has_deriv_at"
+    "def:has_deriv_at",
+    "def:antiderivative"
   ],
-  "statement": "Let $f' : \\mathbb{R} \\to \\mathbb{R}$ be interval integrable on $[a,b]$, and let $F$ be continuous on $[\\min(a,b), \\max(a,b)]$ with right derivative $f'(x)$ at every $x \\in (\\min(a,b), \\max(a,b))$, i.e.\\ $\\texttt{HasDerivWithinAt}\\; F\\; (f'\\; x)\\; (x, +\\infty)\\; x$. Then\n\\[\n  \\int_a^b f'(x)\\,dx = F(b) - F(a).\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
-  "proof": "This is a direct application of \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}, given the continuity of $F$ on $[\\min(a,b), \\max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$."
+  "statement": "Let $f' : \\mathbb{R} \\to \\mathbb{R}$ be interval integrable on $[a,b]$, and let $F$ be an antiderivative (Definition~\\ref{def:antiderivative}) that is continuous on $[\\min(a,b), \\max(a,b)]$ with right derivative $f'(x)$ at every $x \\in (\\min(a,b), \\max(a,b))$, i.e.\\ $\\texttt{HasDerivWithinAt}\\; F\\; (f'\\; x)\\; (x, +\\infty)\\; x$. Then\n\\[\n  \\int_a^b f'(x)\\,dx = F(b) - F(a).\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
+  "proof": "This is a direct application of \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}, given the continuity of the antiderivative $F$ on $[\\min(a,b), \\max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$."
 }
