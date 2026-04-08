@@ -35,8 +35,8 @@ A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on
 
 \begin{lemma}[Continuous functions are interval integrable]
 \label{lem:continuous_integrable}
-\lean{FLT.FundamentalTheoremOfCalculus.continuous_integrable}
 \uses{def:continuous_on, def:interval_integral}
+\lean{FLT.FundamentalTheoremOfCalculus.continuous_integrable}
 
 If $f : \mathbb{R} \to \mathbb{R}$ is continuous on the interval $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the Lebesgue measure. In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
@@ -47,8 +47,8 @@ A continuous function on a compact interval is bounded and measurable, hence int
 
 \begin{lemma}[Integral norm bound]
 \label{lem:integral_bound}
-\lean{FLT.FundamentalTheoremOfCalculus.integral_bound}
 \uses{def:interval_integral}
+\lean{FLT.FundamentalTheoremOfCalculus.integral_bound}
 
 If $\|f(x)\| \le M$ for a.e.\ $x \in \operatorname{uIoc}(a,b)$, then
 \[
@@ -63,8 +63,8 @@ This follows from the monotonicity of the Lebesgue integral and properties of th
 
 \begin{lemma}[Mean Value Theorem]
 \label{lem:mean_value_theorem}
-\lean{FLT.FundamentalTheoremOfCalculus.mean_value_theorem}
 \uses{def:has_deriv_at, def:continuous_on}
+\lean{FLT.FundamentalTheoremOfCalculus.mean_value_theorem}
 
 Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ with $a < b$ and differentiable on $(a,b)$ with derivative $f'$. Then there exists $c \in (a,b)$ such that
 \[
@@ -91,8 +91,8 @@ This is the Heine--Cantor theorem: continuous functions on compact sets are unif
 
 \begin{lemma}[Zero derivative implies constant]
 \label{lem:zero_deriv_constant}
-\lean{FLT.FundamentalTheoremOfCalculus.zero_deriv_constant}
 \uses{def:has_deriv_at, def:continuous_on}
+\lean{FLT.FundamentalTheoremOfCalculus.zero_deriv_constant}
 
 Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and satisfy $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in (a,b)$. Then $G(x) = G(a)$ for all $x \in [a,b]$.
 \end{lemma}
