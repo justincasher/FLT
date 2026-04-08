@@ -25,8 +25,8 @@ For a function $f : \mathbb{R} \to E$ (where $E$ is a normed space) and $a, b \i
 
 \begin{definition}[Antiderivative]
 \label{def:antiderivative}
-\lean{FLT.FundamentalTheoremOfCalculus.IsAntiderivativeOn}
 \uses{def:has_deriv_at}
+\lean{FLT.FundamentalTheoremOfCalculus.IsAntiderivativeOn}
 
 A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on $(a,b)$ if for every $x \in (a,b)$, $F$ has derivative $f(x)$ at $x$ (in the sense of \texttt{HasDerivAt}). In the Lean formalization this is \texttt{IsAntiderivativeOn F f a b}, defined as $\forall x \in (a,b),\; \texttt{HasDerivAt}\; F\; (f\; x)\; x$.
 \end{definition}
