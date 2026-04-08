@@ -8,6 +8,6 @@
     "lem:antideriv_diff_zero_deriv",
     "lem:zero_deriv_constant"
   ],
-  "statement": "If $F$ and $G$ are antiderivatives of $f$ on $(a,b)$, both continuous on $[a,b]$, then $(F-G)(x) = (F-G)(a)$ for all $x \\in [a,b]$.",
-  "proof": "By Lemma~\\ref{lem:antideriv_diff_zero_deriv}, $F-G$ has zero derivative on $(a,b)$. Since $F-G$ is continuous on $[a,b]$, Lemma~\\ref{lem:zero_deriv_constant} gives the result."
+  "statement": "Let $a, b \\in \\mathbb{R}$ with $a \\le b$, and let $f : \\mathbb{R} \\to \\mathbb{R}$. Suppose $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, and that both $F$ and $G$ are continuous on the closed interval $[a,b]$. Then the difference $F - G$ is constant on $[a,b]$: specifically, $(F - G)(x) = (F - G)(a)$ for all $x \\in [a,b]$.",
+  "proof": "By Lemma~\\ref{lem:antideriv_diff_zero_deriv}, the difference $F - G$ has derivative zero at every point of $(a,b)$. The function $F - G$ is continuous on $[a,b]$ because both $F$ and $G$ are. Applying Lemma~\\ref{lem:zero_deriv_constant} to $F - G$, we conclude that $(F - G)(x) = (F - G)(a)$ for all $x \\in [a,b]$."
 }

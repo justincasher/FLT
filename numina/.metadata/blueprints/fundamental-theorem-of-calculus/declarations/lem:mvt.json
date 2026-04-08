@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "If $G$ is continuous on $[a,b]$ with $a < b$ and $\\texttt{HasDerivAt}\\; G\\; (G'\\; x)\\; x$ for all $x \\in (a,b)$, then there exists $c \\in (a,b)$ with $G'(c) = (G(b) - G(a))/(b - a)$. This is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
-  "proof": "Direct application of \\texttt{exists\\_hasDerivAt\\_eq\\_slope}."
+  "statement": "Let $a, b \\in \\mathbb{R}$ with $a < b$, and let $G : \\mathbb{R} \\to \\mathbb{R}$ be a function that is continuous on the closed interval $[a,b]$. Suppose that for every $x$ in the open interval $(a,b)$, the function $G$ has derivative $G'(x)$ at $x$, i.e., $\\texttt{HasDerivAt}\\; G\\; (G'\\; x)\\; x$ holds. Then there exists a point $c \\in (a,b)$ such that\n    \\[\n      G'(c) = \\frac{G(b) - G(a)}{b - a}.\n    \\]\n    In other words, there is an interior point where the instantaneous rate of change of $G$ equals its average rate of change over $[a,b]$.\n\n    This is the Mathlib result \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
+  "proof": "This is a direct application of \\texttt{exists\\_hasDerivAt\\_eq\\_slope}, which is the standard Mean Value Theorem for differentiable functions on a closed interval."
 }

@@ -1,177 +1,240 @@
 \begin{document}
 
+This blueprint presents a self-contained development of the Fundamental Theorem of Calculus (FTC), broken into two main results: the First FTC, which establishes that the integral function $F(u) = \int_a^u f(t)\,dt$ is differentiable with derivative $f$, and the Second FTC, which provides the evaluation formula $\int_a^b f'(x)\,dx = F(b) - F(a)$. We also derive a corollary that connects these two results: if $F$ is any antiderivative of a continuous function $f$, then the definite integral of $f$ can be computed as $F(b) - F(a)$.
+
+Throughout this document, all functions are real-valued functions of a real variable, i.e., of type $\mathbb{R} \to \mathbb{R}$. Integrals are taken with respect to the Lebesgue measure on $\mathbb{R}$. The notation $\int_a^b f(t)\,dt$ denotes the Mathlib interval integral (\texttt{intervalIntegral}), which is defined for all real numbers $a$ and $b$ (not necessarily with $a \le b$). The notation $[\min(a,b), \max(a,b)]$ refers to the unordered closed interval, written \texttt{uIcc} in Mathlib, while $(\min(a,b), \max(a,b))$ refers to the corresponding open interior.
+
 \section{Definitions}
+
+We begin by defining the central notion of an antiderivative, which connects differentiation and integration.
 
 \begin{definition}[Antiderivative]
     \label{def:antiderivative}
 
-    A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on $(a,b)$ if $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ for every $x \in (a,b)$. When $a \ge b$ the condition is vacuously true.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be a given function. A function $F : \mathbb{R} \to \mathbb{R}$ is called an \emph{antiderivative} of $f$ on the open interval $(a,b)$ if, for every point $x \in (a,b)$, the function $F$ has derivative equal to $f(x)$ at $x$. In Mathlib notation, this means that $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ holds for every $x \in (a,b)$, where $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ asserts that $F$ is differentiable at $x$ and $F'(x) = f(x)$.
+
+    When $a \ge b$, the interval $(a,b)$ is empty, so the condition is vacuously satisfied and every function $F$ is an antiderivative of $f$ on $(a,b)$.
 \end{definition}
 
 \section{Auxiliary Lemmas}
 
+This section collects the technical lemmas needed to verify the hypotheses of the main theorems. These include integrability, measurability, and continuity results, as well as consequences of the Mean Value Theorem.
+
 \begin{lemma}[Continuous functions are interval integrable]
     \label{lem:continuous_interval_integrable}
 
-    If $f : \mathbb{R} \to \mathbb{R}$ is continuous on $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. This is \texttt{ContinuousOn.intervalIntegrable}.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be a function that is continuous on the closed interval $[\min(a,b), \max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. That is, $f$ is integrable over the unordered interval $\texttt{uIcc}\; a\; b$ with respect to the volume measure on $\mathbb{R}$.
+
+    This is the Mathlib result \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
 \begin{proof}
-    Continuous functions on compact intervals are bounded and measurable, hence integrable.
+    A continuous function on a compact interval $[\min(a,b), \max(a,b)]$ is bounded and measurable. Bounded measurable functions on sets of finite measure are integrable, so $f$ is integrable over $\texttt{uIcc}\; a\; b$. This yields the interval integrability of $f$ on $[a,b]$.
 \end{proof}
 
-\begin{lemma}[Interval integrability restriction]
+\begin{lemma}[Interval integrability restriction to sub-intervals]
     \label{lem:interval_integrable_restriction}
     \uses{lem:continuous_interval_integrable}
 
-    If $f$ is interval integrable on $[a,b]$ and $x \in (\min(a,b), \max(a,b))$, then $f$ is interval integrable on $[a,x]$. This follows from \texttt{IntervalIntegrable.mono\_set} since $\texttt{uIcc}\; a\; x \subseteq \texttt{uIcc}\; a\; b$.
+    Let $a, b \in \mathbb{R}$ and suppose $f : \mathbb{R} \to \mathbb{R}$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. If $x$ is a point satisfying $\min(a,b) < x < \max(a,b)$, then $f$ is also interval integrable on the smaller interval $[a,x]$.
+
+    This follows from the monotonicity of integrability with respect to set inclusion: the unordered interval $\texttt{uIcc}\; a\; x$ is contained in $\texttt{uIcc}\; a\; b$, so integrability on the larger interval implies integrability on the smaller one. The relevant Mathlib result is \texttt{IntervalIntegrable.mono\_set}.
 \end{lemma}
 \begin{proof}
     \uses{lem:continuous_interval_integrable}
-    The interval $\texttt{uIcc}\; a\; x$ is contained in $\texttt{uIcc}\; a\; b$, so integrability restricts by \texttt{IntervalIntegrable.mono\_set}.
+    Since $x$ lies between $\min(a,b)$ and $\max(a,b)$, the unordered closed interval $\texttt{uIcc}\; a\; x$ is a subset of $\texttt{uIcc}\; a\; b$. The result \texttt{IntervalIntegrable.mono\_set} allows us to restrict interval integrability from a larger interval to any sub-interval, which gives the desired conclusion.
 \end{proof}
 
 \begin{lemma}[Strong measurability at interior points]
     \label{lem:strongly_measurable_interior}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x \in (\min(a,b), \max(a,b))$, then $f$ is strongly measurable at the neighborhood filter of $x$. This follows via \texttt{ContinuousOn.stronglyMeasurableAtFilter} since $x$ lies in the open set $\mathrm{Ioo}\;(\min\,a\,b)\;(\max\,a\,b)$.
+    Let $a, b \in \mathbb{R}$ with $a < b$, and let $f : \mathbb{R} \to \mathbb{R}$ be continuous on the closed interval $[\min(a,b), \max(a,b)]$. Suppose $x$ is a point in the open interval $(\min(a,b), \max(a,b))$. Then $f$ is strongly measurable at the neighborhood filter $\texttt{nhds}\; x$, meaning that $f$ is measurable with respect to any measure when restricted to a sufficiently small neighborhood of $x$.
+
+    This property is required as a hypothesis of \texttt{integral\_hasDerivAt\_right}. It follows from the Mathlib result \texttt{ContinuousOn.stronglyMeasurableAtFilter}, applied with the fact that the open interval $(\min(a,b), \max(a,b))$ is an open set (via \texttt{isOpen\_Ioo}) containing $x$, and the neighborhood filter of $x$ is contained in the principal filter of this open set.
 \end{lemma}
 \begin{proof}
-    Apply \texttt{ContinuousOn.stronglyMeasurableAtFilter} with \texttt{isOpen\_Ioo}, since $x$ lies in the open interior.
+    Since $x$ lies in the open set $(\min(a,b), \max(a,b))$, the neighborhood filter $\texttt{nhds}\; x$ is contained in the principal filter of this open interval, which in turn is contained in the principal filter of the closed interval $[\min(a,b), \max(a,b)]$. Applying \texttt{ContinuousOn.stronglyMeasurableAtFilter} with the open set witness \texttt{isOpen\_Ioo} yields the strong measurability of $f$ at $\texttt{nhds}\; x$.
 \end{proof}
 
 \begin{lemma}[Continuity at interior points]
     \label{lem:continuous_at_interior}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x \in (\min(a,b), \max(a,b))$, then $f$ is continuous at $x$. Since $x$ is interior, the closed interval is a neighborhood of $x$, so \texttt{ContinuousOn} upgrades to \texttt{ContinuousAt}.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be continuous on the closed interval $[\min(a,b), \max(a,b)]$. Suppose $x$ is a point in the open interval $(\min(a,b), \max(a,b))$. Then $f$ is continuous at $x$, in the sense that $\texttt{ContinuousAt}\; f\; x$ holds.
+
+    Intuitively, continuity on a closed set implies continuity at every interior point, because the closed interval is a neighborhood of any interior point. The key Mathlib ingredient is \texttt{Icc\_mem\_nhds}, which shows that $[\min(a,b), \max(a,b)] \in \texttt{nhds}\; x$ whenever $x$ lies strictly between $\min(a,b)$ and $\max(a,b)$.
 \end{lemma}
 \begin{proof}
-    The closed interval is a neighborhood of $x$ (by \texttt{Icc\_mem\_nhds}), so continuity on the interval implies continuity at $x$.
+    Since $\min(a,b) < x < \max(a,b)$, the closed interval $[\min(a,b), \max(a,b)]$ is a neighborhood of $x$ by \texttt{Icc\_mem\_nhds}. Therefore, the hypothesis $\texttt{ContinuousOn}\; f\; [\min(a,b), \max(a,b)]$ implies $\texttt{ContinuousAt}\; f\; x$, because continuity on a set that is a neighborhood of a point upgrades to pointwise continuity at that point.
 \end{proof}
 
 \begin{lemma}[Mean Value Theorem]
     \label{lem:mvt}
 
-    If $G$ is continuous on $[a,b]$ with $a < b$ and $\texttt{HasDerivAt}\; G\; (G'\; x)\; x$ for all $x \in (a,b)$, then there exists $c \in (a,b)$ with $G'(c) = (G(b) - G(a))/(b - a)$. This is \texttt{exists\_hasDerivAt\_eq\_slope}.
+    Let $a, b \in \mathbb{R}$ with $a < b$, and let $G : \mathbb{R} \to \mathbb{R}$ be a function that is continuous on the closed interval $[a,b]$. Suppose that for every $x$ in the open interval $(a,b)$, the function $G$ has derivative $G'(x)$ at $x$, i.e., $\texttt{HasDerivAt}\; G\; (G'\; x)\; x$ holds. Then there exists a point $c \in (a,b)$ such that
+    \[
+      G'(c) = \frac{G(b) - G(a)}{b - a}.
+    \]
+    In other words, there is an interior point where the instantaneous rate of change of $G$ equals its average rate of change over $[a,b]$.
+
+    This is the Mathlib result \texttt{exists\_hasDerivAt\_eq\_slope}.
 \end{lemma}
 \begin{proof}
-    Direct application of \texttt{exists\_hasDerivAt\_eq\_slope}.
+    This is a direct application of \texttt{exists\_hasDerivAt\_eq\_slope}, which is the standard Mean Value Theorem for differentiable functions on a closed interval.
 \end{proof}
 
-\begin{lemma}[Zero derivative implies constant]
+\begin{lemma}[Zero derivative implies constant on an interval]
     \label{lem:zero_deriv_constant}
     \uses{lem:mvt}
 
-    If $G$ is continuous on $[a,b]$ and $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in (a,b)$, then $G(x) = G(a)$ for all $x \in [a,b]$.
+    Let $a, b \in \mathbb{R}$ with $a \le b$, and let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$. Suppose that $\texttt{HasDerivAt}\; G\; 0\; x$ holds for every $x \in (a,b)$, meaning that $G$ has derivative zero at every interior point. Then $G$ is constant on $[a,b]$: specifically, $G(x) = G(a)$ for all $x \in [a,b]$.
 \end{lemma}
 \begin{proof}
     \uses{lem:mvt}
-    For $x = a$ the result is immediate. For $a < x$, restrict to $[a,x]$ and apply the MVT to get $c \in (a,x)$ with $G'(c) = (G(x) - G(a))/(x-a)$. Since $G'(c) = 0$ and $x \ne a$, we get $G(x) = G(a)$.
+    If $x = a$, the conclusion $G(x) = G(a)$ is immediate. Now suppose $a < x \le b$. Restrict $G$ to the interval $[a,x]$. The function $G$ is continuous on $[a,x]$ and has derivative zero at every point of $(a,x)$. By the Mean Value Theorem (Lemma~\ref{lem:mvt}), there exists $c \in (a,x)$ such that
+    \[
+      G'(c) = \frac{G(x) - G(a)}{x - a}.
+    \]
+    Since $G'(c) = 0$ and $x - a \neq 0$ (because $a < x$), we conclude $G(x) - G(a) = 0$, hence $G(x) = G(a)$.
 \end{proof}
 
 \begin{lemma}[Difference of antiderivatives has zero derivative]
     \label{lem:antideriv_diff_zero_deriv}
     \uses{def:antiderivative}
 
-    If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $\texttt{HasDerivAt}\; (F - G)\; 0\; x$ for every $x \in (a,b)$.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$. Suppose that $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$ in the sense of Definition~\ref{def:antiderivative}. Then the difference function $F - G$ has derivative zero at every point $x \in (a,b)$. That is, $\texttt{HasDerivAt}\; (F - G)\; 0\; x$ holds for every $x \in (a,b)$.
 \end{lemma}
 \begin{proof}
     \uses{def:antiderivative}
-    Both $F$ and $G$ have derivative $f(x)$ at $x$, so by \texttt{HasDerivAt.sub}, $F - G$ has derivative $f(x) - f(x) = 0$.
+    Fix $x \in (a,b)$. By Definition~\ref{def:antiderivative}, both $F$ and $G$ satisfy $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ and $\texttt{HasDerivAt}\; G\; (f\; x)\; x$ respectively. By the linearity of the derivative (specifically \texttt{HasDerivAt.sub}), the difference $F - G$ has derivative $f(x) - f(x) = 0$ at $x$.
 \end{proof}
 
 \section{Main Theorems}
+
+We now state and prove the two main results. The First Fundamental Theorem of Calculus shows that integration followed by differentiation recovers the original function. The Second Fundamental Theorem provides a formula for evaluating definite integrals using antiderivatives.
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
     \label{thm:ftc1}
     \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
 
-    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and $x \in (\min(a,b), \max(a,b))$. Then $F(u) = \int_a^u f(t)\,dt$ satisfies $\texttt{HasDerivAt}\; F\; (f\; x)\; x$. The core Mathlib result is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be a function that is continuous on the closed interval $[\min(a,b), \max(a,b)]$. Define the integral function $F : \mathbb{R} \to \mathbb{R}$ by
+    \[
+      F(u) = \int_a^u f(t)\,dt.
+    \]
+    Then for every point $x$ in the open interval $(\min(a,b), \max(a,b))$, the function $F$ is differentiable at $x$ with derivative $f(x)$. In Mathlib notation, $\texttt{HasDerivAt}\; F\; (f\; x)\; x$.
+
+    The core Mathlib result used here is \texttt{intervalIntegral.integral\_hasDerivAt\_right}, which requires three hypotheses to be verified.
 \end{theorem}
 \begin{proof}
     \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
-    We verify the three hypotheses of \texttt{integral\_hasDerivAt\_right}: (1) interval integrability on $[a,x]$ via Lemma~\ref{lem:interval_integrable_restriction}; (2) strong measurability at $\texttt{nhds}\;x$ via Lemma~\ref{lem:strongly_measurable_interior}; (3) continuity at $x$ via Lemma~\ref{lem:continuous_at_interior}.
+    We apply the Mathlib result \texttt{integral\_hasDerivAt\_right}, which states that the integral function has a derivative at $x$ provided three conditions hold:
+    \begin{enumerate}
+        \item \textbf{Interval integrability near $x$:} The function $f$ must be interval integrable on $[a,x]$. This is established by Lemma~\ref{lem:interval_integrable_restriction}, which restricts the integrability of $f$ on $[a,b]$ to the sub-interval $[a,x]$.
+        \item \textbf{Strong measurability at $x$:} The function $f$ must be strongly measurable at the neighborhood filter $\texttt{nhds}\; x$. This is provided by Lemma~\ref{lem:strongly_measurable_interior}, using the fact that $x$ lies in the open interior of $[\min(a,b), \max(a,b)]$.
+        \item \textbf{Continuity at $x$:} The function $f$ must be continuous at $x$, i.e., $\texttt{ContinuousAt}\; f\; x$. This follows from Lemma~\ref{lem:continuous_at_interior}, since $x$ is an interior point where continuity on the closed interval implies pointwise continuity.
+    \end{enumerate}
+    With all three hypotheses verified, \texttt{integral\_hasDerivAt\_right} yields $\texttt{HasDerivAt}\; F\; (f\; x)\; x$.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
     \label{thm:ftc2}
 
-    Let $F$ be continuous on $[\min(a,b), \max(a,b)]$ with right derivative $f'(x)$ at every interior point $x$, and suppose $f'$ is interval integrable on $[a,b]$. Then
+    Let $a, b \in \mathbb{R}$ and let $F : \mathbb{R} \to \mathbb{R}$ be continuous on the closed interval $[\min(a,b), \max(a,b)]$. Suppose that $F$ has a right derivative $f'(x)$ at every interior point $x \in (\min(a,b), \max(a,b))$, and suppose that $f' : \mathbb{R} \to \mathbb{R}$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. Then the definite integral of $f'$ over $[a,b]$ equals the net change in $F$:
     \[
       \int_a^b f'(x)\,dx = F(b) - F(a).
     \]
-    This is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
+    This is the Mathlib result \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
 \end{theorem}
 \begin{proof}
-    Direct application of \texttt{integral\_eq\_sub\_of\_hasDeriv\_right}.
+    This is a direct application of the Mathlib result \texttt{integral\_eq\_sub\_of\_hasDeriv\_right}, which encapsulates the standard proof of the Second Fundamental Theorem. The hypotheses of continuity on the closed interval, differentiability on the open interior, and integrability of the derivative are exactly as assumed.
 \end{proof}
 
 \section{Intermediate Results}
+
+The following lemmas bridge the gap between the First FTC and the evaluation corollary. They show that the integral function is an antiderivative, that any two antiderivatives differ by a constant, and that the integral function vanishes at its base point.
 
 \begin{lemma}[The integral function is an antiderivative]
     \label{lem:integral_is_antiderivative}
     \uses{def:antiderivative, thm:ftc1}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$, then $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $(\min(a,b), \max(a,b))$.
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$. Define the integral function $G : \mathbb{R} \to \mathbb{R}$ by $G(u) = \int_a^u f(t)\,dt$. Then $G$ is an antiderivative of $f$ on the open interval $(\min(a,b), \max(a,b))$ in the sense of Definition~\ref{def:antiderivative}. That is, $\texttt{HasDerivAt}\; G\; (f\; x)\; x$ holds for every $x \in (\min(a,b), \max(a,b))$.
 \end{lemma}
 \begin{proof}
     \uses{def:antiderivative, thm:ftc1}
-    Immediate from the First FTC (Theorem~\ref{thm:ftc1}) and Definition~\ref{def:antiderivative}.
+    This is an immediate consequence of the First Fundamental Theorem of Calculus (Theorem~\ref{thm:ftc1}), which establishes that $G$ has derivative $f(x)$ at every interior point $x$. By Definition~\ref{def:antiderivative}, this precisely means that $G$ is an antiderivative of $f$ on the open interval.
 \end{proof}
 
 \begin{lemma}[Two antiderivatives differ by a constant]
     \label{lem:antiderivatives_diff_constant}
     \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
 
-    If $F$ and $G$ are antiderivatives of $f$ on $(a,b)$, both continuous on $[a,b]$, then $(F-G)(x) = (F-G)(a)$ for all $x \in [a,b]$.
+    Let $a, b \in \mathbb{R}$ with $a \le b$, and let $f : \mathbb{R} \to \mathbb{R}$. Suppose $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, and that both $F$ and $G$ are continuous on the closed interval $[a,b]$. Then the difference $F - G$ is constant on $[a,b]$: specifically, $(F - G)(x) = (F - G)(a)$ for all $x \in [a,b]$.
 \end{lemma}
 \begin{proof}
     \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
-    By Lemma~\ref{lem:antideriv_diff_zero_deriv}, $F-G$ has zero derivative on $(a,b)$. Since $F-G$ is continuous on $[a,b]$, Lemma~\ref{lem:zero_deriv_constant} gives the result.
+    By Lemma~\ref{lem:antideriv_diff_zero_deriv}, the difference $F - G$ has derivative zero at every point of $(a,b)$. The function $F - G$ is continuous on $[a,b]$ because both $F$ and $G$ are. Applying Lemma~\ref{lem:zero_deriv_constant} to $F - G$, we conclude that $(F - G)(x) = (F - G)(a)$ for all $x \in [a,b]$.
 \end{proof}
 
 \begin{lemma}[Integral from a point to itself is zero]
     \label{lem:integral_base_zero}
 
-    For any $f$ and $a$, $\int_a^a f(t)\,dt = 0$. This is \texttt{intervalIntegral.integral\_same}.
+    For any function $f : \mathbb{R} \to \mathbb{R}$ and any point $a \in \mathbb{R}$, the interval integral of $f$ from $a$ to $a$ is zero:
+    \[
+      \int_a^a f(t)\,dt = 0.
+    \]
+    This holds because the interval $[a,a]$ is a single point, which has Lebesgue measure zero, so the integral over it vanishes. The corresponding Mathlib result is \texttt{intervalIntegral.integral\_same}.
 \end{lemma}
 \begin{proof}
-    The interval $[a,a]$ has zero length.
+    The interval $[a,a]$ consists of the single point $\{a\}$, which has Lebesgue measure zero. Any integral over a set of measure zero is zero, giving $\int_a^a f(t)\,dt = 0$.
 \end{proof}
 
-\begin{lemma}[Integral function value at base point]
+\begin{lemma}[Integral function vanishes at the base point]
     \label{lem:integral_func_at_base}
     \uses{lem:integral_base_zero}
 
-    For $G(u) = \int_a^u f(t)\,dt$, we have $G(a) = 0$.
+    Let $f : \mathbb{R} \to \mathbb{R}$ and $a \in \mathbb{R}$. Define the integral function $G : \mathbb{R} \to \mathbb{R}$ by $G(u) = \int_a^u f(t)\,dt$. Then $G(a) = 0$.
 \end{lemma}
 \begin{proof}
     \uses{lem:integral_base_zero}
-    Immediate from Lemma~\ref{lem:integral_base_zero}.
+    Evaluating $G$ at the base point $a$ gives $G(a) = \int_a^a f(t)\,dt = 0$ by Lemma~\ref{lem:integral_base_zero}.
 \end{proof}
 
 \begin{lemma}[Constant difference rearrangement]
     \label{lem:constant_diff_rearrangement}
 
-    If $F(b) - G(b) = F(a) - G(a)$ and $G(a) = 0$, then $G(b) = F(b) - F(a)$.
+    This is a purely algebraic fact. Suppose $F, G : \mathbb{R} \to \mathbb{R}$ satisfy the two conditions:
+    \begin{enumerate}
+        \item $F(b) - G(b) = F(a) - G(a)$, i.e., the difference $F - G$ takes the same value at $a$ and $b$;
+        \item $G(a) = 0$.
+    \end{enumerate}
+    Then $G(b) = F(b) - F(a)$.
 \end{lemma}
 \begin{proof}
-    Rearranging gives $G(b) - G(a) = F(b) - F(a)$, and substituting $G(a) = 0$ yields the result.
+    From condition (1), rearranging gives $G(b) - G(a) = F(b) - F(a)$. Substituting $G(a) = 0$ from condition (2) into the left-hand side yields $G(b) = F(b) - F(a)$.
 \end{proof}
 
 \section{Corollaries}
+
+We conclude with the main corollary, which combines all of the preceding results into the familiar evaluation formula for definite integrals.
 
 \begin{corollary}[Evaluation of integrals via antiderivatives]
     \label{cor:ftc_eval}
     \uses{def:antiderivative, lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
 
-    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and let $F$ be an antiderivative of $f$ on $(\min(a,b), \max(a,b))$, continuous on $[\min(a,b), \max(a,b)]$. Then
+    Let $a, b \in \mathbb{R}$ and let $f : \mathbb{R} \to \mathbb{R}$ be continuous on the closed interval $[\min(a,b), \max(a,b)]$. Suppose $F : \mathbb{R} \to \mathbb{R}$ is an antiderivative of $f$ on the open interval $(\min(a,b), \max(a,b))$ in the sense of Definition~\ref{def:antiderivative}, and that $F$ is continuous on the closed interval $[\min(a,b), \max(a,b)]$. Then the definite integral of $f$ from $a$ to $b$ equals the net change in $F$:
     \[
       \int_a^b f(x)\,dx = F(b) - F(a).
     \]
+    This is the evaluation formula that is most commonly used in practice: to compute a definite integral, find any antiderivative $F$ and evaluate the difference $F(b) - F(a)$.
 \end{corollary}
 \begin{proof}
     \uses{lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
-    Let $G(u) = \int_a^u f(t)\,dt$. By Lemma~\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F(b)-G(b) = F(a)-G(a)$. By Lemma~\ref{lem:integral_func_at_base}, $G(a)=0$. By Lemma~\ref{lem:constant_diff_rearrangement}, $G(b) = F(b)-F(a)$.
+    Define the integral function $G : \mathbb{R} \to \mathbb{R}$ by $G(u) = \int_a^u f(t)\,dt$.
+    \begin{enumerate}
+        \item By Lemma~\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$ on $(\min(a,b), \max(a,b))$.
+        \item Since both $F$ and $G$ are antiderivatives of $f$ on this interval and both are continuous on the closed interval, Lemma~\ref{lem:antiderivatives_diff_constant} implies that $(F - G)(b) = (F - G)(a)$, i.e., $F(b) - G(b) = F(a) - G(a)$.
+        \item By Lemma~\ref{lem:integral_func_at_base}, $G(a) = \int_a^a f(t)\,dt = 0$.
+        \item Finally, Lemma~\ref{lem:constant_diff_rearrangement} combines the equation $F(b) - G(b) = F(a) - G(a)$ with $G(a) = 0$ to conclude $G(b) = F(b) - F(a)$.
+    \end{enumerate}
+    Since $G(b) = \int_a^b f(t)\,dt$, the result follows.
 \end{proof}
 
 \end{document}

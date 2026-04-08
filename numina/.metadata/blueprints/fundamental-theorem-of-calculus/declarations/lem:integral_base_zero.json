@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "For any $f$ and $a$, $\\int_a^a f(t)\\,dt = 0$. This is \\texttt{intervalIntegral.integral\\_same}.",
-  "proof": "The interval $[a,a]$ has zero length."
+  "statement": "For any function $f : \\mathbb{R} \\to \\mathbb{R}$ and any point $a \\in \\mathbb{R}$, the interval integral of $f$ from $a$ to $a$ is zero:\n    \\[\n      \\int_a^a f(t)\\,dt = 0.\n    \\]\n    This holds because the interval $[a,a]$ is a single point, which has Lebesgue measure zero, so the integral over it vanishes. The corresponding Mathlib result is \\texttt{intervalIntegral.integral\\_same}.",
+  "proof": "The interval $[a,a]$ consists of the single point $\\{a\\}$, which has Lebesgue measure zero. Any integral over a set of measure zero is zero, giving $\\int_a^a f(t)\\,dt = 0$."
 }

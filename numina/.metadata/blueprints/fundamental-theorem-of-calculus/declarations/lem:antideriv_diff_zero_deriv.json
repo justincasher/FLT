@@ -7,6 +7,6 @@
   "uses": [
     "def:antiderivative"
   ],
-  "statement": "If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $\\texttt{HasDerivAt}\\; (F - G)\\; 0\\; x$ for every $x \\in (a,b)$.",
-  "proof": "Both $F$ and $G$ have derivative $f(x)$ at $x$, so by \\texttt{HasDerivAt.sub}, $F - G$ has derivative $f(x) - f(x) = 0$."
+  "statement": "Let $a, b \\in \\mathbb{R}$ and let $f : \\mathbb{R} \\to \\mathbb{R}$. Suppose that $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$ in the sense of Definition~\\ref{def:antiderivative}. Then the difference function $F - G$ has derivative zero at every point $x \\in (a,b)$. That is, $\\texttt{HasDerivAt}\\; (F - G)\\; 0\\; x$ holds for every $x \\in (a,b)$.",
+  "proof": "Fix $x \\in (a,b)$. By Definition~\\ref{def:antiderivative}, both $F$ and $G$ satisfy $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ and $\\texttt{HasDerivAt}\\; G\\; (f\\; x)\\; x$ respectively. By the linearity of the derivative (specifically \\texttt{HasDerivAt.sub}), the difference $F - G$ has derivative $f(x) - f(x) = 0$ at $x$."
 }

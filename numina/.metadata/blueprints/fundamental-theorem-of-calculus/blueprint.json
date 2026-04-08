@@ -18,7 +18,7 @@
     {
       "label": "lem:interval_integrable_restriction",
       "kind": "lemma",
-      "title": "Interval integrability restriction"
+      "title": "Interval integrability restriction to sub-intervals"
     },
     {
       "label": "lem:strongly_measurable_interior",
@@ -38,7 +38,7 @@
     {
       "label": "lem:zero_deriv_constant",
       "kind": "lemma",
-      "title": "Zero derivative implies constant"
+      "title": "Zero derivative implies constant on an interval"
     },
     {
       "label": "lem:antideriv_diff_zero_deriv",
@@ -73,7 +73,7 @@
     {
       "label": "lem:integral_func_at_base",
       "kind": "lemma",
-      "title": "Integral function value at base point"
+      "title": "Integral function vanishes at the base point"
     },
     {
       "label": "lem:constant_diff_rearrangement",

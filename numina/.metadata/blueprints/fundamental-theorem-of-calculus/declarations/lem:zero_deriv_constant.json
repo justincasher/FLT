@@ -1,12 +1,12 @@
 {
   "label": "lem:zero_deriv_constant",
   "kind": "lemma",
-  "title": "Zero derivative implies constant",
+  "title": "Zero derivative implies constant on an interval",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "lem:mvt"
   ],
-  "statement": "If $G$ is continuous on $[a,b]$ and $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$, then $G(x) = G(a)$ for all $x \\in [a,b]$.",
-  "proof": "For $x = a$ the result is immediate. For $a < x$, restrict to $[a,x]$ and apply the MVT to get $c \\in (a,x)$ with $G'(c) = (G(x) - G(a))/(x-a)$. Since $G'(c) = 0$ and $x \\ne a$, we get $G(x) = G(a)$."
+  "statement": "Let $a, b \\in \\mathbb{R}$ with $a \\le b$, and let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$. Suppose that $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ holds for every $x \\in (a,b)$, meaning that $G$ has derivative zero at every interior point. Then $G$ is constant on $[a,b]$: specifically, $G(x) = G(a)$ for all $x \\in [a,b]$.",
+  "proof": "If $x = a$, the conclusion $G(x) = G(a)$ is immediate. Now suppose $a < x \\le b$. Restrict $G$ to the interval $[a,x]$. The function $G$ is continuous on $[a,x]$ and has derivative zero at every point of $(a,x)$. By the Mean Value Theorem (Lemma~\\ref{lem:mvt}), there exists $c \\in (a,x)$ such that\n    \\[\n      G'(c) = \\frac{G(x) - G(a)}{x - a}.\n    \\]\n    Since $G'(c) = 0$ and $x - a \\neq 0$ (because $a < x$), we conclude $G(x) - G(a) = 0$, hence $G(x) = G(a)$."
 }

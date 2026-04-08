@@ -8,6 +8,6 @@
     "def:antiderivative",
     "thm:ftc1"
   ],
-  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$.",
-  "proof": "Immediate from the First FTC (Theorem~\\ref{thm:ftc1}) and Definition~\\ref{def:antiderivative}."
+  "statement": "Let $a, b \\in \\mathbb{R}$ and let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$. Define the integral function $G : \\mathbb{R} \\to \\mathbb{R}$ by $G(u) = \\int_a^u f(t)\\,dt$. Then $G$ is an antiderivative of $f$ on the open interval $(\\min(a,b), \\max(a,b))$ in the sense of Definition~\\ref{def:antiderivative}. That is, $\\texttt{HasDerivAt}\\; G\\; (f\\; x)\\; x$ holds for every $x \\in (\\min(a,b), \\max(a,b))$.",
+  "proof": "This is an immediate consequence of the First Fundamental Theorem of Calculus (Theorem~\\ref{thm:ftc1}), which establishes that $G$ has derivative $f(x)$ at every interior point $x$. By Definition~\\ref{def:antiderivative}, this precisely means that $G$ is an antiderivative of $f$ on the open interval."
 }

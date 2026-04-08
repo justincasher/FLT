@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "A function $F : \\mathbb{R} \\to \\mathbb{R}$ is an \\emph{antiderivative} of $f$ on $(a,b)$ if $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ for every $x \\in (a,b)$. When $a \\ge b$ the condition is vacuously true.",
+  "statement": "Let $a, b \\in \\mathbb{R}$ and let $f : \\mathbb{R} \\to \\mathbb{R}$ be a given function. A function $F : \\mathbb{R} \\to \\mathbb{R}$ is called an \\emph{antiderivative} of $f$ on the open interval $(a,b)$ if, for every point $x \\in (a,b)$, the function $F$ has derivative equal to $f(x)$ at $x$. In Mathlib notation, this means that $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ holds for every $x \\in (a,b)$, where $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ asserts that $F$ is differentiable at $x$ and $F'(x) = f(x)$.\n\n    When $a \\ge b$, the interval $(a,b)$ is empty, so the condition is vacuously satisfied and every function $F$ is an antiderivative of $f$ on $(a,b)$.",
   "proof": null
 }
