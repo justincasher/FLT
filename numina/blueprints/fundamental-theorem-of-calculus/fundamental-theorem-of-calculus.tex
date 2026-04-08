@@ -35,11 +35,13 @@ A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on
 
 \begin{lemma}[Continuous functions are interval integrable]
 \label{lem:continuous_integrable}
+\lean{FLT.FundamentalTheoremOfCalculus.continuous_integrable}
 \uses{def:continuous_on, def:interval_integral}
 
-If $f : \mathbb{R} \to E$ is continuous on the interval $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the given measure. In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
+If $f : \mathbb{R} \to \mathbb{R}$ is continuous on the interval $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the Lebesgue measure. In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
 \begin{proof}
+\uses{def:continuous_on, def:interval_integral}
 A continuous function on a compact interval is bounded and measurable, hence integrable with respect to the Lebesgue measure. The result follows from the fact that continuous functions on compact sets are integrable.
 \end{proof}
 
@@ -47,15 +49,17 @@ A continuous function on a compact interval is bounded and measurable, hence int
 
 \begin{lemma}[Integral norm bound]
 \label{lem:integral_bound}
+\lean{FLT.FundamentalTheoremOfCalculus.integral_bound}
 \uses{def:interval_integral}
 
-If $f$ and $g$ are interval integrable on $[a,b]$, $a \le b$, and $\|f(x)\| \le g(x)$ for a.e.\ $x \in [a, b]$, then
+If $\|f(x)\| \le M$ for a.e.\ $x \in \iota(a,b)$, then
 \[
-  \left\|\int_a^b f(x)\,dx\right\| \le \int_a^b g(x)\,dx.
+  \left\|\int_a^b f(x)\,dx\right\| \le M \cdot |b - a|.
 \]
-In Mathlib this is \texttt{intervalIntegral.norm\_integral\_le\_of\_norm\_le}.
+In Mathlib this is \texttt{intervalIntegral.norm\_integral\_le\_of\_norm\_le\_const\_ae}.
 \end{lemma}
 \begin{proof}
+\uses{def:interval_integral}
 This follows from the monotonicity of the Lebesgue integral and properties of the norm.
 \end{proof}
 

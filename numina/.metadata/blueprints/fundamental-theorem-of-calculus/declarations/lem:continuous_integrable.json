@@ -2,12 +2,12 @@
   "label": "lem:continuous_integrable",
   "kind": "lemma",
   "title": "Continuous functions are interval integrable",
-  "leanDeclaration": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.continuous_integrable",
   "leanFile": "",
   "uses": [
     "def:continuous_on",
     "def:interval_integral"
   ],
-  "statement": "If $f : \\mathbb{R} \\to E$ is continuous on the interval $[\\min(a,b), \\max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the given measure. In Mathlib this is \\texttt{ContinuousOn.intervalIntegrable}.",
+  "statement": "If $f : \\mathbb{R} \\to \\mathbb{R}$ is continuous on the interval $[\\min(a,b), \\max(a,b)]$, then $f$ is interval integrable on $[a, b]$ with respect to the Lebesgue measure. In Mathlib this is \\texttt{ContinuousOn.intervalIntegrable}.",
   "proof": "A continuous function on a compact interval is bounded and measurable, hence integrable with respect to the Lebesgue measure. The result follows from the fact that continuous functions on compact sets are integrable."
 }

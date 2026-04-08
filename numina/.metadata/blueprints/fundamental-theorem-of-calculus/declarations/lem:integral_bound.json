@@ -2,11 +2,11 @@
   "label": "lem:integral_bound",
   "kind": "lemma",
   "title": "Integral norm bound",
-  "leanDeclaration": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.integral_bound",
   "leanFile": "",
   "uses": [
     "def:interval_integral"
   ],
-  "statement": "If $f$ and $g$ are interval integrable on $[a,b]$, $a \\le b$, and $\\|f(x)\\| \\le g(x)$ for a.e.\\ $x \\in [a, b]$, then\n\\[\n  \\left\\|\\int_a^b f(x)\\,dx\\right\\| \\le \\int_a^b g(x)\\,dx.\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.norm\\_integral\\_le\\_of\\_norm\\_le}.",
+  "statement": "If $\\|f(x)\\| \\le M$ for a.e.\\ $x \\in \\iota(a,b)$, then\n\\[\n  \\left\\|\\int_a^b f(x)\\,dx\\right\\| \\le M \\cdot |b - a|.\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.norm\\_integral\\_le\\_of\\_norm\\_le\\_const\\_ae}.",
   "proof": "This follows from the monotonicity of the Lebesgue integral and properties of the norm."
 }
