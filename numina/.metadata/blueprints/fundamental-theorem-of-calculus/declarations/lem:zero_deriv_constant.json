@@ -7,6 +7,6 @@
   "uses": [
     "lem:mvt"
   ],
-  "statement": "Let $a, b \\in \\mathbb{R}$ with $a \\le b$, and let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$. Suppose that $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ holds for every $x \\in (a,b)$, meaning that $G$ has derivative zero at every interior point. Then $G$ is constant on $[a,b]$: specifically, $G(x) = G(a)$ for all $x \\in [a,b]$.",
-  "proof": "If $x = a$, the conclusion $G(x) = G(a)$ is immediate. Now suppose $a < x \\le b$. Restrict $G$ to the interval $[a,x]$. The function $G$ is continuous on $[a,x]$ and has derivative zero at every point of $(a,x)$. By the Mean Value Theorem (Lemma~\\ref{lem:mvt}), there exists $c \\in (a,x)$ such that\n    \\[\n      G'(c) = \\frac{G(x) - G(a)}{x - a}.\n    \\]\n    Since $G'(c) = 0$ and $x - a \\neq 0$ (because $a < x$), we conclude $G(x) - G(a) = 0$, hence $G(x) = G(a)$."
+  "statement": "Let $a \\le b$ and $G$ be continuous on $[a,b]$ with $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$. Then $G(x) = G(a)$ for all $x \\in [a,b]$.",
+  "proof": "For $a < x \\le b$, the MVT (Lemma~\\ref{lem:mvt}) gives $c \\in (a,x)$ with $0 = G'(c) = (G(x) - G(a))/(x - a)$, so $G(x) = G(a)$."
 }

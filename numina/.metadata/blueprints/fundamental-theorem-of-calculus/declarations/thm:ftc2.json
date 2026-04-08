@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $a, b \\in \\mathbb{R}$ and let $F : \\mathbb{R} \\to \\mathbb{R}$ be continuous on the closed interval $[\\min(a,b), \\max(a,b)]$. Suppose that $F$ has a right derivative $f'(x)$ at every interior point $x \\in (\\min(a,b), \\max(a,b))$, and suppose that $f' : \\mathbb{R} \\to \\mathbb{R}$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. Then the definite integral of $f'$ over $[a,b]$ equals the net change in $F$:\n    \\[\n      \\int_a^b f'(x)\\,dx = F(b) - F(a).\n    \\]\n    This is the Mathlib result \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
-  "proof": "This is a direct application of the Mathlib result \\texttt{integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}, which encapsulates the standard proof of the Second Fundamental Theorem. The hypotheses of continuity on the closed interval, differentiability on the open interior, and integrability of the derivative are exactly as assumed."
+  "statement": "Let $F$ be continuous on $[\\min(a,b), \\max(a,b)]$ with right derivative $f'(x)$ at every interior point, and suppose $f'$ is interval integrable on $[a,b]$. Then\n    \\[\n      \\int_a^b f'(x)\\,dx = F(b) - F(a).\n    \\]\n    This is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
+  "proof": "Direct application of \\texttt{integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}."
 }

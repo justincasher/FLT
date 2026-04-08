@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $a, b \\in \\mathbb{R}$ and let $f : \\mathbb{R} \\to \\mathbb{R}$ be a function that is continuous on the closed interval $[\\min(a,b), \\max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. That is, $f$ is integrable over the unordered interval $\\texttt{uIcc}\\; a\\; b$ with respect to the volume measure on $\\mathbb{R}$.\n\n    This is the Mathlib result \\texttt{ContinuousOn.intervalIntegrable}.",
-  "proof": "A continuous function on a compact interval $[\\min(a,b), \\max(a,b)]$ is bounded and measurable. Bounded measurable functions on sets of finite measure are integrable, so $f$ is integrable over $\\texttt{uIcc}\\; a\\; b$. This yields the interval integrability of $f$ on $[a,b]$."
+  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $f$ is interval integrable on $[a,b]$. This is \\texttt{ContinuousOn.intervalIntegrable}.",
+  "proof": "Continuous functions on compact intervals are bounded and measurable, hence integrable."
 }

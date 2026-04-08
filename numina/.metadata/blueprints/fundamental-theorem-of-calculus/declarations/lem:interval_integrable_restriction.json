@@ -7,6 +7,6 @@
   "uses": [
     "lem:continuous_interval_integrable"
   ],
-  "statement": "Let $a, b \\in \\mathbb{R}$ and suppose $f : \\mathbb{R} \\to \\mathbb{R}$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. If $x$ is a point satisfying $\\min(a,b) < x < \\max(a,b)$, then $f$ is also interval integrable on the smaller interval $[a,x]$.\n\n    This follows from the monotonicity of integrability with respect to set inclusion: the unordered interval $\\texttt{uIcc}\\; a\\; x$ is contained in $\\texttt{uIcc}\\; a\\; b$, so integrability on the larger interval implies integrability on the smaller one. The relevant Mathlib result is \\texttt{IntervalIntegrable.mono\\_set}.",
-  "proof": "Since $x$ lies between $\\min(a,b)$ and $\\max(a,b)$, the unordered closed interval $\\texttt{uIcc}\\; a\\; x$ is a subset of $\\texttt{uIcc}\\; a\\; b$. The result \\texttt{IntervalIntegrable.mono\\_set} allows us to restrict interval integrability from a larger interval to any sub-interval, which gives the desired conclusion."
+  "statement": "If $f$ is interval integrable on $[a,b]$ and $\\min(a,b) < x < \\max(a,b)$, then $f$ is interval integrable on $[a,x]$, since $\\texttt{uIcc}\\; a\\; x \\subseteq \\texttt{uIcc}\\; a\\; b$. This is \\texttt{IntervalIntegrable.mono\\_set}.",
+  "proof": "Apply \\texttt{IntervalIntegrable.mono\\_set} using the sub-interval inclusion."
 }

@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "This is a purely algebraic fact. Suppose $F, G : \\mathbb{R} \\to \\mathbb{R}$ satisfy the two conditions:\n    \\begin{enumerate}\n        \\item $F(b) - G(b) = F(a) - G(a)$, i.e., the difference $F - G$ takes the same value at $a$ and $b$;\n        \\item $G(a) = 0$.\n    \\end{enumerate}\n    Then $G(b) = F(b) - F(a)$.",
-  "proof": "From condition (1), rearranging gives $G(b) - G(a) = F(b) - F(a)$. Substituting $G(a) = 0$ from condition (2) into the left-hand side yields $G(b) = F(b) - F(a)$."
+  "statement": "If $F(b) - G(b) = F(a) - G(a)$ and $G(a) = 0$, then $G(b) = F(b) - F(a)$.",
+  "proof": "Rearrange: $G(b) = G(a) + F(b) - F(a) = F(b) - F(a)$."
 }

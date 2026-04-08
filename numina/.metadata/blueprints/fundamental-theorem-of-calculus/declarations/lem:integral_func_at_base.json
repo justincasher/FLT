@@ -7,6 +7,6 @@
   "uses": [
     "lem:integral_base_zero"
   ],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ and $a \\in \\mathbb{R}$. Define the integral function $G : \\mathbb{R} \\to \\mathbb{R}$ by $G(u) = \\int_a^u f(t)\\,dt$. Then $G(a) = 0$.",
-  "proof": "Evaluating $G$ at the base point $a$ gives $G(a) = \\int_a^a f(t)\\,dt = 0$ by Lemma~\\ref{lem:integral_base_zero}."
+  "statement": "If $G(u) = \\int_a^u f(t)\\,dt$, then $G(a) = 0$.",
+  "proof": "$G(a) = \\int_a^a f(t)\\,dt = 0$ by Lemma~\\ref{lem:integral_base_zero}."
 }
