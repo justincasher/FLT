@@ -11,6 +11,6 @@
     "lem:integral_func_at_base",
     "lem:constant_diff_rearrangement"
   ],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$ and let $F$ be an antiderivative of $f$ on $\\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$ (i.e.\\ $\\texttt{IsAntiderivativeOn}\\; F\\; f\\; (\\min(a,b))\\; (\\max(a,b))$) that is continuous on $[\\min(a,b), \\max(a,b)]$. Then\n    \\[\n      \\int_a^b f(x)\\,dx = F(b) - F(a).\n    \\]",
-  "proof": "By Lemma~\\ref{lem:integral_is_antiderivative}, the function $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on $\\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$. By Lemma~\\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $\\mathrm{Icc}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$, so $F(b) - G(b) = F(a) - G(a)$. By Lemma~\\ref{lem:integral_func_at_base}, $G(a) = 0$. By Lemma~\\ref{lem:constant_diff_rearrangement}, $G(b) = F(b) - F(a)$, and since $G(b) = \\int_a^b f(x)\\,dx$, the result follows."
+  "statement": "Let $f$ be continuous on $[\\min(a,b), \\max(a,b)]$ and let $F$ be an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$, continuous on $[\\min(a,b), \\max(a,b)]$. Then\n    \\[\n      \\int_a^b f(x)\\,dx = F(b) - F(a).\n    \\]",
+  "proof": "Let $G(u) = \\int_a^u f(t)\\,dt$. By Lemma~\\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\\ref{lem:antiderivatives_diff_constant}, $F(b)-G(b) = F(a)-G(a)$. By Lemma~\\ref{lem:integral_func_at_base}, $G(a)=0$. By Lemma~\\ref{lem:constant_diff_rearrangement}, $G(b) = F(b)-F(a)$."
 }

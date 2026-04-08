@@ -8,6 +8,6 @@
     "def:antiderivative",
     "thm:ftc1"
   ],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$. Then the function $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on $\\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$, i.e., $\\texttt{IsAntiderivativeOn}\\; G\\; f\\; (\\min(a,b))\\; (\\max(a,b))$.",
-  "proof": "By the First FTC (Theorem~\\ref{thm:ftc1}), for every $x \\in (\\min(a,b), \\max(a,b))$, the function $G(u) = \\int_a^u f(t)\\,dt$ has derivative $f(x)$ at $x$. By Definition~\\ref{def:antiderivative}, this means $G$ is an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$."
+  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$.",
+  "proof": "Immediate from the First FTC (Theorem~\\ref{thm:ftc1}) and Definition~\\ref{def:antiderivative}."
 }

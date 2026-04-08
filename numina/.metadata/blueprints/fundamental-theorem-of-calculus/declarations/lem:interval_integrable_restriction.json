@@ -7,6 +7,6 @@
   "uses": [
     "lem:continuous_interval_integrable"
   ],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be interval integrable on $[a,b]$, and let $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$. Then $f$ is interval integrable on $[a,x]$ (i.e.\\ \\texttt{IntervalIntegrable f volume a x}). This follows from \\texttt{IntervalIntegrable.mono\\_set} since $\\texttt{uIcc}\\; a\\; x \\subseteq \\texttt{uIcc}\\; a\\; b$.",
-  "proof": "Since $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b) \\subseteq [\\min(a,b), \\max(a,b)]$, the interval $\\texttt{uIcc}\\; a\\; x$ is contained in $\\texttt{uIcc}\\; a\\; b$. By monotonicity of interval integrability (\\texttt{IntervalIntegrable.mono\\_set}), integrability on $[a,b]$ implies integrability on $[a,x]$."
+  "statement": "If $f$ is interval integrable on $[a,b]$ and $x \\in (\\min(a,b), \\max(a,b))$, then $f$ is interval integrable on $[a,x]$. This follows from \\texttt{IntervalIntegrable.mono\\_set} since $\\texttt{uIcc}\\; a\\; x \\subseteq \\texttt{uIcc}\\; a\\; b$.",
+  "proof": "The interval $\\texttt{uIcc}\\; a\\; x$ is contained in $\\texttt{uIcc}\\; a\\; b$, so integrability restricts by \\texttt{IntervalIntegrable.mono\\_set}."
 }

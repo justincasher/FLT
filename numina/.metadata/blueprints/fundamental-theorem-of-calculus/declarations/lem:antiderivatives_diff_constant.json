@@ -8,6 +8,6 @@
     "lem:antideriv_diff_zero_deriv",
     "lem:zero_deriv_constant"
   ],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ and let $F, G$ both be antiderivatives of $f$ on $\\mathrm{Ioo}\\; a\\; b$ (i.e.\\ $\\texttt{IsAntiderivativeOn}\\; F\\; f\\; a\\; b$ and $\\texttt{IsAntiderivativeOn}\\; G\\; f\\; a\\; b$), with both $F$ and $G$ continuous on $\\mathrm{Icc}\\; a\\; b$. Then $F - G$ is constant on $\\mathrm{Icc}\\; a\\; b$, i.e., for all $x \\in \\mathrm{Icc}\\; a\\; b$, $(F - G)(x) = (F - G)(a)$.",
-  "proof": "By Lemma~\\ref{lem:antideriv_diff_zero_deriv}, the function $F - G$ has derivative $0$ at every $x \\in \\mathrm{Ioo}\\; a\\; b$. Moreover, $F - G$ is continuous on $\\mathrm{Icc}\\; a\\; b$ since both $F$ and $G$ are. By Lemma~\\ref{lem:zero_deriv_constant}, $(F-G)(x) = (F-G)(a)$ for all $x \\in \\mathrm{Icc}\\; a\\; b$."
+  "statement": "If $F$ and $G$ are antiderivatives of $f$ on $(a,b)$, both continuous on $[a,b]$, then $(F-G)(x) = (F-G)(a)$ for all $x \\in [a,b]$.",
+  "proof": "By Lemma~\\ref{lem:antideriv_diff_zero_deriv}, $F-G$ has zero derivative on $(a,b)$. Since $F-G$ is continuous on $[a,b]$, Lemma~\\ref{lem:zero_deriv_constant} gives the result."
 }

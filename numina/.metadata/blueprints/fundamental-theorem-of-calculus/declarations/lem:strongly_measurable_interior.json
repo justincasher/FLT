@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$, and let $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$. Then $f$ is strongly measurable at the full neighborhood filter of $x$ with respect to the Lebesgue measure (i.e.\\ $\\texttt{StronglyMeasurableAtFilter}\\; f\\; (\\mathcal{N}(x))\\; \\texttt{volume}$, where $\\mathcal{N}(x) = \\texttt{nhds}\\; x$). This follows because $x$ belongs to the open set $\\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$, and any function continuous on an open set is strongly measurable at each point's neighborhood filter (via \\texttt{ContinuousOn.stronglyMeasurableAtFilter}).",
-  "proof": "Since $x$ lies in the open set $\\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$, and $f$ is continuous on the open interior (by restriction from the closed interval), we apply \\texttt{ContinuousOn.stronglyMeasurableAtFilter} with \\texttt{isOpen\\_Ioo} to obtain $\\texttt{StronglyMeasurableAtFilter}\\; f\\; (\\texttt{nhds}\\; x)\\; \\texttt{volume}$."
+  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x \\in (\\min(a,b), \\max(a,b))$, then $f$ is strongly measurable at the neighborhood filter of $x$. This follows via \\texttt{ContinuousOn.stronglyMeasurableAtFilter} since $x$ lies in the open set $\\mathrm{Ioo}\\;(\\min\\,a\\,b)\\;(\\max\\,a\\,b)$.",
+  "proof": "Apply \\texttt{ContinuousOn.stronglyMeasurableAtFilter} with \\texttt{isOpen\\_Ioo}, since $x$ lies in the open interior."
 }
