@@ -23,27 +23,24 @@ open MeasureTheory Set Interval Topology
 
 namespace FLT.FundamentalTheoremOfCalculus
 
-/-- A function `F` is an antiderivative of `f` on `(a,b)` if `F` has derivative `f x` at every
-point `x ∈ (a,b)`. This corresponds to `def:antiderivative` in the blueprint. -/
+/-- A function `F` is an antiderivative of `f` on `(a, b)` if `F` has derivative `f x` at every
+point `x ∈ (a, b)`. -/
 def IsAntiderivativeOn (F f : ℝ → ℝ) (a b : ℝ) : Prop :=
   ∀ x ∈ Ioo a b, HasDerivAt F (f x) x
 
-/-- Continuous functions on a closed interval are interval integrable.
-Blueprint: `lem:continuous_integrable`. -/
+/-- A function continuous on a closed interval is interval integrable. -/
 theorem continuous_integrable {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b)) :
     IntervalIntegrable f volume a b := hf.intervalIntegrable
 
-/-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`.
-Blueprint: `lem:integral_bound`. -/
+/-- If `‖f x‖ ≤ M` a.e. on `Ι a b`, then `‖∫ x in a..b, f x‖ ≤ M * |b - a|`. -/
 theorem integral_bound {f : ℝ → ℝ} {a b M : ℝ}
     (hf : ∀ᵐ x, x ∈ Ι a b → ‖f x‖ ≤ M) :
     ‖∫ x in a..b, f x‖ ≤ M * |b - a| :=
   intervalIntegral.norm_integral_le_of_norm_le_const_ae hf
 
-/-- Lagrange's Mean Value Theorem: if `f` is continuous on `[a,b]` and differentiable on `(a,b)`,
-then there exists `c ∈ (a,b)` such that `f' c = (f b - f a) / (b - a)`.
-Blueprint: `lem:mean_value_theorem`. -/
+/-- If `f` is continuous on `[a, b]` and differentiable on `(a, b)`, there exists `c ∈ (a, b)`
+such that `f' c = (f b - f a) / (b - a)`. -/
 theorem mean_value_theorem {f f' : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hf : ContinuousOn f (Icc a b))
     (hf' : ∀ x ∈ Ioo a b, HasDerivAt f (f' x) x) :
