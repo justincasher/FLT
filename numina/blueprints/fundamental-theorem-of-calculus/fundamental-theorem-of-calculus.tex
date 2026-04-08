@@ -107,29 +107,14 @@ By the Mean Value Theorem (Lemma~\ref{lem:mean_value_theorem}), for any $x \in [
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
 \label{thm:ftc1}
-\uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable, lem:integral_bound, lem:uniform_continuity}
+\lean{FLT.FundamentalTheoremOfCalculus.ftc1}
+\uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
 
-Let $f : \mathbb{R} \to E$ be integrable on $[a, b]$ and continuous at a point $x \in [a,b]$, with $x \in (a, b]$ or $x \in [a, b)$ as appropriate. Then the function $F(y) = \int_a^y f(t)\,dt$ has derivative $f(x)$ at $x$. More precisely, in Mathlib this is \texttt{intervalIntegral.integral\_hasDerivAt\_right}, which states that if $f$ is interval integrable on $[a, b]$, and $f$ is continuous at $x$ within $[a, b]$ (via the appropriate one-sided filter), then $\frac{d}{dx}\int_a^x f(t)\,dt = f(x)$.
+Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$, and let $x \in (\min(a,b), \max(a,b))$. Then the function $F(u) = \int_a^u f(t)\,dt$ has derivative $f(x)$ at $x$. In Mathlib this is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{theorem}
 \begin{proof}
-\uses{lem:continuous_integrable, lem:integral_bound, lem:uniform_continuity}
-Fix $x$ in the interior of $[a,b]$. We wish to show
-\[
-  \lim_{h \to 0} \frac{F(x+h) - F(x)}{h} = f(x).
-\]
-By additivity of the integral,
-\[
-  F(x+h) - F(x) = \int_x^{x+h} f(t)\,dt,
-\]
-so
-\[
-  \frac{F(x+h) - F(x)}{h} - f(x) = \frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt.
-\]
-By continuity of $f$ at $x$, given $\varepsilon > 0$ there exists $\delta > 0$ such that $|t - x| < \delta$ implies $\|f(t) - f(x)\| < \varepsilon$. For $0 < |h| < \delta$, by the integral bound (Lemma~\ref{lem:integral_bound}),
-\[
-  \left\|\frac{1}{h}\int_x^{x+h} (f(t) - f(x))\,dt\right\| \le \varepsilon.
-\]
-Since $\varepsilon > 0$ was arbitrary, $F'(x) = f(x)$.
+\uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
+Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ and strongly measurable at $x$. Moreover, $f$ is continuous at $x$. The result then follows from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
