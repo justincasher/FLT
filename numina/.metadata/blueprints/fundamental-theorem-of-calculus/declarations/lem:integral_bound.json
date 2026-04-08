@@ -7,6 +7,6 @@
   "uses": [
     "def:interval_integral"
   ],
-  "statement": "If $\\|f(x)\\| \\le M$ for a.e.\\ $x \\in \\iota(a,b)$, then\n\\[\n  \\left\\|\\int_a^b f(x)\\,dx\\right\\| \\le M \\cdot |b - a|.\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.norm\\_integral\\_le\\_of\\_norm\\_le\\_const\\_ae}.",
+  "statement": "If $\\|f(x)\\| \\le M$ for a.e.\\ $x \\in \\operatorname{uIoc}(a,b)$, then\n\\[\n  \\left\\|\\int_a^b f(x)\\,dx\\right\\| \\le M \\cdot |b - a|.\n\\]\nIn Mathlib this is \\texttt{intervalIntegral.norm\\_integral\\_le\\_of\\_norm\\_le\\_const\\_ae}.",
   "proof": "This follows from the monotonicity of the Lebesgue integral and properties of the norm."
 }
