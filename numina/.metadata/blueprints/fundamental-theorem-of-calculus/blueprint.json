@@ -6,44 +6,14 @@
   "notes": "",
   "entries": [
     {
-      "label": "def:continuous_on",
+      "label": "def:preliminaries",
       "kind": "definition",
-      "title": "Continuous on a set"
-    },
-    {
-      "label": "def:has_deriv_at",
-      "kind": "definition",
-      "title": "Has derivative at a point"
-    },
-    {
-      "label": "def:interval_integral",
-      "kind": "definition",
-      "title": "Interval integral"
+      "title": "Mathlib Preliminaries"
     },
     {
       "label": "def:antiderivative",
       "kind": "definition",
       "title": "Antiderivative"
-    },
-    {
-      "label": "lem:continuous_integrable",
-      "kind": "lemma",
-      "title": "Continuous functions are interval integrable"
-    },
-    {
-      "label": "lem:integral_bound",
-      "kind": "lemma",
-      "title": "Integral norm bound"
-    },
-    {
-      "label": "lem:mean_value_theorem",
-      "kind": "lemma",
-      "title": "Mean Value Theorem"
-    },
-    {
-      "label": "lem:uniform_continuity",
-      "kind": "lemma",
-      "title": "Uniform continuity on compact sets"
     },
     {
       "label": "lem:zero_deriv_constant",

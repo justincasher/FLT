@@ -5,10 +5,8 @@
   "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.ftc1",
   "leanFile": "",
   "uses": [
-    "def:continuous_on",
-    "def:interval_integral",
-    "def:has_deriv_at"
+    "def:preliminaries"
   ],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then the function $F(u) = \\int_a^u f(t)\\,dt$ has derivative $f(x)$ at $x$. In Mathlib the core result is \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}.",
-  "proof": "Since $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ is in the interior, we establish three prerequisites for \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}: (1) $f$ is interval integrable on $[a,x]$ via \\texttt{ContinuousOn.intervalIntegrable} (Lemma~\\ref{lem:continuous_integrable}); (2) $f$ is strongly measurable at the neighborhood filter of $x$, using openness of the interior; (3) $f$ is continuous at $x$, since $x$ lies in the interior of the domain of continuity. The result then follows directly."
+  "proof": "Since $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ is in the interior, we establish three prerequisites for \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}: (1) $f$ is interval integrable on $[a,x]$ via \\texttt{ContinuousOn.intervalIntegrable}; (2) $f$ is strongly measurable at the neighborhood filter of $x$, using openness of the interior; (3) $f$ is continuous at $x$, since $x$ lies in the interior of the domain of continuity. The result then follows directly."
 }

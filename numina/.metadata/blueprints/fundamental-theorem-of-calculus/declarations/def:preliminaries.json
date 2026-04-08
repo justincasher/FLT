@@ -1,0 +1,10 @@
+{
+  "label": "def:preliminaries",
+  "kind": "definition",
+  "title": "Mathlib Preliminaries",
+  "leanDeclaration": "ContinuousOn",
+  "leanFile": "",
+  "uses": [],
+  "statement": "We use the following standard Mathlib notions throughout.\n    \\begin{itemize}\n        \\item \\textbf{Continuity on a set} (\\texttt{ContinuousOn}): A function $f : \\alpha \\to \\beta$ between topological spaces is \\emph{continuous on} $s \\subseteq \\alpha$ if for every $x \\in s$, the filter map of $f$ along the neighborhood filter of $x$ restricted to $s$ tends to $f(x)$.\n        \\item \\textbf{Derivative at a point} (\\texttt{HasDerivAt}): For $F : \\mathbb{F} \\to \\mathbb{F}$ over a nontrivially normed field, $F$ \\emph{has derivative} $f'$ at $x$ if $F(x+h) = F(x) + f' \\cdot h + o(h)$ as $h \\to 0$.\n        \\item \\textbf{Interval integral} (\\texttt{intervalIntegral}): For $f : \\mathbb{R} \\to E$ and $a,b \\in \\mathbb{R}$, the integral $\\int_a^b f(x)\\,dx$ is defined as $\\int_{[a,b]} f\\,d\\mu - \\int_{[b,a]} f\\,d\\mu$, which is antisymmetric: $\\int_a^b f = -\\int_b^a f$.\n    \\end{itemize}",
+  "proof": null
+}
