@@ -127,7 +127,7 @@
 \end{corollary}
 \begin{proof}
     \uses{lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_base_zero}
-    By Lemma~\ref{lem:integral_is_antiderivative}, the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on the interior. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $[\min(a,b), \max(a,b)]$, so $F(b) - G(b) = F(a) - G(a)$, which gives $G(b) - G(a) = F(b) - F(a)$. By Lemma~\ref{lem:integral_base_zero}, $G(a) = \int_a^a f = 0$, so $\int_a^b f(x)\,dx = G(b) = G(b) - G(a) = F(b) - F(a)$.
+    By Lemma~\ref{lem:integral_is_antiderivative}, the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $\mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $\mathrm{Icc}\;(\min\, a\, b)\;(\max\, a\, b)$, so $F(b) - G(b) = F(a) - G(a)$, which gives $G(b) - G(a) = F(b) - F(a)$. By Lemma~\ref{lem:integral_base_zero}, $G(a) = \int_a^a f = 0$, so $\int_a^b f(x)\,dx = G(b) = G(b) - G(a) = F(b) - F(a)$.
 \end{proof}
 
 \end{document}
