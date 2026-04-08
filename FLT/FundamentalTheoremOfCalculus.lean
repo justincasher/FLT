@@ -7,16 +7,12 @@ import Mathlib
 /-!
 # Fundamental Theorem of Calculus
 
-This file formalizes the blueprint for the Fundamental Theorem of Calculus,
-mapping each blueprint declaration to existing Mathlib concepts.
+This file formalizes the Fundamental Theorem of Calculus. The main results are:
 
-## Blueprint definitions
-
-The following definitions from the blueprint correspond to existing Mathlib concepts:
-- `def:continuous_on` → `ContinuousOn`
-- `def:has_deriv_at` → `HasDerivAt`
-- `def:interval_integral` → `∫ x in a..b, f x` (`intervalIntegral`)
-- `def:antiderivative` → `IsAntiderivativeOn` (defined below)
+- `ftc1`: if `f` is continuous on `[a, b]`, then `x ↦ ∫ t in a..x, f t` has derivative `f x`
+  at every interior point.
+- `ftc2`: if `F` has right derivative `f'` on `(a, b)` and `f'` is integrable, then
+  `∫ x in a..b, f' x = F b - F a`.
 -/
 
 open MeasureTheory Set Interval Topology
@@ -47,15 +43,14 @@ theorem mean_value_theorem {f f' : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     ∃ c ∈ Ioo a b, f' c = (f b - f a) / (b - a) :=
   exists_hasDerivAt_eq_slope f f' hab hf hf'
 
-/-- Heine–Cantor theorem: a continuous function on a compact interval is uniformly continuous.
-Blueprint: `lem:uniform_continuity`. -/
+/-- A continuous function on a compact interval is uniformly continuous. -/
 theorem uniform_continuity {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b)) :
     UniformContinuousOn f (Icc a b) :=
   isCompact_Icc.uniformContinuousOn_of_continuous hf
 
-/-- If `f` is continuous on `[a,b]` and `f'(x) = 0` for all `x ∈ (a,b)`, then `f` is constant.
-Blueprint: `lem:zero_deriv_constant`. -/
+/-- If `f` is continuous on `[a, b]` and has derivative `0` everywhere on `(a, b)`, then `f` is
+constant on `[a, b]`. -/
 theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     (hcont : ContinuousOn f (Icc a b))
     (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f 0 x) :
@@ -74,9 +69,8 @@ theorem zero_deriv_constant {f : ℝ → ℝ} {a b : ℝ}
     · linarith
     · exact absurd h hne
 
-/-- First Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]`, then
-`F(x) = ∫ t in a..x, f t` has derivative `f x` at every `x ∈ (a,b)`.
-Blueprint: `thm:ftc1`. -/
+/-- If `f` is continuous on `[a, b]`, then `F x = ∫ t in a..x, f t` has derivative `f x` at every
+interior point `x`. -/
 theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (uIcc a b))
     (x : ℝ) (hx : x ∈ Ioo (min a b) (max a b)) :
@@ -96,10 +90,8 @@ theorem ftc1 {f : ℝ → ℝ} {a b : ℝ}
     hf_ioo.stronglyMeasurableAtFilter isOpen_Ioo x hx
   exact intervalIntegral.integral_hasDerivAt_right hint hmeas hcont_x
 
-/-- Second Fundamental Theorem of Calculus: if `f` is continuous on `[a,b]` and `F` is an
-antiderivative of `f` (i.e. `F` has right derivative `f'` on `(a,b)`), then
-`∫ x in a..b, f' x = F b - F a`.
-Blueprint: `thm:ftc2`. -/
+/-- If `F` is continuous on `[a, b]` and has right derivative `f'` on `(a, b)`, and `f'` is
+interval integrable, then `∫ x in a..b, f' x = F b - F a`. -/
 theorem ftc2 {F f' : ℝ → ℝ} {a b : ℝ}
     (hF : ContinuousOn F (uIcc a b))
     (hF' : ∀ x ∈ Ioo (min a b) (max a b), HasDerivWithinAt F (f' x) (Ioi x) x)
