@@ -2,7 +2,7 @@
   "label": "def:has_deriv_at",
   "kind": "definition",
   "title": "Has derivative at a point",
-  "leanDeclaration": "",
+  "leanDeclaration": "HasDerivAt",
   "leanFile": "",
   "uses": [],
   "statement": "Let $F : \\mathbb{F} \\to \\mathbb{F}$ where $\\mathbb{F}$ is a nontrivially normed field. We say $F$ \\emph{has derivative} $f'$ \\emph{at} $x$ if the Fr\\'echet derivative of $F$ at $x$ exists and equals scalar multiplication by $f'$, i.e., $F(x + h) = F(x) + f' \\cdot h + o(h)$ as $h \\to 0$. In Mathlib this is \\texttt{HasDerivAt}.",
