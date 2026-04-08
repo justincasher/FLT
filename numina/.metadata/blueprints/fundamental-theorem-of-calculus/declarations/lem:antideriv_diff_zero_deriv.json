@@ -1,0 +1,12 @@
+{
+  "label": "lem:antideriv_diff_zero_deriv",
+  "kind": "lemma",
+  "title": "Difference of antiderivatives has zero derivative",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "def:antiderivative"
+  ],
+  "statement": "Let $F$ and $G$ both be antiderivatives of $f$ on $\\mathrm{Ioo}\\; a\\; b$ (i.e.\\ $\\texttt{IsAntiderivativeOn}\\; F\\; f\\; a\\; b$ and $\\texttt{IsAntiderivativeOn}\\; G\\; f\\; a\\; b$). Then for every $x \\in \\mathrm{Ioo}\\; a\\; b$, the function $F - G$ has derivative $0$ at $x$ (i.e.\\ $\\texttt{HasDerivAt}\\; (F - G)\\; 0\\; x$).",
+  "proof": "For $x \\in \\mathrm{Ioo}\\; a\\; b$, we have $\\texttt{HasDerivAt}\\; F\\; (f\\;x)\\; x$ and $\\texttt{HasDerivAt}\\; G\\; (f\\;x)\\; x$ by the antiderivative hypothesis. By \\texttt{HasDerivAt.sub}, $F - G$ has derivative $f(x) - f(x) = 0$ at $x$."
+}

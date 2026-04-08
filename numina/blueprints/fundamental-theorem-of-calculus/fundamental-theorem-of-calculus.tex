@@ -19,6 +19,17 @@
     This is a standard Mathlib result. Continuous functions on compact intervals are bounded and measurable, hence integrable.
 \end{proof}
 
+\begin{lemma}[Interval integrability restriction]
+    \label{lem:interval_integrable_restriction}
+    \uses{lem:continuous_interval_integrable}
+
+    Let $f : \mathbb{R} \to \mathbb{R}$ be interval integrable on $[a,b]$, and let $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. Then $f$ is interval integrable on $[a,x]$ (i.e.\ \texttt{IntervalIntegrable f volume a x}). This follows from \texttt{IntervalIntegrable.mono\_set} since $\texttt{uIcc}\; a\; x \subseteq \texttt{uIcc}\; a\; b$.
+\end{lemma}
+\begin{proof}
+    \uses{lem:continuous_interval_integrable}
+    Since $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b) \subseteq [\min(a,b), \max(a,b)]$, the interval $\texttt{uIcc}\; a\; x$ is contained in $\texttt{uIcc}\; a\; b$. By monotonicity of interval integrability (\texttt{IntervalIntegrable.mono\_set}), integrability on $[a,b]$ implies integrability on $[a,x]$.
+\end{proof}
+
 \begin{lemma}[Strong measurability at interior points]
     \label{lem:strongly_measurable_interior}
 
@@ -48,6 +59,7 @@
 
 \begin{lemma}[Zero derivative implies constant]
     \label{lem:zero_deriv_constant}
+    \uses{lem:mvt}
 
     Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $\mathrm{Icc}\; a\; b$ and satisfy $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in \mathrm{Ioo}\; a\; b$. Then $G(x) = G(a)$ for all $x \in \mathrm{Icc}\; a\; b$.
 \end{lemma}
@@ -56,16 +68,28 @@
     Let $x \in \mathrm{Icc}\; a\; b$. If $x = a$ the result is immediate. Otherwise $a < x$, so we restrict $G$ to $\mathrm{Icc}\; a\; x$ (which inherits continuity) and note the derivative hypothesis restricts to $\mathrm{Ioo}\; a\; x$. By the Mean Value Theorem (\texttt{exists\_hasDerivAt\_eq\_slope}), there exists $c \in \mathrm{Ioo}\; a\; x$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis and $x - a \neq 0$, we conclude $G(x) = G(a)$.
 \end{proof}
 
+\begin{lemma}[Difference of antiderivatives has zero derivative]
+    \label{lem:antideriv_diff_zero_deriv}
+    \uses{def:antiderivative}
+
+    Let $F$ and $G$ both be antiderivatives of $f$ on $\mathrm{Ioo}\; a\; b$ (i.e.\ $\texttt{IsAntiderivativeOn}\; F\; f\; a\; b$ and $\texttt{IsAntiderivativeOn}\; G\; f\; a\; b$). Then for every $x \in \mathrm{Ioo}\; a\; b$, the function $F - G$ has derivative $0$ at $x$ (i.e.\ $\texttt{HasDerivAt}\; (F - G)\; 0\; x$).
+\end{lemma}
+\begin{proof}
+    \uses{def:antiderivative}
+    For $x \in \mathrm{Ioo}\; a\; b$, we have $\texttt{HasDerivAt}\; F\; (f\;x)\; x$ and $\texttt{HasDerivAt}\; G\; (f\;x)\; x$ by the antiderivative hypothesis. By \texttt{HasDerivAt.sub}, $F - G$ has derivative $f(x) - f(x) = 0$ at $x$.
+\end{proof}
+
 \section{Main Theorems}
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
     \label{thm:ftc1}
+    \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
 
     Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$, and let $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. Then the function $F(u) = \int_a^u f(t)\,dt$ satisfies $\texttt{HasDerivAt}\; F\; (f\; x)\; x$. In Mathlib the core result is \texttt{intervalIntegral.integral\_hasDerivAt\_right}, which requires three hypotheses: (1) $\texttt{IntervalIntegrable}\; f\; \texttt{volume}\; a\; x$, (2) $\texttt{StronglyMeasurableAtFilter}\; f\; (\texttt{nhds}\; x)\; \texttt{volume}$, and (3) $\texttt{ContinuousAt}\; f\; x$.
 \end{theorem}
 \begin{proof}
-    \uses{lem:continuous_interval_integrable, lem:strongly_measurable_interior, lem:continuous_at_interior}
-    We establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $\texttt{IntervalIntegrable}\; f\; \texttt{volume}\; a\; x$: since $f$ is continuous on $\texttt{uIcc}\; a\; b$, it is interval integrable on $[a,b]$ by Lemma~\ref{lem:continuous_interval_integrable}, and we restrict to $[a,x]$ via monotonicity of interval integrability (\texttt{IntervalIntegrable.mono\_set}); (2) $\texttt{StronglyMeasurableAtFilter}\; f\; (\texttt{nhds}\; x)\; \texttt{volume}$: by Lemma~\ref{lem:strongly_measurable_interior}, since $x$ belongs to the open interior; (3) $\texttt{ContinuousAt}\; f\; x$: by Lemma~\ref{lem:continuous_at_interior}. The result then follows directly from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
+    \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
+    We establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $\texttt{IntervalIntegrable}\; f\; \texttt{volume}\; a\; x$: by Lemma~\ref{lem:interval_integrable_restriction}, since $f$ is continuous on $\texttt{uIcc}\; a\; b$ and $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$; (2) $\texttt{StronglyMeasurableAtFilter}\; f\; (\texttt{nhds}\; x)\; \texttt{volume}$: by Lemma~\ref{lem:strongly_measurable_interior}; (3) $\texttt{ContinuousAt}\; f\; x$: by Lemma~\ref{lem:continuous_at_interior}. The result then follows directly from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
@@ -96,13 +120,13 @@
 
 \begin{lemma}[Two antiderivatives differ by a constant]
     \label{lem:antiderivatives_diff_constant}
-    \uses{def:antiderivative, lem:zero_deriv_constant}
+    \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
 
     Let $f : \mathbb{R} \to \mathbb{R}$ and let $F, G$ both be antiderivatives of $f$ on $\mathrm{Ioo}\; a\; b$ (i.e.\ $\texttt{IsAntiderivativeOn}\; F\; f\; a\; b$ and $\texttt{IsAntiderivativeOn}\; G\; f\; a\; b$), with both $F$ and $G$ continuous on $\mathrm{Icc}\; a\; b$. Then $F - G$ is constant on $\mathrm{Icc}\; a\; b$, i.e., for all $x \in \mathrm{Icc}\; a\; b$, $(F - G)(x) = (F - G)(a)$.
 \end{lemma}
 \begin{proof}
-    \uses{def:antiderivative, lem:zero_deriv_constant}
-    Since $F$ and $G$ are both antiderivatives of $f$ on $\mathrm{Ioo}\; a\; b$, for every $x \in \mathrm{Ioo}\; a\; b$ we have $\texttt{HasDerivAt}\; F\; (f\;x)\; x$ and $\texttt{HasDerivAt}\; G\; (f\;x)\; x$. By the linearity of derivatives (\texttt{HasDerivAt.sub}), $F - G$ has derivative $f(x) - f(x) = 0$ at every $x \in \mathrm{Ioo}\; a\; b$. Moreover, $F - G$ is continuous on $\mathrm{Icc}\; a\; b$ since both $F$ and $G$ are. By Lemma~\ref{lem:zero_deriv_constant}, $(F-G)(x) = (F-G)(a)$ for all $x \in \mathrm{Icc}\; a\; b$.
+    \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
+    By Lemma~\ref{lem:antideriv_diff_zero_deriv}, the function $F - G$ has derivative $0$ at every $x \in \mathrm{Ioo}\; a\; b$. Moreover, $F - G$ is continuous on $\mathrm{Icc}\; a\; b$ since both $F$ and $G$ are. By Lemma~\ref{lem:zero_deriv_constant}, $(F-G)(x) = (F-G)(a)$ for all $x \in \mathrm{Icc}\; a\; b$.
 \end{proof}
 
 \begin{lemma}[Integral from a point to itself is zero]
@@ -114,11 +138,31 @@
     This is a standard Mathlib result (\texttt{intervalIntegral.integral\_same}). The interval $[a,a]$ has zero length, so the integral vanishes.
 \end{proof}
 
+\begin{lemma}[Integral function value at base point]
+    \label{lem:integral_func_at_base}
+    \uses{lem:integral_base_zero}
+
+    Let $f : \mathbb{R} \to \mathbb{R}$ and $a \in \mathbb{R}$. Define $G(u) = \int_a^u f(t)\,dt$. Then $G(a) = 0$.
+\end{lemma}
+\begin{proof}
+    \uses{lem:integral_base_zero}
+    By Lemma~\ref{lem:integral_base_zero}, $G(a) = \int_a^a f(t)\,dt = 0$.
+\end{proof}
+
+\begin{lemma}[Constant difference rearrangement]
+    \label{lem:constant_diff_rearrangement}
+
+    Let $F, G : \mathbb{R} \to \mathbb{R}$ and $a, b \in \mathbb{R}$. If $F(b) - G(b) = F(a) - G(a)$ and $G(a) = 0$, then $G(b) = F(b) - F(a)$.
+\end{lemma}
+\begin{proof}
+    From $F(b) - G(b) = F(a) - G(a)$ we get $G(b) - G(a) = F(b) - F(a)$. Substituting $G(a) = 0$ gives $G(b) = F(b) - F(a)$.
+\end{proof}
+
 \section{Corollaries}
 
 \begin{corollary}[Evaluation of integrals via antiderivatives]
     \label{cor:ftc_eval}
-    \uses{def:antiderivative, lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_base_zero}
+    \uses{def:antiderivative, lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
 
     Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$ and let $F$ be an antiderivative of $f$ on $\mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$ (i.e.\ $\texttt{IsAntiderivativeOn}\; F\; f\; (\min(a,b))\; (\max(a,b))$) that is continuous on $[\min(a,b), \max(a,b)]$. Then
     \[
@@ -126,8 +170,8 @@
     \]
 \end{corollary}
 \begin{proof}
-    \uses{lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_base_zero}
-    By Lemma~\ref{lem:integral_is_antiderivative}, the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $\mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $\mathrm{Icc}\;(\min\, a\, b)\;(\max\, a\, b)$, so $F(b) - G(b) = F(a) - G(a)$, which gives $G(b) - G(a) = F(b) - F(a)$. By Lemma~\ref{lem:integral_base_zero}, $G(a) = \int_a^a f = 0$, so $\int_a^b f(x)\,dx = G(b) = G(b) - G(a) = F(b) - F(a)$.
+    \uses{lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
+    By Lemma~\ref{lem:integral_is_antiderivative}, the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $\mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $\mathrm{Icc}\;(\min\, a\, b)\;(\max\, a\, b)$, so $F(b) - G(b) = F(a) - G(a)$. By Lemma~\ref{lem:integral_func_at_base}, $G(a) = 0$. By Lemma~\ref{lem:constant_diff_rearrangement}, $G(b) = F(b) - F(a)$, and since $G(b) = \int_a^b f(x)\,dx$, the result follows.
 \end{proof}
 
 \end{document}

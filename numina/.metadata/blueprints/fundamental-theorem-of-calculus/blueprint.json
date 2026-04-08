@@ -16,6 +16,11 @@
       "title": "Continuous functions are interval integrable"
     },
     {
+      "label": "lem:interval_integrable_restriction",
+      "kind": "lemma",
+      "title": "Interval integrability restriction"
+    },
+    {
       "label": "lem:strongly_measurable_interior",
       "kind": "lemma",
       "title": "Strong measurability at interior points"
@@ -34,6 +39,11 @@
       "label": "lem:zero_deriv_constant",
       "kind": "lemma",
       "title": "Zero derivative implies constant"
+    },
+    {
+      "label": "lem:antideriv_diff_zero_deriv",
+      "kind": "lemma",
+      "title": "Difference of antiderivatives has zero derivative"
     },
     {
       "label": "thm:ftc1",
@@ -59,6 +69,16 @@
       "label": "lem:integral_base_zero",
       "kind": "lemma",
       "title": "Integral from a point to itself is zero"
+    },
+    {
+      "label": "lem:integral_func_at_base",
+      "kind": "lemma",
+      "title": "Integral function value at base point"
+    },
+    {
+      "label": "lem:constant_diff_rearrangement",
+      "kind": "lemma",
+      "title": "Constant difference rearrangement"
     },
     {
       "label": "cor:ftc_eval",

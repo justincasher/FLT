@@ -1,0 +1,12 @@
+{
+  "label": "lem:integral_func_at_base",
+  "kind": "lemma",
+  "title": "Integral function value at base point",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [
+    "lem:integral_base_zero"
+  ],
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ and $a \\in \\mathbb{R}$. Define $G(u) = \\int_a^u f(t)\\,dt$. Then $G(a) = 0$.",
+  "proof": "By Lemma~\\ref{lem:integral_base_zero}, $G(a) = \\int_a^a f(t)\\,dt = 0$."
+}

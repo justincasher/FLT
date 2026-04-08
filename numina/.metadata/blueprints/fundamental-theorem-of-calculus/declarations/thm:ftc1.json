@@ -4,7 +4,11 @@
   "title": "First Fundamental Theorem of Calculus",
   "leanDeclaration": "",
   "leanFile": "",
-  "uses": [],
+  "uses": [
+    "lem:interval_integrable_restriction",
+    "lem:strongly_measurable_interior",
+    "lem:continuous_at_interior"
+  ],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$, and let $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$. Then the function $F(u) = \\int_a^u f(t)\\,dt$ satisfies $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$. In Mathlib the core result is \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}, which requires three hypotheses: (1) $\\texttt{IntervalIntegrable}\\; f\\; \\texttt{volume}\\; a\\; x$, (2) $\\texttt{StronglyMeasurableAtFilter}\\; f\\; (\\texttt{nhds}\\; x)\\; \\texttt{volume}$, and (3) $\\texttt{ContinuousAt}\\; f\\; x$.",
-  "proof": "We establish three prerequisites for \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}: (1) $\\texttt{IntervalIntegrable}\\; f\\; \\texttt{volume}\\; a\\; x$: since $f$ is continuous on $\\texttt{uIcc}\\; a\\; b$, it is interval integrable on $[a,b]$ by Lemma~\\ref{lem:continuous_interval_integrable}, and we restrict to $[a,x]$ via monotonicity of interval integrability (\\texttt{IntervalIntegrable.mono\\_set}); (2) $\\texttt{StronglyMeasurableAtFilter}\\; f\\; (\\texttt{nhds}\\; x)\\; \\texttt{volume}$: by Lemma~\\ref{lem:strongly_measurable_interior}, since $x$ belongs to the open interior; (3) $\\texttt{ContinuousAt}\\; f\\; x$: by Lemma~\\ref{lem:continuous_at_interior}. The result then follows directly from \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}."
+  "proof": "We establish three prerequisites for \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}: (1) $\\texttt{IntervalIntegrable}\\; f\\; \\texttt{volume}\\; a\\; x$: by Lemma~\\ref{lem:interval_integrable_restriction}, since $f$ is continuous on $\\texttt{uIcc}\\; a\\; b$ and $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$; (2) $\\texttt{StronglyMeasurableAtFilter}\\; f\\; (\\texttt{nhds}\\; x)\\; \\texttt{volume}$: by Lemma~\\ref{lem:strongly_measurable_interior}; (3) $\\texttt{ContinuousAt}\\; f\\; x$: by Lemma~\\ref{lem:continuous_at_interior}. The result then follows directly from \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}."
 }
