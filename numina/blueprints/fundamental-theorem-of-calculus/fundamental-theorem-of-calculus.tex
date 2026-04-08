@@ -45,8 +45,6 @@ If $f : \mathbb{R} \to \mathbb{R}$ is continuous on the interval $[\min(a,b), \m
 A continuous function on a compact interval is bounded and measurable, hence integrable with respect to the Lebesgue measure. The result follows from the fact that continuous functions on compact sets are integrable.
 \end{proof}
 
-
-
 \begin{lemma}[Integral norm bound]
 \label{lem:integral_bound}
 \lean{FLT.FundamentalTheoremOfCalculus.integral_bound}
@@ -113,8 +111,8 @@ By the Mean Value Theorem (Lemma~\ref{lem:mean_value_theorem}), for any $x \in [
 Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$, and let $x \in (\min(a,b), \max(a,b))$. Then the function $F(u) = \int_a^u f(t)\,dt$ has derivative $f(x)$ at $x$. In Mathlib this is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{theorem}
 \begin{proof}
-\uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
-Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ and strongly measurable at $x$. Moreover, $f$ is continuous at $x$. The result then follows from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
+\uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable}
+Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ (by Lemma~\ref{lem:continuous_integrable}) and strongly measurable at $x$. Moreover, $f$ is continuous at $x$. The result then follows from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
@@ -129,6 +127,7 @@ Let $f' : \mathbb{R} \to \mathbb{R}$ be interval integrable on $[a,b]$, and let 
 In Mathlib this is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
 \end{theorem}
 \begin{proof}
+\uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
 This is a direct application of \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}, given the continuity of $F$ on $[\min(a,b), \max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$.
 \end{proof}
 

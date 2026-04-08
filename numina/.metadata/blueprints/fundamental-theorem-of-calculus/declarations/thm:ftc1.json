@@ -10,5 +10,5 @@
     "def:has_deriv_at"
   ],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then the function $F(u) = \\int_a^u f(t)\\,dt$ has derivative $f(x)$ at $x$. In Mathlib this is \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}.",
-  "proof": "Since $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ and strongly measurable at $x$. Moreover, $f$ is continuous at $x$. The result then follows from \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}."
+  "proof": "Since $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ (by Lemma~\\ref{lem:continuous_integrable}) and strongly measurable at $x$. Moreover, $f$ is continuous at $x$. The result then follows from \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}."
 }
