@@ -1,0 +1,10 @@
+{
+  "label": "lem:integral_base_zero",
+  "kind": "lemma",
+  "title": "Integral from a point to itself is zero",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "For any function $f : \\mathbb{R} \\to \\mathbb{R}$ and any $a \\in \\mathbb{R}$, $\\int_a^a f(t)\\,dt = 0$. In Mathlib this is \\texttt{intervalIntegral.integral\\_same}.",
+  "proof": "This is a standard Mathlib result (\\texttt{intervalIntegral.integral\\_same}). The interval $[a,a]$ has zero length, so the integral vanishes."
+}

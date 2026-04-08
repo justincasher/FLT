@@ -6,10 +6,10 @@
   "leanFile": "",
   "uses": [
     "def:antiderivative",
-    "thm:ftc1",
-    "thm:ftc2",
-    "lem:zero_deriv_constant"
+    "lem:integral_is_antiderivative",
+    "lem:antiderivatives_diff_constant",
+    "lem:integral_base_zero"
   ],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$ and let $F$ be an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$ that is continuous on $[\\min(a,b), \\max(a,b)]$. Then\n    \\[\n      \\int_a^b f(x)\\,dx = F(b) - F(a).\n    \\]",
-  "proof": "By the First FTC (Theorem~\\ref{thm:ftc1}), the function $G(u) = \\int_a^u f(t)\\,dt$ is also an antiderivative of $f$ on the interior. Then $F - G$ has zero derivative on the interior, so by Lemma~\\ref{lem:zero_deriv_constant}, $F(x) - G(x)$ is constant on $[\\min(a,b), \\max(a,b)]$. In particular $F(b) - G(b) = F(a) - G(a)$, which gives $G(b) - G(a) = F(b) - F(a)$. Since $G(a) = \\int_a^a f = 0$, we get $\\int_a^b f(x)\\,dx = F(b) - F(a)$. Alternatively, if $F$ has right derivatives, this follows directly from the Second FTC (Theorem~\\ref{thm:ftc2})."
+  "proof": "By Lemma~\\ref{lem:integral_is_antiderivative}, the function $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on the interior. By Lemma~\\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant on $[\\min(a,b), \\max(a,b)]$, so $F(b) - G(b) = F(a) - G(a)$, which gives $G(b) - G(a) = F(b) - F(a)$. By Lemma~\\ref{lem:integral_base_zero}, $G(a) = \\int_a^a f = 0$, so $\\int_a^b f(x)\\,dx = G(b) = G(b) - G(a) = F(b) - F(a)$."
 }

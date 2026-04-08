@@ -46,6 +46,21 @@
       "title": "Second Fundamental Theorem of Calculus"
     },
     {
+      "label": "lem:integral_is_antiderivative",
+      "kind": "lemma",
+      "title": "The integral function is an antiderivative"
+    },
+    {
+      "label": "lem:antiderivatives_diff_constant",
+      "kind": "lemma",
+      "title": "Two antiderivatives differ by a constant"
+    },
+    {
+      "label": "lem:integral_base_zero",
+      "kind": "lemma",
+      "title": "Integral from a point to itself is zero"
+    },
+    {
       "label": "cor:ftc_eval",
       "kind": "corollary",
       "title": "Evaluation of integrals via antiderivatives"
