@@ -5,7 +5,7 @@
 \begin{definition}[Antiderivative]
     \label{def:antiderivative}
 
-    A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f$ on $(a,b)$ if for every $x \in (a,b)$, $F$ has derivative $f(x)$ at $x$ (in the sense of \texttt{HasDerivAt}). In the Lean formalization this is \texttt{IsAntiderivativeOn F f a b}, defined as $\forall x \in (a,b),\; \texttt{HasDerivAt}\; F\; (f\; x)\; x$.
+    Let $a, b \in \mathbb{R}$. A function $F : \mathbb{R} \to \mathbb{R}$ is an \emph{antiderivative} of $f : \mathbb{R} \to \mathbb{R}$ on the open interval $\mathrm{Ioo}\; a\; b = (a,b)$ if for every $x \in \mathrm{Ioo}\; a\; b$, $F$ has derivative $f(x)$ at $x$ (in the sense of \texttt{HasDerivAt}). In the Lean formalization this is \texttt{IsAntiderivativeOn F f a b}, defined as $\forall x \in \mathrm{Ioo}\; a\; b,\; \texttt{HasDerivAt}\; F\; (f\; x)\; x$. Note that $a$ and $b$ need not satisfy $a < b$; when $a \ge b$ the interval is empty and the condition is vacuously true.
 \end{definition}
 
 \section{Auxiliary Lemmas}
@@ -13,7 +13,7 @@
 \begin{lemma}[Continuous functions are interval integrable]
     \label{lem:continuous_interval_integrable}
 
-    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
+    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure (i.e.\ \texttt{IntervalIntegrable f volume a b}). In Mathlib this is \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
 \begin{proof}
     This is a standard Mathlib result. Continuous functions on compact intervals are bounded and measurable, hence integrable.

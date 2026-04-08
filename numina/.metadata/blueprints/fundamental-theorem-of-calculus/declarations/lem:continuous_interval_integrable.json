@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure. In Mathlib this is \\texttt{ContinuousOn.intervalIntegrable}.",
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$. Then $f$ is interval integrable on $[a,b]$ with respect to the Lebesgue measure (i.e.\\ \\texttt{IntervalIntegrable f volume a b}). In Mathlib this is \\texttt{ContinuousOn.intervalIntegrable}.",
   "proof": "This is a standard Mathlib result. Continuous functions on compact intervals are bounded and measurable, hence integrable."
 }
