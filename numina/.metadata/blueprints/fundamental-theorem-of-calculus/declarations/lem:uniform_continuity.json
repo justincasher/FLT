@@ -8,5 +8,5 @@
     "def:continuous_on"
   ],
   "statement": "If $f$ is continuous on a closed interval $[a,b]$, then $f$ is uniformly continuous on $[a,b]$. In Mathlib this is \\texttt{IsCompact.uniformContinuousOn\\_of\\_continuous}.",
-  "proof": "This is the Heine--Cantor theorem: continuous functions on compact sets are uniformly continuous."
+  "proof": "Direct application of \\texttt{isCompact\\_Icc.uniformContinuousOn\\_of\\_continuous}. This is the Heine--Cantor theorem: continuous functions on compact sets are uniformly continuous."
 }
