@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $a < b$. Then there exists $c \\in (a,b)$ such that $G'(c) = (G(b) - G(a))/(b - a)$. In Mathlib this is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
+  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ and $G' : \\mathbb{R} \\to \\mathbb{R}$, with $a < b$. Suppose $G$ is continuous on $\\mathrm{Icc}\\; a\\; b$ and satisfies $\\texttt{HasDerivAt}\\; G\\; (G'\\; x)\\; x$ for all $x \\in \\mathrm{Ioo}\\; a\\; b$. Then there exists $c \\in \\mathrm{Ioo}\\; a\\; b$ such that $G'(c) = (G(b) - G(a))/(b - a)$. In Mathlib this is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
   "proof": "This is a standard Mathlib result (\\texttt{exists\\_hasDerivAt\\_eq\\_slope})."
 }

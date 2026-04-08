@@ -40,7 +40,7 @@
 \begin{lemma}[Mean Value Theorem]
     \label{lem:mvt}
 
-    Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $a < b$. Then there exists $c \in (a,b)$ such that $G'(c) = (G(b) - G(a))/(b - a)$. In Mathlib this is \texttt{exists\_hasDerivAt\_eq\_slope}.
+    Let $G : \mathbb{R} \to \mathbb{R}$ and $G' : \mathbb{R} \to \mathbb{R}$, with $a < b$. Suppose $G$ is continuous on $\mathrm{Icc}\; a\; b$ and satisfies $\texttt{HasDerivAt}\; G\; (G'\; x)\; x$ for all $x \in \mathrm{Ioo}\; a\; b$. Then there exists $c \in \mathrm{Ioo}\; a\; b$ such that $G'(c) = (G(b) - G(a))/(b - a)$. In Mathlib this is \texttt{exists\_hasDerivAt\_eq\_slope}.
 \end{lemma}
 \begin{proof}
     This is a standard Mathlib result (\texttt{exists\_hasDerivAt\_eq\_slope}).
@@ -49,11 +49,11 @@
 \begin{lemma}[Zero derivative implies constant]
     \label{lem:zero_deriv_constant}
 
-    Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and satisfy $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in (a,b)$. Then $G(x) = G(a)$ for all $x \in [a,b]$.
+    Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $\mathrm{Icc}\; a\; b$ and satisfy $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in \mathrm{Ioo}\; a\; b$. Then $G(x) = G(a)$ for all $x \in \mathrm{Icc}\; a\; b$.
 \end{lemma}
 \begin{proof}
     \uses{lem:mvt}
-    For any $x \in [a,b]$ with $a < x$, restrict $G$ to $[a,x]$. By the Mean Value Theorem (\texttt{exists\_hasDerivAt\_eq\_slope}), there exists $c \in (a,x)$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis, we get $G(x) = G(a)$.
+    Let $x \in \mathrm{Icc}\; a\; b$. If $x = a$ the result is immediate. Otherwise $a < x$, so we restrict $G$ to $\mathrm{Icc}\; a\; x$ (which inherits continuity) and note the derivative hypothesis restricts to $\mathrm{Ioo}\; a\; x$. By the Mean Value Theorem (\texttt{exists\_hasDerivAt\_eq\_slope}), there exists $c \in \mathrm{Ioo}\; a\; x$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis and $x - a \neq 0$, we conclude $G(x) = G(a)$.
 \end{proof}
 
 \section{Main Theorems}
@@ -61,7 +61,7 @@
 \begin{theorem}[First Fundamental Theorem of Calculus]
     \label{thm:ftc1}
 
-    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$, and let $x \in (\min(a,b), \max(a,b))$. Then the function $F(u) = \int_a^u f(t)\,dt$ has derivative $f(x)$ at $x$. In Mathlib the core result is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
+    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$, and let $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$. Then the function $F(u) = \int_a^u f(t)\,dt$ satisfies $\texttt{HasDerivAt}\; F\; (f\; x)\; x$. In Mathlib the core result is \texttt{intervalIntegral.integral\_hasDerivAt\_right}, which requires three hypotheses: (1) $\texttt{IntervalIntegrable}\; f\; \texttt{volume}\; a\; x$, (2) $\texttt{StronglyMeasurableAtFilter}\; f\; (\texttt{nhds}\; x)\; \texttt{volume}$, and (3) $\texttt{ContinuousAt}\; f\; x$.
 \end{theorem}
 \begin{proof}
     \uses{lem:continuous_interval_integrable, lem:strongly_measurable_interior, lem:continuous_at_interior}
