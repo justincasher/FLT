@@ -6,8 +6,7 @@
   "leanFile": "",
   "uses": [
     "def:has_deriv_at",
-    "def:continuous_on",
-    "lem:mean_value_theorem"
+    "def:continuous_on"
   ],
   "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and satisfy $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$. Then $G(x) = G(a)$ for all $x \\in [a,b]$.",
   "proof": "For any $x \\in [a,b]$ with $a < x$, restrict $G$ to $[a,x]$. Apply \\texttt{exists\\_hasDerivAt\\_eq\\_slope} (the Mean Value Theorem) to obtain $c \\in (a,x)$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis, we get $G(x) - G(a) = 0$, i.e., $G(x) = G(a)$."
