@@ -6,14 +6,29 @@
   "notes": "",
   "entries": [
     {
-      "label": "def:preliminaries",
-      "kind": "definition",
-      "title": "Mathlib Preliminaries"
-    },
-    {
       "label": "def:antiderivative",
       "kind": "definition",
       "title": "Antiderivative"
+    },
+    {
+      "label": "lem:continuous_interval_integrable",
+      "kind": "lemma",
+      "title": "Continuous functions are interval integrable"
+    },
+    {
+      "label": "lem:strongly_measurable_interior",
+      "kind": "lemma",
+      "title": "Strong measurability at interior points"
+    },
+    {
+      "label": "lem:continuous_at_interior",
+      "kind": "lemma",
+      "title": "Continuity at interior points"
+    },
+    {
+      "label": "lem:mvt",
+      "kind": "lemma",
+      "title": "Mean Value Theorem"
     },
     {
       "label": "lem:zero_deriv_constant",
@@ -29,6 +44,11 @@
       "label": "thm:ftc2",
       "kind": "theorem",
       "title": "Second Fundamental Theorem of Calculus"
+    },
+    {
+      "label": "cor:ftc_eval",
+      "kind": "corollary",
+      "title": "Evaluation of integrals via antiderivatives"
     }
   ]
 }

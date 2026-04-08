@@ -1,0 +1,10 @@
+{
+  "label": "lem:continuous_at_interior",
+  "kind": "lemma",
+  "title": "Continuity at interior points",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then $f$ is continuous at $x$ within $\\mathrm{Ioi}\\; x$ (i.e.\\ \\texttt{ContinuousWithinAt f (Ioi x) x}). This follows from the fact that continuity on a set implies continuity at any interior point, restricted to any subset.",
+  "proof": "Since $x$ is in the interior of $[\\min(a,b), \\max(a,b)]$, continuity on the closed interval implies continuity at $x$. Restricting to $\\mathrm{Ioi}\\; x$ preserves this, since $\\mathrm{Ioi}\\; x \\subseteq [\\min(a,b), \\max(a,b)]$ near $x$."
+}

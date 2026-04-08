@@ -1,0 +1,10 @@
+{
+  "label": "lem:mvt",
+  "kind": "lemma",
+  "title": "Mean Value Theorem",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $a < b$. Then there exists $c \\in (a,b)$ such that $G'(c) = (G(b) - G(a))/(b - a)$. In Mathlib this is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
+  "proof": "This is a standard Mathlib result (\\texttt{exists\\_hasDerivAt\\_eq\\_slope})."
+}

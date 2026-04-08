@@ -1,0 +1,10 @@
+{
+  "label": "lem:strongly_measurable_interior",
+  "kind": "lemma",
+  "title": "Strong measurability at interior points",
+  "leanDeclaration": "",
+  "leanFile": "",
+  "uses": [],
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then $f$ is strongly measurable at the neighborhood filter of $x$ within $\\mathrm{Ioi}\\; x$ (i.e.\\ \\texttt{StronglyMeasurableAtFilter f (nhdsWithin x (Ioi x))}). This follows because the interior of $[\\min(a,b), \\max(a,b)]$ is open and belongs to the Lebesgue measurable sets.",
+  "proof": "Since $x$ lies in the open interior $(\\min(a,b), \\max(a,b))$, there is an open neighborhood of $x$ contained in the domain. Continuous functions on open sets are strongly measurable with respect to the Lebesgue measure, giving measurability at the neighborhood filter."
+}
