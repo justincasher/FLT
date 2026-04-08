@@ -97,7 +97,7 @@
     Let $G : \mathbb{R} \to \mathbb{R}$ be continuous on $[a,b]$ and satisfy $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in (a,b)$. Then $G(x) = G(a)$ for all $x \in [a,b]$.
 \end{lemma}
 \begin{proof}
-    \uses{def:has_deriv_at, def:continuous_on}
+    \uses{def:has_deriv_at, def:continuous_on, lem:mean_value_theorem}
     For any $x \in [a,b]$ with $a < x$, restrict $G$ to $[a,x]$. Apply \texttt{exists\_hasDerivAt\_eq\_slope} (the Mean Value Theorem) to obtain $c \in (a,x)$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis, we get $G(x) - G(a) = 0$, i.e., $G(x) = G(a)$.
 \end{proof}
 
@@ -111,8 +111,8 @@
     Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$, and let $x \in (\min(a,b), \max(a,b))$. Then the function $F(u) = \int_a^u f(t)\,dt$ has derivative $f(x)$ at $x$. In Mathlib the core result is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{theorem}
 \begin{proof}
-    \uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
-    Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, we establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $f$ is interval integrable on $[a,x]$ via \texttt{ContinuousOn.intervalIntegrable}; (2) $f$ is strongly measurable at the neighborhood filter of $x$, using openness of the interior; (3) $f$ is continuous at $x$, since $x$ lies in the interior of the domain of continuity. The result then follows directly.
+    \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable}
+    Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, we establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $f$ is interval integrable on $[a,x]$ via \texttt{ContinuousOn.intervalIntegrable} (Lemma~\ref{lem:continuous_integrable}); (2) $f$ is strongly measurable at the neighborhood filter of $x$, using openness of the interior; (3) $f$ is continuous at $x$, since $x$ lies in the interior of the domain of continuity. The result then follows directly.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
@@ -127,8 +127,8 @@
     In Mathlib this is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
 \end{theorem}
 \begin{proof}
-    \uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
-    Direct application of \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}, given the continuity of $F$ on $[\min(a,b), \max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$.
+    \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, lem:continuous_integrable}
+    Direct application of \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}, given the continuity of $F$ on $[\min(a,b), \max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$ (Lemma~\ref{lem:continuous_integrable}).
 \end{proof}
 
 \end{document}
