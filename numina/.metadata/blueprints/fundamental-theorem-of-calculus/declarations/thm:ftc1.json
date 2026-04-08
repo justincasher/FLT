@@ -7,7 +7,10 @@
   "uses": [
     "def:continuous_on",
     "def:interval_integral",
-    "def:has_deriv_at"
+    "def:has_deriv_at",
+    "lem:continuous_integrable",
+    "lem:integral_bound",
+    "lem:uniform_continuity"
   ],
   "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then the function $F(u) = \\int_a^u f(t)\\,dt$ has derivative $f(x)$ at $x$. In Mathlib this is \\texttt{intervalIntegral.integral\\_hasDerivAt\\_right}.",
   "proof": "Since $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ is in the interior, $f$ is interval integrable on $[a, x]$ (by Lemma~\\ref{lem:continuous_integrable}) and strongly measurable at $x$. By uniform continuity of $f$ on the compact interval (Lemma~\\ref{lem:uniform_continuity}), for any $\\varepsilon > 0$ there exists $\\delta > 0$ such that $|f(t) - f(x)| < \\varepsilon$ for $|t - x| < \\delta$. Using the integral norm bound (Lemma~\\ref{lem:integral_bound}), the difference quotient error satisfies $\\left\\|\\frac{1}{h}\\int_x^{x+h} (f(t) - f(x))\\,dt\\right\\| \\le \\varepsilon$ for $|h| < \\delta$, giving $F'(x) = f(x)$."
