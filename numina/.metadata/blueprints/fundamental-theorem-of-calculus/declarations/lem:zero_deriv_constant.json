@@ -4,7 +4,9 @@
   "title": "Zero derivative implies constant",
   "leanDeclaration": "",
   "leanFile": "",
-  "uses": [],
+  "uses": [
+    "lem:mvt"
+  ],
   "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and satisfy $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$. Then $G(x) = G(a)$ for all $x \\in [a,b]$.",
   "proof": "For any $x \\in [a,b]$ with $a < x$, restrict $G$ to $[a,x]$. By the Mean Value Theorem (\\texttt{exists\\_hasDerivAt\\_eq\\_slope}), there exists $c \\in (a,x)$ with $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$ by hypothesis, we get $G(x) = G(a)$."
 }
