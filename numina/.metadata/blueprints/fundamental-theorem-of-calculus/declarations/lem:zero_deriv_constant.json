@@ -2,13 +2,12 @@
   "label": "lem:zero_deriv_constant",
   "kind": "lemma",
   "title": "Zero derivative implies constant",
-  "leanDeclaration": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.zero_deriv_constant",
   "leanFile": "",
   "uses": [
     "def:has_deriv_at",
-    "def:continuous_on",
-    "lem:mean_value_theorem"
+    "def:continuous_on"
   ],
-  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $G'(x) = 0$ for all $x \\in (a,b)$. Then $G$ is constant on $[a,b]$. In Mathlib this is \\texttt{is\\_const\\_of\\_deriv\\_eq\\_zero}.",
-  "proof": "By the Mean Value Theorem (Lemma~\\ref{lem:mean_value_theorem}), for any $x, y \\in [a,b]$ with $x < y$, there exists $c \\in (x,y)$ such that $G(y) - G(x) = G'(c)(y-x) = 0$."
+  "statement": "Let $G : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and satisfy $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$. Then $G(x) = G(a)$ for all $x \\in [a,b]$.",
+  "proof": "By the Mean Value Theorem (Lemma~\\ref{lem:mean_value_theorem}), for any $x \\in [a,b]$ with $a < x$, there exists $c \\in (a,x)$ such that $G'(c) = (G(x) - G(a))/(x - a)$. Since $G'(c) = 0$, we get $G(x) = G(a)$."
 }

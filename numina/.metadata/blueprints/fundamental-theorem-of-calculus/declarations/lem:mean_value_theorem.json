@@ -2,12 +2,12 @@
   "label": "lem:mean_value_theorem",
   "kind": "lemma",
   "title": "Mean Value Theorem",
-  "leanDeclaration": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.mean_value_theorem",
   "leanFile": "",
   "uses": [
     "def:has_deriv_at",
     "def:continuous_on"
   ],
-  "statement": "Let $f, g : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Then there exists $c \\in (a,b)$ such that\n\\[\n  (g(b) - g(a)) \\cdot f'(c) = (f(b) - f(a)) \\cdot g'(c).\n\\]\nTaking $g(x) = x$ gives the classical form $f(b) - f(a) = f'(c)(b-a)$. In Mathlib this is \\texttt{exists\\_ratio\\_hasDerivAt\\_eq\\_ratio\\_slope} (or related formulations).",
-  "proof": "Standard application of Rolle's theorem to an auxiliary function combining $f$ and $g$."
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[a,b]$ with $a < b$ and differentiable on $(a,b)$ with derivative $f'$. Then there exists $c \\in (a,b)$ such that\n\\[\n  f'(c) = \\frac{f(b) - f(a)}{b - a}.\n\\]\nIn Mathlib this is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
+  "proof": "Standard application of Rolle's theorem to an auxiliary function."
 }

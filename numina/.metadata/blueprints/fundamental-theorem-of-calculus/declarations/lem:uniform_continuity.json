@@ -2,11 +2,11 @@
   "label": "lem:uniform_continuity",
   "kind": "lemma",
   "title": "Uniform continuity on compact sets",
-  "leanDeclaration": "",
+  "leanDeclaration": "FLT.FundamentalTheoremOfCalculus.uniform_continuity",
   "leanFile": "",
   "uses": [
     "def:continuous_on"
   ],
-  "statement": "If $K$ is a compact set and $f$ is continuous on $K$, then $f$ is uniformly continuous on $K$. In Mathlib this is \\texttt{IsCompact.uniformContinuousOn\\_of\\_continuous}.",
-  "proof": "This is the Heine--Cantor theorem: continuous functions on compact metric spaces (more generally, compact uniform spaces) are uniformly continuous."
+  "statement": "If $f$ is continuous on a closed interval $[a,b]$, then $f$ is uniformly continuous on $[a,b]$. In Mathlib this is \\texttt{IsCompact.uniformContinuousOn\\_of\\_continuous}.",
+  "proof": "This is the Heine--Cantor theorem: continuous functions on compact sets are uniformly continuous."
 }
