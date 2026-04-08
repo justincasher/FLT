@@ -7,7 +7,8 @@
   "uses": [
     "def:continuous_on",
     "def:interval_integral",
-    "def:has_deriv_at"
+    "def:has_deriv_at",
+    "lem:continuous_integrable"
   ],
   "statement": "Let $F : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$ and have right derivative $f'(x)$ at every $x \\in (\\min(a,b), \\max(a,b))$, i.e., $\\texttt{HasDerivWithinAt}\\; F\\; (f'\\; x)\\; (x, +\\infty)\\; x$. If $f'$ is interval integrable on $[a,b]$, then\n    \\[\n      \\int_a^b f'(x)\\,dx = F(b) - F(a).\n    \\]\n    In Mathlib this is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
   "proof": "Direct application of \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}, given the continuity of $F$ on $[\\min(a,b), \\max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$ (Lemma~\\ref{lem:continuous_integrable})."
