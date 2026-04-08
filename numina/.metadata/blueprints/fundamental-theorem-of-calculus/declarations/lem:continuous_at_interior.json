@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $[\\min(a,b), \\max(a,b)]$, and let $x \\in (\\min(a,b), \\max(a,b))$. Then $f$ is continuous at $x$ within $\\mathrm{Ioi}\\; x$ (i.e.\\ \\texttt{ContinuousWithinAt f (Ioi x) x}). This follows from the fact that continuity on a set implies continuity at any interior point, restricted to any subset.",
-  "proof": "Since $x$ is in the interior of $[\\min(a,b), \\max(a,b)]$, continuity on the closed interval implies continuity at $x$. Restricting to $\\mathrm{Ioi}\\; x$ preserves this, since $\\mathrm{Ioi}\\; x \\subseteq [\\min(a,b), \\max(a,b)]$ near $x$."
+  "statement": "Let $f : \\mathbb{R} \\to \\mathbb{R}$ be continuous on $\\texttt{uIcc}\\; a\\; b = [\\min(a,b), \\max(a,b)]$, and let $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$. Then $f$ is continuous at $x$ (i.e.\\ $\\texttt{ContinuousAt}\\; f\\; x$). This follows because $x$ is an interior point of $[\\min(a,b), \\max(a,b)]$, so the closed interval is a neighborhood of $x$, and \\texttt{ContinuousOn} at a point where the set is a neighborhood implies \\texttt{ContinuousAt} (via \\texttt{ContinuousWithinAt.continuousAt}).",
+  "proof": "Since $x \\in \\mathrm{Ioo}\\;(\\min\\, a\\, b)\\;(\\max\\, a\\, b)$, the closed interval $[\\min(a,b), \\max(a,b)]$ is a neighborhood of $x$ (by \\texttt{Icc\\_mem\\_nhds}). Therefore $\\texttt{ContinuousOn}\\; f\\; ([\\min(a,b), \\max(a,b)])$ at $x$ upgrades to $\\texttt{ContinuousAt}\\; f\\; x$."
 }
