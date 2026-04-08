@@ -79,8 +79,8 @@ Standard application of Rolle's theorem to an auxiliary function.
 
 \begin{lemma}[Uniform continuity on compact sets]
 \label{lem:uniform_continuity}
-\lean{FLT.FundamentalTheoremOfCalculus.uniform_continuity}
 \uses{def:continuous_on}
+\lean{FLT.FundamentalTheoremOfCalculus.uniform_continuity}
 
 If $f$ is continuous on a closed interval $[a,b]$, then $f$ is uniformly continuous on $[a,b]$. In Mathlib this is \texttt{IsCompact.uniformContinuousOn\_of\_continuous}.
 \end{lemma}
@@ -105,8 +105,8 @@ By the Mean Value Theorem (Lemma~\ref{lem:mean_value_theorem}), for any $x \in [
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
 \label{thm:ftc1}
-\lean{FLT.FundamentalTheoremOfCalculus.ftc1}
 \uses{def:continuous_on, def:interval_integral, def:has_deriv_at}
+\lean{FLT.FundamentalTheoremOfCalculus.ftc1}
 
 Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$, and let $x \in (\min(a,b), \max(a,b))$. Then the function $F(u) = \int_a^u f(t)\,dt$ has derivative $f(x)$ at $x$. In Mathlib this is \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{theorem}
@@ -117,8 +117,8 @@ Since $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ is in the interior, 
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
 \label{thm:ftc2}
-\lean{FLT.FundamentalTheoremOfCalculus.ftc2}
 \uses{def:continuous_on, def:interval_integral, def:has_deriv_at, def:antiderivative}
+\lean{FLT.FundamentalTheoremOfCalculus.ftc2}
 
 Let $f' : \mathbb{R} \to \mathbb{R}$ be interval integrable on $[a,b]$, and let $F$ be an antiderivative (Definition~\ref{def:antiderivative}) that is continuous on $[\min(a,b), \max(a,b)]$ with right derivative $f'(x)$ at every $x \in (\min(a,b), \max(a,b))$, i.e.\ $\texttt{HasDerivWithinAt}\; F\; (f'\; x)\; (x, +\infty)\; x$. Then
 \[
