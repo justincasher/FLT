@@ -65,20 +65,20 @@
 \end{theorem}
 \begin{proof}
     \uses{lem:continuous_interval_integrable, lem:strongly_measurable_interior, lem:continuous_at_interior}
-    We establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $f$ is interval integrable on $[a,x]$ by Lemma~\ref{lem:continuous_interval_integrable}; (2) $f$ is strongly measurable at the neighborhood filter of $x$ by Lemma~\ref{lem:strongly_measurable_interior}; (3) $f$ is continuous at $x$ within $\mathrm{Ioi}\; x$ by Lemma~\ref{lem:continuous_at_interior}. The result then follows directly from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
+    We establish three prerequisites for \texttt{intervalIntegral.integral\_hasDerivAt\_right}: (1) $\texttt{IntervalIntegrable}\; f\; \texttt{volume}\; a\; x$: since $f$ is continuous on $\texttt{uIcc}\; a\; b$, it is interval integrable on $[a,b]$ by Lemma~\ref{lem:continuous_interval_integrable}, and we restrict to $[a,x]$ via monotonicity of interval integrability (\texttt{IntervalIntegrable.mono\_set}); (2) $\texttt{StronglyMeasurableAtFilter}\; f\; (\texttt{nhds}\; x)\; \texttt{volume}$: by Lemma~\ref{lem:strongly_measurable_interior}, since $x$ belongs to the open interior; (3) $\texttt{ContinuousAt}\; f\; x$: by Lemma~\ref{lem:continuous_at_interior}. The result then follows directly from \texttt{intervalIntegral.integral\_hasDerivAt\_right}.
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
     \label{thm:ftc2}
 
-    Let $F : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$ and have right derivative $f'(x)$ at every $x \in (\min(a,b), \max(a,b))$, i.e., $\texttt{HasDerivWithinAt}\; F\; (f'\; x)\; (x, +\infty)\; x$. If $f'$ is interval integrable on $[a,b]$, then
+    Let $F : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$ and have right derivative $f'(x)$ at every $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$, i.e., $\texttt{HasDerivWithinAt}\; F\; (f'\; x)\; (\mathrm{Ioi}\; x)\; x$ for all such $x$. If $f'$ is interval integrable on $[a,b]$ (i.e.\ $\texttt{IntervalIntegrable}\; f'\; \texttt{volume}\; a\; b$), then
     \[
       \int_a^b f'(x)\,dx = F(b) - F(a).
     \]
     In Mathlib this is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
 \end{theorem}
 \begin{proof}
-    Direct application of \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}, given the continuity of $F$ on $[\min(a,b), \max(a,b)]$, the right-derivative hypothesis on the interior, and the integrability of $f'$.
+    Direct application of \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}, given the continuity of $F$ on $\texttt{uIcc}\; a\; b$, the right-derivative hypothesis $\texttt{HasDerivWithinAt}\; F\; (f'\; x)\; (\mathrm{Ioi}\; x)\; x$ for all $x \in \mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$, and $\texttt{IntervalIntegrable}\; f'\; \texttt{volume}\; a\; b$.
 \end{proof}
 
 \section{Intermediate Results}
@@ -87,7 +87,7 @@
     \label{lem:integral_is_antiderivative}
     \uses{def:antiderivative, thm:ftc1}
 
-    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $[\min(a,b), \max(a,b)]$. Then the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $(\min(a,b), \max(a,b))$, i.e., $\texttt{IsAntiderivativeOn}\; G\; f\; (\min(a,b))\; (\max(a,b))$.
+    Let $f : \mathbb{R} \to \mathbb{R}$ be continuous on $\texttt{uIcc}\; a\; b = [\min(a,b), \max(a,b)]$. Then the function $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $\mathrm{Ioo}\;(\min\, a\, b)\;(\max\, a\, b)$, i.e., $\texttt{IsAntiderivativeOn}\; G\; f\; (\min(a,b))\; (\max(a,b))$.
 \end{lemma}
 \begin{proof}
     \uses{def:antiderivative, thm:ftc1}
