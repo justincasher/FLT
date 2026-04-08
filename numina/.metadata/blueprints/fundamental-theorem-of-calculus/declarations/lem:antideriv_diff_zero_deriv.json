@@ -7,6 +7,6 @@
   "uses": [
     "def:antiderivative"
   ],
-  "statement": "If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $\\texttt{HasDerivAt}\\; (F - G)\\; 0\\; x$ for all $x \\in (a,b)$.",
-  "proof": "By \\texttt{HasDerivAt.sub}, the derivative of $F - G$ at $x$ is $f(x) - f(x) = 0$."
+  "statement": "If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $(F - G)'(x) = f(x) - f(x) = 0$ for all $x \\in (a,b)$.",
+  "proof": "Immediate from linearity of the derivative (\\texttt{HasDerivAt.sub})."
 }

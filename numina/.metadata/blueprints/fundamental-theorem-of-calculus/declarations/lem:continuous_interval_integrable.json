@@ -6,5 +6,5 @@
   "leanFile": "",
   "uses": [],
   "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $f$ is interval integrable on $[a,b]$. This is \\texttt{ContinuousOn.intervalIntegrable}.",
-  "proof": "Continuous functions on compact intervals are bounded and measurable, hence integrable."
+  "proof": "A continuous function on a compact interval is bounded and measurable, hence integrable."
 }

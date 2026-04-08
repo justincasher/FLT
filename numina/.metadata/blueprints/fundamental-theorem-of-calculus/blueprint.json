@@ -18,7 +18,7 @@
     {
       "label": "lem:interval_integrable_restriction",
       "kind": "lemma",
-      "title": "Interval integrability restriction to sub-intervals"
+      "title": "Restriction to sub-intervals"
     },
     {
       "label": "lem:strongly_measurable_interior",
@@ -38,7 +38,7 @@
     {
       "label": "lem:zero_deriv_constant",
       "kind": "lemma",
-      "title": "Zero derivative implies constant on an interval"
+      "title": "Zero derivative implies constant"
     },
     {
       "label": "lem:antideriv_diff_zero_deriv",
@@ -63,22 +63,22 @@
     {
       "label": "lem:antiderivatives_diff_constant",
       "kind": "lemma",
-      "title": "Two antiderivatives differ by a constant"
+      "title": "Antiderivatives differ by a constant"
     },
     {
       "label": "lem:integral_base_zero",
       "kind": "lemma",
-      "title": "Integral from a point to itself is zero"
+      "title": "Integral from a point to itself"
     },
     {
       "label": "lem:integral_func_at_base",
       "kind": "lemma",
-      "title": "Integral function vanishes at the base point"
+      "title": "The integral function vanishes at the base point"
     },
     {
       "label": "lem:constant_diff_rearrangement",
       "kind": "lemma",
-      "title": "Constant difference rearrangement"
+      "title": "Algebraic rearrangement"
     },
     {
       "label": "cor:ftc_eval",

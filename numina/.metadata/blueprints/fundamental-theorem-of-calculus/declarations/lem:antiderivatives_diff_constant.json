@@ -1,13 +1,13 @@
 {
   "label": "lem:antiderivatives_diff_constant",
   "kind": "lemma",
-  "title": "Two antiderivatives differ by a constant",
+  "title": "Antiderivatives differ by a constant",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "lem:antideriv_diff_zero_deriv",
     "lem:zero_deriv_constant"
   ],
-  "statement": "If $a \\le b$ and $F, G$ are both continuous antiderivatives of $f$ on $(a,b)$, then $(F - G)(x) = (F - G)(a)$ for all $x \\in [a,b]$.",
-  "proof": "Lemma~\\ref{lem:antideriv_diff_zero_deriv} gives zero derivative; Lemma~\\ref{lem:zero_deriv_constant} gives constancy."
+  "statement": "If $a \\le b$ and $F, G$ are both continuous antiderivatives of $f$ on $(a,b)$, then $F - G$ is constant on $[a,b]$: for all $x \\in [a,b]$, $(F - G)(x) = (F - G)(a)$.",
+  "proof": "By Lemma~\\ref{lem:antideriv_diff_zero_deriv}, $F - G$ has zero derivative on $(a,b)$; by Lemma~\\ref{lem:zero_deriv_constant}, it is constant."
 }

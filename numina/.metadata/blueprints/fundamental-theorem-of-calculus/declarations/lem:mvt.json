@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $a < b$ and $G$ be continuous on $[a,b]$ with $\\texttt{HasDerivAt}\\; G\\; (G'\\; x)\\; x$ for all $x \\in (a,b)$. Then there exists $c \\in (a,b)$ with $G'(c) = (G(b) - G(a))/(b - a)$. This is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
-  "proof": "Direct application of \\texttt{exists\\_hasDerivAt\\_eq\\_slope}."
+  "statement": "Let $a < b$ and let $G$ be continuous on $[a,b]$ with derivative $G'(x)$ at every $x \\in (a,b)$. Then there exists $c \\in (a,b)$ with $G'(c) = \\frac{G(b) - G(a)}{b - a}$. This is \\texttt{exists\\_hasDerivAt\\_eq\\_slope}.",
+  "proof": "This is the classical Mean Value Theorem; we invoke \\texttt{exists\\_hasDerivAt\\_eq\\_slope}."
 }

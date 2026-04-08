@@ -1,12 +1,12 @@
 {
   "label": "lem:interval_integrable_restriction",
   "kind": "lemma",
-  "title": "Interval integrability restriction to sub-intervals",
+  "title": "Restriction to sub-intervals",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "lem:continuous_interval_integrable"
   ],
-  "statement": "If $f$ is interval integrable on $[a,b]$ and $\\min(a,b) < x < \\max(a,b)$, then $f$ is interval integrable on $[a,x]$, since $\\texttt{uIcc}\\; a\\; x \\subseteq \\texttt{uIcc}\\; a\\; b$. This is \\texttt{IntervalIntegrable.mono\\_set}.",
-  "proof": "Apply \\texttt{IntervalIntegrable.mono\\_set} using the sub-interval inclusion."
+  "statement": "If $f$ is interval integrable on $[a,b]$ and $x$ lies in the interior, then $f$ is interval integrable on $[a,x]$. This is \\texttt{IntervalIntegrable.mono\\_set}, using the inclusion $\\texttt{uIcc}\\; a\\; x \\subseteq \\texttt{uIcc}\\; a\\; b$.",
+  "proof": "Monotonicity of integrability with respect to the domain."
 }

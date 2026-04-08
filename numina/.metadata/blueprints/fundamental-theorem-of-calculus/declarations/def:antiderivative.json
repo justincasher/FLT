@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "A function $F$ is an \\emph{antiderivative} of $f$ on $(a,b)$ if $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ for every $x \\in (a,b)$. When $a \\ge b$ the condition is vacuous.",
+  "statement": "We say that $F$ is an \\emph{antiderivative} of $f$ on $(a,b)$ if $F$ is differentiable at every point $x \\in (a,b)$ with $F'(x) = f(x)$, i.e.\\ $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ for all $x \\in (a,b)$. The condition is vacuous when $a \\ge b$.",
   "proof": null
 }

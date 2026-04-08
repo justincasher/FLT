@@ -1,16 +1,20 @@
 \begin{document}
 
-This blueprint develops the Fundamental Theorem of Calculus in two parts: the First FTC (differentiating an integral recovers the integrand) and the Second FTC (evaluating an integral via antiderivatives). All functions are $\mathbb{R} \to \mathbb{R}$, integrals use Lebesgue measure, and $[\min(a,b), \max(a,b)]$ denotes the Mathlib \texttt{uIcc}.
+The goal of this blueprint is to give a clean account of the Fundamental Theorem of Calculus, in both directions: differentiation undoes integration, and integration undoes differentiation. The key structural observation is that any two antiderivatives of the same function differ by a constant; once this is established, both halves of the theorem become formal consequences.
+
+Throughout, we work with functions $\mathbb{R} \to \mathbb{R}$, integrals are taken with respect to Lebesgue measure, and $[\min(a,b), \max(a,b)]$ denotes the Mathlib \texttt{uIcc}.
 
 \section{Definitions}
 
 \begin{definition}[Antiderivative]
     \label{def:antiderivative}
 
-    A function $F$ is an \emph{antiderivative} of $f$ on $(a,b)$ if $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ for every $x \in (a,b)$. When $a \ge b$ the condition is vacuous.
+    We say that $F$ is an \emph{antiderivative} of $f$ on $(a,b)$ if $F$ is differentiable at every point $x \in (a,b)$ with $F'(x) = f(x)$, i.e.\ $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ for all $x \in (a,b)$. The condition is vacuous when $a \ge b$.
 \end{definition}
 
-\section{Auxiliary Lemmas}
+\section{Auxiliary lemmas}
+
+We collect some preliminary facts. The first three concern the regularity of continuous functions on compact intervals; they are essentially soft analysis.
 
 \begin{lemma}[Continuous functions are interval integrable]
     \label{lem:continuous_interval_integrable}
@@ -18,132 +22,135 @@ This blueprint develops the Fundamental Theorem of Calculus in two parts: the Fi
     If $f$ is continuous on $[\min(a,b), \max(a,b)]$, then $f$ is interval integrable on $[a,b]$. This is \texttt{ContinuousOn.intervalIntegrable}.
 \end{lemma}
 \begin{proof}
-    Continuous functions on compact intervals are bounded and measurable, hence integrable.
+    A continuous function on a compact interval is bounded and measurable, hence integrable.
 \end{proof}
 
-\begin{lemma}[Interval integrability restriction to sub-intervals]
+\begin{lemma}[Restriction to sub-intervals]
     \label{lem:interval_integrable_restriction}
     \uses{lem:continuous_interval_integrable}
 
-    If $f$ is interval integrable on $[a,b]$ and $\min(a,b) < x < \max(a,b)$, then $f$ is interval integrable on $[a,x]$, since $\texttt{uIcc}\; a\; x \subseteq \texttt{uIcc}\; a\; b$. This is \texttt{IntervalIntegrable.mono\_set}.
+    If $f$ is interval integrable on $[a,b]$ and $x$ lies in the interior, then $f$ is interval integrable on $[a,x]$. This is \texttt{IntervalIntegrable.mono\_set}, using the inclusion $\texttt{uIcc}\; a\; x \subseteq \texttt{uIcc}\; a\; b$.
 \end{lemma}
 \begin{proof}
     \uses{lem:continuous_interval_integrable}
-    Apply \texttt{IntervalIntegrable.mono\_set} using the sub-interval inclusion.
+    Monotonicity of integrability with respect to the domain.
 \end{proof}
 
 \begin{lemma}[Strong measurability at interior points]
     \label{lem:strongly_measurable_interior}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x \in (\min(a,b), \max(a,b))$, then $f$ is strongly measurable at $\texttt{nhds}\; x$. This follows from \texttt{ContinuousOn.stronglyMeasurableAtFilter} via \texttt{isOpen\_Ioo}.
+    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ lies in the open interior, then $f$ is strongly measurable at $\texttt{nhds}\; x$. This follows from \texttt{ContinuousOn.stronglyMeasurableAtFilter} via \texttt{isOpen\_Ioo}.
 \end{lemma}
 \begin{proof}
-    Since $x$ lies in the open set $(\min(a,b), \max(a,b))$, the neighborhood filter at $x$ is contained in the principal filter of the closed interval. Apply \texttt{ContinuousOn.stronglyMeasurableAtFilter}.
+    The open interval is a neighborhood of $x$, so the claim reduces to strong measurability on a compact set, which is automatic from continuity.
 \end{proof}
 
 \begin{lemma}[Continuity at interior points]
     \label{lem:continuous_at_interior}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x \in (\min(a,b), \max(a,b))$, then $\texttt{ContinuousAt}\; f\; x$. The closed interval is a neighborhood of $x$ by \texttt{Icc\_mem\_nhds}, so continuity on the set implies pointwise continuity.
+    If $f$ is continuous on $[\min(a,b), \max(a,b)]$ and $x$ lies in the interior, then $f$ is continuous at $x$. Indeed, the closed interval is a neighborhood of any interior point (\texttt{Icc\_mem\_nhds}), so continuity on the set implies pointwise continuity.
 \end{lemma}
 \begin{proof}
-    Apply \texttt{Icc\_mem\_nhds} to upgrade \texttt{ContinuousOn} to \texttt{ContinuousAt}.
+    Upgrade \texttt{ContinuousOn} to \texttt{ContinuousAt} via \texttt{Icc\_mem\_nhds}.
 \end{proof}
+
+The next two lemmas are the heart of the matter. The Mean Value Theorem gives rigidity: a function with zero derivative must be constant.
 
 \begin{lemma}[Mean Value Theorem]
     \label{lem:mvt}
 
-    Let $a < b$ and $G$ be continuous on $[a,b]$ with $\texttt{HasDerivAt}\; G\; (G'\; x)\; x$ for all $x \in (a,b)$. Then there exists $c \in (a,b)$ with $G'(c) = (G(b) - G(a))/(b - a)$. This is \texttt{exists\_hasDerivAt\_eq\_slope}.
+    Let $a < b$ and let $G$ be continuous on $[a,b]$ with derivative $G'(x)$ at every $x \in (a,b)$. Then there exists $c \in (a,b)$ with $G'(c) = \frac{G(b) - G(a)}{b - a}$. This is \texttt{exists\_hasDerivAt\_eq\_slope}.
 \end{lemma}
 \begin{proof}
-    Direct application of \texttt{exists\_hasDerivAt\_eq\_slope}.
+    This is the classical Mean Value Theorem; we invoke \texttt{exists\_hasDerivAt\_eq\_slope}.
 \end{proof}
 
-\begin{lemma}[Zero derivative implies constant on an interval]
+\begin{lemma}[Zero derivative implies constant]
     \label{lem:zero_deriv_constant}
     \uses{lem:mvt}
 
-    Let $a \le b$ and $G$ be continuous on $[a,b]$ with $\texttt{HasDerivAt}\; G\; 0\; x$ for all $x \in (a,b)$. Then $G(x) = G(a)$ for all $x \in [a,b]$.
+    Let $G$ be continuous on $[a,b]$ with $G'(x) = 0$ for all $x \in (a,b)$. Then $G$ is constant on $[a,b]$: we have $G(x) = G(a)$ for all $x \in [a,b]$.
 \end{lemma}
 \begin{proof}
     \uses{lem:mvt}
-    For $a < x \le b$, the MVT (Lemma~\ref{lem:mvt}) gives $c \in (a,x)$ with $0 = G'(c) = (G(x) - G(a))/(x - a)$, so $G(x) = G(a)$.
+    For any $x \in (a,b]$, the Mean Value Theorem (Lemma~\ref{lem:mvt}) applied to $[a,x]$ produces $c$ with $0 = G'(c) = \frac{G(x) - G(a)}{x - a}$, whence $G(x) = G(a)$.
 \end{proof}
 
 \begin{lemma}[Difference of antiderivatives has zero derivative]
     \label{lem:antideriv_diff_zero_deriv}
     \uses{def:antiderivative}
 
-    If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $\texttt{HasDerivAt}\; (F - G)\; 0\; x$ for all $x \in (a,b)$.
+    If $F$ and $G$ are both antiderivatives of $f$ on $(a,b)$, then $(F - G)'(x) = f(x) - f(x) = 0$ for all $x \in (a,b)$.
 \end{lemma}
 \begin{proof}
     \uses{def:antiderivative}
-    By \texttt{HasDerivAt.sub}, the derivative of $F - G$ at $x$ is $f(x) - f(x) = 0$.
+    Immediate from linearity of the derivative (\texttt{HasDerivAt.sub}).
 \end{proof}
 
-\section{Main Theorems}
+\section{Main theorems}
+
+We now state the two halves of the Fundamental Theorem. The first says that the integral, viewed as a function of its upper limit, provides an antiderivative. The second evaluates a definite integral in terms of any antiderivative.
 
 \begin{theorem}[First Fundamental Theorem of Calculus]
     \label{thm:ftc1}
     \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
 
-    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and define $F(u) = \int_a^u f(t)\,dt$. Then $\texttt{HasDerivAt}\; F\; (f\; x)\; x$ for every $x \in (\min(a,b), \max(a,b))$.
+    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and set $F(u) = \int_a^u f(t)\,dt$. Then $F'(x) = f(x)$ for every interior point $x$.
 \end{theorem}
 \begin{proof}
     \uses{lem:interval_integrable_restriction, lem:strongly_measurable_interior, lem:continuous_at_interior}
-    Apply \texttt{integral\_hasDerivAt\_right} with three hypotheses:
-    (1) integrability on $[a,x]$ from Lemma~\ref{lem:interval_integrable_restriction};
-    (2) strong measurability at $\texttt{nhds}\; x$ from Lemma~\ref{lem:strongly_measurable_interior};
-    (3) continuity at $x$ from Lemma~\ref{lem:continuous_at_interior}.
+    We apply \texttt{integral\_hasDerivAt\_right}. The three hypotheses are: integrability on sub-intervals (Lemma~\ref{lem:interval_integrable_restriction}), strong measurability at the point (Lemma~\ref{lem:strongly_measurable_interior}), and continuity at the point (Lemma~\ref{lem:continuous_at_interior}).
 \end{proof}
 
 \begin{theorem}[Second Fundamental Theorem of Calculus]
     \label{thm:ftc2}
 
-    Let $F$ be continuous on $[\min(a,b), \max(a,b)]$ with right derivative $f'(x)$ at every interior point, and suppose $f'$ is interval integrable on $[a,b]$. Then
+    Let $F$ be continuous on $[\min(a,b), \max(a,b)]$ with right derivative $f'(x)$ at every interior point, and suppose $f'$ is interval integrable. Then
     \[
       \int_a^b f'(x)\,dx = F(b) - F(a).
     \]
     This is \texttt{intervalIntegral.integral\_eq\_sub\_of\_hasDeriv\_right}.
 \end{theorem}
 \begin{proof}
-    Direct application of \texttt{integral\_eq\_sub\_of\_hasDeriv\_right}.
+    We invoke \texttt{integral\_eq\_sub\_of\_hasDeriv\_right} directly.
 \end{proof}
 
-\section{Intermediate Results}
+\section{Consequences}
+
+The structural content of the Fundamental Theorem is best expressed as follows: any two antiderivatives of a continuous function differ by a constant, and the integral function vanishes at the base point. Together, these determine the value of any definite integral.
 
 \begin{lemma}[The integral function is an antiderivative]
     \label{lem:integral_is_antiderivative}
     \uses{def:antiderivative, thm:ftc1}
 
-    If $f$ is continuous on $[\min(a,b), \max(a,b)]$, then $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on $(\min(a,b), \max(a,b))$.
+    If $f$ is continuous on $[\min(a,b), \max(a,b)]$, then $G(u) = \int_a^u f(t)\,dt$ is an antiderivative of $f$ on the interior.
 \end{lemma}
 \begin{proof}
     \uses{def:antiderivative, thm:ftc1}
-    Immediate from Theorem~\ref{thm:ftc1} and Definition~\ref{def:antiderivative}.
+    This is exactly the content of Theorem~\ref{thm:ftc1}.
 \end{proof}
 
-\begin{lemma}[Two antiderivatives differ by a constant]
+\begin{lemma}[Antiderivatives differ by a constant]
     \label{lem:antiderivatives_diff_constant}
     \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
 
-    If $a \le b$ and $F, G$ are both continuous antiderivatives of $f$ on $(a,b)$, then $(F - G)(x) = (F - G)(a)$ for all $x \in [a,b]$.
+    If $a \le b$ and $F, G$ are both continuous antiderivatives of $f$ on $(a,b)$, then $F - G$ is constant on $[a,b]$: for all $x \in [a,b]$, $(F - G)(x) = (F - G)(a)$.
 \end{lemma}
 \begin{proof}
     \uses{lem:antideriv_diff_zero_deriv, lem:zero_deriv_constant}
-    Lemma~\ref{lem:antideriv_diff_zero_deriv} gives zero derivative; Lemma~\ref{lem:zero_deriv_constant} gives constancy.
+    By Lemma~\ref{lem:antideriv_diff_zero_deriv}, $F - G$ has zero derivative on $(a,b)$; by Lemma~\ref{lem:zero_deriv_constant}, it is constant.
 \end{proof}
 
-\begin{lemma}[Integral from a point to itself is zero]
+\begin{lemma}[Integral from a point to itself]
     \label{lem:integral_base_zero}
 
-    $\int_a^a f(t)\,dt = 0$ for any $f$ and $a$. This is \texttt{intervalIntegral.integral\_same}.
+    For any $f$ and any $a$, $\int_a^a f(t)\,dt = 0$. This is \texttt{intervalIntegral.integral\_same}.
 \end{lemma}
 \begin{proof}
-    The interval $[a,a] = \{a\}$ has measure zero.
+    The interval $[a,a]$ has measure zero.
 \end{proof}
 
-\begin{lemma}[Integral function vanishes at the base point]
+\begin{lemma}[The integral function vanishes at the base point]
     \label{lem:integral_func_at_base}
     \uses{lem:integral_base_zero}
 
@@ -151,32 +158,30 @@ This blueprint develops the Fundamental Theorem of Calculus in two parts: the Fi
 \end{lemma}
 \begin{proof}
     \uses{lem:integral_base_zero}
-    $G(a) = \int_a^a f(t)\,dt = 0$ by Lemma~\ref{lem:integral_base_zero}.
+    Immediate from Lemma~\ref{lem:integral_base_zero}.
 \end{proof}
 
-\begin{lemma}[Constant difference rearrangement]
+\begin{lemma}[Algebraic rearrangement]
     \label{lem:constant_diff_rearrangement}
 
     If $F(b) - G(b) = F(a) - G(a)$ and $G(a) = 0$, then $G(b) = F(b) - F(a)$.
 \end{lemma}
 \begin{proof}
-    Rearrange: $G(b) = G(a) + F(b) - F(a) = F(b) - F(a)$.
+    Elementary algebra.
 \end{proof}
-
-\section{Corollaries}
 
 \begin{corollary}[Evaluation of integrals via antiderivatives]
     \label{cor:ftc_eval}
     \uses{def:antiderivative, lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
 
-    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and $F$ be a continuous antiderivative of $f$ on $(\min(a,b), \max(a,b))$. Then
+    Let $f$ be continuous on $[\min(a,b), \max(a,b)]$ and let $F$ be any continuous antiderivative of $f$ on the interior. Then
     \[
       \int_a^b f(x)\,dx = F(b) - F(a).
     \]
 \end{corollary}
 \begin{proof}
     \uses{lem:integral_is_antiderivative, lem:antiderivatives_diff_constant, lem:integral_func_at_base, lem:constant_diff_rearrangement}
-    Let $G(u) = \int_a^u f(t)\,dt$. By Lemma~\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F(b) - G(b) = F(a) - G(a)$. By Lemma~\ref{lem:integral_func_at_base}, $G(a) = 0$. By Lemma~\ref{lem:constant_diff_rearrangement}, $G(b) = F(b) - F(a)$.
+    Set $G(u) = \int_a^u f(t)\,dt$. By Lemma~\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant, so $F(b) - G(b) = F(a) - G(a)$. Since $G(a) = 0$ (Lemma~\ref{lem:integral_func_at_base}), we get $G(b) = F(b) - F(a)$ (Lemma~\ref{lem:constant_diff_rearrangement}).
 \end{proof}
 
 \end{document}

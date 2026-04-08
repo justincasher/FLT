@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "Let $F$ be continuous on $[\\min(a,b), \\max(a,b)]$ with right derivative $f'(x)$ at every interior point, and suppose $f'$ is interval integrable on $[a,b]$. Then\n    \\[\n      \\int_a^b f'(x)\\,dx = F(b) - F(a).\n    \\]\n    This is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
-  "proof": "Direct application of \\texttt{integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}."
+  "statement": "Let $F$ be continuous on $[\\min(a,b), \\max(a,b)]$ with right derivative $f'(x)$ at every interior point, and suppose $f'$ is interval integrable. Then\n    \\[\n      \\int_a^b f'(x)\\,dx = F(b) - F(a).\n    \\]\n    This is \\texttt{intervalIntegral.integral\\_eq\\_sub\\_of\\_hasDeriv\\_right}.",
+  "proof": "We invoke \\texttt{integral\\_eq\\_sub\\_of\\_hasDeriv\\_right} directly."
 }

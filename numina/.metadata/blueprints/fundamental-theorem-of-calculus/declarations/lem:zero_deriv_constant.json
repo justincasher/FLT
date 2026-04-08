@@ -1,12 +1,12 @@
 {
   "label": "lem:zero_deriv_constant",
   "kind": "lemma",
-  "title": "Zero derivative implies constant on an interval",
+  "title": "Zero derivative implies constant",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "lem:mvt"
   ],
-  "statement": "Let $a \\le b$ and $G$ be continuous on $[a,b]$ with $\\texttt{HasDerivAt}\\; G\\; 0\\; x$ for all $x \\in (a,b)$. Then $G(x) = G(a)$ for all $x \\in [a,b]$.",
-  "proof": "For $a < x \\le b$, the MVT (Lemma~\\ref{lem:mvt}) gives $c \\in (a,x)$ with $0 = G'(c) = (G(x) - G(a))/(x - a)$, so $G(x) = G(a)$."
+  "statement": "Let $G$ be continuous on $[a,b]$ with $G'(x) = 0$ for all $x \\in (a,b)$. Then $G$ is constant on $[a,b]$: we have $G(x) = G(a)$ for all $x \\in [a,b]$.",
+  "proof": "For any $x \\in (a,b]$, the Mean Value Theorem (Lemma~\\ref{lem:mvt}) applied to $[a,x]$ produces $c$ with $0 = G'(c) = \\frac{G(x) - G(a)}{x - a}$, whence $G(x) = G(a)$."
 }

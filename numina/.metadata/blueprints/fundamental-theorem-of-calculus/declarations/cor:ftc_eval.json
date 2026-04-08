@@ -11,6 +11,6 @@
     "lem:integral_func_at_base",
     "lem:constant_diff_rearrangement"
   ],
-  "statement": "Let $f$ be continuous on $[\\min(a,b), \\max(a,b)]$ and $F$ be a continuous antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$. Then\n    \\[\n      \\int_a^b f(x)\\,dx = F(b) - F(a).\n    \\]",
-  "proof": "Let $G(u) = \\int_a^u f(t)\\,dt$. By Lemma~\\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\\ref{lem:antiderivatives_diff_constant}, $F(b) - G(b) = F(a) - G(a)$. By Lemma~\\ref{lem:integral_func_at_base}, $G(a) = 0$. By Lemma~\\ref{lem:constant_diff_rearrangement}, $G(b) = F(b) - F(a)$."
+  "statement": "Let $f$ be continuous on $[\\min(a,b), \\max(a,b)]$ and let $F$ be any continuous antiderivative of $f$ on the interior. Then\n    \\[\n      \\int_a^b f(x)\\,dx = F(b) - F(a).\n    \\]",
+  "proof": "Set $G(u) = \\int_a^u f(t)\\,dt$. By Lemma~\\ref{lem:integral_is_antiderivative}, $G$ is an antiderivative of $f$. By Lemma~\\ref{lem:antiderivatives_diff_constant}, $F - G$ is constant, so $F(b) - G(b) = F(a) - G(a)$. Since $G(a) = 0$ (Lemma~\\ref{lem:integral_func_at_base}), we get $G(b) = F(b) - F(a)$ (Lemma~\\ref{lem:constant_diff_rearrangement})."
 }

@@ -9,6 +9,6 @@
     "lem:strongly_measurable_interior",
     "lem:continuous_at_interior"
   ],
-  "statement": "Let $f$ be continuous on $[\\min(a,b), \\max(a,b)]$ and define $F(u) = \\int_a^u f(t)\\,dt$. Then $\\texttt{HasDerivAt}\\; F\\; (f\\; x)\\; x$ for every $x \\in (\\min(a,b), \\max(a,b))$.",
-  "proof": "Apply \\texttt{integral\\_hasDerivAt\\_right} with three hypotheses:\n    (1) integrability on $[a,x]$ from Lemma~\\ref{lem:interval_integrable_restriction};\n    (2) strong measurability at $\\texttt{nhds}\\; x$ from Lemma~\\ref{lem:strongly_measurable_interior};\n    (3) continuity at $x$ from Lemma~\\ref{lem:continuous_at_interior}."
+  "statement": "Let $f$ be continuous on $[\\min(a,b), \\max(a,b)]$ and set $F(u) = \\int_a^u f(t)\\,dt$. Then $F'(x) = f(x)$ for every interior point $x$.",
+  "proof": "We apply \\texttt{integral\\_hasDerivAt\\_right}. The three hypotheses are: integrability on sub-intervals (Lemma~\\ref{lem:interval_integrable_restriction}), strong measurability at the point (Lemma~\\ref{lem:strongly_measurable_interior}), and continuity at the point (Lemma~\\ref{lem:continuous_at_interior})."
 }

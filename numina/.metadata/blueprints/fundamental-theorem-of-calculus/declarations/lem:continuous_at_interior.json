@@ -5,6 +5,6 @@
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x \\in (\\min(a,b), \\max(a,b))$, then $\\texttt{ContinuousAt}\\; f\\; x$. The closed interval is a neighborhood of $x$ by \\texttt{Icc\\_mem\\_nhds}, so continuity on the set implies pointwise continuity.",
-  "proof": "Apply \\texttt{Icc\\_mem\\_nhds} to upgrade \\texttt{ContinuousOn} to \\texttt{ContinuousAt}."
+  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$ and $x$ lies in the interior, then $f$ is continuous at $x$. Indeed, the closed interval is a neighborhood of any interior point (\\texttt{Icc\\_mem\\_nhds}), so continuity on the set implies pointwise continuity.",
+  "proof": "Upgrade \\texttt{ContinuousOn} to \\texttt{ContinuousAt} via \\texttt{Icc\\_mem\\_nhds}."
 }

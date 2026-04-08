@@ -1,12 +1,12 @@
 {
   "label": "lem:integral_func_at_base",
   "kind": "lemma",
-  "title": "Integral function vanishes at the base point",
+  "title": "The integral function vanishes at the base point",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [
     "lem:integral_base_zero"
   ],
   "statement": "If $G(u) = \\int_a^u f(t)\\,dt$, then $G(a) = 0$.",
-  "proof": "$G(a) = \\int_a^a f(t)\\,dt = 0$ by Lemma~\\ref{lem:integral_base_zero}."
+  "proof": "Immediate from Lemma~\\ref{lem:integral_base_zero}."
 }

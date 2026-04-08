@@ -8,6 +8,6 @@
     "def:antiderivative",
     "thm:ftc1"
   ],
-  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on $(\\min(a,b), \\max(a,b))$.",
-  "proof": "Immediate from Theorem~\\ref{thm:ftc1} and Definition~\\ref{def:antiderivative}."
+  "statement": "If $f$ is continuous on $[\\min(a,b), \\max(a,b)]$, then $G(u) = \\int_a^u f(t)\\,dt$ is an antiderivative of $f$ on the interior.",
+  "proof": "This is exactly the content of Theorem~\\ref{thm:ftc1}."
 }

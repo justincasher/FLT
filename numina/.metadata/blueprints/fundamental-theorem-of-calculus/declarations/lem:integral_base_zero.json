@@ -1,10 +1,10 @@
 {
   "label": "lem:integral_base_zero",
   "kind": "lemma",
-  "title": "Integral from a point to itself is zero",
+  "title": "Integral from a point to itself",
   "leanDeclaration": "",
   "leanFile": "",
   "uses": [],
-  "statement": "$\\int_a^a f(t)\\,dt = 0$ for any $f$ and $a$. This is \\texttt{intervalIntegral.integral\\_same}.",
-  "proof": "The interval $[a,a] = \\{a\\}$ has measure zero."
+  "statement": "For any $f$ and any $a$, $\\int_a^a f(t)\\,dt = 0$. This is \\texttt{intervalIntegral.integral\\_same}.",
+  "proof": "The interval $[a,a]$ has measure zero."
 }
