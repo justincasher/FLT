@@ -75,4 +75,36 @@ of their underlying locally ringed spaces. -/
 def Scheme6.Hom (X Y : AlgebraicGeometry.Scheme) :=
   AlgebraicGeometry.Scheme.Hom X Y
 
+/-! ## Simple proofs using our definitions -/
+
+/-- The spectrum of any commutative ring is an affine scheme. -/
+theorem Scheme6.specIsAffine (R : CommRingCat) :
+    Scheme6.IsAffine (Spec R) :=
+  AlgebraicGeometry.isAffine_Spec R
+
+/-- Every scheme has an identity morphism. -/
+def Scheme6.idHom (X : Scheme6.Scheme) : Scheme6.Hom X X :=
+  𝟙 X
+
+/-- Morphisms of schemes can be composed. -/
+def Scheme6.compHom {X Y Z : Scheme6.Scheme}
+    (f : Scheme6.Hom X Y) (g : Scheme6.Hom Y Z) : Scheme6.Hom X Z :=
+  f ≫ g
+
+/-- Composing with the identity morphism on the right is a no-op. -/
+theorem Scheme6.comp_id {X Y : Scheme6.Scheme} (f : Scheme6.Hom X Y) :
+    Scheme6.compHom f (Scheme6.idHom Y) = f := by
+  simp [Scheme6.compHom, Scheme6.idHom]
+
+/-- Composing with the identity morphism on the left is a no-op. -/
+theorem Scheme6.id_comp {X Y : Scheme6.Scheme} (f : Scheme6.Hom X Y) :
+    Scheme6.compHom (Scheme6.idHom X) f = f := by
+  simp [Scheme6.compHom, Scheme6.idHom]
+
+/-- Composition of scheme morphisms is associative. -/
+theorem Scheme6.comp_assoc {W X Y Z : Scheme6.Scheme}
+    (f : Scheme6.Hom W X) (g : Scheme6.Hom X Y) (h : Scheme6.Hom Y Z) :
+    Scheme6.compHom (Scheme6.compHom f g) h = Scheme6.compHom f (Scheme6.compHom g h) := by
+  simp [Scheme6.compHom, Category.assoc]
+
 end
