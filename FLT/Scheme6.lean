@@ -83,28 +83,31 @@ theorem Scheme6.specIsAffine (R : CommRingCat) :
   AlgebraicGeometry.isAffine_Spec R
 
 /-- Every scheme has an identity morphism. -/
-def Scheme6.idHom (X : Scheme6.Scheme) : Scheme6.Hom X X :=
+def Scheme6.idHom (X : AlgebraicGeometry.Scheme) : Scheme6.Hom X X :=
   𝟙 X
 
 /-- Morphisms of schemes can be composed. -/
-def Scheme6.compHom {X Y Z : Scheme6.Scheme}
+def Scheme6.compHom {X Y Z : AlgebraicGeometry.Scheme}
     (f : Scheme6.Hom X Y) (g : Scheme6.Hom Y Z) : Scheme6.Hom X Z :=
-  f ≫ g
+  show X ⟶ Z from f ≫ g
 
 /-- Composing with the identity morphism on the right is a no-op. -/
-theorem Scheme6.comp_id {X Y : Scheme6.Scheme} (f : Scheme6.Hom X Y) :
+theorem Scheme6.comp_id {X Y : AlgebraicGeometry.Scheme} (f : Scheme6.Hom X Y) :
     Scheme6.compHom f (Scheme6.idHom Y) = f := by
-  simp [Scheme6.compHom, Scheme6.idHom]
+  unfold Scheme6.compHom Scheme6.idHom
+  simp
 
 /-- Composing with the identity morphism on the left is a no-op. -/
-theorem Scheme6.id_comp {X Y : Scheme6.Scheme} (f : Scheme6.Hom X Y) :
+theorem Scheme6.id_comp {X Y : AlgebraicGeometry.Scheme} (f : Scheme6.Hom X Y) :
     Scheme6.compHom (Scheme6.idHom X) f = f := by
-  simp [Scheme6.compHom, Scheme6.idHom]
+  unfold Scheme6.compHom Scheme6.idHom
+  simp
 
 /-- Composition of scheme morphisms is associative. -/
-theorem Scheme6.comp_assoc {W X Y Z : Scheme6.Scheme}
+theorem Scheme6.comp_assoc {W X Y Z : AlgebraicGeometry.Scheme}
     (f : Scheme6.Hom W X) (g : Scheme6.Hom X Y) (h : Scheme6.Hom Y Z) :
     Scheme6.compHom (Scheme6.compHom f g) h = Scheme6.compHom f (Scheme6.compHom g h) := by
-  simp [Scheme6.compHom, Category.assoc]
+  unfold Scheme6.compHom
+  simp [Category.assoc]
 
 end
