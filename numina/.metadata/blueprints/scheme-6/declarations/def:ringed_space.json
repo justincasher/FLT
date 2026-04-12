@@ -4,6 +4,7 @@
   "title": "Ringed Space",
   "leanDeclaration": "AlgebraicGeometry.SheafedSpace",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:sheaf"
   ],

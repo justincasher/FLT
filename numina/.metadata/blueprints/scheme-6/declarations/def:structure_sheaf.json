@@ -4,6 +4,7 @@
   "title": "Structure Sheaf on $\\operatorname{Spec} A$",
   "leanDeclaration": "AlgebraicGeometry.structureSheaf",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:sheaf",
     "def:spectrum"

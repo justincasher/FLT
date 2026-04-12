@@ -4,6 +4,7 @@
   "title": "Locally Ringed Space",
   "leanDeclaration": "AlgebraicGeometry.LocallyRingedSpace",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:ringed_space",
     "def:stalk"

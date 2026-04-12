@@ -4,6 +4,7 @@
   "title": "Stalk",
   "leanDeclaration": "TopCat.Presheaf.stalk",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:presheaf"
   ],

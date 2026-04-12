@@ -4,6 +4,7 @@
   "title": "Affine Scheme",
   "leanDeclaration": "AlgebraicGeometry.IsAffine",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:locally_ringed_space",
     "def:spectrum",

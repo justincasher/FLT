@@ -4,6 +4,7 @@
   "title": "Morphism of Schemes",
   "leanDeclaration": "AlgebraicGeometry.Scheme.Hom",
   "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
   "uses": [
     "def:scheme",
     "def:stalk"
