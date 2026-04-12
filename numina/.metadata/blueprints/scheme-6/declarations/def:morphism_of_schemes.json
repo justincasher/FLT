@@ -1,0 +1,13 @@
+{
+  "label": "def:morphism_of_schemes",
+  "kind": "definition",
+  "title": "Morphism of Schemes",
+  "leanDeclaration": "AlgebraicGeometry.Scheme.Hom",
+  "leanFile": "",
+  "uses": [
+    "def:scheme",
+    "def:stalk"
+  ],
+  "statement": "A \\textbf{morphism of schemes} $(X, \\mathcal{O}_X) \\to (Y, \\mathcal{O}_Y)$ is a morphism of locally ringed spaces: a continuous map $f \\colon X \\to Y$ together with a sheaf homomorphism $f^\\sharp \\colon \\mathcal{O}_Y \\to f_*\\mathcal{O}_X$ such that for every $x \\in X$, the induced map on stalks $f^\\sharp_x \\colon \\mathcal{O}_{Y,f(x)} \\to \\mathcal{O}_{X,x}$ is a local homomorphism (i.e.\\ $f^\\sharp_x(\\mathfrak{m}_{f(x)}) \\subseteq \\mathfrak{m}_x$).",
+  "proof": null
+}

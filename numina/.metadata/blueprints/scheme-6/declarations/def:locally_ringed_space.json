@@ -1,0 +1,13 @@
+{
+  "label": "def:locally_ringed_space",
+  "kind": "definition",
+  "title": "Locally Ringed Space",
+  "leanDeclaration": "AlgebraicGeometry.LocallyRingedSpace",
+  "leanFile": "",
+  "uses": [
+    "def:ringed_space",
+    "def:stalk"
+  ],
+  "statement": "A ringed space $(X, \\mathcal{O}_X)$ is a \\textbf{locally ringed space} if for every point $p \\in X$, the stalk $\\mathcal{O}_{X,p}$ is a local ring (i.e.\\ it has a unique maximal ideal $\\mathfrak{m}_p$).",
+  "proof": null
+}

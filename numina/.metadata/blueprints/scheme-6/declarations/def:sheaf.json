@@ -1,0 +1,12 @@
+{
+  "label": "def:sheaf",
+  "kind": "definition",
+  "title": "Sheaf",
+  "leanDeclaration": "TopCat.Presheaf.IsSheaf",
+  "leanFile": "",
+  "uses": [
+    "def:presheaf"
+  ],
+  "statement": "A presheaf $\\mathcal{F}$ on $X$ is a \\textbf{sheaf} if for every open set $U \\subseteq X$ and every open cover $\\{U_i\\}$ of $U$:\n    \\begin{enumerate}\n        \\item \\textbf{(Locality)} If $s, t \\in \\mathcal{F}(U)$ satisfy $s|_{U_i} = t|_{U_i}$ for all $i$, then $s = t$.\n        \\item \\textbf{(Gluing)} If $s_i \\in \\mathcal{F}(U_i)$ satisfy $s_i|_{U_i \\cap U_j} = s_j|_{U_i \\cap U_j}$ for all $i, j$, then there exists $s \\in \\mathcal{F}(U)$ with $s|_{U_i} = s_i$.\n    \\end{enumerate}",
+  "proof": null
+}
