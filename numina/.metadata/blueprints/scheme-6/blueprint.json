@@ -4,5 +4,96 @@
   "status": "complete",
   "source_type": "latex",
   "notes": "All 10 definitions already exist in Mathlib. Blueprint maps each to its Mathlib counterpart.",
-  "entries": []
+  "entries": [
+    {
+      "id": "def:presheaf",
+      "type": "definition",
+      "title": "Presheaf",
+      "status": "proved",
+      "lean_name": "TopCat.Presheaf",
+      "source_ref": "Definition 1 (Presheaf)",
+      "dependencies": []
+    },
+    {
+      "id": "def:sheaf",
+      "type": "definition",
+      "title": "Sheaf",
+      "status": "proved",
+      "lean_name": "TopCat.Presheaf.IsSheaf",
+      "source_ref": "Definition 2 (Sheaf)",
+      "dependencies": ["def:presheaf"]
+    },
+    {
+      "id": "def:ringed_space",
+      "type": "definition",
+      "title": "Ringed Space",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.SheafedSpace",
+      "source_ref": "Definition 3 (Ringed Space)",
+      "dependencies": ["def:sheaf"]
+    },
+    {
+      "id": "def:stalk",
+      "type": "definition",
+      "title": "Stalk",
+      "status": "proved",
+      "lean_name": "TopCat.Presheaf.stalk",
+      "source_ref": "Definition 4 (Stalk)",
+      "dependencies": ["def:presheaf"]
+    },
+    {
+      "id": "def:locally_ringed_space",
+      "type": "definition",
+      "title": "Locally Ringed Space",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.LocallyRingedSpace",
+      "source_ref": "Definition 5 (Locally Ringed Space)",
+      "dependencies": ["def:ringed_space", "def:stalk"]
+    },
+    {
+      "id": "def:spectrum",
+      "type": "definition",
+      "title": "Spectrum of a Ring",
+      "status": "proved",
+      "lean_name": "PrimeSpectrum",
+      "source_ref": "Definition 6 (Spectrum of a Ring)",
+      "dependencies": []
+    },
+    {
+      "id": "def:structure_sheaf",
+      "type": "definition",
+      "title": "Structure Sheaf on Spec A",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.structureSheaf",
+      "source_ref": "Definition 7 (Structure Sheaf on Spec A)",
+      "dependencies": ["def:sheaf", "def:spectrum"]
+    },
+    {
+      "id": "def:affine_scheme",
+      "type": "definition",
+      "title": "Affine Scheme",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.IsAffine",
+      "source_ref": "Definition 8 (Affine Scheme)",
+      "dependencies": ["def:locally_ringed_space", "def:spectrum", "def:structure_sheaf"]
+    },
+    {
+      "id": "def:scheme",
+      "type": "definition",
+      "title": "Scheme",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.Scheme",
+      "source_ref": "Definition 9 (Scheme)",
+      "dependencies": ["def:locally_ringed_space", "def:affine_scheme"]
+    },
+    {
+      "id": "def:morphism_of_schemes",
+      "type": "definition",
+      "title": "Morphism of Schemes",
+      "status": "proved",
+      "lean_name": "AlgebraicGeometry.Scheme.Hom",
+      "source_ref": "Definition 10 (Morphism of Schemes)",
+      "dependencies": ["def:scheme", "def:stalk"]
+    }
+  ]
 }
