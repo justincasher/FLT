@@ -1,7 +1,6 @@
 {
   "title": "Scheme 6",
   "branch": "numina/scheme-6",
-  "status": "complete",
   "source_type": "latex",
   "notes": "All 10 definitions already exist in Mathlib. Blueprint maps each to its Mathlib counterpart.",
   "entries": [
