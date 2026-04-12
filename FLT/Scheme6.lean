@@ -49,14 +49,14 @@ def Scheme6.LocallyRingedSpace : Type _ :=
 
 /-- **Blueprint def:spectrum** The prime spectrum of a commutative ring `R` is
 the set of prime ideals of `R`, equipped with the Zariski topology. -/
-def Scheme6.PrimeSpectrum (R : Type*) [CommRing R] :=
+def Scheme6.PrimeSpectrum (R : Type*) [CommRing R] : Type _ :=
   PrimeSpectrum R
 
 /-- **Blueprint def:structure_sheaf** The structure sheaf on `Spec R` is the
 sheaf of commutative rings whose sections on basic opens `D(f)` are the
 localizations `R_f`. -/
 def Scheme6.structureSheaf (R : Type*) [CommRing R] :=
-  AlgebraicGeometry.structureSheaf R
+  Spec.structureSheaf R
 
 /-! ## Schemes -/
 
