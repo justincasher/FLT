@@ -1,0 +1,10 @@
+{
+  "label": "def:presheaf",
+  "kind": "definition",
+  "title": "Presheaf",
+  "leanDeclaration": "TopCat.Presheaf",
+  "leanFile": "",
+  "uses": [],
+  "statement": "Let $X$ be a topological space. A \\textbf{presheaf} $\\mathcal{F}$ of rings on $X$ assigns to each open set $U \\subseteq X$ a ring $\\mathcal{F}(U)$, and to each inclusion $V \\subseteq U$ a restriction homomorphism $\\operatorname{res}_{U,V} \\colon \\mathcal{F}(U) \\to \\mathcal{F}(V)$, such that:\n    \\begin{enumerate}\n        \\item $\\operatorname{res}_{U,U} = \\operatorname{id}_{\\mathcal{F}(U)}$.\n        \\item If $W \\subseteq V \\subseteq U$, then $\\operatorname{res}_{U,W} = \\operatorname{res}_{V,W} \\circ \\operatorname{res}_{U,V}$.\n    \\end{enumerate}",
+  "proof": null
+}

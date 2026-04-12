@@ -1,0 +1,14 @@
+{
+  "label": "def:affine_scheme",
+  "kind": "definition",
+  "title": "Affine Scheme",
+  "leanDeclaration": "AlgebraicGeometry.IsAffine",
+  "leanFile": "",
+  "uses": [
+    "def:locally_ringed_space",
+    "def:spectrum",
+    "def:structure_sheaf"
+  ],
+  "statement": "An \\textbf{affine scheme} is a locally ringed space that is isomorphic to $(\\operatorname{Spec} A, \\mathcal{O}_{\\operatorname{Spec} A})$ for some commutative ring $A$.",
+  "proof": null
+}
