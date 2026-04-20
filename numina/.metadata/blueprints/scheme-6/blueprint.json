@@ -1,5 +1,5 @@
 {
-  "title": "Scheme 6",
+  "title": "Fundamental group",
   "branch": "numina/scheme-6",
   "source_type": "latex",
   "notes": "All 10 definitions already exist in Mathlib. Blueprint maps each to its Mathlib counterpart.",
@@ -54,5 +54,8 @@
       "kind": "definition",
       "title": "Morphism of Schemes"
     }
-  ]
+  ],
+  "settings": {
+    "draft_prs": false
+  }
 }
