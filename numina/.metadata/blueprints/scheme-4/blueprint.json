@@ -6,6 +6,6 @@
   "entries": [],
   "settings": {
     "agent_model": "opus",
-    "pr_mode": "draft"
+    "pr_mode": "ready"
   }
 }
