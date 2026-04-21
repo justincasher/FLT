@@ -58,6 +58,6 @@
   "settings": {
     "draft_prs": false,
     "agent_model": "opus",
-    "pr_mode": "ready"
+    "pr_mode": "draft"
   }
 }
