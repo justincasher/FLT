@@ -1,1 +1,96 @@
-% OCR pending for Fundamental Theorem of Calculus 2
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\title{A Proof of the Second Fundamental Theorem of Calculus}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Statement of the Theorem}
+
+\begin{theorem}[Second Fundamental Theorem of Calculus]
+Let $f$ be a continuous real-valued function on the closed interval $[a,b]$, and let $F$ be any antiderivative of $f$ on $[a,b]$, meaning that $F$ is continuous on $[a,b]$, differentiable on $(a,b)$, and satisfies $F'(x) = f(x)$ for all $x \in (a,b)$. Then
+\[
+\int_a^b f(x)\,dx \;=\; F(b) - F(a).
+\]
+\end{theorem}
+
+\begin{remark}
+This is sometimes called the \emph{Evaluation Theorem}. It is the form of the Fundamental Theorem of Calculus that allows one to compute a definite integral by evaluating an antiderivative at the endpoints.
+\end{remark}
+
+\section*{Tools Used in the Proof}
+
+The proof relies on three key results from analysis:
+
+\begin{enumerate}
+\item \textbf{Mean Value Theorem (MVT).} If $g$ is continuous on $[\alpha, \beta]$ and differentiable on $(\alpha, \beta)$, then there exists $c \in (\alpha, \beta)$ such that
+\[
+g(\beta) - g(\alpha) = g'(c)\,(\beta - \alpha).
+\]
+
+\item \textbf{Riemann integrability of continuous functions.} Every function continuous on a closed interval $[a,b]$ is Riemann integrable on $[a,b]$.
+
+\item \textbf{Definition of the Riemann integral.} If $f$ is Riemann integrable on $[a,b]$, then for every sequence of tagged partitions $\{(P_n, \{c_i^{(n)}\})\}$ with mesh $\|P_n\| \to 0$,
+\[
+\lim_{n \to \infty} \sum_{i=1}^{k_n} f\!\left(c_i^{(n)}\right) \Delta x_i^{(n)} \;=\; \int_a^b f(x)\,dx.
+\]
+\end{enumerate}
+
+\section*{Proof}
+
+\begin{proof}
+Let $\varepsilon > 0$ be arbitrary, and let
+\[
+P = \{x_0, x_1, x_2, \ldots, x_n\}, \qquad a = x_0 < x_1 < \cdots < x_n = b,
+\]
+be any partition of $[a,b]$. Write $\Delta x_i = x_i - x_{i-1}$ for the width of the $i$-th subinterval, and $\|P\| = \max_{1 \le i \le n} \Delta x_i$ for the mesh of $P$.
+
+\textbf{Step 1: Telescoping.} We begin by writing $F(b) - F(a)$ as a telescoping sum across the partition:
+\[
+F(b) - F(a) \;=\; F(x_n) - F(x_0) \;=\; \sum_{i=1}^{n} \bigl[F(x_i) - F(x_{i-1})\bigr].
+\]
+
+\textbf{Step 2: Applying the Mean Value Theorem.} By hypothesis, $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$, so for each $i \in \{1, 2, \ldots, n\}$, $F$ is continuous on $[x_{i-1}, x_i]$ and differentiable on $(x_{i-1}, x_i)$. The Mean Value Theorem therefore guarantees the existence of a point $c_i \in (x_{i-1}, x_i)$ such that
+\[
+F(x_i) - F(x_{i-1}) \;=\; F'(c_i)\,(x_i - x_{i-1}) \;=\; f(c_i)\,\Delta x_i,
+\]
+where in the last equality we used $F'(c_i) = f(c_i)$.
+
+\textbf{Step 3: Identifying a Riemann sum.} Substituting the result of Step~2 into the telescoping sum from Step~1 gives
+\begin{equation}
+F(b) - F(a) \;=\; \sum_{i=1}^{n} f(c_i)\,\Delta x_i. \tag{$\star$}
+\end{equation}
+The right-hand side of $(\star)$ is precisely a Riemann sum for $f$ over $[a,b]$, with tags $c_i$ chosen (via the MVT) from the open subintervals $(x_{i-1}, x_i)$.
+
+\textbf{Step 4: Passing to the limit.} Because $f$ is continuous on the closed interval $[a,b]$, $f$ is Riemann integrable on $[a,b]$. Hence for every sequence of partitions $P_n$ of $[a,b]$ with $\|P_n\| \to 0$, and for any choice of tags, the associated Riemann sums converge to $\int_a^b f(x)\,dx$. In particular, choose any such sequence $\{P_n\}$, and for each $n$ let $\{c_i^{(n)}\}$ be the tags produced by the Mean Value Theorem as in Step~2. Equation $(\star)$ gives
+\[
+F(b) - F(a) \;=\; \sum_{i=1}^{k_n} f\!\left(c_i^{(n)}\right) \Delta x_i^{(n)} \qquad \text{for every } n.
+\]
+Taking $n \to \infty$ and using Riemann integrability,
+\[
+F(b) - F(a) \;=\; \lim_{n \to \infty} \sum_{i=1}^{k_n} f\!\left(c_i^{(n)}\right) \Delta x_i^{(n)} \;=\; \int_a^b f(x)\,dx.
+\]
+The left-hand side does not depend on $n$, so this equality is exact (not merely a limit). This completes the proof.
+\end{proof}
+
+\section*{Discussion}
+
+A few remarks are in order.
+
+\textbf{Why the MVT is the right tool.} The clever step is Step~2. We do not know a priori that the antiderivative $F$ is related to $f$ in any integrable way; all we know is the pointwise identity $F'(x) = f(x)$. The Mean Value Theorem converts this pointwise (infinitesimal) information into a statement about \emph{finite differences} $F(x_i) - F(x_{i-1})$, which is exactly what appears on the right-hand side of the telescoping sum.
+
+\textbf{Where continuity of $f$ is used.} Continuity of $f$ is used in Step~4 to guarantee that $f$ is Riemann integrable and that Riemann sums converge to the integral regardless of tag choice. The proof can be extended to the broader case in which $f$ is merely assumed to be Riemann integrable (with $F$ still an antiderivative), though that version requires a more delicate argument controlling the partition directly rather than passing through continuity.
+
+\textbf{Relationship to the First Fundamental Theorem.} The First Fundamental Theorem asserts that if $f$ is continuous on $[a,b]$, then the function $G(x) = \int_a^x f(t)\,dt$ is an antiderivative of $f$. One can alternatively deduce the Second Fundamental Theorem from the First by noting that any two antiderivatives of $f$ differ by a constant, so $F(x) = G(x) + C$ for some constant $C$, whence $F(b) - F(a) = G(b) - G(a) = \int_a^b f - 0 = \int_a^b f$. The proof given above is independent of the First Fundamental Theorem and relies only on the Mean Value Theorem together with Riemann integrability of continuous functions.
+
+\end{document}
