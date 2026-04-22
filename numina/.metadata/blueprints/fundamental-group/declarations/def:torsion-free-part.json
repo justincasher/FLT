@@ -1,0 +1,11 @@
+{
+  "label": "def:torsion-free-part",
+  "kind": "definition",
+  "title": "Torsion and free part",
+  "uses": [
+    "def:abelian-group",
+    "def:subgroup-homomorphism"
+  ],
+  "statement": "An element $g \\in G$ is a \\emph{torsion element} if $ng = 0$ for some $n \\ge 1$. The set\n    of torsion elements forms a subgroup $T(G) \\subseteq G$, called the \\emph{torsion subgroup}.\n    A group is \\emph{torsion-free} if $T(G) = 0$, and \\emph{free abelian of rank $r$} if it is\n    isomorphic to $\\mathbb{Z}^r$.",
+  "proof": null
+}

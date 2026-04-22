@@ -3,5 +3,56 @@
   "branch": "numina/fundamental-group",
   "source_type": "latex",
   "notes": "",
-  "entries": []
+  "entries": [
+    {
+      "label": "def:group",
+      "kind": "definition",
+      "title": "Group"
+    },
+    {
+      "label": "def:abelian-group",
+      "kind": "definition",
+      "title": "Abelian group"
+    },
+    {
+      "label": "def:subgroup-homomorphism",
+      "kind": "definition",
+      "title": "Subgroup and homomorphism"
+    },
+    {
+      "label": "def:direct-sum",
+      "kind": "definition",
+      "title": "Direct sum"
+    },
+    {
+      "label": "def:cyclic-group",
+      "kind": "definition",
+      "title": "Cyclic group"
+    },
+    {
+      "label": "def:finitely-generated",
+      "kind": "definition",
+      "title": "Finitely generated"
+    },
+    {
+      "label": "def:torsion-free-part",
+      "kind": "definition",
+      "title": "Torsion and free part"
+    },
+    {
+      "label": "thm:invariant-factor-form",
+      "kind": "theorem",
+      "title": "Fundamental Theorem, Invariant Factor Form"
+    },
+    {
+      "label": "thm:elementary-divisor-form",
+      "kind": "theorem",
+      "title": "Fundamental Theorem, Elementary Divisor Form"
+    },
+    {
+      "label": "lem:passage-between-forms",
+      "kind": "lemma",
+      "title": "Passage between the two forms"
+    }
+  ]
 }

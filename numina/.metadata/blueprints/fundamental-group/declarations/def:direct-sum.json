@@ -1,0 +1,10 @@
+{
+  "label": "def:direct-sum",
+  "kind": "definition",
+  "title": "Direct sum",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "Given abelian groups $A_1, \\dots, A_n$, their \\emph{direct sum} is\n    \\[\n        A_1 \\oplus \\cdots \\oplus A_n\n        = \\{ (a_1, \\dots, a_n) : a_i \\in A_i \\},\n    \\]\n    with componentwise addition $(a_i) + (b_i) = (a_i + b_i)$.",
+  "proof": null
+}

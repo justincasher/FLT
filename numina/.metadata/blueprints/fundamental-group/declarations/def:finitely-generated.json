@@ -1,0 +1,10 @@
+{
+  "label": "def:finitely-generated",
+  "kind": "definition",
+  "title": "Finitely generated",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "An abelian group $G$ is \\emph{finitely generated} if there exist $g_1, \\dots, g_n \\in G$\n    such that every element can be written as $k_1 g_1 + \\cdots + k_n g_n$ with\n    $k_i \\in \\mathbb{Z}$.",
+  "proof": null
+}

@@ -1,0 +1,10 @@
+{
+  "label": "def:abelian-group",
+  "kind": "definition",
+  "title": "Abelian group",
+  "uses": [
+    "def:group"
+  ],
+  "statement": "A group $(G, \\cdot)$ is \\emph{abelian} if $a \\cdot b = b \\cdot a$ for all $a, b \\in G$.\n    We typically write the operation additively as $a + b$, with identity $0$ and inverse $-a$.",
+  "proof": null
+}

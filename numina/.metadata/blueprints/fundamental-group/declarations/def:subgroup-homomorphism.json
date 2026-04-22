@@ -1,0 +1,10 @@
+{
+  "label": "def:subgroup-homomorphism",
+  "kind": "definition",
+  "title": "Subgroup and homomorphism",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "A subset $H \\subseteq G$ is a \\emph{subgroup} if it is closed under the operation and\n    inverses and contains $0$. A \\emph{homomorphism} $\\varphi : G \\to H$ of abelian groups is\n    a map satisfying $\\varphi(a + b) = \\varphi(a) + \\varphi(b)$. An \\emph{isomorphism} is a\n    bijective homomorphism, written $G \\cong H$.",
+  "proof": null
+}

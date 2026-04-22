@@ -1,0 +1,8 @@
+{
+  "label": "def:group",
+  "kind": "definition",
+  "title": "Group",
+  "uses": [],
+  "statement": "A \\emph{group} is a set $G$ equipped with a binary operation\n    $\\cdot : G \\times G \\to G$ satisfying:\n    \\begin{enumerate}\n        \\item (Associativity) $(a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$ for all $a, b, c \\in G$.\n        \\item (Identity) There exists $e \\in G$ with $e \\cdot a = a \\cdot e = a$ for all $a \\in G$.\n        \\item (Inverses) For every $a \\in G$ there exists $a^{-1} \\in G$ with\n        $a \\cdot a^{-1} = a^{-1} \\cdot a = e$.\n    \\end{enumerate}",
+  "proof": null
+}

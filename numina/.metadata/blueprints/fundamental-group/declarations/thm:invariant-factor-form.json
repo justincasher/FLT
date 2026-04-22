@@ -1,0 +1,15 @@
+{
+  "label": "thm:invariant-factor-form",
+  "kind": "theorem",
+  "title": "Fundamental Theorem, Invariant Factor Form",
+  "uses": [
+    "def:abelian-group",
+    "def:direct-sum",
+    "def:cyclic-group",
+    "def:finitely-generated",
+    "def:torsion-free-part",
+    "def:subgroup-homomorphism"
+  ],
+  "statement": "Let $G$ be a finitely generated abelian group. Then there exist a unique integer\n    $r \\ge 0$ and unique integers $1 < d_1 \\mid d_2 \\mid \\cdots \\mid d_k$ such that\n    \\[\n        G \\;\\cong\\; \\mathbb{Z}^r \\;\\oplus\\; \\mathbb{Z}/d_1\\mathbb{Z} \\;\\oplus\\;\n        \\mathbb{Z}/d_2\\mathbb{Z} \\;\\oplus\\; \\cdots \\;\\oplus\\; \\mathbb{Z}/d_k\\mathbb{Z}.\n    \\]\n    The integer $r$ is the \\emph{rank} (or \\emph{Betti number}) of $G$, and\n    $d_1, \\dots, d_k$ are the \\emph{invariant factors}.",
+  "proof": "The torsion subgroup $T(G)$ of a finitely generated abelian group is itself finitely\n    generated, hence finite, and the quotient $G / T(G)$ is finitely generated and torsion-free,\n    hence free abelian of some rank $r \\ge 0$. The short exact sequence $0 \\to T(G) \\to G\n    \\to G/T(G) \\to 0$ splits because $G/T(G)$ is free, giving $G \\cong \\mathbb{Z}^r \\oplus T(G)$.\n    Applying the structure theorem for finitely generated modules over the principal ideal\n    domain $\\mathbb{Z}$ (via Smith normal form) to $T(G)$ produces a decomposition\n    $T(G) \\cong \\mathbb{Z}/d_1\\mathbb{Z} \\oplus \\cdots \\oplus \\mathbb{Z}/d_k\\mathbb{Z}$ with\n    $1 < d_1 \\mid d_2 \\mid \\cdots \\mid d_k$. Uniqueness of $r$ and of the invariant factors\n    follows from the uniqueness part of Smith normal form."
+}

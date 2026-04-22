@@ -1,0 +1,11 @@
+{
+  "label": "lem:passage-between-forms",
+  "kind": "lemma",
+  "title": "Passage between the two forms",
+  "uses": [
+    "def:direct-sum",
+    "def:cyclic-group"
+  ],
+  "statement": "If $d = p_1^{a_1} \\cdots p_m^{a_m}$ is a prime factorization with the $p_i$ distinct\n    primes and each $a_i \\ge 1$, then\n    \\[\n        \\mathbb{Z}/d\\mathbb{Z} \\;\\cong\\; \\mathbb{Z}/p_1^{a_1}\\mathbb{Z} \\;\\oplus\\; \\cdots\n        \\;\\oplus\\; \\mathbb{Z}/p_m^{a_m}\\mathbb{Z}.\n    \\]\n    Splitting each invariant factor in this way yields the elementary divisors; conversely,\n    grouping the elementary divisors by taking, for each prime, the largest power into $d_k$,\n    the next largest into $d_{k-1}$, and so on, recovers the invariant factors.",
+  "proof": "The isomorphism is a direct application of the Chinese Remainder Theorem: since the\n    prime powers $p_i^{a_i}$ are pairwise coprime and their product equals $d$, the natural\n    ring homomorphism\n    $\\mathbb{Z}/d\\mathbb{Z} \\to \\prod_{i=1}^m \\mathbb{Z}/p_i^{a_i}\\mathbb{Z}$\n    is an isomorphism of rings, and in particular of abelian groups. Reversing the grouping\n    as described recovers the original invariant factors because, for each prime $p$, the\n    divisibility chain $d_1 \\mid d_2 \\mid \\cdots \\mid d_k$ forces the $p$-parts of the $d_j$\n    to form an increasing sequence of prime powers."
+}

@@ -1,0 +1,15 @@
+{
+  "label": "thm:elementary-divisor-form",
+  "kind": "theorem",
+  "title": "Fundamental Theorem, Elementary Divisor Form",
+  "uses": [
+    "def:abelian-group",
+    "def:direct-sum",
+    "def:cyclic-group",
+    "def:finitely-generated",
+    "def:torsion-free-part",
+    "def:subgroup-homomorphism"
+  ],
+  "statement": "Let $G$ be a finitely generated abelian group. Then there exist an integer $r \\ge 0$,\n    primes $p_1, \\dots, p_s$ (not necessarily distinct), and positive integers\n    $e_1, \\dots, e_s$ such that\n    \\[\n        G \\;\\cong\\; \\mathbb{Z}^r \\;\\oplus\\; \\bigoplus_{i=1}^{s} \\mathbb{Z}/p_i^{e_i}\\mathbb{Z},\n    \\]\n    and the multiset of prime powers $\\{p_i^{e_i}\\}$ is uniquely determined by $G$. These are\n    the \\emph{elementary divisors} of $G$.",
+  "proof": "Start from the invariant factor decomposition\n    $G \\cong \\mathbb{Z}^r \\oplus \\mathbb{Z}/d_1\\mathbb{Z} \\oplus \\cdots\n    \\oplus \\mathbb{Z}/d_k\\mathbb{Z}$ given by \\cref{thm:invariant-factor-form}. By\n    \\cref{lem:passage-between-forms}, each factor $\\mathbb{Z}/d_j\\mathbb{Z}$ splits as a\n    direct sum $\\bigoplus_\\ell \\mathbb{Z}/p_{j,\\ell}^{a_{j,\\ell}}\\mathbb{Z}$ over the prime\n    factorization of $d_j$. Concatenating these decompositions gives the claimed elementary\n    divisor form. Uniqueness of the multiset of prime powers follows from the uniqueness of\n    invariant factors together with the uniqueness of the prime factorization of each $d_j$."
+}

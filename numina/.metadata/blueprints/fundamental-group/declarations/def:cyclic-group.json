@@ -1,0 +1,11 @@
+{
+  "label": "def:cyclic-group",
+  "kind": "definition",
+  "title": "Cyclic group",
+  "uses": [
+    "def:abelian-group",
+    "def:subgroup-homomorphism"
+  ],
+  "statement": "An abelian group $G$ is \\emph{cyclic} if there exists $g \\in G$ such that\n    $G = \\{ ng : n \\in \\mathbb{Z} \\}$. Every cyclic group is isomorphic to either $\\mathbb{Z}$\n    (infinite order) or $\\mathbb{Z}/n\\mathbb{Z}$ for some $n \\ge 1$ (finite order $n$).",
+  "proof": null
+}
