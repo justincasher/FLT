@@ -1,5 +1,5 @@
 {
-  "title": "Fundamental Theorem Abel 2",
+  "title": "The Fundamental Theorem of Finitely Generated Abelian Groups",
   "branch": "numina/fundamental-theorem-abel-2",
   "source_type": "latex",
   "notes": "",
@@ -99,5 +99,6 @@
       "kind": "corollary",
       "title": "Primary decomposition of finite abelian groups"
     }
-  ]
+  ],
+  "leanModule": "Numina.Blueprints.FundamentalTheoremAbel2"
 }
