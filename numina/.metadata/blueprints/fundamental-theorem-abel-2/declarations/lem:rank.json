@@ -8,5 +8,8 @@
     "def:direct-sum"
   ],
   "statement": "If $G \\cong \\mathbb{Z}^r \\oplus T$ with $T$ finite, then $T = T(G)$ and\n    $r = \\dim_{\\mathbb{Q}}(G \\otimes_{\\mathbb{Z}} \\mathbb{Q})$. In particular, $r$ depends\n    only on $G$.",
-  "proof": "Every element of $T$ has finite order, while no nonzero element of $\\mathbb{Z}^r$\n    does. So $T(G) = T$. Tensoring with $\\mathbb{Q}$ kills the (finite) torsion and\n    gives $\\mathbb{Q}^r$; the $\\mathbb{Q}$-dimension is an isomorphism invariant of $G$."
+  "proof": "Every element of $T$ has finite order, while no nonzero element of $\\mathbb{Z}^r$\n    does. So $T(G) = T$. Tensoring with $\\mathbb{Q}$ kills the (finite) torsion and\n    gives $\\mathbb{Q}^r$; the $\\mathbb{Q}$-dimension is an isomorphism invariant of $G$.",
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.rank_and_torsion_intrinsic",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "HARD"
 }

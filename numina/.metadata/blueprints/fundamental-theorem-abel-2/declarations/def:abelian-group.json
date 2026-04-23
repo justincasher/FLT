@@ -4,5 +4,8 @@
   "title": "Abelian group",
   "uses": [],
   "statement": "A \\emph{group} is a set $G$ with a binary operation $\\cdot : G \\times G \\to G$\n    that is associative, has a two-sided identity $e$, and admits two-sided inverses.\n    It is \\emph{abelian} if $a \\cdot b = b \\cdot a$ for all $a, b \\in G$.\n    Abelian groups are written additively, with identity $0$.",
-  "proof": null
+  "proof": null,
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.AbelianGroup",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "ALREADY_IN_MATHLIB"
 }

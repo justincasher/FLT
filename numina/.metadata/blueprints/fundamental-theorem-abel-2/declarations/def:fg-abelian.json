@@ -7,5 +7,8 @@
     "def:subgroup-generated"
   ],
   "statement": "An abelian group $G$ is \\emph{finitely generated} if $G = \\langle S \\rangle$\n    for some finite set $S \\subseteq G$.",
-  "proof": null
+  "proof": null,
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.FinitelyGenerated",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "ALREADY_IN_MATHLIB"
 }

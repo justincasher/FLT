@@ -7,5 +7,8 @@
     "def:subgroup-generated"
   ],
   "statement": "A group $G$ is \\emph{cyclic} if $G = \\langle a \\rangle$ for some $a \\in G$.\n    Up to isomorphism, the cyclic groups are $\\mathbb{Z}$ and $\\mathbb{Z}/n\\mathbb{Z}$ for $n \\ge 1$.",
-  "proof": null
+  "proof": null,
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.CyclicGroup",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "ALREADY_IN_MATHLIB"
 }

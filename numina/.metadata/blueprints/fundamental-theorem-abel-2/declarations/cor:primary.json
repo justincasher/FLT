@@ -9,5 +9,8 @@
     "thm:main"
   ],
   "statement": "Every finite abelian group is isomorphic to a direct sum of cyclic groups\n    of prime-power order, and the multiset of prime-power orders is unique.",
-  "proof": "Apply Theorem~\\ref{thm:main} to obtain $G \\cong \\mathbb{Z}/n_1 \\oplus \\cdots\n    \\oplus \\mathbb{Z}/n_k$, and then apply the Chinese Remainder Theorem to each\n    $\\mathbb{Z}/n_j$ via $n_j = \\prod_p p^{a_p(j)}$, regrouping. Uniqueness of the\n    prime-power multiset follows from the uniqueness of the exponents\n    $a_p(j)$ established in the proof of Proposition~\\ref{prop:uniqueness}."
+  "proof": "Apply Theorem~\\ref{thm:main} to obtain $G \\cong \\mathbb{Z}/n_1 \\oplus \\cdots\n    \\oplus \\mathbb{Z}/n_k$, and then apply the Chinese Remainder Theorem to each\n    $\\mathbb{Z}/n_j$ via $n_j = \\prod_p p^{a_p(j)}$, regrouping. Uniqueness of the\n    prime-power multiset follows from the uniqueness of the exponents\n    $a_p(j)$ established in the proof of Proposition~\\ref{prop:uniqueness}.",
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.primary_decomposition_of_finite",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "ALREADY_IN_MATHLIB"
 }

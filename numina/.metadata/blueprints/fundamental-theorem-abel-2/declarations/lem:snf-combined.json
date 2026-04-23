@@ -8,5 +8,8 @@
     "lem:snf-uniqueness"
   ],
   "statement": "For every $A \\in M_{n \\times m}(\\mathbb{Z})$ there exist $U \\in GL_n(\\mathbb{Z})$\n    and $V \\in GL_m(\\mathbb{Z})$ such that $U A V$ is in Smith Normal Form, and\n    the diagonal entries are uniquely determined by $A$.",
-  "proof": "Combine Lemma~\\ref{lem:snf-existence} (existence) and\n    Lemma~\\ref{lem:snf-uniqueness} (uniqueness)."
+  "proof": "Combine Lemma~\\ref{lem:snf-existence} (existence) and\n    Lemma~\\ref{lem:snf-uniqueness} (uniqueness).",
+  "leanDeclaration": "Numina.FundamentalTheoremAbel2.smith_normal_form_combined",
+  "leanFile": "Numina/Blueprints/FundamentalTheoremAbel2.lean",
+  "assessment": "HARD"
 }
