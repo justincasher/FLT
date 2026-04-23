@@ -89,15 +89,18 @@ theorem exists_finite_presentation (G : Type u) [AddCommGroup G] [AddGroup.FG G]
 
 /-- **Smith Normal Form of an integer matrix.** A rectangular integer matrix
 `A : Matrix (Fin n) (Fin m) ℤ` is in Smith Normal Form if it is zero off the
-main diagonal, the first `s` diagonal entries are positive and form a divisibility
-chain `d₁ ∣ d₂ ∣ ⋯ ∣ dₛ`, and the remaining diagonal entries are zero. -/
-structure IsSmithNormalForm {n m : ℕ} (A : Matrix (Fin n) (Fin m) ℤ) : Prop where
-  /-- Entries off the main diagonal are zero. -/
-  offDiagonal_zero : ∀ i : Fin n, ∀ j : Fin m, (i : ℕ) ≠ (j : ℕ) → A i j = 0
+main diagonal, has `s` (with `s ≤ min n m`) positive diagonal entries
+`d₀, …, d_{s-1}` forming a divisibility chain `d₀ ∣ d₁ ∣ ⋯ ∣ d_{s-1}`, and all
+other diagonal entries are zero. The witness `s` is recorded as data. -/
+structure SmithNormalForm {n m : ℕ} (A : Matrix (Fin n) (Fin m) ℤ) where
   /-- The number of nonzero diagonal entries. -/
   s : ℕ
+  /-- `s` does not exceed the number of rows. -/
   s_le_n : s ≤ n
+  /-- `s` does not exceed the number of columns. -/
   s_le_m : s ≤ m
+  /-- Entries off the main diagonal are zero. -/
+  offDiagonal_zero : ∀ i : Fin n, ∀ j : Fin m, (i : ℕ) ≠ (j : ℕ) → A i j = 0
   /-- The first `s` diagonal entries are positive. -/
   diag_pos : ∀ k : Fin s,
     0 < A ⟨k, lt_of_lt_of_le k.isLt s_le_n⟩ ⟨k, lt_of_lt_of_le k.isLt s_le_m⟩
@@ -118,41 +121,41 @@ is in Smith Normal Form. -/
 theorem smith_normal_form_existence {n m : ℕ} (A : Matrix (Fin n) (Fin m) ℤ) :
     ∃ (U : Matrix.GeneralLinearGroup (Fin n) ℤ)
       (V : Matrix.GeneralLinearGroup (Fin m) ℤ),
-      IsSmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
-        (V : Matrix (Fin m) (Fin m) ℤ)) := by
+      Nonempty (SmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
+        (V : Matrix (Fin m) (Fin m) ℤ))) := by
   sorry
 
-/-- **Uniqueness of Smith Normal Form.** The diagonal entries of the Smith Normal
-Form of an integer matrix `A` are uniquely determined by `A`: if `U A V` and
-`U' A V'` are both in Smith Normal Form, the sequences of positive diagonal
-entries agree. -/
+/-- **Uniqueness of Smith Normal Form.** The number `s` of nonzero diagonal
+entries and the positive diagonal entries themselves depend only on `A` (and
+not on the choice of `U`, `V`). -/
 theorem smith_normal_form_uniqueness {n m : ℕ} (A : Matrix (Fin n) (Fin m) ℤ)
     (U : Matrix.GeneralLinearGroup (Fin n) ℤ)
     (V : Matrix.GeneralLinearGroup (Fin m) ℤ)
     (U' : Matrix.GeneralLinearGroup (Fin n) ℤ)
     (V' : Matrix.GeneralLinearGroup (Fin m) ℤ)
-    (hS : IsSmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
+    (snf : SmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
       (V : Matrix (Fin m) (Fin m) ℤ)))
-    (hS' : IsSmithNormalForm ((U' : Matrix (Fin n) (Fin n) ℤ) * A *
+    (snf' : SmithNormalForm ((U' : Matrix (Fin n) (Fin n) ℤ) * A *
       (V' : Matrix (Fin m) (Fin m) ℤ))) :
-    hS.s = hS'.s ∧
-    ∀ k : Fin hS.s,
-      (((U : Matrix (Fin n) (Fin n) ℤ) * A * (V : Matrix (Fin m) (Fin m) ℤ))
-          ⟨k, lt_of_lt_of_le k.isLt hS.s_le_n⟩
-          ⟨k, lt_of_lt_of_le k.isLt hS.s_le_m⟩) =
-      (((U' : Matrix (Fin n) (Fin n) ℤ) * A * (V' : Matrix (Fin m) (Fin m) ℤ))
-          ⟨k, lt_of_lt_of_le (hS.s.symm ▸ k).isLt hS'.s_le_n⟩
-          ⟨k, lt_of_lt_of_le (hS.s.symm ▸ k).isLt hS'.s_le_m⟩) := by
+    ∃ h : snf.s = snf'.s,
+      ∀ k : Fin snf.s,
+        (((U : Matrix (Fin n) (Fin n) ℤ) * A * (V : Matrix (Fin m) (Fin m) ℤ))
+            ⟨k, lt_of_lt_of_le k.isLt snf.s_le_n⟩
+            ⟨k, lt_of_lt_of_le k.isLt snf.s_le_m⟩) =
+        (((U' : Matrix (Fin n) (Fin n) ℤ) * A * (V' : Matrix (Fin m) (Fin m) ℤ))
+            ⟨(k : ℕ), lt_of_lt_of_le (h ▸ k.isLt) snf'.s_le_n⟩
+            ⟨(k : ℕ), lt_of_lt_of_le (h ▸ k.isLt) snf'.s_le_m⟩) := by
   sorry
 
-/-- **Smith Normal Form (combined).** For every integer matrix
-`A ∈ M_{n×m}(ℤ)` there exist `U ∈ GL_n(ℤ)` and `V ∈ GL_m(ℤ)` with `UAV` in Smith
-Normal Form, and the diagonal entries are unique. -/
+/-- **Smith Normal Form (combined).** Combined existence and uniqueness: for
+every integer matrix `A ∈ M_{n×m}(ℤ)` there exist `U ∈ GL_n(ℤ)`, `V ∈ GL_m(ℤ)`
+with `UAV` in Smith Normal Form, whose diagonal entries are unique invariants
+of `A`. -/
 theorem smith_normal_form_combined {n m : ℕ} (A : Matrix (Fin n) (Fin m) ℤ) :
     ∃ (U : Matrix.GeneralLinearGroup (Fin n) ℤ)
       (V : Matrix.GeneralLinearGroup (Fin m) ℤ),
-      IsSmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
-        (V : Matrix (Fin m) (Fin m) ℤ)) := by
+      Nonempty (SmithNormalForm ((U : Matrix (Fin n) (Fin n) ℤ) * A *
+        (V : Matrix (Fin m) (Fin m) ℤ))) := by
   sorry
 
 /-! ## Existence of the decomposition -/
