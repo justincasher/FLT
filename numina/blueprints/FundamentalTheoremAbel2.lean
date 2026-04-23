@@ -9,8 +9,9 @@ import Mathlib.GroupTheory.Torsion
 import Mathlib.GroupTheory.SpecificGroups.Cyclic
 import Mathlib.LinearAlgebra.FreeModule.PID
 import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Defs
-import Mathlib.LinearAlgebra.SmithNormalForm
 import Mathlib.GroupTheory.FreeAbelianGroup
+import Mathlib.LinearAlgebra.Dimension.Finrank
+import Mathlib.RingTheory.TensorProduct.Basic
 
 /-!
 # The Fundamental Theorem of Finitely Generated Abelian Groups
