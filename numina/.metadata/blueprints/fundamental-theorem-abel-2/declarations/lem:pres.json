@@ -1,0 +1,11 @@
+{
+  "label": "lem:pres",
+  "kind": "lemma",
+  "title": "Finite presentation",
+  "uses": [
+    "def:fg-abelian",
+    "def:free-abelian"
+  ],
+  "statement": "Every finitely generated abelian group $G$ fits in a short exact sequence\n    \\[\n        0 \\to K \\to \\mathbb{Z}^n \\to G \\to 0\n    \\]\n    with $K$ free abelian of rank $m \\le n$.",
+  "proof": "If $g_1, \\dots, g_n$ generate $G$, the map $\\varphi : \\mathbb{Z}^n \\to G$\n    defined by $(a_i) \\mapsto \\sum a_i g_i$ is surjective. Set $K = \\ker \\varphi$\n    and apply Lemma~\\ref{lem:fgfree} to conclude that $K$ is free abelian of\n    rank at most $n$."
+}

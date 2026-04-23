@@ -1,0 +1,10 @@
+{
+  "label": "lem:snf-uniqueness",
+  "kind": "lemma",
+  "title": "Uniqueness of Smith Normal Form",
+  "uses": [
+    "def:snf"
+  ],
+  "statement": "The diagonal entries $d_1, \\dots, d_s$ of the Smith Normal Form of $A$\n    are uniquely determined by $A$.",
+  "proof": "For $1 \\le k \\le \\min(n, m)$, let $\\Delta_k(A)$ denote the gcd of all\n    $k \\times k$ minors of $A$, with the convention $\\Delta_0(A) = 1$ and\n    $\\Delta_k(A) = 0$ if every $k \\times k$ minor vanishes. Each elementary\n    operation expresses the new $k \\times k$ minors as integer linear\n    combinations of the old ones (and conversely), so $\\Delta_k$ is invariant\n    under left/right multiplication by elements of $GL_n(\\mathbb{Z})$ or $GL_m(\\mathbb{Z})$.\n    For a matrix in Smith form with diagonal $d_1 \\mid \\cdots \\mid d_s$,\n    one computes $\\Delta_k = d_1 d_2 \\cdots d_k$ for $k \\le s$ and\n    $\\Delta_k = 0$ for $k > s$. Hence $s$ is determined by $A$, and\n    $d_k = \\Delta_k(A) / \\Delta_{k-1}(A)$ is determined by $A$."
+}

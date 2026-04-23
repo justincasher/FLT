@@ -1,0 +1,10 @@
+{
+  "label": "lem:fgfree",
+  "kind": "lemma",
+  "title": "Subgroups of $\\mathbb{Z}^n$ are free",
+  "uses": [
+    "def:free-abelian"
+  ],
+  "statement": "Every subgroup $H \\le \\mathbb{Z}^n$ is free abelian of rank at most $n$.",
+  "proof": "Proceed by induction on $n$. For $n = 1$, every subgroup of $\\mathbb{Z}$ equals\n    $d\\mathbb{Z}$ for some $d \\ge 0$ (take the smallest positive element, using the\n    division algorithm); this is free of rank $0$ or $1$.\n\n    For $n > 1$, let $\\pi : \\mathbb{Z}^n \\to \\mathbb{Z}$ be the last-coordinate projection.\n    Then $\\pi(H) = d\\mathbb{Z}$ for some $d \\ge 0$. If $d = 0$, then\n    $H \\subseteq \\mathbb{Z}^{n-1}$ and induction applies. Otherwise pick $h \\in H$\n    with $\\pi(h) = d$, and let $K = H \\cap \\ker \\pi \\subseteq \\mathbb{Z}^{n-1}$.\n    By induction, $K$ has a basis $e_1, \\dots, e_m$. Every $x \\in H$ satisfies\n    $\\pi(x) = q d$ for some $q \\in \\mathbb{Z}$, so $x - q h \\in K$ has a unique\n    expansion in $e_1, \\dots, e_m$. Hence $e_1, \\dots, e_m, h$ is a basis of $H$."
+}

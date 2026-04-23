@@ -1,0 +1,13 @@
+{
+  "label": "prop:uniqueness",
+  "kind": "proposition",
+  "title": "Uniqueness of invariant factors",
+  "uses": [
+    "def:fg-abelian",
+    "def:direct-sum",
+    "def:free-abelian",
+    "def:cyclic-group"
+  ],
+  "statement": "In any decomposition\n    $G \\cong \\mathbb{Z}^r \\oplus \\mathbb{Z}/n_1 \\oplus \\cdots \\oplus \\mathbb{Z}/n_k$ of a\n    finitely generated abelian group with $n_1 \\mid \\cdots \\mid n_k$ and\n    $n_i \\ge 2$, the integer $r$ and the sequence $(n_1, \\dots, n_k)$ are\n    uniquely determined by $G$.",
+  "proof": "By Lemma~\\ref{lem:rank}, $r$ is determined by $G$, and the torsion part\n    $T(G) \\cong \\mathbb{Z}/n_1 \\oplus \\cdots \\oplus \\mathbb{Z}/n_k$ is determined as a\n    group. So we reduce to $G$ finite and prove uniqueness of the invariant\n    factors $n_1 \\mid \\cdots \\mid n_k$ with $n_i \\ge 2$.\n\n    Let $p$ be a prime and write $a_p(j) = v_p(n_j)$ for the $p$-adic\n    valuation of $n_j$. Since $n_1 \\mid \\cdots \\mid n_k$, we have\n    $0 \\le a_p(1) \\le \\cdots \\le a_p(k)$. Lemma~\\ref{lem:pdim} gives\n    \\[\n        \\dim_{\\mathbb{F}_p} U_i(G) = \\#\\{\\, j : a_p(j) \\ge i + 1 \\,\\}.\n    \\]\n    Viewing the right-hand side as a function of $i$ completely determines the\n    nondecreasing sequence $(a_p(1), \\dots, a_p(k))$: the count with\n    $a_p(j) \\ge 1$ is $\\dim U_0$, the count with $a_p(j) \\ge 2$ is\n    $\\dim U_1$, and so on. Repeating for every prime $p$ recovers each\n    $n_j = \\prod_p p^{a_p(j)}$. Since the dimensions $\\dim_{\\mathbb{F}_p} U_i(G)$\n    depend only on $G$ as an abstract abelian group, the invariant factors\n    are unique."
+}

@@ -1,0 +1,8 @@
+{
+  "label": "def:snf",
+  "kind": "definition",
+  "title": "Smith Normal Form",
+  "uses": [],
+  "statement": "A matrix $A \\in M_{n \\times m}(\\mathbb{Z})$ is in \\emph{Smith Normal Form} if\n    it is zero off the main diagonal and its diagonal entries\n    $d_1, \\dots, d_s$ (with the remaining diagonal positions equal to $0$)\n    satisfy $d_1 \\mid d_2 \\mid \\cdots \\mid d_s$ with all $d_i > 0$.",
+  "proof": null
+}

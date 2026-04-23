@@ -1,0 +1,11 @@
+{
+  "label": "def:fg-abelian",
+  "kind": "definition",
+  "title": "Finitely generated abelian group",
+  "uses": [
+    "def:abelian-group",
+    "def:subgroup-generated"
+  ],
+  "statement": "An abelian group $G$ is \\emph{finitely generated} if $G = \\langle S \\rangle$\n    for some finite set $S \\subseteq G$.",
+  "proof": null
+}

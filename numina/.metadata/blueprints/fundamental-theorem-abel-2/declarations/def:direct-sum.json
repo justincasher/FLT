@@ -1,0 +1,10 @@
+{
+  "label": "def:direct-sum",
+  "kind": "definition",
+  "title": "Direct sum of abelian groups",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "The (external) \\emph{direct sum} $A_1 \\oplus \\cdots \\oplus A_k$ is the set of\n    tuples $(a_1, \\dots, a_k)$ with $a_i \\in A_i$, under coordinatewise addition.",
+  "proof": null
+}

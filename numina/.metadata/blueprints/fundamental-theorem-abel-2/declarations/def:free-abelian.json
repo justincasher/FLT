@@ -1,0 +1,10 @@
+{
+  "label": "def:free-abelian",
+  "kind": "definition",
+  "title": "Free abelian group of rank $n$",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "An abelian group $F$ is \\emph{free of rank $n$} if $F \\cong \\mathbb{Z}^n$.\n    Equivalently, $F$ has a basis $\\{e_1, \\dots, e_n\\}$: a subset such that\n    every element has a unique expression $\\sum c_i e_i$ with $c_i \\in \\mathbb{Z}$.\n    The rank is well-defined, equal to the $\\mathbb{Q}$-dimension of $F \\otimes_{\\mathbb{Z}} \\mathbb{Q}$.",
+  "proof": null
+}

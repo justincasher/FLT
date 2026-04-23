@@ -1,0 +1,10 @@
+{
+  "label": "lem:snf-existence",
+  "kind": "lemma",
+  "title": "Existence of Smith Normal Form",
+  "uses": [
+    "def:snf"
+  ],
+  "statement": "For every $A \\in M_{n \\times m}(\\mathbb{Z})$, there exist matrices\n    $U \\in GL_n(\\mathbb{Z})$ and $V \\in GL_m(\\mathbb{Z})$ such that $U A V$ is in Smith Normal Form.",
+  "proof": "Integer elementary row and column operations (row/column swaps, sign\n    change, adding an integer multiple of one row/column to another) correspond\n    to left/right multiplication by elements of $GL_n(\\mathbb{Z})$ or $GL_m(\\mathbb{Z})$.\n\n    If $A = 0$ we are done. Otherwise let $\\delta(A)$ be the smallest positive\n    absolute value among the entries of $A$. Move an entry achieving it to\n    position $(1,1)$ with positive sign, so $a_{11} = \\delta(A) > 0$. For each\n    $j > 1$, write $a_{1j} = q a_{11} + r$ with $0 \\le r < a_{11}$ and subtract\n    $q$ times column $1$ from column $j$; if $r > 0$ the new entry reduces\n    $\\delta$, so restart. Do the same for column $1$ via row operations.\n    Since $\\delta$ is a positive integer that strictly decreases at each\n    restart, the procedure terminates with row $1$ and column $1$ zero except\n    for $a_{11} > 0$.\n\n    If some entry $a_{ij}$ with $i, j > 1$ is not divisible by $a_{11}$, add\n    row $i$ to row $1$ and repeat; $\\delta$ strictly decreases. After finitely\n    many iterations $a_{11}$ divides all remaining entries; recursively apply\n    to the submatrix obtained by deleting row $1$ and column $1$. Since\n    divisibility by $a_{11}$ is preserved, the divisibility chain\n    $d_1 \\mid d_2 \\mid \\cdots$ holds."
+}

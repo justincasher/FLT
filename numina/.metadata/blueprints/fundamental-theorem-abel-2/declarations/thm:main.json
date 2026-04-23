@@ -1,0 +1,15 @@
+{
+  "label": "thm:main",
+  "kind": "theorem",
+  "title": "Fundamental Theorem of Finitely Generated Abelian Groups",
+  "uses": [
+    "def:fg-abelian",
+    "def:free-abelian",
+    "def:cyclic-group",
+    "def:direct-sum",
+    "prop:existence",
+    "prop:uniqueness"
+  ],
+  "statement": "Let $G$ be a finitely generated abelian group. There exist unique integers\n    $r \\ge 0$, $k \\ge 0$, and $n_1, \\dots, n_k \\ge 2$ with\n    $n_1 \\mid n_2 \\mid \\cdots \\mid n_k$ such that\n    \\[\n        G \\;\\cong\\; \\mathbb{Z}^r \\oplus \\mathbb{Z}/n_1\\mathbb{Z} \\oplus \\mathbb{Z}/n_2\\mathbb{Z}\n        \\oplus \\cdots \\oplus \\mathbb{Z}/n_k\\mathbb{Z}.\n    \\]\n    The integer $r$ is the \\emph{free rank}; the $n_i$ are the\n    \\emph{invariant factors}.",
+  "proof": "Existence of the decomposition is Proposition~\\ref{prop:existence}, and\n    uniqueness of $r$ and the invariant factors is\n    Proposition~\\ref{prop:uniqueness}."
+}

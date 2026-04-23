@@ -1,0 +1,10 @@
+{
+  "label": "def:torsion",
+  "kind": "definition",
+  "title": "Torsion subgroup",
+  "uses": [
+    "def:abelian-group"
+  ],
+  "statement": "An element $g \\in G$ is \\emph{torsion} if $n g = 0$ for some $n \\ge 1$.\n    The torsion elements form a subgroup $T(G)$, the \\emph{torsion subgroup};\n    $G$ is \\emph{torsion-free} if $T(G) = 0$.",
+  "proof": null
+}
