@@ -1,1 +1,136 @@
-% OCR pending for Calculus test
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\begin{document}
+
+\title{The Fundamental Theorem of Calculus\\A Rigorous Proof}
+\maketitle
+
+\section{Introduction}
+
+The Fundamental Theorem of Calculus (FTC) is the cornerstone of analysis: it asserts that the two principal operations of the calculus---differentiation and integration---are mutually inverse. The result is usually stated as two distinct propositions, often called Part I and Part II. Part I says that the indefinite integral of a continuous function is an antiderivative of that function; Part II says that any antiderivative may be used to evaluate a definite integral by subtraction of endpoint values.
+
+Throughout we work with the Riemann integral on a closed bounded interval $[a,b]\subset\mathbb{R}$.
+
+\section{Preliminaries}
+
+\begin{definition}[Riemann integral, briefly]
+A bounded function $f\colon[a,b]\to\mathbb{R}$ is Riemann integrable if its lower and upper Darboux integrals coincide; the common value is denoted $\int_{a}^{b}f(x)\,dx$.
+\end{definition}
+
+We will use two standard facts without re-proof.
+
+\begin{lemma}[Boundedness on integrable intervals]
+If $f$ is Riemann integrable on $[a,b]$, then $f$ is bounded on $[a,b]$.
+\end{lemma}
+
+\begin{lemma}[Additivity of the integral]
+If $f$ is Riemann integrable on $[a,b]$ and $a\leq c\leq b$, then $f$ is integrable on $[a,c]$ and on $[c,b]$, and
+$$\int_{a}^{b}f(x)\,dx\ =\ \int_{a}^{c}f(x)\,dx+\int_{c}^{b}f(x)\,dx.$$
+\end{lemma}
+
+We adopt the standard convention $\int_{a}^{a}f=0$ and $\int_{b}^{a}f=-\int_{a}^{b}f$, which makes Lemma 3 valid for any ordering of $a,b,c$.
+
+\section{Part I: Differentiation of the Integral}
+
+\begin{theorem}[FTC, Part I]
+Let $f\colon[a,b]\to\mathbb{R}$ be Riemann integrable, and define
+$$F(x)\ =\ \int_{a}^{x}f(t)\,dt,\qquad x\in[a,b].$$
+Then:
+\begin{enumerate}
+    \item $F$ is Lipschitz continuous, hence uniformly continuous, on $[a,b]$.
+    \item If $f$ is continuous at a point $c\in[a,b]$, then $F$ is differentiable at $c$ and $F^{\prime}(c)=f(c)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By Lemma 2, $f$ is bounded; choose $M>0$ with $|f(t)|\leq M$ for every $t\in[a,b]$.
+
+\textbf{Proof of (i).} Let $x,y\in[a,b]$ with $x\leq y$. By Lemma 3,
+$$F(y)-F(x)\ =\ \int_{a}^{y}f(t)\,dt-\int_{a}^{x}f(t)\,dt\ =\ \int_{x}^{y}f(t)\,dt.$$
+Hence
+$$|F(y)-F(x)|\ =\ \left|\int_{x}^{y}f(t)\,dt\right|\ \leq\ \int_{x}^{y}|f(t)|\,dt\ \leq\ M\left(y-x\right).$$
+For arbitrary $x,y$ we obtain $|F(y)-F(x)|\leq M\left|y-x\right|$, so $F$ is Lipschitz with constant $M$, and in particular uniformly continuous.
+
+\textbf{Proof of (ii).} Suppose $f$ is continuous at $c\in[a,b]$. Fix $\varepsilon>0$. By continuity there exists $\delta>0$ such that
+$$t\in[a,b],\ |t-c|<\delta\quad\Longrightarrow\quad|f(t)-f(c)|<\varepsilon.$$
+Take any $h$ with $0<|h|<\delta$ and $c+h\in[a,b]$. Using $\int_{c}^{c+h}f(c)\,dt=h\,f(c)$, we compute
+\begin{align*}
+\frac{F(c+h)-F(c)}{h}-f(c) &=\frac{1}{h}\int_{c}^{c+h}f(t)\,dt\ -\ \frac{1}{h}\int_{c}^{c+h}f(c)\,dt\\
+&=\frac{1}{h}\int_{c}^{c+h}\big(f(t)-f(c)\big)\,dt.
+\end{align*}
+For every $t$ between $c$ and $c+h$ we have $|t-c|\leq|h|<\delta$, so $|f(t)-f(c)|<\varepsilon$. Therefore
+$$\left|\frac{F(c+h)-F(c)}{h}-f(c)\right|\ \leq\ \frac{1}{|h|}\,\varepsilon\,|h|\ =\ \varepsilon.$$
+The absolute-value bound holds for both signs of $h$ because of the sign convention on the integral. Since $\varepsilon>0$ was arbitrary,
+$$\lim_{h\to 0}\frac{F(c+h)-F(c)}{h}\ =\ f(c),$$
+which is precisely the assertion $F^{\prime}(c)=f(c)$.
+\end{proof}
+
+\begin{corollary}
+Every continuous function $f\colon[a,b]\to\mathbb{R}$ has an antiderivative; namely, $F(x)=\int_{a}^{x}f(t)\,dt$.
+\end{corollary}
+
+\section{Part II: Evaluation of Definite Integrals}
+
+We first record a tool from differential calculus.
+
+\begin{lemma}[Mean Value Theorem]
+If $G\colon[a,b]\to\mathbb{R}$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists $\xi\in(a,b)$ with $G(b)-G(a)=G^{\prime}(\xi)(b-a)$.
+\end{lemma}
+
+\begin{theorem}[FTC, Part II]
+Let $f\colon[a,b]\to\mathbb{R}$ be Riemann integrable, and suppose $G\colon[a,b]\to\mathbb{R}$ is continuous on $[a,b]$, differentiable on $(a,b)$, and satisfies $G^{\prime}(x)=f(x)$ for every $x\in(a,b)$. Then
+$$\int_{a}^{b}f(x)\,dx\ =\ G(b)-G(a).$$
+\end{theorem}
+
+\begin{proof}
+Let $\varepsilon>0$. Since $f$ is integrable, there exists a partition
+$$P\colon\quad a=x_{0}<x_{1}<\cdots<x_{n}=b$$
+such that the upper and lower Darboux sums satisfy $U(f,P)-L(f,P)<\varepsilon$. On each subinterval $[x_{k-1},x_{k}]$ the function $G$ satisfies the hypotheses of the Mean Value Theorem (Lemma 6); hence there exists $\xi_{k}\in(x_{k-1},x_{k})$ with
+$$G(x_{k})-G(x_{k-1})\ =\ G^{\prime}(\xi_{k})\,(x_{k}-x_{k-1})\ =\ f(\xi_{k})\,(x_{k}-x_{k-1}).$$
+Telescoping the left-hand side over $k=1,\ldots,n$ gives
+$$G(b)-G(a)\ =\ \sum_{k=1}^{n}\bigl[G(x_{k})-G(x_{k-1})\bigr]\ =\ \sum_{k=1}^{n}f(\xi_{k})\,(x_{k}-x_{k-1}).$$
+The right-hand sum is a Riemann sum $S(f,P,\xi)$ for $f$ over the partition $P$ with tags $\xi=(\xi_{1},\ldots,\xi_{n})$. By definition of the Darboux sums,
+$$L(f,P)\ \leq\ S(f,P,\xi)\ \leq\ U(f,P).$$
+The integral $\int_{a}^{b}f$ also lies between $L(f,P)$ and $U(f,P)$. Both $G(b)-G(a)$ and $\int_{a}^{b}f(x)\,dx$ therefore lie in the same interval of length $U(f,P)-L(f,P)<\varepsilon$, so
+$$\left|\bigl(G(b)-G(a)\bigr)\ -\ \int_{a}^{b}f(x)\,dx\right|\ \leq\ U(f,P)-L(f,P)\ <\ \varepsilon.$$
+Since $\varepsilon>0$ was arbitrary, the difference is zero:
+$$G(b)-G(a)\ =\ \int_{a}^{b}f(x)\,dx.\qedhere$$
+\end{proof}
+
+\begin{remark}
+The proof of Part II does \emph{not} require $f$ to be continuous, only Riemann integrable. The continuity of $f$ is used in Part I to obtain $F^{\prime}=f$; once an antiderivative $G$ is given, integrability of $f$ is enough.
+\end{remark}
+
+\section{Synthesis}
+
+Parts I and II together express the inverse relationship between differentiation and integration. Part I says: if you start with a continuous $f$, integrate it to get $F$, and then differentiate, you recover $f$. Part II says: if you start with a differentiable $G$ whose derivative is integrable, then integrating that derivative recovers the net change $G(b)-G(a)$. Symbolically:
+$$\frac{d}{dx}\!\int_{a}^{x}f(t)\,dt=f(x),\qquad\int_{a}^{b}G^{\prime}(x)\,dx=G(b)-G(a).$$
+
+\begin{corollary}[Integration by parts]
+If $u,v\colon[a,b]\to\mathbb{R}$ are continuously differentiable, then
+$$\int_{a}^{b}u(x)v^{\prime}(x)\,dx\ =\ \bigl[u(x)v(x)\bigr]_{a}^{b}\ -\ \int_{a}^{b}u^{\prime}(x)v(x)\,dx.$$
+\end{corollary}
+
+\begin{proof}
+Apply Theorem 7 to $G(x) = u(x)v(x)$, whose derivative $G'(x) = u'(x)v(x) + u(x)v'(x)$ is continuous, hence integrable.
+\end{proof}
+
+\begin{corollary}[Substitution rule]
+Let $\varphi \colon [a,b] \to \mathbb{R}$ be continuously differentiable with $\varphi([a,b]) \subseteq [c,d]$, and let $f \colon [c,d] \to \mathbb{R}$ be continuous. Then
+$$\int_{a}^{b} f(\varphi(x)) \varphi'(x)\,dx = \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.$$
+\end{corollary}
+
+\begin{proof}
+By Corollary 5, $f$ has an antiderivative $F$ on $[c,d]$. The chain rule gives $(F \circ \varphi)'(x) = f(\varphi(x))\varphi'(x)$, which is continuous on $[a,b]$. Theorem 7 applied to $F \circ \varphi$ on $[a,b]$ and to $F$ on $[\varphi(a),\varphi(b)]$ yields, respectively,
+$$\int_{a}^{b} f(\varphi(x)) \varphi'(x)\,dx = F(\varphi(b)) - F(\varphi(a)) = \int_{\varphi(a)}^{\varphi(b)} f(u)\,du.\qedhere$$
+\end{proof}
+
+\end{document}
