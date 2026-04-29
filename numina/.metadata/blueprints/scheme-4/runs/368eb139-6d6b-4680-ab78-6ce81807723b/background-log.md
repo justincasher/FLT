@@ -1,0 +1,1 @@
+- [2026-04-29] Started: drafting scheme-4 blueprint and Lean stubs from source LaTeX (10 definitions on schemes).
