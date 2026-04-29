@@ -5,53 +5,106 @@
   "notes": "",
   "entries": [
     {
-      "label": "def:presheaf",
       "kind": "definition",
+      "label": "def:presheaf",
+      "lean_name": "FLT.Scheme4.RingPresheaf",
+      "uses": [],
+      "status": "not_started",
       "title": "Presheaf of Rings"
     },
     {
-      "label": "def:sheaf",
       "kind": "definition",
+      "label": "def:sheaf",
+      "lean_name": "FLT.Scheme4.RingSheaf",
+      "uses": [
+        "def:presheaf"
+      ],
+      "status": "not_started",
       "title": "Sheaf"
     },
     {
-      "label": "def:ringed-space",
       "kind": "definition",
+      "label": "def:ringed-space",
+      "lean_name": "AlgebraicGeometry.RingedSpace",
+      "uses": [
+        "def:sheaf"
+      ],
+      "status": "not_started",
       "title": "Ringed Space"
     },
     {
-      "label": "def:stalk",
       "kind": "definition",
+      "label": "def:stalk",
+      "lean_name": "TopCat.Presheaf.stalk",
+      "uses": [
+        "def:presheaf"
+      ],
+      "status": "not_started",
       "title": "Stalk"
     },
     {
-      "label": "def:locally-ringed-space",
       "kind": "definition",
+      "label": "def:locally-ringed-space",
+      "lean_name": "AlgebraicGeometry.LocallyRingedSpace",
+      "uses": [
+        "def:ringed-space",
+        "def:stalk"
+      ],
+      "status": "not_started",
       "title": "Locally Ringed Space"
     },
     {
-      "label": "def:spectrum",
       "kind": "definition",
+      "label": "def:spectrum",
+      "lean_name": "PrimeSpectrum",
+      "uses": [],
+      "status": "not_started",
       "title": "Spectrum of a Ring"
     },
     {
-      "label": "def:structure-sheaf",
       "kind": "definition",
+      "label": "def:structure-sheaf",
+      "lean_name": "AlgebraicGeometry.Spec.structureSheaf",
+      "uses": [
+        "def:sheaf",
+        "def:spectrum"
+      ],
+      "status": "not_started",
       "title": "Structure Sheaf on $\\operatorname{Spec} A$"
     },
     {
-      "label": "def:affine-scheme",
       "kind": "definition",
+      "label": "def:affine-scheme",
+      "lean_name": "FLT.Scheme4.IsAffineScheme",
+      "uses": [
+        "def:locally-ringed-space",
+        "def:spectrum",
+        "def:structure-sheaf"
+      ],
+      "status": "not_started",
       "title": "Affine Scheme"
     },
     {
-      "label": "def:scheme",
       "kind": "definition",
+      "label": "def:scheme",
+      "lean_name": "AlgebraicGeometry.Scheme",
+      "uses": [
+        "def:locally-ringed-space",
+        "def:affine-scheme"
+      ],
+      "status": "not_started",
       "title": "Scheme"
     },
     {
-      "label": "def:scheme-hom",
       "kind": "definition",
+      "label": "def:scheme-hom",
+      "lean_name": "AlgebraicGeometry.Scheme.Hom",
+      "uses": [
+        "def:scheme",
+        "def:stalk",
+        "def:locally-ringed-space"
+      ],
+      "status": "not_started",
       "title": "Morphism of Schemes"
     }
   ],

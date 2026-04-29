@@ -1,1 +1,2 @@
 - [2026-04-29] Started: drafting scheme-4 blueprint and Lean stubs from source LaTeX (10 definitions on schemes).
+- [2026-04-29] Progress: blueprint LaTeX and metadata drafted; 10 definitions linked to Mathlib names or FLT.Scheme4 wrappers.
