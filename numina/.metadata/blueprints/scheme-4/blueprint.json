@@ -3,7 +3,58 @@
   "branch": "numina/scheme-4",
   "source_type": "latex",
   "notes": "",
-  "entries": [],
+  "entries": [
+    {
+      "label": "def:presheaf",
+      "kind": "definition",
+      "title": "Presheaf of Rings"
+    },
+    {
+      "label": "def:sheaf",
+      "kind": "definition",
+      "title": "Sheaf"
+    },
+    {
+      "label": "def:ringed-space",
+      "kind": "definition",
+      "title": "Ringed Space"
+    },
+    {
+      "label": "def:stalk",
+      "kind": "definition",
+      "title": "Stalk"
+    },
+    {
+      "label": "def:locally-ringed-space",
+      "kind": "definition",
+      "title": "Locally Ringed Space"
+    },
+    {
+      "label": "def:spectrum",
+      "kind": "definition",
+      "title": "Spectrum of a Ring"
+    },
+    {
+      "label": "def:structure-sheaf",
+      "kind": "definition",
+      "title": "Structure Sheaf on $\\operatorname{Spec} A$"
+    },
+    {
+      "label": "def:affine-scheme",
+      "kind": "definition",
+      "title": "Affine Scheme"
+    },
+    {
+      "label": "def:scheme",
+      "kind": "definition",
+      "title": "Scheme"
+    },
+    {
+      "label": "def:scheme-hom",
+      "kind": "definition",
+      "title": "Morphism of Schemes"
+    }
+  ],
   "settings": {
     "agent_model": "opus",
     "pr_mode": "ready"

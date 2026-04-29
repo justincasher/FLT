@@ -1,0 +1,12 @@
+{
+  "label": "def:structure-sheaf",
+  "kind": "definition",
+  "title": "Structure Sheaf on $\\operatorname{Spec} A$",
+  "uses": [
+    "def:sheaf",
+    "def:spectrum"
+  ],
+  "statement": "\\notready\n    The \\textbf{structure sheaf} $\\mathcal{O}_{\\operatorname{Spec} A}$ is the unique sheaf of rings on $\\operatorname{Spec} A$ satisfying\n    \\[\n        \\mathcal{O}_{\\operatorname{Spec} A}(D(f)) = A_f\n    \\]\n    for every $f \\in A$, where $A_f$ is the localization of $A$ at $f$. The stalk at a prime $\\mathfrak{p}$ is the local ring $A_{\\mathfrak{p}}$.",
+  "proof": null,
+  "leanDeclaration": "AlgebraicGeometry.Spec.structureSheaf"
+}

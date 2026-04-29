@@ -1,0 +1,13 @@
+{
+  "label": "def:affine-scheme",
+  "kind": "definition",
+  "title": "Affine Scheme",
+  "uses": [
+    "def:locally-ringed-space",
+    "def:spectrum",
+    "def:structure-sheaf"
+  ],
+  "statement": "\\notready\n    An \\textbf{affine scheme} is a locally ringed space that is isomorphic to $(\\operatorname{Spec} A, \\mathcal{O}_{\\operatorname{Spec} A})$ for some commutative ring $A$.",
+  "proof": null,
+  "leanDeclaration": "FLT.Scheme4.IsAffineScheme"
+}
