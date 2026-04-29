@@ -7,5 +7,8 @@
   ],
   "statement": "\\notready\n    Let $\\mathcal{F}$ be a sheaf on $X$ and $p \\in X$. The \\textbf{stalk} of $\\mathcal{F}$ at $p$ is the direct limit\n    \\[\n        \\mathcal{F}_p = \\varinjlim_{U \\ni p} \\mathcal{F}(U).\n    \\]",
   "proof": null,
-  "leanDeclaration": "TopCat.Presheaf.stalk"
+  "leanDeclaration": "TopCat.Presheaf.stalk",
+  "leanFile": "Mathlib/Topology/Sheaves/Stalks.lean",
+  "assessment": "ALREADY_IN_MATHLIB",
+  "status": "proved"
 }

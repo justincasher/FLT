@@ -8,5 +8,8 @@
   ],
   "statement": "\\notready\n    A ringed space $(X, \\mathcal{O}_X)$ is a \\textbf{locally ringed space} if for every point $p \\in X$, the stalk $\\mathcal{O}_{X,p}$ is a local ring (i.e.\\ it has a unique maximal ideal $\\mathfrak{m}_p$).",
   "proof": null,
-  "leanDeclaration": "AlgebraicGeometry.LocallyRingedSpace"
+  "leanDeclaration": "AlgebraicGeometry.LocallyRingedSpace",
+  "leanFile": "Mathlib/Geometry/RingedSpace/LocallyRingedSpace.lean",
+  "assessment": "ALREADY_IN_MATHLIB",
+  "status": "proved"
 }

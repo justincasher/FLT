@@ -8,5 +8,8 @@
   ],
   "statement": "\\notready\n    A \\textbf{scheme} is a locally ringed space $(X, \\mathcal{O}_X)$ such that every point $x \\in X$ has an open neighbourhood $U$ for which $(U, \\mathcal{O}_X|_U)$ is an affine scheme.",
   "proof": null,
-  "leanDeclaration": "AlgebraicGeometry.Scheme"
+  "leanDeclaration": "AlgebraicGeometry.Scheme",
+  "leanFile": "Mathlib/AlgebraicGeometry/Scheme.lean",
+  "assessment": "ALREADY_IN_MATHLIB",
+  "status": "proved"
 }
