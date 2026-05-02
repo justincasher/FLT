@@ -89,7 +89,7 @@ abbrev Dinfx := (Dinf K D)ˣ
 
 /-- The inclusion Dˣ → D_𝔸ˣ as a group homomorphism. -/
 abbrev incl : Dˣ →* D_𝔸ˣ :=
-  Units.map Algebra.TensorProduct.includeLeftRingHom.toMonoidHom
+  Units.map Algebra.TensorProduct.includeLeftRingHom. toMonoidHom
 
 /-- The inclusion Dˣ → (D ⊗ 𝔸_K^∞)ˣ as a group homomorphism. -/
 noncomputable abbrev incl₁ : Dˣ →* Dfx K D :=
