@@ -1,0 +1,1 @@
+- [2026-05-03] Started: thorough review of scheme-4 blueprint, metadata, and Lean files.
