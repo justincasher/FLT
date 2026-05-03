@@ -1,0 +1,1 @@
+- [2026-05-03] Started: quick sanity check of scheme-4 build and metadata.
