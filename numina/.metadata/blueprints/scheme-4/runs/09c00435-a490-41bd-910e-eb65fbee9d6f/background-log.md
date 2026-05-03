@@ -1,0 +1,1 @@
+- [2026-05-03] Progress: full repo build failed with 7 errors, all in FLT/DivisionAlgebra/Finiteness.lean; FLT.Scheme4 unaffected.
