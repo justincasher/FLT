@@ -19,18 +19,18 @@ namespace FLT.Scheme4
 
 open CategoryTheory TopologicalSpace AlgebraicGeometry
 
-/-- A presheaf of commutative rings on a topological space `X`,
-    i.e. a `TopCat.Presheaf` with values in `CommRingCat`. -/
+/-- A presheaf of commutative rings on a topological space `X`.
+    Concretely, a `TopCat.Presheaf` with values in `CommRingCat`. -/
 abbrev RingPresheaf (X : TopCat) : Type _ :=
   TopCat.Presheaf CommRingCat X
 
-/-- A sheaf of commutative rings on a topological space `X`. -/
+/-- A sheaf of commutative rings on a topological space `X`, valued in `CommRingCat`. -/
 abbrev RingSheaf (X : TopCat) : Type _ :=
   TopCat.Sheaf CommRingCat X
 
-/-- A locally ringed space is an affine scheme if it is isomorphic
-    (in `LocallyRingedSpace`) to `Spec.locallyRingedSpaceObj` of some
-    commutative ring. -/
+/-- A locally ringed space `X` is an affine scheme iff it is isomorphic,
+    as a `LocallyRingedSpace`, to `Spec.locallyRingedSpaceObj R` for some
+    commutative ring `R`. -/
 def IsAffineScheme (X : LocallyRingedSpace) : Prop :=
   ∃ (R : CommRingCat),
     Nonempty (X ≅ Spec.locallyRingedSpaceObj R)
