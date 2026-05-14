@@ -1,0 +1,9 @@
+{
+  "label": "GL2.restrictedProduct",
+  "kind": "theorem",
+  "title": "GL2.restrictedProduct",
+  "uses": [],
+  "statement": "$G$ is isomorphic and homeomorphic\n  to the restricted product of $GL_2(K_v)$ with respect\n  to the compact open subgroups $GL_2(\\calO_v)$.",
+  "proof": "\\leanok\n  \n  This follows from lemma~\\ref{ContinuousMulEquiv.restrictedProductUnits}\n  and lemma~\\ref{Homeomorph.restrictedProductMatrix}.",
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.GL2.restrictedProduct"
+}

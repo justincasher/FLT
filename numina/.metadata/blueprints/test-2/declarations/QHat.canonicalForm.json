@@ -1,0 +1,12 @@
+{
+  "label": "QHat.canonicalForm",
+  "kind": "lemma",
+  "title": "QHat.canonicalForm",
+  "uses": [
+    "QHat",
+    "ZHat.commRing"
+  ],
+  "statement": "Every element of $\\Qhat:=\\Q\\otimes\\Zhat$ can be written as $q\\otimes_t z$ with $q\\in\\Q$ and $z\\in\\Zhat$.\n    Furthermore one can even assume that $q=\\frac{1}{N}$ for some positive integer $N$.",
+  "proof": "\\leanok\n    A proof I would write on the board would look like the following. Take a general\n    element of $\\Qhat$; we know it can be expressed as a finite sum\n    $\\sum_i q_i\\otimes_t z_i$ with $q_i\\in\\Q$ and $z_i\\in\\Zhat$. Now choose a large\n    positive integer $N$, the lowest common multiple of all the denominators showing up in the\n    $q_i$, and then rewrite $\\sum_i q_i\\otimes_t z_i$ as $\\sum_i \\frac{n_i}{N}\\otimes z_i$ with\n    $n_i\\in\\Z$. Now using the fundamental fact that $na\\otimes_t b=a\\otimes_t nb$ for $n\\in\\Z$,\n    we can rewrite the sum as $\\sum_i \\frac{1}{N}\\otimes_t n_i z_i$\n    which is equal to the pure tensor $\\frac{1}{N}\\otimes(\\sum_i n_i z_i)$.\n\n    In Lean I would prove this using {\\tt TensorProduct.induction\\_on}, which quickly\n    reduces us to the claim that the sum of two pure tensors is pure, which we can prove\n    using the above technique whilst avoiding the general theory of finite sums.",
+  "leanDeclaration": "QHat.canonicalForm"
+}

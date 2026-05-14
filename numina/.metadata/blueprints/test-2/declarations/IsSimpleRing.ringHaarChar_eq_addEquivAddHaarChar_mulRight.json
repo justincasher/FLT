@@ -1,0 +1,9 @@
+{
+  "label": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight",
+  "kind": "corollary",
+  "title": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight",
+  "uses": [],
+  "statement": "If $B$ is a central simple algebra over a locally compact field $F$, and if $u\\in B^\\times$,\n  then $d_B(r_u)=\\delta_B(u)$ (recall that the latter is defined to mean $d_B(\\ell_u)$).",
+  "proof": "\\leanok\n  \n  If $\\ell_u$ and $r_u$ denote left and right multiplication by $u$ on $B$, then we have\n  seen in lemma~\\ref{MeasureTheory.addEquivAddHaarChar_eq_ringHaarChar_det} that $d_B(r_u)=\\delta_F(\\det(r_u))$.\n  Lemma~\\ref{IsSimpleRing.mulLeft_det_eq_mulRight_det} tells\n  us that this is $\\delta_F(\\det(\\ell_u))$ and this is $\\delta_B(u)$ again by\n  corollary~\\ref{MeasureTheory.addEquivAddHaarChar_eq_ringHaarChar_det}.",
+  "leanDeclaration": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight"
+}

@@ -1,0 +1,9 @@
+{
+  "label": "FreyPackage",
+  "kind": "definition",
+  "title": "FreyPackage",
+  "uses": [],
+  "statement": "A \\emph{Frey package} $(a,b,c,p)$\nis three nonzero pairwise-coprime integers $a$, $b$, $c$, with $a\\equiv3\\pmod4$ and $b\\equiv0\\pmod2$,\nand a prime $p\\geq5$, such that $a^p+b^p=c^p$.",
+  "proof": null,
+  "leanDeclaration": "FreyPackage"
+}

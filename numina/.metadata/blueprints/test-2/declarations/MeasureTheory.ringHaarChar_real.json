@@ -1,0 +1,9 @@
+{
+  "label": "MeasureTheory.ringHaarChar_real",
+  "kind": "lemma",
+  "title": "MeasureTheory.ringHaarChar_real",
+  "uses": [],
+  "statement": "If $R=\\R$ then $\\delta_R(u)=|u|$.",
+  "proof": "\\leanok\n  Take $\\mu$ to be Lebesgue measure and $X=[0,1]$.\nWe have $\\delta(u)=\\mu(uX)$. If $u>0$ then $u[0,1]=[0,u]$ which has measure $u=|u|$,\nand if $u<0$ then $u*[0,1]=[u,0]$ which has measure $-u=|u|$.",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_real"
+}

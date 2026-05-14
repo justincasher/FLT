@@ -1,0 +1,11 @@
+{
+  "label": "Hurwitz.norm_nonneg",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_nonneg",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of an element is nonnegative.",
+  "proof": "\\leanok\n    It's a sum of rational squares.",
+  "leanDeclaration": "Hurwitz.norm_nonneg"
+}

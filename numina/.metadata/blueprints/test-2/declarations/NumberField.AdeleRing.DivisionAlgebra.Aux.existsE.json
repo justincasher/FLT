@@ -1,0 +1,9 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE",
+  "uses": [],
+  "statement": "There's a compact subset $E$ of $D_{\\A}$\n  with the property that for all $x\\in D_{\\A}^{(1)}$,\n  the obvious map $xE\\to D\\backslash D_{\\A}$ is not injective.",
+  "proof": "\\leanok\n  We know that if we pick a $\\Q$-basis for $D$\n  of size $d$ then this identifies $D$ with $\\Q^d$,\n  $D_{\\A}$ with $\\A_{\\Q}^d$, and $D\\backslash D_{\\A}$ with\n  $(\\Q\\backslash\\A_{\\Q})^d$. Now $\\Q$ is discrete in $\\A_{\\Q}$\n  by theorem~\\ref{NumberField.AdeleRing.discrete}, and the quotient\n  $\\Q\\backslash \\A_{\\Q}$ is compact by theorem~\\ref{Rat.AdeleRing.cocompact}.\n  Hence $D$ is discrete in $D_{\\A}$\n  and the quotient $D\\backslash D_{\\A}$ is compact.\n\n    Fix a Haar measure $\\mu$ on $D_{\\A}$ and push it forward\n    to $D\\backslash D_{\\A}$; by compactness this quotient has finite\n    and positive measure, say $m\\in\\R_{>0}$.\n    Choose any compact $E\\subseteq D_{\\A}$ with measure $> m$\n    (for example, choose a $\\Z$-lattice $L\\cong\\Z^d$ in $D\\cong\\Q^d$,\n    define $E_f:=\\prod_p L_p\\in D\\otimes_{\\Q}\\A_{\\Q}^\\infty$,\n    and define $E_{\\infty}\\subseteq D\\otimes_{\\Q}\\R\\cong\\R^n$ to be a huge closed\n    ball, large enough to ensure the measure of $E:=E_f\\times E_{\\infty}$ is bigger than $m$).\n    Then $\\mu(xE)=\\mu(E)>m$ so the map can't be injective.",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE"
+}

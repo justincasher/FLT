@@ -1,0 +1,11 @@
+{
+  "label": "Mazur_Frey",
+  "kind": "theorem",
+  "title": "Mazur",
+  "uses": [
+    "FreyCurve"
+  ],
+  "statement": "If $\\rho$ is the mod $p$ Galois representation associated to a Frey package $(a,b,c,p)$ then\n  $\\rho$ is irreducible.",
+  "proof": "\\notready\n  This follows from a profound and long result of Mazur \\cite{mazur-torsion} from 1977,\n  namely the fact that the torsion subgroup of an elliptic curve over $\\Q$ can have size at most~16.\n  In fact there is still a little more work which needs to be done to deduce the theorem from\n  Mazur's result. A pre-1990 reference for the full proof of this claim is Proposition~6\n  in~\\S4.1 of~\\cite{serreconj}.",
+  "leanDeclaration": "Mazur_Frey"
+}

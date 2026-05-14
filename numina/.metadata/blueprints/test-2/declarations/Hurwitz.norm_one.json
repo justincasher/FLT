@@ -1,0 +1,11 @@
+{
+  "label": "Hurwitz.norm_one",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_one",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of $1$ is $1$.",
+  "proof": "\\leanok\n    A calculation.",
+  "leanDeclaration": "Hurwitz.norm_one"
+}

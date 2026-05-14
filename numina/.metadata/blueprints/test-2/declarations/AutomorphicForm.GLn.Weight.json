@@ -1,0 +1,9 @@
+{
+  "label": "AutomorphicForm.GLn.Weight",
+  "kind": "definition",
+  "title": "AutomorphicForm.GLn.Weight",
+  "uses": [],
+  "statement": "The \\emph{weight} of an automorphic form for $\\GL_n/\\Q$ can be thought of as a finite-dimensional\ncontinuous complex representation $\\rho$ of a maximal compact subgroup of $\\GL_n(\\R)$,\nand it's convenient to choose one (they're all conjugate) so we choose $O_n(\\R)$.",
+  "proof": null,
+  "leanDeclaration": "AutomorphicForm.GLn.Weight"
+}

@@ -1,0 +1,9 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding",
+  "uses": [],
+  "statement": "\\discussion{551}\n  If $f:A\\to B$ is a group homomorphism and open embedding between locally compact\n  topological additive groups and if $\\alpha:A\\to A$ and $\\beta:B\\to B$ are additive\n  homeomorphisms such that the square commutes (i.e., $f\\circ\\alpha=\\beta\\circ f$)\n  then $d_A(\\alpha)=d_B(\\beta)$.",
+  "proof": "\\leanok\n  Choose a regular Haar measure $\\mu_B$ on $B$. We just saw\n  in lemmas~\\ref{Topology.IsOpenEmbedding.isHaarMeasure_comap}\n  and~\\ref{Topology.IsOpenEmbedding.regular_comap} that its pullback\n  $\\mu_A:=f^*\\mu_B$ to $A$ is also a regular Haar\n  measure. Now fix a continuous compactly-supported function $g$ on $A$ with\n  $0<\\int g(a)d\\mu(a)<\\infty$. Then $d_A(\\alpha)\\int g(a)d\\mu_A(a)=\\int g(a)d(\\alpha^*\\mu_A)(a)$\n  by lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_integral_comap}.\n  This equals $\\int g(a)d(\\alpha^* f^*\\mu_B)(a)$ by definition,\n  which is $\\int g(a)d(f^*\\beta^*\\mu_B)(a)$ because pullback of pullback is pullback.\n  This equals $d_B(\\beta)\\int g(a) d(f^*\\mu_B)(a)$ by\n  corollary~\\ref{MeasureTheory.addEquivAddHaarChar_comap}\n  which is $d_B(\\beta)\\int g(a)d\\mu_A(a)$ by definition,\n  and so $d_A(\\alpha)=d_B(\\beta)$ as required.",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding"
+}

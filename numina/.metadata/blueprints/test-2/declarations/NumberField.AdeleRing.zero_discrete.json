@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.zero_discrete",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.zero_discrete",
+  "uses": [
+    "Rat.AdeleRing.zero_discrete",
+    "NumberField.AdeleRing.baseChangeEquiv"
+  ],
+  "statement": "There's an open subset of $\\A_{K}$ whose intersection with $K$ is $\\{0\\}$.",
+  "proof": "By a previous result, we have $\\A_K=K\\otimes_{\\Q}\\A_{\\Q}$.\n  Choose a basis of $K/\\Q$; then $K$ can be identified with $\\Q^n\\subseteq(\\A_{\\Q})^n$\n  and the result follows from the previous theorem.",
+  "leanDeclaration": "NumberField.AdeleRing.zero_discrete"
+}

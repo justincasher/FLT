@@ -1,0 +1,12 @@
+{
+  "label": "QHat.rat_join_zHat",
+  "kind": "lemma",
+  "title": "QHat.rat_join_zHat",
+  "uses": [
+    "QHat",
+    "ZHat.commRing"
+  ],
+  "statement": "The sum of $\\Q$ and $\\Zhat$ in $\\Qhat$ is $\\Qhat$.\n    More precisely, every element of $\\Qhat$ can be written as $q+z$ with $q\\in\\Q$ and $z\\in\\Zhat$,\n    or more precisely as $q\\otimes_t 1+1\\otimes_t z$.",
+  "proof": "\\leanok\n    Write $x\\in\\Qhat$ as $x=z/N$ in lowest terms. Lift $z_N$ to an integer $t$ and observe\n    that $(z-t)_N=0$, hence $z-t=Ny$ for some $y\\in\\Zhat$. Now $x=t/N+y\\in\\Q+\\Zhat$.",
+  "leanDeclaration": "QHat.rat_join_zHat"
+}

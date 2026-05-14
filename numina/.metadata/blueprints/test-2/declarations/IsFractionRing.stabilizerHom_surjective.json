@@ -1,0 +1,11 @@
+{
+  "label": "IsFractionRing.stabilizerHom_surjective",
+  "kind": "theorem",
+  "title": "IsFractionRing.stabilizerHom_surjective",
+  "uses": [
+    "IsFractionRing.stabilizerHom"
+  ],
+  "statement": "\\mathlibok\n  The map $g\\mapsto \\phi_g$ from $D_Q$ to $\\Aut(L/K)$ defined above is surjective.",
+  "proof": null,
+  "leanDeclaration": "IsFractionRing.stabilizerHom_surjective"
+}

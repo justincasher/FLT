@@ -1,0 +1,11 @@
+{
+  "label": "FreyCurve",
+  "kind": "definition",
+  "title": "Frey",
+  "uses": [
+    "FreyPackage"
+  ],
+  "statement": "\\discussion{21}\n  Given a Frey package $(a,b,c,p)$, the corresponding \\emph{Frey curve} (considered by Frey and,\n  before him, Hellegouarch) is the elliptic curve over $\\Q$ defined by the equation\n  $Y^2=X(X-a^p)(X+b^p).$",
+  "proof": null,
+  "leanDeclaration": "FreyPackage.freyCurve"
+}

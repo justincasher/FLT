@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.InfinitePlace.Completion.baseChange_surjective",
+  "kind": "theorem",
+  "title": "NumberField.InfinitePlace.Completion.baseChange_surjective",
+  "uses": [
+    "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi"
+  ],
+  "statement": "For a fixed infinite place $v$ of $K$, the map $L\\otimes_K K_v \\to\\prod_{w\\mid v}L_w$ is\n  surjective.",
+  "proof": "Let $(x_i)_i$ be a $K_v$-basis of $\\prod_{w\\mid v}L_w$. By the density of $L$ in\n  $\\prod_{w\\mid v}L_w$\n  (Theorem~\\ref{NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi}), we can\n  find $\\alpha_i \\in L$ arbitrarily close to $x_i\\prod_{w\\mid v}L_w$ with respect to the sup norm\n  when embedded globally in $\\prod_{w\\mid v}L_w$.\n  In particular, it is possible to choose such $\\alpha_i$ so that the matrix representing\n  the vector $((\\alpha_i)_{w \\mid v})_i$ in the basis $(x_i)_i$ has non-zero determinant.\n  Since $(\\alpha_i)_{w \\mid v}$ is the image of $1\\otimes \\alpha_i$ under base change, we have\n  that $(1 \\otimes \\alpha_i)_i$ also forms a basis of $L\\otimes_K K_v$, and base change\n  is surjective.",
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChange_surjective"
+}

@@ -1,0 +1,9 @@
+{
+  "label": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso",
+  "kind": "lemma",
+  "title": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso",
+  "uses": [],
+  "statement": "%    %    %  Any such quaternion algebra has a basis $1,i,j,k$ with $i^2=a$, $j^2=b$ and $ij=-ji=k$.\n%",
+  "proof": null,
+  "leanDeclaration": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso"
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Hurwitz.surjective_pnat_quotient",
+  "kind": "theorem",
+  "title": "Hurwitz.surjective_pnat_quotient",
+  "uses": [
+    "Hurwitz"
+  ],
+  "statement": "If $N$ is a positive natural then the obvious map $\\calO\\to\\calOhat/N\\calOhat$ is surjective.",
+  "proof": "This is just four copies of the surjection $\\Z\\to\\Zhat/N\\Zhat$.\n    Note that this latter map is surjective because $\\Z\\to\\Z/N\\Z$ is surjective,\n    hence given $z\\in\\Zhat$ you can subtract an integer $w$ such\n    that $(z-w)_N=0$, so $z-w$ is a multiple of~$N$."
+}

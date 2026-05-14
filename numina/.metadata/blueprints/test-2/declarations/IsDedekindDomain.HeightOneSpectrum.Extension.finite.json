@@ -1,0 +1,9 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.Extension.finite",
+  "kind": "lemma",
+  "title": "IsDedekindDomain.HeightOneSpectrum.Extension.finite",
+  "uses": [],
+  "statement": "There are only finitely many primes $w$ of $B$ lying above $v$.",
+  "proof": "\\leanok\n  This is a standard fact about Dedekind domains. The key input is\n  mathlib's theorem {\\tt primesOver\\_finite}.",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.Extension.finite"
+}

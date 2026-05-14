@@ -1,0 +1,9 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+  "kind": "lemma",
+  "title": "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+  "uses": [],
+  "statement": "If $i:K\\to L$ denotes the inclusion then for $k\\in K$ we have\n  $e\\times w(i(k))=v(k)$, where $e$ is the ramification index of $w/v$\n  (recall that valuations here are written additively, unlike in mathlib).",
+  "proof": "\\leanok\n  Standard (and formalized).",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.valuation_comap"
+}

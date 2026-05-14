@@ -1,0 +1,8 @@
+{
+  "label": "pi_tensorProduct_of_finitePresentation",
+  "kind": "theorem",
+  "title": "pi_tensorProduct_of_finitePresentation",
+  "uses": [],
+  "statement": "If $R$ is a commutative ring, if $M$ is a finitely presented $R$-module\n  and if $N_i$ are a collection of $R$-modules, then the canonical map\n  $M\\otimes_R\\prod_i N_i\\to\\prod_i(M\\otimes_R N_i)$ is an isomorphism.",
+  "proof": "If $M$ is finite and free then Maddy Crim has already formalized this\n  in FLT. For the general case present $M$ as $R^a\\to R^b\\to M\\to 0$ and use that tensor\n  products and arbitrary products preserve surjections."
+}

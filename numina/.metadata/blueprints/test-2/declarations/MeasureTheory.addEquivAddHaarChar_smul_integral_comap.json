@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar_comap"
+  ],
+  "statement": "If $f:A\\to\\R$ is a Borel measurable function then\n  $d_A(\\phi)\\int f(x)d\\mu(x)=\\int f(x)d\\phi^*\\mu(x)$.",
+  "proof": "\\leanok\n  This is immediate from corollary~\\ref{MeasureTheory.addEquivAddHaarChar_comap}.",
+  "leanDeclaration": "MeasureTheory.integral_comap_eq_addEquivAddHaarChar_smul"
+}

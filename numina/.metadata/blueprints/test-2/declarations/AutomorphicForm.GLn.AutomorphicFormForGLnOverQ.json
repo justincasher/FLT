@@ -1,0 +1,14 @@
+{
+  "label": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ",
+  "kind": "definition",
+  "title": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ",
+  "uses": [
+    "AutomorphicForm.GLn.IsSmooth",
+    "AutomorphicForm.GLn.IsSlowlyIncreasing",
+    "AutomorphicForm.GLn.Weight",
+    "instCentreAction"
+  ],
+  "statement": "A smooth function $f:\\GL_n(\\A_{\\Q}^f)\\times\\GL_n(\\R)\\to\\bbC$ is\n  an $O_n(\\R)$-\\emph{automorphic form} on $\\GL_n(\\A_{\\Q})$ if it satisfies the following\n  five conditions.\n  \\begin{enumerate}\n    \\item (periodicity) For all $g\\in\\GL_n(\\Q)$, we have $f(gx,gy)=f(x,y)$.\n    \\item (has a finite level) There exists a compact open subgroup $U\\subseteq\\GL_n(\\A_{\\Q}^f)$\n      such that $f(xu,y)=f(x,y)$ for all $u\\in U$, $x\\in \\GL_n(\\A_{\\Q}^f)$ and $y\\in\\GL_n(\\R)$.\n    \\item (weight $\\rho$) There exists a continuous finite-dimensional irreducible complex\n    representation $\\rho$ of $O_n(\\R)$ such that for every $(x,y)\\in\\GL_n(\\A_{\\Q})$, the\n    set of functions $k\\mapsto f(x,yk)$ span a finite-dimensional complex vector space isomorphic\n    as $O_n(\\R)$-representation to a direct sum of copies of $\\rho$.\n    \\item (has an infinite level) There is an ideal $I$ of the centre $Z_n$ described in the\n    previous section, which has finite complex codimension, and which annihiliates the\n    function $y \\mapsto f(x,y)$ for all $x\\in \\GL_n(\\A_{\\Q}^f)$. Note that this is a very fancy\n    way of saying ``the function satisfies some natural differential equations''. In the\n    case of modular forms, the differential equations are the Cauchy-Riemann equations, which\n    is why modular forms are holomorphic.\n    \\item (growth condition) For every $x\\in\\GL_n(\\A_{\\Q}^f)$, the function $y\\mapsto f(x,y)$\n  on $\\GL_n(\\R)$ is slowly-increasing.\n  \\end{enumerate}",
+  "proof": null,
+  "leanDeclaration": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ"
+}

@@ -1,0 +1,11 @@
+{
+  "label": "Hurwitz.norm_eq_zero",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_eq_zero",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of an element is zero if and only if the element is zero.",
+  "proof": "\\leanok\n    It's a sum of rational squares.",
+  "leanDeclaration": "Hurwitz.norm_eq_zero"
+}

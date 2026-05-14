@@ -1,0 +1,9 @@
+{
+  "label": "Rat.AdeleRing.cocompact",
+  "kind": "theorem",
+  "title": "Rat.AdeleRing.cocompact",
+  "uses": [],
+  "statement": "The quotient $\\A_{\\Q}/\\Q$ is compact.",
+  "proof": "The space $\\prod_p\\Z_p\\times[0,1]\\subseteq\\A_{\\Q}$ is a product of compact spaces\n  and is hence compact. I claim that it surjects onto $\\A_{\\Q}/\\Q$. Indeed,\n  if $a\\in\\A_{\\Q}$ then for the finitely many prime numbers $p\\in S$ such that $a_p\\not\\in\\Z_p$\n  we have $a_p\\in\\frac{r_p}{p^{n_p}}+\\Z_p$ with $r_p/p^{n_p}\\in\\Q$, and\n  if $q=\\sum_{p\\in S}\\frac{r_p}{p^{n_p}}\\in\\Q$ then $a-q\\in \\prod_p\\Z_p\\times\\R$.\n  Now just subtract $\\lfloor a_{\\infty}-q\\rfloor$ to move into $\\prod_p\\Z_p\\times[0,1)$\n  and we are done.",
+  "leanDeclaration": "Rat.AdeleRing.cocompact"
+}

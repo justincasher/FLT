@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_smul_map",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_smul_map",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar_eq"
+  ],
+  "statement": "If $\\mu$ is any regular Haar measure on $A$ then\n  $d_A(\\phi)(\\phi_*\\mu) = \\mu.$",
+  "proof": "\\leanok\n  This is a restatement of the previous result.",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_smul_map"
+}

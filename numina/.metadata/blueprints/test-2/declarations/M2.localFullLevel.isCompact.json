@@ -1,0 +1,9 @@
+{
+  "label": "M2.localFullLevel.isCompact",
+  "kind": "lemma",
+  "title": "M2.localFullLevel.isCompact",
+  "uses": [],
+  "statement": "$M_2(\\calO_v)$ is a compact subring of $M_2(K_v)$.",
+  "proof": "\\leanok\n  \n  Topologically $M_2(\\calO_v)\\cong \\calO_v^4$ as a subset of $K_v^4$ so this\n  follows because a product of compacts is compact and a product of opens is open.",
+  "leanDeclaration": "IsDedekindDomain.M2.localFullLevel.isCompact"
+}

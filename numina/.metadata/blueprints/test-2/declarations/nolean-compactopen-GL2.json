@@ -1,0 +1,8 @@
+{
+  "label": "nolean-compactopen-GL2",
+  "kind": "lemma",
+  "title": "nolean-compactopen-GL2",
+  "uses": [],
+  "statement": "$GL_2(\\calO_v)$ is a compact open subgroup of $GL_2(K_v)$.",
+  "proof": "$K_v$ is known to be Hausdorff, so $M_2(K_v)$ is Hausdorff and the\n  results follow from lemmas~\\ref{Submonoid.units_isOpen} and~\\ref{Submonoid.units_isCompact}."
+}

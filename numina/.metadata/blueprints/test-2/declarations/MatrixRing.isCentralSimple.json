@@ -1,0 +1,11 @@
+{
+  "label": "MatrixRing.isCentralSimple",
+  "kind": "lemma",
+  "title": "MatrixRing.isCentralSimple",
+  "uses": [
+    "IsCentralSimple"
+  ],
+  "statement": "%    %    \\discussion{47}\n    If $n\\geq1$ then the $n\\times n$ matrices $M_n(K)$ are a central simple algebra over~$K$.",
+  "proof": "\\leanok\nWe prove more generally that matrices with coefficients in~$K$ and indexed by an arbitrary nonempty\nfinite type are a central simple algebra over~$K$.\n\nThey are clearly an algebra over $K$, with $K$ embedded via scalar matrices as usual\n(the injectivity of the map from~$K$ comes from nonemptiness of the finite index type).\nThe centre clearly contains $K$; to show that it\nequals~$K$, we argue as follows. Let $e(i,j)$ be the matrix with a 1 in the $i$th row and $j$th\ncolumn, and zeros everywhere else. An element $Z=(Z_{s,t})_{s,t}$ of the centre commutes with\nall matrices $e(i,j)$ for $i\\not=j$ and these equations immediately imply that $Z_{i,j}=0$ if\n$i\\not=j$ and that $Z_{i,i}=Z_{j,j}$.\n\nIt suffices to prove that any nonzero two-sided ideal~$I$ is all of $M_n(K)$. So say $0\\not=M\\in I$\nand let's fix $(i,j)$ such that $M_{i,j}\\not=0$. One easily checks that\n$M_{i,j} \\mathrm{id} = \\sum_{k}e(k,i)\\times M\\times e(j,k)\\in I$ (where $\\mathrm{id} \\in M_n(K)$\nis the identity matrix). Therefore, $\\mathrm{id} \\in I$, so $I = M_n(K)$.\n\nThe definition also requires that the ring be non-zero, but this follows from the index type being\nnonempty.",
+  "leanDeclaration": "MatrixRing.isCentralSimple"
+}

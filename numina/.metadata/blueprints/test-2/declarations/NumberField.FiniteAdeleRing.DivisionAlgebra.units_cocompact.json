@@ -1,0 +1,9 @@
+{
+  "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact",
+  "kind": "theorem",
+  "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact",
+  "uses": [],
+  "statement": "$D^\\times\\backslash(D\\otimes_K\\A_K^\\infty)^\\times$ is compact.",
+  "proof": "\\leanok\nThere's a natural map $\\alpha$ from $D^\\times\\backslash D_{\\A}^{(1)}$ to\n  $D^\\times\\backslash (D\\otimes_K \\A_K^\\infty)^\\times$. We claim that it's\n  surjective. Granted this claim, we are home, because if we put the quotient\n  topology on $D^\\times\\backslash (D\\otimes_K \\A_K^\\infty)^\\times$ coming from\n  $(D\\otimes_K \\A_K^\\infty)^\\times$ then it's readily verified that $\\alpha$\n  is continuous, and the continuous image of a compact space is compact.\n\n  As for surjectivity: say $x\\in (D\\otimes_K \\A_K^\\infty)^\\times$. We need to extend\n  $x$ to an element $(x,y)\\in (D\\otimes_K \\A_K^\\infty)^\\times\\times(D\\otimes_K K_\\infty)^\\times$\n  which is in the kernel of $\\delta_{D_{\\A}}$. Because $\\delta_{D_{\\A}}(x,1)$ is some positive\n  real number, it will suffice to show that if $r$ is any positive real number then we can\n  find $y\\in (D\\otimes_K \\A_K^\\infty)^\\times=(D\\otimes_{\\Q}\\R)^\\times$ with $\\delta_{D_{\\A}}(1,y)=r$,\n  or equivalently (setting $D_{\\R}=D\\otimes_{\\Q}\\R$) that $\\delta_{D_{\\R}}(y)=r$.\n  But $D\\not=0$ as it is a division algebra,and hence $\\Q\\subseteq D$, meaning\n  $\\R\\subseteq D_{\\R}$, and if\n  $x\\in\\R^\\times\\subseteq D_{\\R}^\\times$ then $\\delta(x)=|x|^d$ with $d=\\dim_{\\Q}(D)$,\n  as multiplication by $x$ is just scaling by a factor of $x$ on $D_{\\R}\\cong\\R^d$.\n  In particular we can set $x=y^{1/d}$.",
+  "leanDeclaration": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact"
+}

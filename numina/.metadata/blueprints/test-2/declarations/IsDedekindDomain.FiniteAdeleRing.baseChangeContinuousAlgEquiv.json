@@ -1,0 +1,11 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+  "kind": "theorem",
+  "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral"
+  ],
+  "statement": "The induced $L$-algebra morphism\n  $L\\otimes_K\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ is a topological isomorphism.",
+  "proof": null,
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv"
+}

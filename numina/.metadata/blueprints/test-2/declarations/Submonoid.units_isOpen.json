@@ -1,0 +1,9 @@
+{
+  "label": "Submonoid.units_isOpen",
+  "kind": "lemma",
+  "title": "Submonoid.units_isOpen",
+  "uses": [],
+  "statement": "\\discussion{587}\n  If $M$ is a topological monoid and $U$ is an open submonoid, then\n  the units $U^\\times$ of $U$ are naturally an open subgroup of $M^\\times$.",
+  "proof": null,
+  "leanDeclaration": "Submonoid.units_isOpen"
+}

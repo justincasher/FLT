@@ -1,0 +1,9 @@
+{
+  "label": "hardly_ramified_reducible",
+  "kind": "theorem",
+  "title": "hardly_ramified_reducible",
+  "uses": [],
+  "statement": "If $\\ell\\geq 3$ is a prime and $\\rho:\\GQ\\to\\GL_2(\\Z/\\ell\\Z)$ is hardly ramified,\n  then $\\rho$ is reducible.",
+  "proof": null,
+  "leanDeclaration": "FreyCurve.torsion_not_isIrreducible"
+}

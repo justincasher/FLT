@@ -1,0 +1,10 @@
+{
+  "label": "topology_on_affine_variety_computation",
+  "kind": "theorem",
+  "title": "topology_on_affine_variety_computation",
+  "uses": [
+    "topology_on_affine_variety_points"
+  ],
+  "statement": "If $X$ is as above and $X\\to\\mathbb{A}^n_K$ is a closed immersion, then the induced map from $X(R)$ with its topology as above to $R^n$ is an embedding of topological spaces (that is, a homeomorphism onto its image).",
+  "proof": "See \\href{https://math.stanford.edu/~conrad/papers/adelictop.pdf}{Conrad's notes}."
+}

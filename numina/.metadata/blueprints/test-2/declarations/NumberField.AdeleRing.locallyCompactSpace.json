@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.AdeleRing.locallyCompactSpace",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.locallyCompactSpace",
+  "uses": [
+    "NumberField.instCompactSpaceAdicCompletionIntegers"
+  ],
+  "statement": "\\discussion{253}\n  The adeles of a number field are locally compact.",
+  "proof": "The adeles of a number field are a product of the finite adeles and the infinite adeles\n  so it suffices to prove that the finite and infinite adeles are locally compact.\n  The infinite adeles are just isomorphic to $\\R^n$ as a topological space, so they're certainly\n  locally compact. As for the finite adeles,\n  the mathlib theorem {\\tt RestrictedProduct.locallyCompactSpace\\_of\\_addGroup}\n  says that a restricted product of locally compact additive groups with respect to open compact\n  subgroups is locally compact, so this reduces us the previous result.",
+  "leanDeclaration": "NumberField.AdeleRing.locallyCompactSpace"
+}

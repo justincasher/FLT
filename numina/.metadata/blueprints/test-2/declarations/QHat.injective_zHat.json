@@ -1,0 +1,12 @@
+{
+  "label": "QHat.injective_zHat",
+  "kind": "lemma",
+  "title": "QHat.injective_zHat",
+  "uses": [
+    "QHat",
+    "ZHat.torsionfree"
+  ],
+  "statement": "The ring homomorphism $\\Zhat\\to\\Qhat$ sending\n    $z$ to $1\\otimes_t z$ is injective.",
+  "proof": "\\leanok\n    The map from $\\Z$ to $\\Q$ is injective, and we have seen\n    that $\\Zhat$ is a torsion-free and thus flat $\\Z$-module,\n    so the map from $\\Zhat$ to $\\Qhat$ is also injective.",
+  "leanDeclaration": "QHat.injective_zHat"
+}

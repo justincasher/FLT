@@ -1,0 +1,8 @@
+{
+  "label": "compatible_family",
+  "kind": "definition",
+  "title": "compatible_family",
+  "uses": [],
+  "statement": "\\discussion{23} Let $N$ be a number field. A \\emph{compatible family of $d$-dimensional Galois representations over $N$} is a finite set of finite places $S$ of $N$,\na number field $E$, a monic degree $d$ polynomial $F_{\\p}(X)\\in E[X]$ for each finite place $\\p$ of $K$ not in $S$ and, for each prime number $\\ell$ and field embedding $\\phi : E\\to\\Qlbar$ (or essentially equivalently for each finite place of $E$), a continuous homomorphism $\\rho:\\GK\\to\\GL_2(\\Qlbar)$ unramified outside $S$ and the primes of $K$ above $\\ell$, such that $\\rho(\\Frob_\\p)$ has characteristic polynomial $P_\\pi(X)$ if $\\pi$ lies above a prime number $p\\not=\\ell$ with $p\\not\\in S$.",
+  "proof": null
+}

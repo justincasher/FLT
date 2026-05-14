@@ -1,0 +1,12 @@
+{
+  "label": "Galois_representation_from_automorphic_representation_on_GL_2_form",
+  "kind": "theorem",
+  "title": "Galois_representation_from_automorphic_representation_on_GL_2_form",
+  "uses": [
+    "automorphic_representation",
+    "Shimura_varieties",
+    "compatible_family"
+  ],
+  "statement": "\\notready Given an automorphic representation $\\pi$ for an inner form of $\\GL_2$ over a totally real field and with reflex field~$E$, such that $\\pi$ is weight 2 discrete series at every infinite place, there exists a compatible family of 2-dimensional Galois representations associated to $\\pi$, with $S$ being the places at which $\\pi$ is ramified, and $F_{\\p}(X)$ being the monic polynomial with roots the two Satake parameters for $\\pi$ at $\\p$.",
+  "proof": null
+}

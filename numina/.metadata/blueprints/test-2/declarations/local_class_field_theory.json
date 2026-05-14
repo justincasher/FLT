@@ -1,0 +1,10 @@
+{
+  "label": "local_class_field_theory",
+  "kind": "theorem",
+  "title": "local_class_field_theory",
+  "uses": [
+    "local_Weil_group"
+  ],
+  "statement": "\\notready If $K$ is a finite extension of $\\Q_p$ then there are two ``canonical'' isomorphisms of topological abelian groups, between $K^\\times$ and the abelianisation of the Weil group of $K$.",
+  "proof": "This is the main theorem of local class field theory; see for example the relevant articles in~\\cite{cf} or many other places."
+}

@@ -1,0 +1,12 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+  "kind": "definition",
+  "title": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers"
+  ],
+  "statement": "There's a natural ring homomorphism\n  $\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ lying over $K\\to L$.",
+  "proof": null,
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom"
+}

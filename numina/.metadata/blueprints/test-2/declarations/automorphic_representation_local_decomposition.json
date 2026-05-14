@@ -1,0 +1,10 @@
+{
+  "label": "automorphic_representation_local_decomposition",
+  "kind": "theorem",
+  "title": "automorphic_representation_local_decomposition",
+  "uses": [
+    "automorphic_representation"
+  ],
+  "statement": "\\notready An irreducible admissible $(G(\\A_N^f)\\times U_\\infty,\\mathfrak{g})$-module is a restricted tensor product of irreducible representations $\\pi_v$ of $G(N_v)$ as $v$ runs through the finite places of $N$, tensored with a tensor product of irreducible $(\\mathfrak{g}_v,U_{\\infty,v})$-modules as $v$ runs through the infinite places of $N$. The representations $\\pi_v$ are unramified for all but finitely many $v$.",
+  "proof": "See Flath's article in~\\cite{corvallis2}."
+}

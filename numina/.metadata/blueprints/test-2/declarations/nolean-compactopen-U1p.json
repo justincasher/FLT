@@ -1,0 +1,8 @@
+{
+  "label": "nolean-compactopen-U1p",
+  "kind": "lemma",
+  "title": "nolean-compactopen-U1p",
+  "uses": [],
+  "statement": "$U_v$ is a compact open subgroup of $GL_2(K_v)$.",
+  "proof": "$\\Gamma_v$ is a group and hence its preimage $U_v$ is a subgroup of the monoid\n  $M_2(K_v)$. It is compact and open as we just saw. Hence its units (also $U_v$)\n  are a subgroup of $GL_2(K_v)$, which is compact and open, again by\n  lemmas~\\ref{Submonoid.units_isOpen} and~\\ref{Submonoid.units_isCompact}."
+}

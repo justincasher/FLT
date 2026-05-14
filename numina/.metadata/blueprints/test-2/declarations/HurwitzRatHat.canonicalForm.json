@@ -1,0 +1,13 @@
+{
+  "label": "HurwitzRatHat.canonicalForm",
+  "kind": "lemma",
+  "title": "HurwitzRatHat.canonicalForm",
+  "uses": [
+    "QHat",
+    "ZHat",
+    "Hurwitz"
+  ],
+  "statement": "Every element of $\\widehat{D}$ can be written as $z/N$ with $z\\in\\calOhat$ and $N\\in\\N^+$.",
+  "proof": "Same as the proof for $\\Qhat$.",
+  "leanDeclaration": "HurwitzRatHat.canonicalForm"
+}

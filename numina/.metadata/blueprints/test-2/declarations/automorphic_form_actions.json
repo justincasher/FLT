@@ -1,0 +1,10 @@
+{
+  "label": "automorphic_form_actions",
+  "kind": "definition",
+  "title": "automorphic_form_actions",
+  "uses": [
+    "automorphic_form"
+  ],
+  "statement": "\\notready The group $G(\\A_N)$ acts on itself on the right, and this induces a left action of its\n    subgroup $G(\\A_N^f)\\times U_\\infty$ on the spaces of automorphic forms and cusp forms. The Lie algebra $\\mathfrak{g}$ of $G(N_\\infty)$ also acts, via differential operators. Furthermore the actions of $\\mathfrak{g}$ and $U_\\infty$ are compatible in the sense that the differential of the $U_\\infty$ action is the action of its Lie algebra considered as a subalgebra of $\\mathfrak{g}$. We say that the spaces are $(G(\\A_N^f)\\times U_\\infty,\\mathfrak{g})$-modules.",
+  "proof": null
+}

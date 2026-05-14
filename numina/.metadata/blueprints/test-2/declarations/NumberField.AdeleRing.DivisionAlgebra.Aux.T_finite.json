@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.T"
+  ],
+  "statement": "$T$ is finite.",
+  "proof": "\\leanok\n  % TODO I used T in both the theorem and proof this time!\n  It suffices to prove that $Y\\cap D$ is finite.\n    But $D\\subseteq D_{\\A}$ is a discrete additive subgroup, and hence closed.\n    And $Y\\subseteq D_{\\A}$ is compact.\n    So $D\\cap Y$ is compact and discrete, so finite.",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite"
+}

@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.ringHaarChar_prod",
+  "kind": "lemma",
+  "title": "MeasureTheory.ringHaarChar_prod",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar_prodCongr"
+  ],
+  "statement": "If $R$ and $S$ are locally compact topological rings, then $\\delta_{R\\times S}(r,s)=\\delta_R(r)\\times\\delta_S(s)$.",
+  "proof": "\\leanok\n  Follows immediately from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_prodCongr}.",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_prod"
+}

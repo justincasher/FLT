@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.AdeleRing.discrete",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.discrete",
+  "uses": [
+    "NumberField.AdeleRing.zero_discrete"
+  ],
+  "statement": "The additive subgroup $K$ of $\\A_K$ is discrete.",
+  "proof": "If $x\\in K$ and $U$ is the open subset in the previous lemma, then\n  it's easily checked that $K\\cap U=\\{0\\}$ implies $K\\cap (U+x)=\\{x\\}$,\n  and $U+x$ is open.",
+  "leanDeclaration": "NumberField.AdeleRing.discrete"
+}

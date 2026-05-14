@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.ringHaarChar_pi",
+  "kind": "lemma",
+  "title": "MeasureTheory.ringHaarChar_pi",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar_piCongrRight"
+  ],
+  "statement": "If $R_i$ are a finite collection of locally compact topological rings,\n  and $u_i\\in R_i^\\times$ then $\\delta_{\\prod_i R_i}((u_i)_i)=\\prod_i\\delta_{R_i}(u_i)$.",
+  "proof": "\\leanok\n  Follows immediately from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_piCongrRight}.",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_pi"
+}

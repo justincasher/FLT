@@ -1,0 +1,9 @@
+{
+  "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
+  "kind": "lemma",
+  "title": "NumberField.instCompactSpaceAdicCompletionIntegers",
+  "uses": [],
+  "statement": "$\\calO_v$ is a compact subring of $K_v$.",
+  "proof": "\\leanok\n  Compactness lies a little deeper because it\n  assumes that the residue field of $K_v$ is finite.",
+  "leanDeclaration": "NumberField.instCompactSpaceAdicCompletionIntegers"
+}

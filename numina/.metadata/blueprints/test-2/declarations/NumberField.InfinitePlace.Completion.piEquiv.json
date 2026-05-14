@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.InfinitePlace.Completion.piEquiv",
+  "kind": "theorem",
+  "title": "NumberField.InfinitePlace.Completion.piEquiv",
+  "uses": [
+    "NumberField.InfinitePlace.Completion.baseChangeEquiv"
+  ],
+  "statement": "Let $v$ be an infinite place of $K$. There is a natural $K_v$-linear homeomorphism\n  $K_v^{[L:K]} \\cong_{K_v} \\prod_{w\\mid v}L_w$.",
+  "proof": "Compose the $K_v$-linear isomorphism $K_v^{[L:K]} \\cong \\prod_{w\\mid v}L_w$ with the $K_v$-linear\n  version of base change~\\ref{NumberField.InfinitePlace.Completion.baseChangeEquiv} to get the\n  isomorphism in the statement.\n  Since both sides have the $K_v$-module topology, then this is also a homeomorphism.",
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.piEquiv"
+}

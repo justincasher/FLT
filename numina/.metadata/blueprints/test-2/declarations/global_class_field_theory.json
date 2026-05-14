@@ -1,0 +1,10 @@
+{
+  "label": "global_class_field_theory",
+  "kind": "theorem",
+  "title": "global_class_field_theory",
+  "uses": [
+    "local_class_field_theory"
+  ],
+  "statement": "\\notready If $N$ is a finite extension of $\\Q$ then there are two ``canonical'' isomorphisms of topological groups between the profinite abelian groups $\\pi_0(\\A_N^\\times/N^\\times)$ and $\\GN^{\\ab}$; one sends local uniformisers to arithmetic Frobenii and the other to geometric Frobenii; each of the global isomorphisms is compatible with the local isomorphisms above.",
+  "proof": "\\notready This is the main theorem of global class field theory; see for example Tate's article in~\\cite{cf}."
+}

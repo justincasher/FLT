@@ -1,0 +1,10 @@
+{
+  "label": "IsCentralSimple.baseChange",
+  "kind": "lemma",
+  "title": "IsCentralSimple.baseChange",
+  "uses": [
+    "IsCentralSimple"
+  ],
+  "statement": "% no Lean yet because Lean didn't seem to know L \\otimes_K D was a ring\n    %    If $D$ is a central simple algebra over~$K$ and $L/K$ is a field extension, then $L\\otimes_KD$\n    is a central simple algebra over~$L$.",
+  "proof": "This is not too hard: it's lemma b of section 12.4 in Peirce's \"Associative algebras\"."
+}

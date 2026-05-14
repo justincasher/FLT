@@ -1,0 +1,10 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2",
+  "kind": "corollary",
+  "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2",
+  "uses": [
+    "RestrictedProduct.relabelIso"
+  ],
+  "statement": "The ring $R$ introduced above (the restricted\n  product of the $B\\otimes_A K_v$ with respect to the $B\\otimes_A A_v$)\n  is isomorphic to $\\mathbb{A}_L$.",
+  "proof": "Let $V$ be the finite places of $K$ and $W$ the finite places of $L$,\n  let $X_v$ be $B\\otimes_A K_v$, let $C_v$ be $B\\otimes_A A_v$, let $Y_w$ be $L_w$,\n  let $D_w$ be $B_w$ and the result follows from the previous definition, given\n  theorem~\\ref{IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral}."
+}

@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.InfinitePlace.Completion.baseChange_injective",
+  "kind": "theorem",
+  "title": "NumberField.InfinitePlace.Completion.baseChange_injective",
+  "uses": [
+    "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct"
+  ],
+  "statement": "For a fixed infinite place $v$ of $K$, the map $L\\otimes_K K_v \\to\\prod_{w\\mid v}L_w$ is\n  injective.",
+  "proof": "The $L$-algebra map $L\\otimes_K K_v \\to\\prod_{w\\mid v}L_w$ can equivalently be thought of\n  as $K_v$-linear, which is injective, because it is surjective by\n  Theorem~\\ref{NumberField.InfinitePlace.Completion.baseChange_surjective}, and both side have the same\n  $K_v$-dimension by\n  Theorem~\\ref{NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct}.",
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChange_injective"
+}

@@ -1,0 +1,10 @@
+{
+  "label": "instUniversalEnvelopingAlgebraAction",
+  "kind": "definition",
+  "title": "instUniversalEnvelopingAlgebraAction",
+  "uses": [
+    "instComplexLieAlgebraAction"
+  ],
+  "statement": "By functoriality, we get an action of the universal enveloping algebra of this\ncomplexified Lie algebra on the smooth complex functions.",
+  "proof": null
+}

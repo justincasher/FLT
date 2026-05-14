@@ -1,0 +1,10 @@
+{
+  "label": "instCentreAction",
+  "kind": "definition",
+  "title": "instCentreAction",
+  "uses": [
+    "instUniversalEnvelopingAlgebraAction"
+  ],
+  "statement": "Thus the \\emph{centre} $\\Z_n$ of this universal enveloping algebra also acts on the smooth\ncomplex functions.",
+  "proof": null
+}

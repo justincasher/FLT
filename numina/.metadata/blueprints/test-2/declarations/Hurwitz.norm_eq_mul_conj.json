@@ -1,0 +1,9 @@
+{
+  "label": "Hurwitz.norm_eq_mul_conj",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_eq_mul_conj",
+  "uses": [],
+  "statement": "We have $N(x)=x\\overline{x}$.",
+  "proof": "\\leanok\n    Easy calculation.",
+  "leanDeclaration": "Hurwitz.norm_eq_mul_conj"
+}

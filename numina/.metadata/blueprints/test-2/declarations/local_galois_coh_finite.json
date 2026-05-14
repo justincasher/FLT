@@ -1,0 +1,8 @@
+{
+  "label": "local_galois_coh_finite",
+  "kind": "theorem",
+  "title": "local_galois_coh_finite",
+  "uses": [],
+  "statement": "\\notready\n    If $M$ is finite then the cohomology groups $H^i(G_K,M)$ all finite.",
+  "proof": "This is Proposition~14 in section~5.2 of~\\cite{serre-galcoh}."
+}

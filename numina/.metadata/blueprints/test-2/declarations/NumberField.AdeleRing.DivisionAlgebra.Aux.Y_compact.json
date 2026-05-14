@@ -1,0 +1,11 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.Y"
+  ],
+  "statement": "$Y$ is a compact subset of $D_{\\A}$.",
+  "proof": "\\leanok\n  It's the continuous image of the compact set~$X\\times X$.",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact"
+}

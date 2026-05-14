@@ -1,0 +1,10 @@
+{
+  "label": "slowly_increasing_well_defined",
+  "kind": "theorem",
+  "title": "slowly_increasing_well_defined",
+  "uses": [
+    "slowly_increasing"
+  ],
+  "statement": "\\notready This is independent of the choice of $\\rho$ as above.",
+  "proof": "Follows from the above."
+}

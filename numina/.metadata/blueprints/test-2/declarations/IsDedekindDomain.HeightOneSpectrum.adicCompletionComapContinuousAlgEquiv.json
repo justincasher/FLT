@@ -1,0 +1,11 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv",
+  "kind": "theorem",
+  "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology"
+  ],
+  "statement": "If we give $L\\otimes_KK_v$ the $K_v$-module topology then the $L$-algebra isomorphism\n  $L\\otimes_K K_v\\cong\\prod_{w|v}L_w$ is also a homeomorphism.",
+  "proof": "Indeed, is a $K_v$-algebra isomorphism between two modules each of which\n  have the module topology, and any module map is automorphically continuous for the\n  module topologies.",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv"
+}

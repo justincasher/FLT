@@ -1,0 +1,9 @@
+{
+  "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+  "kind": "definition",
+  "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+  "uses": [],
+  "statement": "The space of $R$-valued \\emph{automorphic forms} for $D^\\times$ is the set of\n  functions $f:D_{\\A^\\infty}^\\times\\to R$ satisfying the following axioms:\n  \\begin{itemize}\n    \\item $f(dg)=f(g)$ for all $d\\in D^\\times$ and $g\\in D_{\\A^\\infty}^\\times$.\n    \\item $f(gz)=f(g)$ for all $g\\in D_{\\A^\\infty}^\\times$.\n    \\item There exists a compact open subgroup $U\\subseteq (D_{\\A^f}^\\times)$ such that $f(gu)=f(g)$ for all $g\\in D_{\\A^\\infty}^\\times$ and $u\\in U$.\n  \\end{itemize}",
+  "proof": null,
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm"
+}

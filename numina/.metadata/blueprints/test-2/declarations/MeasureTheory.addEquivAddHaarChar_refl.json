@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_refl",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_refl",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar"
+  ],
+  "statement": "$d_A(id)=1.$",
+  "proof": "\\leanok\n  Clear.",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_refl"
+}

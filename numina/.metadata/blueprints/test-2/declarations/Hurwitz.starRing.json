@@ -1,0 +1,11 @@
+{
+  "label": "Hurwitz.starRing",
+  "kind": "definition",
+  "title": "Hurwitz.starRing",
+  "uses": [
+    "Hurwitz.ring"
+  ],
+  "statement": "There's a conjugation map (which we'll call \"star\") from the Hurwitz quaternions to themselves, sending\n    integers to themselves and purely imaginary elements like $2\\omega+1$ to minus themselves.\n    It satisfies $(x^*)^*=x$, $(xy)^*=y^*x^*$ and $(x+y)^*=x^*+y^*$. In particular, the Hurwitz\n    quaternions are a \"star ring\" in the sense of mathlib.",
+  "proof": null,
+  "leanDeclaration": "Hurwitz.starRing"
+}

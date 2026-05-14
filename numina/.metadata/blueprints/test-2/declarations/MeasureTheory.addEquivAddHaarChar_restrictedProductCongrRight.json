@@ -1,0 +1,9 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight",
+  "kind": "theorem",
+  "title": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight",
+  "uses": [],
+  "statement": "\\discussion{552}\n  With $A$, $A_i$, $C_i$, $\\phi_i$, $\\phi$ defined as above, we have\n  $\\delta_A(\\phi)=\\prod_i\\delta_{A_i}(\\phi_i)$.",
+  "proof": null,
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight"
+}

@@ -1,0 +1,10 @@
+{
+  "label": "automorphic_representation",
+  "kind": "definition",
+  "title": "automorphic_representation",
+  "uses": [
+    "automorphic_form_actions"
+  ],
+  "statement": "\\notready An automorphic representation is an irreducible $(G(\\A_N^f)\\times U_\\infty,\\mathfrak{g})$-module isomorphic to an irreducible subquotient of the space of automorphic forms.",
+  "proof": null
+}

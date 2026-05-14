@@ -1,0 +1,9 @@
+{
+  "label": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT",
+  "kind": "theorem",
+  "title": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT",
+  "uses": [],
+  "statement": "If $w \\mid v$ is an infinite place of $L$ lying above the infinite place $v$ of $K$, then\n  $L_w$ has the $K_v$-module topology.",
+  "proof": "Because $L_w$ is a finite-dimensional normed $K_v$ vector space, there exists a $K_v$-linear\n  linear homeomorphism $L_w \\cong K_v^n$, from which $L_w$ has the $K_v$-module topology.",
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT"
+}

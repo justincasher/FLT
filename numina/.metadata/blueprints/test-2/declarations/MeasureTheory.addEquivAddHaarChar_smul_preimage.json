@@ -1,0 +1,11 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_smul_preimage",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_smul_preimage",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar"
+  ],
+  "statement": "\\discussion{509}\n  If $X$ is a Borel set then $\\mu(X)=d_A(\\phi)\\mu(\\phi^{-1}X)$.",
+  "proof": "\\leanok\n  \n  This follows immediately from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_map}\n  and the definition of the pushforward of a measure.",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_smul_preimage"
+}

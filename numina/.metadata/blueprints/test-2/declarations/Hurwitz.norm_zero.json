@@ -1,0 +1,11 @@
+{
+  "label": "Hurwitz.norm_zero",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_zero",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of $0$ is $0$.",
+  "proof": "\\leanok\n    A calculation.",
+  "leanDeclaration": "Hurwitz.norm_zero"
+}

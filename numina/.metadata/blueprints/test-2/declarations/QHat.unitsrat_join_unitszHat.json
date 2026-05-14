@@ -1,0 +1,12 @@
+{
+  "label": "QHat.unitsrat_join_unitszHat",
+  "kind": "lemma",
+  "title": "QHat.unitsrat_join_unitszHat",
+  "uses": [
+    "QHat",
+    "ZHat.commRing"
+  ],
+  "statement": "The product of $\\Q^\\times$ and $\\Zhat^\\times$ in $\\Qhat^\\times$ is all of $\\Qhat^\\times$.\n    More precisely, every element of $\\Qhat^\\times$ can be written as $qz$ with $q\\in\\Q^\\times$\n    and $z\\in\\Zhat^\\times$.",
+  "proof": null,
+  "leanDeclaration": "QHat.unitsrat_join_unitszHat"
+}

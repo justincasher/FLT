@@ -1,0 +1,9 @@
+{
+  "label": "NumberField.InfinitePlace.Completion.piExtension",
+  "kind": "definition",
+  "title": "NumberField.InfinitePlace.Completion.piExtension",
+  "uses": [],
+  "statement": "Let $v$ be an infinite place of $K$. There is a continuous $K$-algebra homomorphism\n  $K_v \\to \\prod_{w\\mid v}L_w$, whose restriction to $K$ corresponds to the global embedding\n  of $K$ into $(L_w)_w$.",
+  "proof": null,
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.piExtension"
+}

@@ -4,5 +4,1166 @@
   "blueprint_file": "blueprint/src/content.tex",
   "source_type": "",
   "notes": "",
-  "entries": []
+  "entries": [
+    {
+      "label": "FermatLastTheorem.of_odd_primes",
+      "kind": "lemma",
+      "title": "FermatLastTheorem.of_odd_primes"
+    },
+    {
+      "label": "fermatLastTheoremThree",
+      "kind": "lemma",
+      "title": "fermatLastTheoremThree"
+    },
+    {
+      "label": "FermatLastTheorem.of_p_ge_5",
+      "kind": "corollary",
+      "title": "FermatLastTheorem.of_p_ge_5"
+    },
+    {
+      "label": "FreyPackage",
+      "kind": "definition",
+      "title": "FreyPackage"
+    },
+    {
+      "label": "FreyPackage.of_not_FermatLastTheorem_p_ge_5",
+      "kind": "lemma",
+      "title": "FreyPackage.of_not_FermatLastTheorem_p_ge_5"
+    },
+    {
+      "label": "FreyCurve",
+      "kind": "definition",
+      "title": "Frey"
+    },
+    {
+      "label": "Mazur_Frey",
+      "kind": "theorem",
+      "title": "Mazur"
+    },
+    {
+      "label": "Wiles_Frey",
+      "kind": "theorem",
+      "title": "Wiles,Taylor--Wiles, Ribet,\\ldots"
+    },
+    {
+      "label": "FreyPackage.false",
+      "kind": "corollary",
+      "title": "FreyPackage.false"
+    },
+    {
+      "label": "FLT",
+      "kind": "corollary",
+      "title": "FLT"
+    },
+    {
+      "label": "hardly_ramified",
+      "kind": "definition",
+      "title": "hardly_ramified"
+    },
+    {
+      "label": "Frey_curve_hardly_ramified",
+      "kind": "theorem",
+      "title": "Frey_curve_hardly_ramified"
+    },
+    {
+      "label": "hardly_ramified_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_reducible"
+    },
+    {
+      "label": "Wiles_Frey_again",
+      "kind": "theorem",
+      "title": "Wiles_Frey_again"
+    },
+    {
+      "label": "hardly_ramified_lifts",
+      "kind": "theorem",
+      "title": "hardly_ramified_lifts"
+    },
+    {
+      "label": "hardly_ramified_spreads_out",
+      "kind": "theorem",
+      "title": "hardly_ramified_spreads_out"
+    },
+    {
+      "label": "hardly_ramified_mod3_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_mod3_reducible"
+    },
+    {
+      "label": "hardly_ramified_3adic_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_3adic_reducible"
+    },
+    {
+      "label": "modularity_lifting_theorem",
+      "kind": "theorem",
+      "title": "modularity_lifting_theorem"
+    },
+    {
+      "label": "ZHat",
+      "kind": "definition",
+      "title": "ZHat"
+    },
+    {
+      "label": "ZHat.commRing",
+      "kind": "lemma",
+      "title": "ZHat.commRing"
+    },
+    {
+      "label": "ZHat.nontrivial",
+      "kind": "lemma",
+      "title": "ZHat.nontrivial"
+    },
+    {
+      "label": "ZHat.charZero",
+      "kind": "lemma",
+      "title": "ZHat.charZero"
+    },
+    {
+      "label": "ZHat.e",
+      "kind": "definition",
+      "title": "ZHat.e"
+    },
+    {
+      "label": "ZHat.e_def",
+      "kind": "lemma",
+      "title": "ZHat.e_def"
+    },
+    {
+      "label": "ZHat.e_not_in_Int",
+      "kind": "lemma",
+      "title": "ZHat.e_not_in_Int"
+    },
+    {
+      "label": "ZHat.torsionfree",
+      "kind": "lemma",
+      "title": "ZHat.torsionfree"
+    },
+    {
+      "label": "ZHat.multiples",
+      "kind": "lemma",
+      "title": "ZHat.multiples"
+    },
+    {
+      "label": "QHat",
+      "kind": "definition",
+      "title": "QHat"
+    },
+    {
+      "label": "QHat.canonicalForm",
+      "kind": "lemma",
+      "title": "QHat.canonicalForm"
+    },
+    {
+      "label": "QHat.IsCoprime",
+      "kind": "definition",
+      "title": "QHat.IsCoprime"
+    },
+    {
+      "label": "QHat.lowestTerms",
+      "kind": "lemma",
+      "title": "QHat.lowestTerms"
+    },
+    {
+      "label": "QHat.injective_rat",
+      "kind": "lemma",
+      "title": "QHat.injective_rat"
+    },
+    {
+      "label": "QHat.injective_zHat",
+      "kind": "lemma",
+      "title": "QHat.injective_zHat"
+    },
+    {
+      "label": "QHat.rat_meet_zHat",
+      "kind": "lemma",
+      "title": "QHat.rat_meet_zHat"
+    },
+    {
+      "label": "QHat.rat_join_zHat",
+      "kind": "lemma",
+      "title": "QHat.rat_join_zHat"
+    },
+    {
+      "label": "Qhat.unitsrat_meet_unitszHat",
+      "kind": "lemma",
+      "title": "Qhat.unitsrat_meet_unitszHat"
+    },
+    {
+      "label": "QHat.unitsrat_join_unitszHat",
+      "kind": "lemma",
+      "title": "QHat.unitsrat_join_unitszHat"
+    },
+    {
+      "label": "Hurwitz",
+      "kind": "definition",
+      "title": "Hurwitz"
+    },
+    {
+      "label": "Hurwitz.ring",
+      "kind": "lemma",
+      "title": "Hurwitz.ring"
+    },
+    {
+      "label": "Hurwitz.starRing",
+      "kind": "definition",
+      "title": "Hurwitz.starRing"
+    },
+    {
+      "label": "Hurwitz.norm",
+      "kind": "definition",
+      "title": "Hurwitz.norm"
+    },
+    {
+      "label": "Hurwitz.norm_eq_mul_conj",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_eq_mul_conj"
+    },
+    {
+      "label": "Hurwitz.norm_zero",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_zero"
+    },
+    {
+      "label": "Hurwitz.norm_one",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_one"
+    },
+    {
+      "label": "Hurwitz.norm_mul",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_mul"
+    },
+    {
+      "label": "Hurwitz.norm_nonneg",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_nonneg"
+    },
+    {
+      "label": "Hurwitz.norm_eq_zero",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_eq_zero"
+    },
+    {
+      "label": "Hurwitz.exists_near",
+      "kind": "lemma",
+      "title": "Hurwitz.exists_near"
+    },
+    {
+      "label": "Hurwitz.quot_rem",
+      "kind": "lemma",
+      "title": "Hurwitz.quot_rem"
+    },
+    {
+      "label": "Hurwitz.left_ideal_princ",
+      "kind": "corollary",
+      "title": "Hurwitz.left_ideal_princ"
+    },
+    {
+      "label": "Hurwitz.surjective_pnat_quotient",
+      "kind": "theorem",
+      "title": "Hurwitz.surjective_pnat_quotient"
+    },
+    {
+      "label": "HurwitzRatHat.canonicalForm",
+      "kind": "lemma",
+      "title": "HurwitzRatHat.canonicalForm"
+    },
+    {
+      "label": "HurwitzRatHat.completed_units",
+      "kind": "theorem",
+      "title": "HurwitzRatHat.completed_units"
+    },
+    {
+      "label": "MatrixRing.isCentralSimple",
+      "kind": "lemma",
+      "title": "MatrixRing.isCentralSimple"
+    },
+    {
+      "label": "IsCentralSimple.baseChange",
+      "kind": "lemma",
+      "title": "IsCentralSimple.baseChange"
+    },
+    {
+      "label": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso",
+      "kind": "lemma",
+      "title": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso"
+    },
+    {
+      "label": "AutomorphicForm.GLn.IsSmooth",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.IsSmooth"
+    },
+    {
+      "label": "AutomorphicForm.GLn.IsSlowlyIncreasing",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.IsSlowlyIncreasing"
+    },
+    {
+      "label": "AutomorphicForm.GLn.Weight",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.Weight"
+    },
+    {
+      "label": "instLieAlgebraAction",
+      "kind": "definition",
+      "title": "instLieAlgebraAction"
+    },
+    {
+      "label": "instComplexLieAlgebraAction",
+      "kind": "definition",
+      "title": "instComplexLieAlgebraAction"
+    },
+    {
+      "label": "instUniversalEnvelopingAlgebraAction",
+      "kind": "definition",
+      "title": "instUniversalEnvelopingAlgebraAction"
+    },
+    {
+      "label": "instCentreAction",
+      "kind": "definition",
+      "title": "instCentreAction"
+    },
+    {
+      "label": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ"
+    },
+    {
+      "label": "IsFractionRing.stabilizerHom",
+      "kind": "definition",
+      "title": "IsFractionRing.stabilizerHom"
+    },
+    {
+      "label": "IsFractionRing.stabilizerHom_surjective",
+      "kind": "theorem",
+      "title": "IsFractionRing.stabilizerHom_surjective"
+    },
+    {
+      "label": "MulSemiringAction.charpoly",
+      "kind": "definition",
+      "title": "MulSemiringAction.charpoly"
+    },
+    {
+      "label": "MulSemiringAction.monic_charpoly",
+      "kind": "lemma",
+      "title": "MulSemiringAction.monic_charpoly"
+    },
+    {
+      "label": "Algebra.IsInvariant.charpoly_mem_lifts",
+      "kind": "lemma",
+      "title": "Algebra.IsInvariant.charpoly_mem_lifts"
+    },
+    {
+      "label": "Algebra.IsInvariant.isIntegral",
+      "kind": "theorem",
+      "title": "Algebra.IsInvariant.isIntegral"
+    },
+    {
+      "label": "fixed_of_fixed1_aux1",
+      "kind": "lemma",
+      "title": "fixed_of_fixed1_aux1"
+    },
+    {
+      "label": "fixed_of_fixed1_aux2",
+      "kind": "lemma",
+      "title": "fixed_of_fixed1_aux2"
+    },
+    {
+      "label": "FixedPoints.toAlgAut_surjective",
+      "kind": "theorem",
+      "title": "FixedPoints.toAlgAut_surjective"
+    },
+    {
+      "label": "fixed_of_fixed1",
+      "kind": "proposition",
+      "title": "fixed_of_fixed1"
+    },
+    {
+      "label": "IsAlgebraic.exists_smul_eq_mul",
+      "kind": "lemma",
+      "title": "IsAlgebraic.exists_smul_eq_mul"
+    },
+    {
+      "label": "fixed_of_fixed2",
+      "kind": "proposition",
+      "title": "fixed_of_fixed2"
+    },
+    {
+      "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "kind": "theorem",
+      "title": "NumberField.instCompactSpaceAdicCompletionIntegers"
+    },
+    {
+      "label": "NumberField.AdeleRing.locallyCompactSpace",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.locallyCompactSpace"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.valuation_comap"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+      "kind": "definition",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.Extension.finite",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.Extension.finite"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+      "kind": "definition",
+      "title": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.dvd_norm",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.dvd_norm"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.surjective_tensorProduct_map",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.AKLB.surjective_tensorProduct_map"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.tensorProduct_algEquiv",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.tensorProduct_algEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.tensorProduct_module_algEquiv",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.AKLB.tensorProduct_module_algEquiv"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.finitePresentation",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.AKLB.finitePresentation"
+    },
+    {
+      "label": "pi_tensorProduct_of_finitePresentation",
+      "kind": "theorem",
+      "title": "pi_tensorProduct_of_finitePresentation"
+    },
+    {
+      "label": "IsDedekindDomain.pi_tensorProduct",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.pi_tensorProduct"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1"
+    },
+    {
+      "label": "RestrictedProduct.relabelIso",
+      "kind": "definition",
+      "title": "RestrictedProduct.relabelIso"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.piExtension",
+      "kind": "definition",
+      "title": "NumberField.InfinitePlace.Completion.piExtension"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange",
+      "kind": "definition",
+      "title": "NumberField.InfinitePlace.Completion.baseChange"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange_surjective",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChange_surjective"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange_injective",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChange_injective"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChangeEquiv"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.piEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.piEquiv"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.piEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.piEquiv"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.baseChangeEquivAux",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.baseChangeEquivAux"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.baseChangeEquiv"
+    },
+    {
+      "label": "NumberField.AdeleRing.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.baseChangeEquiv"
+    },
+    {
+      "label": "NumberField.AdeleRing.baseChange_moduleTopology",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.baseChange_moduleTopology"
+    },
+    {
+      "label": "Rat.AdeleRing.zero_discrete",
+      "kind": "theorem",
+      "title": "Rat.AdeleRing.zero_discrete"
+    },
+    {
+      "label": "NumberField.AdeleRing.zero_discrete",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.zero_discrete"
+    },
+    {
+      "label": "NumberField.AdeleRing.discrete",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.discrete"
+    },
+    {
+      "label": "Rat.AdeleRing.cocompact",
+      "kind": "theorem",
+      "title": "Rat.AdeleRing.cocompact"
+    },
+    {
+      "label": "NumberField.AdeleRing.cocompact",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.cocompact"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar",
+      "kind": "definition",
+      "title": "MeasureTheory.addEquivAddHaarChar"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_eq",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_eq"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_map",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_map"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_comap",
+      "kind": "corollary",
+      "title": "MeasureTheory.addEquivAddHaarChar_comap"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_preimage",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_preimage"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_integral_map",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_integral_map"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_refl",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_refl"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_trans",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_trans"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar",
+      "kind": "definition",
+      "title": "MeasureTheory.ringHaarChar"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_mul_integral",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_mul_integral"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_mul_volume",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_mul_volume"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_continuous",
+      "kind": "corollary",
+      "title": "MeasureTheory.ringHaarChar_continuous"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_real",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_real"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_complex",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_complex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_padic",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_padic"
+    },
+    {
+      "label": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det",
+      "kind": "corollary",
+      "title": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det"
+    },
+    {
+      "label": "IsSimpleRing.mulLeft_det_eq_mulRight_det",
+      "kind": "lemma",
+      "title": "IsSimpleRing.mulLeft_det_eq_mulRight_det"
+    },
+    {
+      "label": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight",
+      "kind": "corollary",
+      "title": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_prodCongr",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_prodCongr"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_piCongrRight",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_piCongrRight"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_prod",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_prod"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_pi",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_pi"
+    },
+    {
+      "label": "Topology.IsOpenEmbedding.isHaarMeasure_comap",
+      "kind": "lemma",
+      "title": "Topology.IsOpenEmbedding.isHaarMeasure_comap"
+    },
+    {
+      "label": "Topology.IsOpenEmbedding.regular_comap",
+      "kind": "lemma",
+      "title": "Topology.IsOpenEmbedding.regular_comap"
+    },
+    {
+      "label": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace",
+      "kind": "lemma",
+      "title": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding"
+    },
+    {
+      "label": "Continuous.restrictedProduct_congrRight",
+      "kind": "lemma",
+      "title": "Continuous.restrictedProduct_congrRight"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight",
+      "kind": "theorem",
+      "title": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_restrictedProduct",
+      "kind": "corollary",
+      "title": "MeasureTheory.ringHaarChar_restrictedProduct"
+    },
+    {
+      "label": "IsModuleTopology.continuous_bilinear_of_finite_left",
+      "kind": "lemma",
+      "title": "IsModuleTopology.continuous_bilinear_of_finite_left"
+    },
+    {
+      "label": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv"
+    },
+    {
+      "label": "NumberField.AdeleRing.isCentralSimple_addHaarScalarFactor_left_mul_eq_right_mul",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.isCentralSimple_addHaarScalarFactor_left_mul_eq_right_mul"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_adeles_rat",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_adeles_rat"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_adeles_units_rat_eq_one",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_adeles_units_rat_eq_one"
+    },
+    {
+      "label": "MeasureTheory.addHaarScalarFactor_tensor_adeles_eq_one",
+      "kind": "theorem",
+      "title": "MeasureTheory.addHaarScalarFactor_tensor_adeles_eq_one"
+    },
+    {
+      "label": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker"
+    },
+    {
+      "label": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.E"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.C",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.C"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C"
+    },
+    {
+      "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact",
+      "kind": "theorem",
+      "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact"
+    },
+    {
+      "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset",
+      "kind": "theorem",
+      "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.finiteDimensional",
+      "kind": "theorem",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.finiteDimensional"
+    },
+    {
+      "label": "AbstractHeckeOperator.HeckeOperator_toFun",
+      "kind": "definition",
+      "title": "AbstractHeckeOperator.HeckeOperator_toFun"
+    },
+    {
+      "label": "AbstractHeckeOperator.HeckeOperator",
+      "kind": "lemma",
+      "title": "AbstractHeckeOperator.HeckeOperator"
+    },
+    {
+      "label": "AbstractHeckeOperator.comm",
+      "kind": "lemma",
+      "title": "AbstractHeckeOperator.comm"
+    },
+    {
+      "label": "QuotientGroup.mk_image_finite_of_compact_of_open",
+      "kind": "lemma",
+      "title": "QuotientGroup.mk_image_finite_of_compact_of_open"
+    },
+    {
+      "label": "Homeomorph.restrictedProductProd",
+      "kind": "lemma",
+      "title": "Homeomorph.restrictedProductProd"
+    },
+    {
+      "label": "Homeomorph.restrictedProductPi",
+      "kind": "corollary",
+      "title": "Homeomorph.restrictedProductPi"
+    },
+    {
+      "label": "Homeomorph.restrictedProductMatrix",
+      "kind": "corollary",
+      "title": "Homeomorph.restrictedProductMatrix"
+    },
+    {
+      "label": "Submonoid.units_isOpen",
+      "kind": "lemma",
+      "title": "Submonoid.units_isOpen"
+    },
+    {
+      "label": "Submonoid.units_isCompact",
+      "kind": "lemma",
+      "title": "Submonoid.units_isCompact"
+    },
+    {
+      "label": "ContinuousMulEquiv.piUnits",
+      "kind": "lemma",
+      "title": "ContinuousMulEquiv.piUnits"
+    },
+    {
+      "label": "ContinuousMulEquiv.restrictedProductUnits",
+      "kind": "theorem",
+      "title": "ContinuousMulEquiv.restrictedProductUnits"
+    },
+    {
+      "label": "NumberField.isOpenAdicCompletionIntegers",
+      "kind": "lemma",
+      "title": "NumberField.isOpenAdicCompletionIntegers"
+    },
+    {
+      "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "kind": "lemma",
+      "title": "NumberField.instCompactSpaceAdicCompletionIntegers"
+    },
+    {
+      "label": "M2.localFullLevel.isOpen",
+      "kind": "lemma",
+      "title": "M2.localFullLevel.isOpen"
+    },
+    {
+      "label": "M2.localFullLevel.isCompact",
+      "kind": "lemma",
+      "title": "M2.localFullLevel.isCompact"
+    },
+    {
+      "label": "nolean-compactopen-GL2",
+      "kind": "lemma",
+      "title": "nolean-compactopen-GL2"
+    },
+    {
+      "label": "nolean-compactopen-U1p",
+      "kind": "lemma",
+      "title": "nolean-compactopen-U1p"
+    },
+    {
+      "label": "bijOn_unipotent_mul_diagU1_U1diagU1",
+      "kind": "lemma",
+      "title": "bijOn_unipotent_mul_diagU1_U1diagU1"
+    },
+    {
+      "label": "GL2.restrictedProduct",
+      "kind": "theorem",
+      "title": "GL2.restrictedProduct"
+    },
+    {
+      "label": "nolean-hecke-algebra-commutative-noetherian",
+      "kind": "theorem",
+      "title": "nolean-hecke-algebra-commutative-noetherian"
+    },
+    {
+      "label": "nolean-product-of-U-alpha",
+      "kind": "lemma",
+      "title": "nolean-product-of-U-alpha"
+    },
+    {
+      "label": "maximal_unramified_extension_of_p-adic_field",
+      "kind": "theorem",
+      "title": "maximal_unramified_extension_of_p-adic_field"
+    },
+    {
+      "label": "local_Weil_group",
+      "kind": "definition",
+      "title": "local_Weil_group"
+    },
+    {
+      "label": "local_class_field_theory",
+      "kind": "theorem",
+      "title": "local_class_field_theory"
+    },
+    {
+      "label": "local_galois_coh_finite",
+      "kind": "theorem",
+      "title": "local_galois_coh_finite"
+    },
+    {
+      "label": "local_galois_coh_dim_two",
+      "kind": "theorem",
+      "title": "\"the dimension is 2\""
+    },
+    {
+      "label": "local_galois_coh_top_degree",
+      "kind": "theorem",
+      "title": "\"top degree\""
+    },
+    {
+      "label": "local_galois_coh_poincare",
+      "kind": "theorem",
+      "title": "\"Poincar\\'e duality\""
+    },
+    {
+      "label": "local_galois_coh_euler_poincare",
+      "kind": "theorem",
+      "title": "\"Euler-Poincar\\'e characteristic\""
+    },
+    {
+      "label": "global_class_field_theory",
+      "kind": "theorem",
+      "title": "global_class_field_theory"
+    },
+    {
+      "label": "Skinner_Wiles_CFT_trick",
+      "kind": "theorem",
+      "title": "Skinner_Wiles_CFT_trick"
+    },
+    {
+      "label": "topology_on_affine_variety_points",
+      "kind": "definition",
+      "title": "topology_on_affine_variety_points"
+    },
+    {
+      "label": "topology_on_affine_variety_computation",
+      "kind": "theorem",
+      "title": "topology_on_affine_variety_computation"
+    },
+    {
+      "label": "manifold_on_algebraic_variety_points",
+      "kind": "definition",
+      "title": "manifold_on_algebraic_variety_points"
+    },
+    {
+      "label": "manifold_on_algebraic_variety_computation",
+      "kind": "theorem",
+      "title": "manifold_on_algebraic_variety_computation"
+    },
+    {
+      "label": "lie_group_from_algebraic_group",
+      "kind": "corollary",
+      "title": "lie_group_from_algebraic_group"
+    },
+    {
+      "label": "connected_reductive_group",
+      "kind": "definition",
+      "title": "connected_reductive_group"
+    },
+    {
+      "label": "slowly_increasing",
+      "kind": "definition",
+      "title": "slowly_increasing"
+    },
+    {
+      "label": "slowly_increasing_well_defined",
+      "kind": "theorem",
+      "title": "slowly_increasing_well_defined"
+    },
+    {
+      "label": "automorphic_form",
+      "kind": "definition",
+      "title": "automorphic_form"
+    },
+    {
+      "label": "cuspidal_automorphic_form",
+      "kind": "definition",
+      "title": "cuspidal_automorphic_form"
+    },
+    {
+      "label": "automorphic_form_actions",
+      "kind": "definition",
+      "title": "automorphic_form_actions"
+    },
+    {
+      "label": "cuspidal_automorphic_form_decomposition",
+      "kind": "theorem",
+      "title": "cuspidal_automorphic_form_decomposition"
+    },
+    {
+      "label": "cuspidal_automorphic_representation",
+      "kind": "definition",
+      "title": "cuspidal_automorphic_representation"
+    },
+    {
+      "label": "automorphic_representation",
+      "kind": "definition",
+      "title": "automorphic_representation"
+    },
+    {
+      "label": "automorphic_representation_local_decomposition",
+      "kind": "theorem",
+      "title": "automorphic_representation_local_decomposition"
+    },
+    {
+      "label": "compatible_family",
+      "kind": "definition",
+      "title": "compatible_family"
+    },
+    {
+      "label": "Galois_representation_from_automorphic_representation_on_GL_2_form",
+      "kind": "theorem",
+      "title": "Galois_representation_from_automorphic_representation_on_GL_2_form"
+    },
+    {
+      "label": "Shimura_varieties",
+      "kind": "definition",
+      "title": "Shimura_varieties"
+    },
+    {
+      "label": "moret-bailly",
+      "kind": "theorem",
+      "title": "moret-bailly"
+    }
+  ]
 }
