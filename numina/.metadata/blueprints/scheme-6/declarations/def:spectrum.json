@@ -1,0 +1,11 @@
+{
+  "label": "def:spectrum",
+  "kind": "definition",
+  "title": "Spectrum of a Ring",
+  "leanDeclaration": "PrimeSpectrum",
+  "leanFile": "",
+  "assessment": "ALREADY_IN_MATHLIB",
+  "uses": [],
+  "statement": "Let $A$ be a commutative ring with identity. The \\textbf{spectrum} of $A$ is the set\n    \\[\n        \\operatorname{Spec} A = \\{ \\mathfrak{p} \\subseteq A \\mid \\mathfrak{p} \\text{ is a prime ideal} \\}.\n    \\]\n    It is equipped with the \\textbf{Zariski topology}, whose closed sets are\n    \\[\n        V(I) = \\{ \\mathfrak{p} \\in \\operatorname{Spec} A \\mid I \\subseteq \\mathfrak{p} \\}\n    \\]\n    for ideals $I \\subseteq A$. The distinguished open sets $D(f) = \\operatorname{Spec} A \\setminus V(f)$ for $f \\in A$ form a basis.",
+  "proof": null
+}

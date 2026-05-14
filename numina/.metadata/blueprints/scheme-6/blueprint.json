@@ -1,0 +1,63 @@
+{
+  "title": "Fundamental group",
+  "branch": "numina/scheme-6",
+  "source_type": "latex",
+  "notes": "All 10 definitions already exist in Mathlib. Blueprint maps each to its Mathlib counterpart.",
+  "entries": [
+    {
+      "label": "def:presheaf",
+      "kind": "definition",
+      "title": "Presheaf"
+    },
+    {
+      "label": "def:sheaf",
+      "kind": "definition",
+      "title": "Sheaf"
+    },
+    {
+      "label": "def:ringed_space",
+      "kind": "definition",
+      "title": "Ringed Space"
+    },
+    {
+      "label": "def:stalk",
+      "kind": "definition",
+      "title": "Stalk"
+    },
+    {
+      "label": "def:locally_ringed_space",
+      "kind": "definition",
+      "title": "Locally Ringed Space"
+    },
+    {
+      "label": "def:spectrum",
+      "kind": "definition",
+      "title": "Spectrum of a Ring"
+    },
+    {
+      "label": "def:structure_sheaf",
+      "kind": "definition",
+      "title": "Structure Sheaf on $\\operatorname{Spec} A$"
+    },
+    {
+      "label": "def:affine_scheme",
+      "kind": "definition",
+      "title": "Affine Scheme"
+    },
+    {
+      "label": "def:scheme",
+      "kind": "definition",
+      "title": "Scheme"
+    },
+    {
+      "label": "def:morphism_of_schemes",
+      "kind": "definition",
+      "title": "Morphism of Schemes"
+    }
+  ],
+  "settings": {
+    "draft_prs": false,
+    "agent_model": "opus",
+    "pr_mode": "ready"
+  }
+}
