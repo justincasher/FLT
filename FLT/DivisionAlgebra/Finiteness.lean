@@ -73,7 +73,7 @@ notation "D_𝔸" => (D ⊗[K] AdeleRing (𝓞 K) K)
 -- it is local definitions and lemmas which we don't need. All we need
 -- is the big result at the end.)
 
-namespace NumberField.AdeleRing.DivisionAlgebra.Aux
+namespace NumberField.AdeleRing.DivisionAlgebra.Aux 
 
 /-- Df is notation for D ⊗ 𝔸_K^∞ -/
 abbrev Df := D ⊗[K] (FiniteAdeleRing (𝓞 K) K)
