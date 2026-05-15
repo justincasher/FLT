@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Let $R$ be a coefficient ring with finite residue field of characteristic $\\ell\\geq3$.\n  Let $V$ be a finite free $R$-module of rank~2, equipped with the product topology. A\n  continuous representation $\\rho: \\GQ\\to \\GL_R(V)$ is said to be \\emph{hardly ramified} if it\n  satisfies the following four conditions:\n  \\begin{enumerate}\n  \\item $\\det(\\rho):\\GQ\\to R^\\times$ is the cyclotomic character;\n  \\item $\\rho$ is unramified outside $2\\ell$;\n  \\item The restriction of $\\rho$ to $\\Gal(\\Qbar_2/\\Q_2)$ is reducible (more precisely,\n  there is a short exact sequence $0\\to R\\to V\\to R\\to 0$ which is stable\n  under the action of $\\Gal(\\Qbar_2/\\Q_2)$) and the Galois action on the 1-dimensional\n  quotient is an unramified representation of $\\Gal(\\Qbar_2/\\Q_2)$ whose square is trivial;\n  \\item The restriction of $\\rho$ to $\\GQl$ is flat, by which we mean that for all open\n  ideals $I$ of $R$, the (finite image) representation $\\rho$ mod $I:\\GQl\\to \\GL_{R/I}(V/I)$\n  comes from a finite flat group scheme.\n  \\end{enumerate}",
   "proof": null,
-  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified"
+  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex"
 }

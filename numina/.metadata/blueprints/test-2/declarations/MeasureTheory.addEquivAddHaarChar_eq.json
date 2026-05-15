@@ -7,5 +7,6 @@
   ],
   "statement": "\\discussion{508}\n  $d_A(\\phi)$ is independent of choice of regular Haar measure.",
   "proof": "\\leanok\n  If $\\mu'$ is a second choice then $\\mu'=\\lambda\\mu$ for some\n  positive real $\\lambda$, and the $\\lambda$s on each side of\n  $\\mu'(X)=d_A(\\phi)(\\phi_*\\mu')(X)$ cancel.",
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_eq"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_eq",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

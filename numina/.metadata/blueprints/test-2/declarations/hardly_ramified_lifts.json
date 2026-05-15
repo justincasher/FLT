@@ -7,5 +7,6 @@
   ],
   "statement": "If $\\ell\\geq3$ is prime and $\\overline{\\rho}:\\GQ\\to\\GL_2(\\Z/\\ell\\Z)$\n  is hardly ramified and irreducible, then there exists a finite extension~$K$ of $\\Q_\\ell$\n  with integer ring~$\\calO$ and maximal ideal $\\mathfrak{m}$\n  and a hardly ramified representation\n  $\\rho:\\GQ\\to\\GL_2(\\calO)$ whose reduction modulo~$\\m$ is isomorphic to $\\rho$.",
   "proof": "Omitted for now {\\bf TODO}",
-  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified.lifts"
+  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified.lifts",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex"
 }

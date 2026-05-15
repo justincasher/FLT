@@ -7,5 +7,6 @@
   ],
   "statement": "The induced $L$-algebra morphism\n  $L\\otimes_K\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ is a topological isomorphism.",
   "proof": null,
-  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv"
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "For $v$ fixed, the product topology on $\\prod_{w|v}L_w$ is the $K_v$-module\n  topology.",
   "proof": "\\leanok\n  This is a finite product of $K_v$-modules each of which has the $K_v$-module topology\n  by~\\ref{IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology},\n  and the product topology is the module topology for a finite product of modules each of which\n  has the module topology (this is in mathlib).",
-  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology"
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

@@ -10,5 +10,6 @@
   ],
   "statement": "Let $v$ be an infinite place of $K$. There is a natural $L$-algebra homeomorphism\n  $L\\otimes_K K_v \\cong_L \\prod_{w\\mid v}L_w$, whose restriction to $1\\otimes_K K_v$ corresponds to\n  the map in~\\ref{NumberField.InfinitePlace.Completion.piExtension}.",
   "proof": "The map in~\\ref{NumberField.InfinitePlace.Completion.baseChange} is an $L$-algebra\n  isomorphism by Theorem~\\ref{NumberField.InfinitePlace.Completion.baseChange_surjective}\n  and Theorem~\\ref{NumberField.InfinitePlace.Completion.baseChange_injective}.\n  Every $K_v$-algebra isomorphism between two $K_v$-module topological spaces is a homeomorphism.\n  Since the $L$-algebra isomorphism of\n  Definition~\\ref{NumberField.InfinitePlace.Completion.baseChange} can equivalently be viewed as\n  a $K_v$-algebra isomorphism, it is also a homeomorphism.",
-  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChangeEquiv"
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChangeEquiv",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

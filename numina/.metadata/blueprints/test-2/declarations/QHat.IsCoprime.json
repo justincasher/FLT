@@ -7,5 +7,6 @@
   ],
   "statement": "If $N\\in\\N^+$ and $z\\in\\Zhat$ then we say that $N$ and $z$ are \\emph{coprime} if\n    $z_N\\in(\\Z/N\\Z)^\\times$. We write $z/N$ as notation\n    for the element $\\frac{1}{N}\\otimes_tz$.",
   "proof": null,
-  "leanDeclaration": "QHat.IsCoprime"
+  "leanDeclaration": "QHat.IsCoprime",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

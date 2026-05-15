@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\mathlibok\n  $B/A$ is integral.",
   "proof": "\\mathlibok\n  Use $M_b$.",
-  "leanDeclaration": "Algebra.IsInvariant.isIntegral"
+  "leanDeclaration": "Algebra.IsInvariant.isIntegral",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

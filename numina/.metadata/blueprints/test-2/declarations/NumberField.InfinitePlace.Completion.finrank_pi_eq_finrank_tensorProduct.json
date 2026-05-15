@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "For a fixed infinite place $v$ of $K$, we have\n  $\\text{dim}_{K_v} \\prod_{w\\mid v} L_w = \\text{dim}_{K_v} L\\otimes_K K_v$.",
   "proof": null,
-  "leanDeclaration": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct"
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

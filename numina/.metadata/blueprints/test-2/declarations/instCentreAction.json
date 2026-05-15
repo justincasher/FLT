@@ -6,5 +6,6 @@
     "instUniversalEnvelopingAlgebraAction"
   ],
   "statement": "Thus the \\emph{centre} $\\Z_n$ of this universal enveloping algebra also acts on the smooth\ncomplex functions.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex"
 }

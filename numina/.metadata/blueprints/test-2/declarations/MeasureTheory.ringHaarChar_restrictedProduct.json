@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{554}\n  If $u=(u_i)_i\\in R^\\times$ then $\\delta_R(u)=\\prod_i\\delta_{R_i}(u_i)$.",
   "proof": "\\leanok\n  \n  By definition of restricted product we have $u_i\\in C_i$ for all but finitely many $i$.\n  Note also that $u$ has an inverse $v=(v_i)_i$ with $v_i\\in C_i$ for all but finitely many $i$.\n  The fact that $u_iv_i=v_iu_i=1$ means that $u_i,v_i\\in C_i^\\times$ for all but finitely many $i$.\n  Thus the previous theorem~\\ref{MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight} applies.",
-  "leanDeclaration": "MeasureTheory.ringHaarChar_restrictedProduct"
+  "leanDeclaration": "MeasureTheory.ringHaarChar_restrictedProduct",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

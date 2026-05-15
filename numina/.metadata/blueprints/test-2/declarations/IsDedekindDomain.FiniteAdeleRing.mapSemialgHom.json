@@ -8,5 +8,6 @@
   ],
   "statement": "There's a natural ring homomorphism\n  $\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ lying over $K\\to L$.",
   "proof": null,
-  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom"
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

@@ -6,5 +6,6 @@
     "instLieAlgebraAction"
   ],
   "statement": "This extends to is a natural complex Lie algebra action of the complexification of\n  the real Lie algebra, on the smooth complex functions on $\\GL_n(\\R)$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex"
 }

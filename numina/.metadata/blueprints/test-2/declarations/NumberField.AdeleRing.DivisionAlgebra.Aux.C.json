@@ -8,5 +8,6 @@
   ],
   "statement": "Define $C:= (T^{-1}.X) \\times X\\subset D_{\\A}\\times D_{\\A}$.",
   "proof": null,
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.C"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.C",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "There is a natural $K_{\\infty}$-linear homeomorphism\n  $K_{\\infty}^{[L:K]} \\cong_{K_{\\infty}} L_{\\infty}$.",
   "proof": "Using the isomorphisms $K_v^{[L:K]} \\cong_{K_v} \\prod_{w\\mid v}L_w$ from\n  Theorem~\\ref{NumberField.InfinitePlace.Completion.piEquiv}, we clearly have a bijection\n  $K_{\\infty}^{[L:K]} \\cong \\prod_v\\prod_{w \\mid v} L_w \\cong \\prod_w L_w$.\n  The $K_v$-linearity of each component isomorphism extends to $K_{\\infty}$-linearity if the\n  action of $\\prod_v K_v$ on $\\prod_w L_w$ is constant on the fibers of the restriction map on\n  infinite places.\n  In other words, if, for all $x \\in K_{\\infty}$ and $y \\in L_{\\infty}$, we have\n  $(x \\cdot y)_w = x_{v_w} \\cdot y_w$, which is true by definition.",
-  "leanDeclaration": "NumberField.InfiniteAdeleRing.piEquiv"
+  "leanDeclaration": "NumberField.InfiniteAdeleRing.piEquiv",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

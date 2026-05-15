@@ -7,5 +7,6 @@
   ],
   "statement": "$X$ is a compact subset of $D_{\\A}$.",
   "proof": "\\leanok\n  It's the continuous image of the compact set~$E\\times E$.",
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

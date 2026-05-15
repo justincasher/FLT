@@ -9,5 +9,6 @@
   ],
   "statement": "We define $\\delta_R(u)$ (or just $\\delta(u)$ when the ring $R$ is clear) to be $d_R(\\ell_u)$.",
   "proof": null,
-  "leanDeclaration": "MeasureTheory.ringHaarChar"
+  "leanDeclaration": "MeasureTheory.ringHaarChar",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

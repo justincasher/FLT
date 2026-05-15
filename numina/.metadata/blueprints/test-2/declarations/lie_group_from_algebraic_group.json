@@ -6,5 +6,6 @@
     "manifold_on_algebraic_variety_computation"
   ],
   "statement": "\\notready\n    If $G$ is an affine algebraic group of finite type over $K=\\R$ or $\\bbC$ then $G(K)$ is naturally a real or complex Lie group.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

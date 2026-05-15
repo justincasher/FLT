@@ -7,5 +7,6 @@
   ],
   "statement": "If $R$ and $S$ are locally compact topological rings, then $\\delta_{R\\times S}(r,s)=\\delta_R(r)\\times\\delta_S(s)$.",
   "proof": "\\leanok\n  Follows immediately from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_prodCongr}.",
-  "leanDeclaration": "MeasureTheory.ringHaarChar_prod"
+  "leanDeclaration": "MeasureTheory.ringHaarChar_prod",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

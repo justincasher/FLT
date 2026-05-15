@@ -4,5 +4,6 @@
   "title": "\"Poincar\\'e duality\"",
   "uses": [],
   "statement": "\\notready\n    If $\\mu=\\bigcup_{n\\geq1}\\mu_n$ and $M':=\\Hom(M,\\mu)$ is the dual of $M$ then for\n    $0\\leq i\\leq 2$ the cup product pairing $H^i(G_K,M)\\times H^{2-i}(G_K,M')\\to H^2(G_K,\\mu)=\\Q/\\Z$ is perfect.",
-  "proof": "\\notready This is Theorem 2 in section 5.2 in \\cite{serre-galcoh}. Note again\n    the dubious (as far as Lean is concerned) use of the equality symbol."
+  "proof": "\\notready This is Theorem 2 in section 5.2 in \\cite{serre-galcoh}. Note again\n    the dubious (as far as Lean is concerned) use of the equality symbol.",
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

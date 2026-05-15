@@ -7,5 +7,6 @@
   ],
   "statement": "$L_{\\infty}$ has the $K_{\\infty}$-module topology.",
   "proof": "Since $L_{\\infty}$ is homeomorphic to a finite product of $K_{\\infty}$ as a $K_{\\infty}$-vector\n  space, it has the $K_{\\infty}$-module topology.",
-  "leanDeclaration": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT"
+  "leanDeclaration": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Fermat's Last Theorem is true. In other words, there are no positive integers $a,b,c$ and\n  natural $n\\geq3$ such that $a^n+b^n=c^n$.",
   "proof": "\\leanok\n  Assume there is a there is a counterexample $a^n+b^n=c^n$.\n  By Corollary \\ref{FermatLastTheorem.of_p_ge_5} we may assume that there is also a counterexample\n  $a^p+b^p=c^p$ with $p\\geq 5$ and prime.\n  Then there is a Frey package $(a,b,c,p)$ by~\\ref{FreyPackage.of_not_FermatLastTheorem_p_ge_5},\n  contradicting Corollary~\\ref{FreyPackage.false}.",
-  "leanDeclaration": "Wiles_Taylor_Wiles"
+  "leanDeclaration": "Wiles_Taylor_Wiles",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex"
 }

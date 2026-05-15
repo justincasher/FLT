@@ -4,5 +4,6 @@
   "title": "manifold_on_algebraic_variety_points",
   "uses": [],
   "statement": "\\notready Let $K$ be a field equipped with an isomorphism to the reals, complexes, or a finite extension of the $p$-adic numbers. Let $X$ be a smooth affine algebraic variety over $K$. Then the points $X(K)$ naturally inherit the structure of a manifold over $K$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

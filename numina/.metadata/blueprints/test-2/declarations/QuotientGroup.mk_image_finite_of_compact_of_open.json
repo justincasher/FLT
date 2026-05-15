@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{563}\n  If $U$ and $V$ are compact subgroups of a topological group~$G$,\n  if $V$ is also open, and if $g\\in G$, then the double coset space $UgV$\n  is a finite union of left cosets $g_iV$.",
   "proof": "\\leanok\n  The subset $UgV$ of $G$ is a continuous image of the compact set $U\\times V$\n  and is hence compact, and it is covered by the disjoint left cosets $g_iV$;\n  this cover must thus be finite.",
-  "leanDeclaration": "QuotientGroup.mk_image_finite_of_compact_of_open"
+  "leanDeclaration": "QuotientGroup.mk_image_finite_of_compact_of_open",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
 }

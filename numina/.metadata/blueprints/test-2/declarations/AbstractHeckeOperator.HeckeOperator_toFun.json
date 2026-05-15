@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Assuming $UgV$ is a finite union of cosets $g_iV$,\n  we define $[UgV]:A^V\\to A^U$ to be the map sending $a\\in A^V$\n  to $\\sum_i g_ia.$",
   "proof": null,
-  "leanDeclaration": "AbstractHeckeOperator.HeckeOperator_toFun"
+  "leanDeclaration": "AbstractHeckeOperator.HeckeOperator_toFun",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
 }

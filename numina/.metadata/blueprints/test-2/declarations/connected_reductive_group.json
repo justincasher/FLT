@@ -4,5 +4,6 @@
   "title": "connected_reductive_group",
   "uses": [],
   "statement": "\\notready An affine algebraic group~$G$ of finite type over a field~$k$ is said to be \\emph{connected} if it is connected as a scheme, and \\emph{reductive} if $G_{\\overline{k}}$ has no nontrivial smooth connected unipotent normal $k$-subgroup.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

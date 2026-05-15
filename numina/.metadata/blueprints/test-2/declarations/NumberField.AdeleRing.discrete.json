@@ -7,5 +7,6 @@
   ],
   "statement": "The additive subgroup $K$ of $\\A_K$ is discrete.",
   "proof": "If $x\\in K$ and $U$ is the open subset in the previous lemma, then\n  it's easily checked that $K\\cap U=\\{0\\}$ implies $K\\cap (U+x)=\\{x\\}$,\n  and $U+x$ is open.",
-  "leanDeclaration": "NumberField.AdeleRing.discrete"
+  "leanDeclaration": "NumberField.AdeleRing.discrete",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

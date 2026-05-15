@@ -6,5 +6,6 @@
     "automorphic_form"
   ],
   "statement": "\\notready An automorphic form is \\emph{cuspidal} (or ``a cusp form'') if it furthermore satisfies $\\int_{U(N)\\backslash U(\\A_N)}\\phi(ux)du=0$, where $P$ runs through all the proper parabolic subgroups of $G$ defined over $N$ and $U$ is the unipotent radical of $P$, and the integral is with respect to the measure coming from Haar measure.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

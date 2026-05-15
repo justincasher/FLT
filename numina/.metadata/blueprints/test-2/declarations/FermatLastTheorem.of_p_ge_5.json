@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If there is a counterexample to\n  Fermat's Last Theorem, then there is a counterexample $a^p+b^p=c^p$ with $p$ prime and $p\\geq 5$.",
   "proof": "\\leanok Follows from the\n  previous two lemmas.",
-  "leanDeclaration": "FermatLastTheorem.of_p_ge_5"
+  "leanDeclaration": "FermatLastTheorem.of_p_ge_5",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex"
 }

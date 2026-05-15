@@ -7,5 +7,6 @@
   ],
   "statement": "The norm of an element is zero if and only if the element is zero.",
   "proof": "\\leanok\n    It's a sum of rational squares.",
-  "leanDeclaration": "Hurwitz.norm_eq_zero"
+  "leanDeclaration": "Hurwitz.norm_eq_zero",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

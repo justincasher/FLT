@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "$\\calO_v$ is an open subring of $K_v$.",
   "proof": "\\leanok\n  Openness is already in mathlib.",
-  "leanDeclaration": "NumberField.isOpenAdicCompletionIntegers"
+  "leanDeclaration": "NumberField.isOpenAdicCompletionIntegers",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
 }

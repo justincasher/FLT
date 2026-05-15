@@ -7,5 +7,6 @@
   ],
   "statement": "Define $X:=E-E:=\\{e-f:e,f\\in E\\}\\subseteq D_{\\A}$.",
   "proof": null,
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

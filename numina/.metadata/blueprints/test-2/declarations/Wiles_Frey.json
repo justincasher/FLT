@@ -7,5 +7,6 @@
   ],
   "statement": "If $\\rho$ is the mod $p$ Galois representation associated to a Frey package $(a,b,c,p)$ then\n  $\\rho$ is reducible.",
   "proof": "%  \n  This is the main content of Wiles' magnum opus.\n  We omit the argument for now, although later on in this project\n  we will have a lot to say about a proof of this.",
-  "leanDeclaration": "Wiles_Frey"
+  "leanDeclaration": "Wiles_Frey",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex"
 }

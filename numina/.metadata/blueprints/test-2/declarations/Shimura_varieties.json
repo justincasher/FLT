@@ -4,5 +4,6 @@
   "title": "Shimura_varieties",
   "uses": [],
   "statement": "\\notready We need the definition of (the canonical model over $F$ of) the Shimura curve attached to an inner form of $\\GL_2$ with precisely one split infinite place, and the same for the Shimura surface associated to an inner form split at two infinite places (and ramified elsewhere, so it's compact).",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

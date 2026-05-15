@@ -4,5 +4,6 @@
   "title": "IsDedekindDomain.dvd_norm",
   "uses": [],
   "statement": "If $0\\not=b\\in B$ then there exists $0\\not=a\\in A$ such that $b$ divides\n  the image of $a$ in $B$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

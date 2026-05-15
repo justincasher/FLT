@@ -4,5 +4,6 @@
   "title": "\"the dimension is 2\"",
   "uses": [],
   "statement": "\\notready\n  If $M$ is torsion then $H^i(G_K,M)=0$ if $i>2$.",
-  "proof": "This follows from Proposition~15 in~section 5.3 of~\\cite{serre-galcoh}."
+  "proof": "This follows from Proposition~15 in~section 5.3 of~\\cite{serre-galcoh}.",
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

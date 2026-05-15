@@ -7,5 +7,6 @@
   ],
   "statement": "Let $T:=Y\\cap D^\\times$.",
   "proof": null,
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.T"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

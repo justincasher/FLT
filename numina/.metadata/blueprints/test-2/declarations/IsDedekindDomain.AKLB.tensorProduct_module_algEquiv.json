@@ -7,5 +7,6 @@
   ],
   "statement": "%%%  -- uncomment to break leanblueprint\n    If $M$ is any $K$-module then the canonical map $B\\otimes_A M\\to L\\otimes_K M$\n  is an isomorphism.",
   "proof": "\\leanok\n  We can factor this map as $B\\otimes_AM\\cong B\\otimes_A(K\\otimes_KM)\\cong\n  (B\\otimes_A K)\\cong_KM\\to L\\otimes_KM$ and we just showed that the latter map was an\n  isomorphism.",
-  "leanDeclaration": "IsDedekindDomain.linearEquivTensorProductModule"
+  "leanDeclaration": "IsDedekindDomain.linearEquivTensorProductModule",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

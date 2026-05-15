@@ -7,5 +7,6 @@
   ],
   "statement": "The Hurwitz quaternions form a ring.",
   "proof": "\\leanok\n    Follow your nose.",
-  "leanDeclaration": "Hurwitz.ring"
+  "leanDeclaration": "Hurwitz.ring",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

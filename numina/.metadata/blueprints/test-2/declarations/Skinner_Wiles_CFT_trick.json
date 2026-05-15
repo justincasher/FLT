@@ -6,5 +6,6 @@
     "global_class_field_theory"
   ],
   "statement": "\\notready Let $S$ be a finite set of places of a number field $K$ . For each $v \\in S$\nlet $L_v/K_v$ be a finite Galois extension. Then there is a finite solvable Galois extension\n$L/K$ such that if $w$ is a place of $L$ dividing $v \\in S$, then $L_w/K_v$ is isomorphic to $L_v/K_v$ as $K_v$-algebra. Moreover, if $K^{\\avoid} /K$ is\nany finite extension then we can choose $L$ to be linearly disjoint from $K^{\\avoid}$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "Define $Y:=X.X:=\\{xy:x,y\\in X\\}\\subseteq D_{\\A}$.",
   "proof": null,
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

@@ -10,5 +10,6 @@
   ],
   "statement": "The quaternionic modular forms of level $U$, with notation $S^D(U;R)$, are the $U$-invariants for the $D_{\\A^\\infty}^\\times$-action on $S^D(R)$.",
   "proof": null,
-  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel"
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+  "sourceFile": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
 }

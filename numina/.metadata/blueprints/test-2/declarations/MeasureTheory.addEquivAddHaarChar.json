@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $A$ is a locally compact topological additive abelian group,\n  if $\\mu$ is a regular Haar measure on $A$, and if $\\phi:A\\to A$ is an\n  additive homeomorphism, then we let $d_A(\\phi)$ denote the unique positive\n  real number such that $\\mu(X)=d_A(\\phi)(\\phi_*\\mu)(X)$ for any Borel set~$X$.",
   "proof": null,
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Let $S$ be a set of infinite places of $K$. The image of $K$ under the embedding\n  $K\\hookrightarrow (K_v)_{v\\in S}; k \\mapsto (k)_v$ is dense in the product topology.",
   "proof": "Let $(K, v)$ denote $K$ equipped with the topology induced by the infinite place $v$.\n  It suffices to show that the image of $K$ under the embedding\n  $K\\hookrightarrow \\prod_{v\\mid \\infty}(K, v)$ is dense in the product topology.\n  By a standard analytic argument, for each $v$ it is possible to select a sequence $(x_n^{(v)})_n$\n  with the property that $x_n^{(v)} \\to 1$ in $v$'s topology, while $x_n^{(v)} \\to 0$ in any other\n  infinite place's topology.\n  Let $(z_v)_v \\in \\prod_{v\\mid \\infty}(K, v)$.\n  For each $v$, the sequence $y_n := \\sum_{v\\mid\\infty} x_n^{(v)}z_v$ in $K$ converges to\n  $z_v$ in $v$'s topology.\n  So the embedded image of $y_n$ in $\\prod_{v\\mid \\infty}(K, v)$ converges to $(z_v)_v$ in the\n  product topology.",
-  "leanDeclaration": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi"
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

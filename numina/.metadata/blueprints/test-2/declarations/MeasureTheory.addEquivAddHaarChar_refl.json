@@ -7,5 +7,6 @@
   ],
   "statement": "$d_A(id)=1.$",
   "proof": "\\leanok\n  Clear.",
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_refl"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_refl",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

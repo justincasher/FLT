@@ -7,5 +7,6 @@
   ],
   "statement": "\\mathlibok\n  $F_b$ is the lift of some monic polynomial $M_b$ in $A[X]$.",
   "proof": "\\mathlibok\n  The coefficients of $F_b$ are $G$-invariant, and thus lie in the image of $A$.",
-  "leanDeclaration": "Algebra.IsInvariant.charpoly_mem_lifts"
+  "leanDeclaration": "Algebra.IsInvariant.charpoly_mem_lifts",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

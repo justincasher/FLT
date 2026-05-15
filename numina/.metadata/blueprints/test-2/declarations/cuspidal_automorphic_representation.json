@@ -6,5 +6,6 @@
     "cuspidal_automorphic_form_decomposition"
   ],
   "statement": "\\notready A cuspidal automorphic representation is an irreducible $(G(\\A_N^f)\\times U_\\infty,\\mathfrak{g})$-module isomorphic to an irreducible summand of the space of cusp forms.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

@@ -6,5 +6,6 @@
     "slowly_increasing"
   ],
   "statement": "\\notready This is independent of the choice of $\\rho$ as above.",
-  "proof": "Follows from the above."
+  "proof": "Follows from the above.",
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

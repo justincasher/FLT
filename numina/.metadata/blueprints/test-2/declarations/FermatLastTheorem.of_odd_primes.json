@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If there is a counterexample to Fermat's Last Theorem, then there is a counterexample $a^p+b^p=c^p$\n  with $p$ an odd prime.",
   "proof": "\\leanok\n  Note: this proof is \\href{https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FLT/Four.html#FermatLastTheorem.of_odd_primes}{in mathlib already};\n  we run through it for completeness' sake.\n\n  Say $a^n + b^n = c^n$ is a counterexample to Fermat's Last Theorem. Every positive integer is either\n  a power of 2 or has an odd prime factor. If $n=kp$ has an odd prime factor $p$ then\n  $(a^k)^p+(b^k)^p=(c^k)^p$ is the counterexample we seek. It remains to deal with the case where\n  $n$ is a power of 2, so let's assume this. We have $3\\leq n$ by assumption, so\n  $n=4k$ must be a multiple of~4, and thus $(a^k)^4=(b^k)^4=(c^k)^4$, giving us a counterexample\n  to Fermat's Last Theorem for $n=4$. However an old result of Fermat himself (proved as\n  \\href{https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/FLT/Four.html#fermatLastTheoremFour}{\\tt fermatLastTheoremFour}\n  in {\\tt mathlib}) says that $x^4+y^4=z^4$ has no solutions in positive integers.",
-  "leanDeclaration": "FermatLastTheorem.of_odd_primes"
+  "leanDeclaration": "FermatLastTheorem.of_odd_primes",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex"
 }

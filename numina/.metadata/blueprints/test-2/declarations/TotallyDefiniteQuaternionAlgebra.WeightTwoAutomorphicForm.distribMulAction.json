@@ -9,5 +9,6 @@
   ],
   "statement": "The group $D_{\\A^f}^\\times$ acts on the additive abelian group $S^D(R)$ by $(g\\cdot f)(x)=f(xg)$.",
   "proof": null,
-  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction"
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction",
+  "sourceFile": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
 }

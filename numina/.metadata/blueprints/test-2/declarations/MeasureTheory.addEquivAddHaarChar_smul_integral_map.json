@@ -7,5 +7,6 @@
   ],
   "statement": "\\discussion{510}\n  If $f:A\\to\\R$ is a Borel measurable function then\n  $d_A(\\phi)\\int f(x)d\\phi_*\\mu(x)=\\int f(x)d\\mu(x)$.",
   "proof": "\\leanok\n  \n  This also follows immediately from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_map}.",
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_smul_integral_map"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_smul_integral_map",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

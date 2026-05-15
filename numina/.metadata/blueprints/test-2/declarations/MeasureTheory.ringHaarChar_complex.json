@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $R=\\bbC$ then $\\delta_R(u)=|u|^2$.",
   "proof": "\\leanok\n  Multiplication by a positive real $r$ sends a unit square to a square of area $r^2=|r|^2$.\n  Multiplication by $e^{i\\theta}$ is a rotation and thus does not change area.\n  The general case follows.",
-  "leanDeclaration": "MeasureTheory.ringHaarChar_complex"
+  "leanDeclaration": "MeasureTheory.ringHaarChar_complex",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

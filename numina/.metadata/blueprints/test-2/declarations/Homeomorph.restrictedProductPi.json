@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{570}\n  Restricted products (with respect to open subspaces) commute with finite products.\n  In other words, if $j$ runs through a finite set $J$ and $i$ runs through an arbitrary\n  set $I$, and if $X_{ji}$ are topological spaces equipped with open subspaces $Y_{ji}$,\n  then the obvious bijection $\\prod'_i(\\prod_j X_{ji})=\\prod_j\\left(\\prod'_i X_{ji}\\right)$\n  is a homeomorphism.",
   "proof": "\\leanok\n  \n  Induction on the size of the finite set, using lemma~\\ref{Homeomorph.restrictedProductProd}\n  to get you started.",
-  "leanDeclaration": "Homeomorph.restrictedProductPi"
+  "leanDeclaration": "Homeomorph.restrictedProductPi",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
 }

@@ -4,5 +4,6 @@
   "title": "fixed_of_fixed1_aux2",
   "uses": [],
   "statement": "\\mathlibok\n  Let $b_0 \\in B$.\n  Suppose that the image of $b_0$ in the quotient $B/Q$ is fixed by the stabilizer subgroup\n  $D_Q$.\n  Then there exist elements $a,b \\in B$, with $a\\notin Q$ and $a$ in the image of $A$ such that\n  for all $g\\in G$,\n  \\begin{itemize}\n    \\item If $g \\cdot Q = Q$, then $g \\cdot b \\equiv ab_0 \\pmod{Q}$.\n    \\item If $g \\cdot Q \\neq Q$, then $g \\cdot b \\equiv 0 \\pmod{Q}$.\n  \\end{itemize}",
-  "proof": "Multiply the $b$ from~\\ref{fixed_of_fixed1_aux1} by $b_0$.\n  \\mathlibok"
+  "proof": "Multiply the $b$ from~\\ref{fixed_of_fixed1_aux1} by $b_0$.\n  \\mathlibok",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

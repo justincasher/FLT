@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\mathlibok\n  If $b\\in B$ then define the \\emph{characteristic polynomial}\n  $F_b(X) \\in B[X]$ of $b$ to be $\\prod_{g\\in G}(X-g\\cdot b)$.",
   "proof": null,
-  "leanDeclaration": "MulSemiringAction.charpoly"
+  "leanDeclaration": "MulSemiringAction.charpoly",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

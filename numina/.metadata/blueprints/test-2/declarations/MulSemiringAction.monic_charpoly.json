@@ -7,5 +7,6 @@
   ],
   "statement": "\\mathlibok\n  $F_b$ is monic.",
   "proof": "\\mathlibok\n  Obvious.",
-  "leanDeclaration": "MulSemiringAction.monic_charpoly"
+  "leanDeclaration": "MulSemiringAction.monic_charpoly",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

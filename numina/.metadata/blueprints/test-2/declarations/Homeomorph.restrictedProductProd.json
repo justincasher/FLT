@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{568}\n  If $A_i$ is a family of topological spaces equipped with open\n  subsets $B_i$, and if $C_i$ is a family of topological spaces equipped\n  with open subsets $D_i$, and if we equip $A_i\\times C_i$ with the open\n  subset $B_i\\times D_i$, then the natural bijection\n  $\\prod'_i(A_i\\times C_i)=\\left(\\prod'_iA_i\\right)\\times\\left(\\prod'_iB_i\\right)$\n  is a homeomorphism.",
   "proof": null,
-  "leanDeclaration": "Homeomorph.restrictedProductProd"
+  "leanDeclaration": "Homeomorph.restrictedProductProd",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
 }

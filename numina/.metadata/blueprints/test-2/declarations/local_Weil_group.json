@@ -6,5 +6,6 @@
     "maximal_unramified_extension_of_p-adic_field"
   ],
   "statement": "\\notready The topological group described above is called the \\emph{Weil group} of $K$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }

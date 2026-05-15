@@ -7,5 +7,6 @@
   ],
   "statement": "We let $E$ denote any compact set satisfying the hypothesis of the previous lemma.",
   "proof": null,
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.E"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "$\\Zhat$ is a subring of $\\prod_{N\\geq1}(Z/N\\Z)$ and in particular is a ring.",
   "proof": "\\leanok Follow your nose.",
-  "leanDeclaration": "ZHat.commRing"
+  "leanDeclaration": "ZHat.commRing",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

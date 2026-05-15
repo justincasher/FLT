@@ -7,5 +7,6 @@
   ],
   "statement": "\\discussion{521}\n    If $A_i$ are a finite collection of locally compact topological abelian groups,\n  with $\\phi_i:A_i\\to A_i$ additive homeomorphisms, then $d_{\\prod_i A_i}(\\prod_i\\phi_i)=\\prod_i d_{A_i}(\\phi_i)$.",
   "proof": "\\leanok\n  Induction on the size of the finite set, using the previous lemma.",
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_piCongrRight"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_piCongrRight",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

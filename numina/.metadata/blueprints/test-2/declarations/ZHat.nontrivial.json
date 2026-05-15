@@ -7,5 +7,6 @@
   ],
   "statement": "$0\\not=1$ in $\\Zhat$.",
   "proof": "\\leanok\n    Recall that you can evaluate an element of $\\Zhat$ at a positive integer.\n    Evaluating $0$ at 2 gives $0$, and evaluating $1$ at $2$ gives $1$, and these\n    are distinct elements of $\\Z/2\\Z$, so $0\\not=1$ in $\\Zhat$.",
-  "leanDeclaration": "ZHat.nontrivial"
+  "leanDeclaration": "ZHat.nontrivial",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

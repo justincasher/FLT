@@ -7,5 +7,6 @@
   ],
   "statement": "$Y$ is a compact subset of $D_{\\A}$.",
   "proof": "\\leanok\n  It's the continuous image of the compact set~$X\\times X$.",
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Choose $g\\in D_Q$. Then the action of $g$ on $B$ gives us an induced\n  $A/P$-algebra automorphism of $B/Q$ which extends to a $K$-algebra automorphism $\\phi(g)$ of $L$.\n  This construction $g\\mapsto \\phi(g)$ defines a group homomorphism from $D_Q$\n  to $\\Aut(L/K)$ (all the proofs implicit in the definition here are straightforward).\n  \\mathlibok",
   "proof": null,
-  "leanDeclaration": "IsFractionRing.stabilizerHom"
+  "leanDeclaration": "IsFractionRing.stabilizerHom",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

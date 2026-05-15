@@ -6,5 +6,6 @@
     "IsDedekindDomain.dvd_norm"
   ],
   "statement": "The $A$-bilinear map $B\\times K\\to L$ sending $(b,k)$ to $bk$ is surjective.",
-  "proof": "Given $\\lambda\\in L$ write it as $n/d$ with $0\\not=d\\in B$. Choose $0\\not=a\\in A$\n  and $b\\in B$ with $db=a$ and then note $\\lambda=nb/a=nb\\times a^{-1}$."
+  "proof": "Given $\\lambda\\in L$ write it as $n/d$ with $0\\not=d\\in B$. Choose $0\\not=a\\in A$\n  and $b\\in B$ with $db=a$ and then note $\\lambda=nb/a=nb\\times a^{-1}$.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

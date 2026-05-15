@@ -6,5 +6,6 @@
     "instComplexLieAlgebraAction"
   ],
   "statement": "By functoriality, we get an action of the universal enveloping algebra of this\ncomplexified Lie algebra on the smooth complex functions.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex"
 }

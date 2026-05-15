@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $B$ is a finite-dimensional $\\Q$-algebra and\n    if $b\\in B^\\times$ then right multiplication by $b$\n    does not change Haar measure on $B_{\\A}$.",
   "proof": "\\leanok\n    \n    Follows immediately from the previous theorem.",
-  "leanDeclaration": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one"
+  "leanDeclaration": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

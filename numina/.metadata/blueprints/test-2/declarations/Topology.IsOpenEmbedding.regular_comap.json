@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{513}\n  The pullback of a regular Borel measure along an open\n  embedding is a regular Borel measure.",
   "proof": "\\leanok\n  Again this is because the image of compact is compact and the\n  image of open is open, so all the properties of being a regular measure\n  are easily checked.",
-  "leanDeclaration": "Topology.IsOpenEmbedding.regular_comap"
+  "leanDeclaration": "Topology.IsOpenEmbedding.regular_comap",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "The norm of $0$ is $0$.",
   "proof": "\\leanok\n    A calculation.",
-  "leanDeclaration": "Hurwitz.norm_zero"
+  "leanDeclaration": "Hurwitz.norm_zero",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

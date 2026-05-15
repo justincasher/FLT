@@ -8,5 +8,6 @@
   ],
   "statement": "There is no Frey package.",
   "proof": "\\leanok Follows immediately from the previous two\n  theorems~\\ref{Mazur_Frey} and~\\ref{Wiles_Frey}.",
-  "leanDeclaration": "FreyPackage.false"
+  "leanDeclaration": "FreyPackage.false",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex"
 }

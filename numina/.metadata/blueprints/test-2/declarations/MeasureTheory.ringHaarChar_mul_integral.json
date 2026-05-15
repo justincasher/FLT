@@ -7,5 +7,6 @@
   ],
   "statement": "\\discussion{514}\n  If $f:R\\to\\R$ is a Borel measurable function and $u\\in R^\\times$ then\n  $\\delta_R(u)\\int f(ux)d\\mu(x)=\\int f(x)d\\mu(x)$.",
   "proof": "\\leanok\n  A short calculation using lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_integral_map}.",
-  "leanDeclaration": "MeasureTheory.ringHaarChar_mul_integral"
+  "leanDeclaration": "MeasureTheory.ringHaarChar_mul_integral",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

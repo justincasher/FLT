@@ -9,5 +9,6 @@
   ],
   "statement": "$C$ is compact.",
   "proof": "\\leanok\n   $X$ is compact and $T$ is finite.",
-  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact"
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex"
 }

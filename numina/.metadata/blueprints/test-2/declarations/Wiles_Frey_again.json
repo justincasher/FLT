@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $\\overline{\\rho}$ is the mod $p$ Galois representation associated to a Frey package $(a,b,c,p)$ then\n  $\\overline{\\rho}$ is reducible.",
   "proof": "Indeed, $\\rho$ is hardly ramified by theorem~\\ref{Frey_curve_hardly_ramified}\n  and thus reducible by theorem~\\ref{hardly_ramified_reducible}.",
-  "leanDeclaration": "Wiles_Frey"
+  "leanDeclaration": "Wiles_Frey",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex"
 }

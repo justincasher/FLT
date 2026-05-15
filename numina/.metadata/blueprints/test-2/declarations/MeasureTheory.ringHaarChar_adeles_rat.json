@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $x\\in\\A_{\\Q}^\\times$ then $\\delta_{\\A_{\\Q}}(x)=\\prod_v|x_v|_v.$",
   "proof": "\\leanok\n  \n  By theorem~\\ref{MeasureTheory.addEquivAddHaarChar_prodCongr}\n  we have $\\delta_{\\A_{\\Q}}(x)=\\delta_{\\A_{\\Q}^\\infty}(x^\\infty)\\times\\delta_{\\R}(x_\\infty)$.\n  By lemma~\\ref{MeasureTheory.ringHaarChar_real} we have $\\delta_{\\R}(x_\\infty)=|x|_\\infty$, and by\n  theorem~\\ref{MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight} we have\n  $\\delta_{\\A_{\\Q}^\\infty}=\\prod_p\\delta_{\\Q_p}(x_p)$. By lemma~\\ref{MeasureTheory.ringHaarChar_padic}\n  we have $\\delta_{\\Q_p}(x_p)=|x_p|_p$ and putting everything together we get the result.",
-  "leanDeclaration": "MeasureTheory.ringHaarChar_adeles_rat"
+  "leanDeclaration": "MeasureTheory.ringHaarChar_adeles_rat",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "We say that a function $f:\\GL_n(\\R)\\to\\bbC$ is \\emph{slowly-increasing}\n  if there's some real constant $C$ and positive integer $n$ such that $|f(M)|\\leq Cs(M)^n$\n  for all $M\\in\\GL_n(\\R)$.",
   "proof": null,
-  "leanDeclaration": "AutomorphicForm.GLn.IsSlowlyIncreasing"
+  "leanDeclaration": "AutomorphicForm.GLn.IsSlowlyIncreasing",
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex"
 }

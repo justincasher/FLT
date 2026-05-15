@@ -8,5 +8,6 @@
   ],
   "statement": "If $R$ is a commutative ring then pointwise scalar multiplication $(r\\cdot f)(g):= r\\cdot(f(g))$ makes\n  $S^D(R)$ into an $R$-module.",
   "proof": null,
-  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module"
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
+  "sourceFile": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
 }

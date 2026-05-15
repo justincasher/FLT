@@ -4,5 +4,6 @@
   "title": "IsDedekindDomain.AKLB.finitePresentation",
   "uses": [],
   "statement": "$B$ is a finitely-presented $A$-module.",
-  "proof": "$A$ is Noetherian as it is a Dedekind domain, so it suffices to prove that $B$ is\n  finitely-generated as an $A$-module. But this is in mathlib already (a proof is\n  around line 101 of {\\tt BaseChange.lean} in FLT at the time of writing)."
+  "proof": "$A$ is Noetherian as it is a Dedekind domain, so it suffices to prove that $B$ is\n  finitely-generated as an $A$-module. But this is in mathlib already (a proof is\n  around line 101 of {\\tt BaseChange.lean} in FLT at the time of writing).",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

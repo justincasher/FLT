@@ -7,5 +7,6 @@
   ],
   "statement": "\\mathlibok\n  The map $g\\mapsto \\phi_g$ from $D_Q$ to $\\Aut(L/K)$ defined above is surjective.",
   "proof": null,
-  "leanDeclaration": "IsFractionRing.stabilizerHom_surjective"
+  "leanDeclaration": "IsFractionRing.stabilizerHom_surjective",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

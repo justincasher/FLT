@@ -10,5 +10,6 @@
   ],
   "statement": "\\discussion{243}\n  This natural map $L\\otimes_K\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ is an isomorphism.",
   "proof": null,
-  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv"
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

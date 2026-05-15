@@ -7,5 +7,6 @@
   ],
   "statement": "Pointwise addition $(f_1+f_2)(g):=f_1(g)+f_2(g)$ makes $S^D(R)$ into an\n  additive abelian group.",
   "proof": null,
-  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup"
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+  "sourceFile": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
 }

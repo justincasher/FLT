@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "\\discussion{532}\n  Say $A$ is a compact topological additive group and $\\phi:A\\to A$ is an additive isomorphism.\nThen $d_A(\\phi)=1.$",
   "proof": "\\leanok\n  We have $d_A(\\phi)\\mu(A)=\\mu(A)$\n  from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_preimage}\n  and $\\mu(A)$ is positive and finite because $A$ is open and compact.",
-  "leanDeclaration": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace"
+  "leanDeclaration": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

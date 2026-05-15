@@ -7,5 +7,6 @@
   ],
   "statement": "\\discussion{511}\n  $d_A(\\phi\\circ\\psi)=d_A(\\phi)d_A(\\psi).$",
   "proof": "\\leanok\n  \n  Here's one way: it suffices to prove that\n  $d_A(\\phi\\circ\\psi)(\\phi\\circ\\psi)_*\\mu=d_A(\\phi)d_A(\\psi)(\\phi\\circ\\psi)_*\\mu$\n  (because there exists a compact set with positive finite measure)\n  and using lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_map}\n  and the fact that $(\\phi\\circ\\psi)_*\\mu=\\phi_*(\\psi_*\\mu)$\n  one can simplify both sides to $\\mu$.",
-  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_trans"
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_trans",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

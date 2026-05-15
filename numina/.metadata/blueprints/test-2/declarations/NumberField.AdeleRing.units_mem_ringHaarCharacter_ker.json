@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "If $B$ is a finite-dimensional $\\Q$-algebra (for example a number field, or a quaternion algebra over a number field),\n    if $B_{\\A}$ denotes the ring $B\\otimes_{\\Q}\\A_{\\Q}$, and if $b\\in B^\\times$,\n    then $\\delta_{B_{\\A}}(b)=1$.",
   "proof": "\\leanok\n    Follows immediately from the previous theorem.",
-  "leanDeclaration": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker"
+  "leanDeclaration": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex"
 }

@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "Let $H$ be a finite group acting on a field $F$ by field automorphisms.\n  Then the map $H \\to \\Aut(F/F^H)$ is surjective.\n  \\mathlibok",
   "proof": "This is a general fact of Galois theory and was already in mathlib.\n  \\mathlibok",
-  "leanDeclaration": "FixedPoints.toAlgAut_surjective"
+  "leanDeclaration": "FixedPoints.toAlgAut_surjective",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "Let $v$ be an infinite place of $K$. There is a natural $L$-algebra homomorphism\n  $L\\otimes_K K_v \\to \\prod_{w\\mid v}L_w$, whose restriction to $1\\otimes_K K_v$ corresponds to\n  the map in~\\ref{NumberField.InfinitePlace.Completion.piExtension}.",
   "proof": null,
-  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChange"
+  "leanDeclaration": "NumberField.InfinitePlace.Completion.baseChange",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
 }

@@ -7,5 +7,6 @@
   ],
   "statement": "% blue node\n    The profinite completion $\\Qhat$ of $\\Q$ is the tensor product $\\Q\\otimes_{\\Z}\\Zhat$,\n    or $\\Qhat=\\Q\\otimes\\Zhat$ for short.",
   "proof": null,
-  "leanDeclaration": "QHat"
+  "leanDeclaration": "QHat",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

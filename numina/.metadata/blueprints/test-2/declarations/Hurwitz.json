@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "The Hurwitz quaternions are the set $\\calO := \\Z\\oplus\\Z \\omega\\oplus\\Z i\\oplus\n    \\Z i\\omega$ (as an abstract abelian group or as a subgroup of the usual quaternions).\n    Here $\\omega=\\frac{-1+(i+j+k)}{2}$ and note that $(i+j+k)^2=-3$.\n    We have $\\overline{\\omega}=\\omega^2=-(\\omega+1)$. A general quaternion\n    $a+bi+cj+dk$ is a Hurwitz quaternion if either $a,b,c,d\\in\\Z$\n    or $a,b,c,d\\in\\Z+\\frac{1}{2}$.",
   "proof": null,
-  "leanDeclaration": "Hurwitz"
+  "leanDeclaration": "Hurwitz",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

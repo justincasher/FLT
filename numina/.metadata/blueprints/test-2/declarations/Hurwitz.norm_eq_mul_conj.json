@@ -5,5 +5,6 @@
   "uses": [],
   "statement": "We have $N(x)=x\\overline{x}$.",
   "proof": "\\leanok\n    Easy calculation.",
-  "leanDeclaration": "Hurwitz.norm_eq_mul_conj"
+  "leanDeclaration": "Hurwitz.norm_eq_mul_conj",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex"
 }

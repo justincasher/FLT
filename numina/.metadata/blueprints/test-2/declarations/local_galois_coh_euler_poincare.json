@@ -4,5 +4,6 @@
   "title": "\"Euler-Poincar\\'e characteristic\"",
   "uses": [],
   "statement": "\\notready\n    If $h^i(M)$ denotes the order of $H^i(G_K,M)$ then $h^0(M)-h^1(M)+h^2(M)=0$.",
-  "proof": null
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
 }
