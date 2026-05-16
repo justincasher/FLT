@@ -76,7 +76,7 @@ notation "D_𝔸" => (D ⊗[K] AdeleRing (𝓞 K) K)
 namespace NumberField.AdeleRing.DivisionAlgebra.Aux 
 
 /-- Df is notation for D ⊗ 𝔸_K^∞ -/
-abbrev Df := D ⊗[K] (FiniteAdeleRing (𝓞 K) K)
+abbrev Df := D ⊗[K] (FiniteAdeleRing (𝓞 K) K) test
 
 /-- Dfx is notation for (D ⊗ 𝔸_K^∞)ˣ. -/
 abbrev Dfx := (Df K D)ˣ
