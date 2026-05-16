@@ -17,7 +17,7 @@ Mathlib without redefinition.
 
 namespace FLT.Scheme4
 
-open CategoryTheory TopologicalSpace AlgebraicGeometry
+open CategoryTheory TopologicalSpace AlgebraicGeometry 
 
 /-- A presheaf of commutative rings on a topological space `X`.
     Concretely, a `TopCat.Presheaf` with values in `CommRingCat`. -/
