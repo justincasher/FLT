@@ -13,7 +13,7 @@ import FLT.Mathlib.MeasureTheory.Measure.Haar.MulEquivHaarChar
 import FLT.Mathlib.LinearAlgebra.TensorProduct.Basis
 import FLT.Mathlib.Topology.HomToDiscrete
 import FLT.Mathlib.Topology.Polish
-import Mathlib.Topology.Metrizable.Urysohn
+import Mathlib.Topology.Metrizable.Urysohn 
 import Mathlib.Topology.MetricSpace.Polish
 import Mathlib.Topology.UniformSpace.Completion
 import Mathlib.Topology.MetricSpace.Completion
@@ -121,7 +121,7 @@ instance : MeasurableSpace D_𝔸 := borel _
 
 instance : BorelSpace D_𝔸 := ⟨rfl⟩
 
-instance : Module.Finite ℝ (Dinf K D) :=
+instance : Module.Finite ℝ (Dinf K D) :=  
   Module.Finite.trans (InfiniteAdeleRing K) (Dinf K D)
 
 /-- Dinf K D has the ℝ-module topology. -/
