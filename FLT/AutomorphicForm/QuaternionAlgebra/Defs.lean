@@ -13,7 +13,7 @@ import Mathlib.RingTheory.DedekindDomain.FiniteAdeleRing
 
 # Definition of automorphic forms on a totally definite quaternion algebra
 
-## Main definitions
+## Main definitions 
 
 In the `TotallyDefiniteQuaternionAlgebra` namespace:
 
