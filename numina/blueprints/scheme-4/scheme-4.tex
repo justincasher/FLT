@@ -9,7 +9,7 @@
     \label{def:presheaf}
     \lean{FLT.Scheme4.RingPresheaf}
     \notready
-    Let $X$ be a topological space. A \textbf{presheaf} $\mathcal{F}$ of rings on $X$ assigns to each open set $U \subseteq X$ a ring $\mathcal{F}(U)$, and to each inclusion $V \subseteq U$ a restriction homomorphism $\operatorname{res}_{U,V} \colon \mathcal{F}(U) \to \mathcal{F}(V)$, such that: 
+    Let $X$ be a topological space. A \textbf{presheaf} $\mathcal{F}$ of rings on $X$ assigns to each open set $U \subseteq X$ a ring $\mathcal{F}(U)$, and to each inclusion $V \subseteq U$ a restriction homomorphism $\operatorname{res}_{U,V} \colon \mathcal{F}(U) \to \mathcal{F}(V)$, such that: hello
     \begin{enumerate}
         \item $\operatorname{res}_{U,U} = \operatorname{id}_{\mathcal{F}(U)}$.
         \item If $W \subseteq V \subseteq U$, then $\operatorname{res}_{U,W} = \operatorname{res}_{V,W} \circ \operatorname{res}_{U,V}$.
