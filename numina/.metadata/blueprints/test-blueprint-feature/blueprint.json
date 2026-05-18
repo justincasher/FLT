@@ -469,9 +469,9 @@
     },
     {
       "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
-      "kind": "theorem",
+      "kind": "lemma",
       "title": "NumberField.instCompactSpaceAdicCompletionIntegers",
-      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
     },
     {
       "label": "NumberField.AdeleRing.locallyCompactSpace",
