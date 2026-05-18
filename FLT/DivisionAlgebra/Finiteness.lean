@@ -11,7 +11,7 @@ import FLT.Mathlib.LinearAlgebra.TensorProduct.Basis
 import FLT.Mathlib.MeasureTheory.Haar.Extension
 import FLT.Mathlib.MeasureTheory.Measure.Haar.MulEquivHaarChar
 import FLT.Mathlib.LinearAlgebra.TensorProduct.Basis
-import FLT.Mathlib.Topology.HomToDiscrete 
+import FLT.Mathlib.Topology.HomToDiscrete
 import FLT.Mathlib.Topology.Polish
 import Mathlib.Topology.Metrizable.Urysohn
 import Mathlib.Topology.MetricSpace.Polish
