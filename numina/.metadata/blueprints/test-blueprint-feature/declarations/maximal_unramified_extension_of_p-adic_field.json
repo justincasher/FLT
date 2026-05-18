@@ -1,0 +1,9 @@
+{
+  "label": "maximal_unramified_extension_of_p-adic_field",
+  "kind": "theorem",
+  "title": "maximal_unramified_extension_of_p-adic_field",
+  "uses": [],
+  "statement": "\\notready The maximal unramified extension $K^{un}$ in a given algebraic closure of $K$\n    is Galois over $K$ with Galois group ``canonically'' isomorphic to $\\widehat{\\Z}$ in two ways; one of these two isomorphisms identifies $1\\in\\widehat{\\Z}$ with an arithmetic Frobenius (the endomorphism inducing $x\\mapsto x^q$ on the residue field of $K^{un}$, where $q$ is the size of the residue field of $K$). The other identifies 1 with geometric Frobenius (defined to be the inverse of arithmetic Frobenius).",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

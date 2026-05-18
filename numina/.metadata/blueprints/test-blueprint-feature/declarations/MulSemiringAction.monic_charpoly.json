@@ -1,0 +1,12 @@
+{
+  "label": "MulSemiringAction.monic_charpoly",
+  "kind": "lemma",
+  "title": "MulSemiringAction.monic_charpoly",
+  "uses": [
+    "MulSemiringAction.charpoly"
+  ],
+  "statement": "\\mathlibok\n  $F_b$ is monic.",
+  "proof": "\\mathlibok\n  Obvious.",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex",
+  "leanDeclaration": "MulSemiringAction.monic_charpoly"
+}

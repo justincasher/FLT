@@ -1,0 +1,10 @@
+{
+  "label": "IsSimpleRing.mulLeft_det_eq_mulRight_det",
+  "kind": "lemma",
+  "title": "IsSimpleRing.mulLeft_det_eq_mulRight_det",
+  "uses": [],
+  "statement": "\\discussion{518}\n  Say $B$ is a finite-dimensional central simple algebra over a field~$k$,\n  and $u\\in B^\\times$. Let $\\ell_u:B\\to B$ be the $k$-linear mapping $x$ to $ux$ and\n  let $r_u:B\\to B$ be the $k$-linear map sending $x$ to $xu$. Then\n  $\\det(\\ell_u)=\\det(r_u)$.",
+  "proof": "\\leanok\n  Determinants are unchanged by base extension, so WLOG $k$ is algebraically closed.\n  Then it's known that $B$ must be a matrix algebra, say $M_n(k)$. Now $u$ can be thought\n  of as a matrix which has its own intrinsic determinant $d$, and $B$ as a left $B$-module\n  becomes a direct sum of $n$ copies of $V$, the standard $n$-dimensional representation of $B$.\n  Thus $\\det(\\ell_u)=d^n$. Similarly $\\det(r_u)=d^n$ and in particular they are equal.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "IsSimpleRing.mulLeft_det_eq_mulRight_det"
+}

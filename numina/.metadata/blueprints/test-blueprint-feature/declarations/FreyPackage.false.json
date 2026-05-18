@@ -1,0 +1,13 @@
+{
+  "label": "FreyPackage.false",
+  "kind": "corollary",
+  "title": "FreyPackage.false",
+  "uses": [
+    "Mazur_Frey",
+    "Wiles_Frey"
+  ],
+  "statement": "There is no Frey package.",
+  "proof": "\\leanok Follows immediately from the previous two\n  theorems~\\ref{Mazur_Frey} and~\\ref{Wiles_Frey}.",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex",
+  "leanDeclaration": "FreyPackage.false"
+}

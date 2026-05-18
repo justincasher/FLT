@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.baseChange_moduleTopology",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.baseChange_moduleTopology",
+  "uses": [
+    "NumberField.AdeleRing.baseChangeEquiv"
+  ],
+  "statement": "If $K\\to L$ is a ring homomorphism between two number fields then the topology on $\\A_L$\n  is the $\\A_K$-module topology, where the module structure comes from the\n  natural map $\\A_K\\to\\A_L$.",
+  "proof": "\\leanok\n  Indeed $\\A_L\\cong L\\otimes_K\\A_K$ is a homeomorphism, and\n  the right hand side has the $\\A_K$-module topology.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.instBaseChangeIsModuleTopology"
+}

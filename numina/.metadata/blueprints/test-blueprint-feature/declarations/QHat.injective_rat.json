@@ -1,0 +1,13 @@
+{
+  "label": "QHat.injective_rat",
+  "kind": "lemma",
+  "title": "QHat.injective_rat",
+  "uses": [
+    "QHat",
+    "ZHat.commRing"
+  ],
+  "statement": "The ring homomorphism $\\Q\\to\\Qhat$ sending $q$ to $q\\otimes_t 1$\n    is injective.",
+  "proof": "\\leanok\n    We have seen that the map from $\\Z$ to $\\Zhat$ is\n    injective. Now $\\Q$ is a flat $\\Z$-module, because it's\n    torsion-free, so tensoring up we deduce that the map\n    from $\\Q=\\Q\\otimes\\Z$ to $\\Qhat=\\Q\\otimes\\Zhat$ is also injective.\n    There is no doubt a more elementary proof of this fact.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "QHat.injective_rat"
+}

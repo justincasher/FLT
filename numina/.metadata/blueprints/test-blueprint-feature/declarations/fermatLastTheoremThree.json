@@ -1,0 +1,10 @@
+{
+  "label": "fermatLastTheoremThree",
+  "kind": "lemma",
+  "title": "fermatLastTheoremThree",
+  "uses": [],
+  "statement": "\\discussion{16}\n  There are no solutions in positive integers to $a^3+b^3=c^3$.",
+  "proof": "\\leanok\n  The proof in mathlib was formalized by a team from the ``Lean For the Curious Mathematician'' conference held in Luminy in March 2024\n  (its dependency graph can be visualised \\href{https://pitmonticone.github.io/FLT3/blueprint/dep_graph_document.html}{\\underline{here}}).",
+  "sourceFile": "blueprint/src/chapter/ch02reductions.tex",
+  "leanDeclaration": "fermatLastTheoremThree"
+}

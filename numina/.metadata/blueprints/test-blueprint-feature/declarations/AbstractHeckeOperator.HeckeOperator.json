@@ -1,0 +1,12 @@
+{
+  "label": "AbstractHeckeOperator.HeckeOperator",
+  "kind": "lemma",
+  "title": "AbstractHeckeOperator.HeckeOperator",
+  "uses": [
+    "AbstractHeckeOperator.HeckeOperator_toFun"
+  ],
+  "statement": "This function is well-defined (that is, independent of the\n  choice of $g_i$), has image in $A^U$ and is $R$-linear.",
+  "proof": "\\leanok\n  Well-definedness is because if we change $g_i$ to $g'_i:=g_iv$\n  for some $v\\in V$ then $g_ia=g_i'a$ because $a\\in A^V$.\n\n  The image lands in $A^U$ because left multiplication by $u$\n  fixes $UgV$ and hence permutes the cosets $g_iV$.\n\n  Finally $R$-linearity is because the $G$-action is $R$-linear.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "AbstractHeckeOperator.HeckeOperator"
+}

@@ -1,0 +1,13 @@
+{
+  "label": "NumberField.AdeleRing.baseChangeEquiv",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.baseChangeEquiv",
+  "uses": [
+    "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+    "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv"
+  ],
+  "statement": "If $K\\to L$ is a ring homomorphism between two number fields then there is a natural isomorphism\n  (both topological and algebraic) $L\\otimes_K\\A_K\\cong\\A_L$.",
+  "proof": "\\leanok\n  Follows from the previous results.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.baseChangeEquiv"
+}

@@ -1,0 +1,12 @@
+{
+  "label": "Hurwitz.norm_one",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_one",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of $1$ is $1$.",
+  "proof": "\\leanok\n    A calculation.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.norm_one"
+}

@@ -1,0 +1,12 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology",
+  "kind": "theorem",
+  "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom"
+  ],
+  "statement": "\\discussion{326}\n  Giving $L_w$ the $K_v$-algebra structure coming from the natural map $K_v\\to L_w$,\n  the $w$-adic topology on $L_w$ is the $K_v$-module topology.",
+  "proof": "Any basis for $L$ as a $K$-vector space spans $L_w$ as a $K_v$-module, so $L_w$ is\n  finite-dimensional over $K_v$ and the module topology is the same as the product\n  topology. So we need to establish that the product topology on $L_w=K_v^n$ is\n  the $w$-adic topology. But the $w$-adic topology is induced by the $w$-adic norm,\n  which makes $L_w$ into a normed $K_v$-vector space, and (after picking a basis)\n  the product norm on $L_w=K_v^n$ also makes $L_w$ into a normed $K_v$-vector space.\n  So the result follows from the standard fact (see for example the lemma on p52\n  of Cassels-Froelich, formalized as {\\tt ContinuousLinearEquiv.ofFinrankEq} in mathlib)\n  that any two norms on a finite-dimensional vector space over\n  a complete field are equivalent (and thus induce the same topology).",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology"
+}

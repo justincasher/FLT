@@ -1,0 +1,12 @@
+{
+  "label": "MeasureTheory.ringHaarChar_continuous",
+  "kind": "corollary",
+  "title": "MeasureTheory.ringHaarChar_continuous",
+  "uses": [
+    "MeasureTheory.ringHaarChar"
+  ],
+  "statement": "\\discussion{516}\n  The function $\\delta_R:R^\\times\\to\\R_{>0}$ is continuous.",
+  "proof": "\\leanok\n  \n  Fix a Haar measure $\\mu$ on $R$ and a continuous real-valued function\n  $f$ on $R$ with compact support and such that $\\int f(x) d\\mu(x)\\not=0$.\n  Then $r \\mapsto \\int f(rx) d\\mu(x)$ is a continuous function\n  from $R\\to\\R$ (because a continuous function with compact support is uniformly\n   continuous) and thus gives a continuous function $R^\\times\\to\\R$.\n   Thus the function $u\\mapsto (\\int f(ux) d\\mu(x))/(\\int f(x)d\\mu(x))$ is\n   a continuous function from $R^\\times$ to $\\R$ taking values in $\\R_{>0}$.\n   Hence $\\delta_R^{-1}$ is continuous,\n   from lemma~\\ref{MeasureTheory.ringHaarChar_mul_integral},\n   and thus $\\delta_R$ is too.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_continuous"
+}

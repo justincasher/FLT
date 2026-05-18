@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.C"
+  ],
+  "statement": "For every $\\beta\\in D_{\\A}^{(1)}$, there exists $b\\in D^\\times$\n  and $\\nu\\in D_{\\A}^{(1)}$ such that $\\beta=b\\nu$ and $(\\nu,\\nu^{-1})\\in C.$",
+  "proof": "\\leanok\n  \n  By lemma~\\ref{NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel},\n  $\\beta X\\cap D^\\times\\not=\\emptyset$,\n  and lemma~\\ref{NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel'},\n  $X\\beta^{-1}\\cap D^\\times\\not=\\emptyset$,\n  so we can write $\\beta x_1=b_1$ and $x_2\\beta^{-1}=b_2$ with $b_i\\in D^\\times$ and $x_i\\in X$.\n  Note that $\\beta\\in D_{\\A}^{(1)}$ and $b_i\\in D^{\\times}\\subseteq D_{\\A}^{(1)}$ by\n  corollary~\\ref{NumberField.AdeleRing.units_mem_ringHaarCharacter_ker}, so $x_i\\in D_{\\A}^{(1)}$\n  as well. In particular $x_i\\in D_{\\A}^\\times$ so $x_1^{-1}$ makes sense.\n\n  Multiplying the equations defining the $x_i$ and $b_i$ we deduce that\n  $x_2x_1=b_2b_1\\in Y\\cap D^\\times=T$ (recall that $Y=X.X$ and $T=Y\\cap D^\\times$\n  is finite); call this element $t$. Then $x_1^{-1}=t^{-1}x_2\\in T^{-1}.X$,\n  and $x_1\\in X$, so if we set $\\nu=x_1^{-1}\\in D_{\\A}^{(1)}$\n  and $b=b_1\\in D^\\times$ then we have $\\beta=b\\nu$ and $(\\nu,\\nu^{-1})\\in C := (T^{-1}.X)\\times X$.\n  We are done!",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C"
+}

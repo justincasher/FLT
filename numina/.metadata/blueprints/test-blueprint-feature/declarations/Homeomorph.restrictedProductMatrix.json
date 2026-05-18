@@ -1,0 +1,10 @@
+{
+  "label": "Homeomorph.restrictedProductMatrix",
+  "kind": "corollary",
+  "title": "Homeomorph.restrictedProductMatrix",
+  "uses": [],
+  "statement": "\\discussion{571}\n  If $X_i$ are topological spaces and the $Y_i$ are open subspaces,\n  then the obvious map $M_n(\\prod'_iX_i)=\\prod'_iM_n(X_i)$ is a homeomorphism.",
+  "proof": "\\leanok\n  \n  Immediate from the previous corollary~\\ref{Homeomorph.restrictedProductPi}.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "Homeomorph.restrictedProductMatrix"
+}

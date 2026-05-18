@@ -1,0 +1,13 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.E"
+  ],
+  "statement": "% TODO I used E in the statement of the lemma here\n  If $\\beta\\in D_{\\A}^{(1)}$ then\n$\\beta X\\cap D^\\times\\not=\\emptyset$.",
+  "proof": "\\leanok\nIndeed by lemma~\\ref{NumberField.AdeleRing.DivisionAlgebra.Aux.existsE},\nthe map $\\beta E\\to D\\backslash D_{\\A}$\nisn't injective, so there are distinct\n$\\beta e_1,\\beta e_2\\in \\beta E$ with $e_i\\in E$ and\n$\\beta e_1-\\beta e_2=b\\in D$.\nNow $b\\not=0$ and $D$ is a division algebra, so $b\\in D^\\times$.\nAnd $e_1-e_2\\in X$ so $b=\\beta(e_1-e_2)\\in \\beta X$, so we're done.",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel"
+}

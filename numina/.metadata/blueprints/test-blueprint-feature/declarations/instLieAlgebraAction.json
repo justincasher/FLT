@@ -1,0 +1,9 @@
+{
+  "label": "instLieAlgebraAction",
+  "kind": "definition",
+  "title": "instLieAlgebraAction",
+  "uses": [],
+  "statement": "There is a natural action of the real Lie algebra of $\\GL_n(\\R)$ on the complex vector space of\nsmooth complex-valued functions on $\\GL_n(\\R)$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex"
+}

@@ -1,0 +1,12 @@
+{
+  "label": "AbstractHeckeOperator.comm",
+  "kind": "lemma",
+  "title": "AbstractHeckeOperator.comm",
+  "uses": [
+    "AbstractHeckeOperator.HeckeOperator"
+  ],
+  "statement": "Say $g,h\\in G$ and we have $UgU=\\coprod_i g_iU$\n  and $UhU=\\coprod_j h_j$ and we have $g_ih_j=h_jg_i$ for all $i,j$.\n  Then $[UgU][UhU]=[UhU][UgU]$, that is, the Hecke operators\n  acting on $A^U$ commute.",
+  "proof": "\\leanok\n  We have $[UgU][UhU]a=\\sum_ig_i(\\sum_jh_ja)=\\sum_{i,j}g_ih_ja$\n  and $[UhU][UgU]a=\\sum_jh_j\\sum_ig_ia=\\sum_{j,i}h_jg_ia$ and these\n  sums are equal because $g_ih_j=h_jg_i$.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "AbstractHeckeOperator.comm"
+}

@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.X"
+  ],
+  "statement": "$X$ is a compact subset of $D_{\\A}$.",
+  "proof": "\\leanok\n  It's the continuous image of the compact set~$E\\times E$.",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact"
+}

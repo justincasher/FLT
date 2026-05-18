@@ -1,0 +1,13 @@
+{
+  "label": "MeasureTheory.ringHaarChar_mul_volume",
+  "kind": "lemma",
+  "title": "MeasureTheory.ringHaarChar_mul_volume",
+  "uses": [
+    "MeasureTheory.ringHaarChar",
+    "MeasureTheory.addEquivAddHaarChar_smul_preimage"
+  ],
+  "statement": "\\discussion{515}\n  If $X$ is a Borel subset of $R$ and $r\\in R^\\times$ then $\\mu(rX)=\\delta_R(r)\\mu(X)$.",
+  "proof": "\\leanok\n  \n   Immediate from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_preimage}.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_mul_volume"
+}

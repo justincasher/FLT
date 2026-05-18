@@ -1,0 +1,9 @@
+{
+  "label": "nolean-product-of-U-alpha",
+  "kind": "lemma",
+  "title": "nolean-product-of-U-alpha",
+  "uses": [],
+  "statement": "If $v\\in S$ and $\\begin{pmatrix}1&*\\\\0&1\\end{pmatrix}\\subseteq\\Gamma_v\\subseteq\\begin{pmatrix}*&*\\\\0&*\\end{pmatrix}$\n  then $U_{\\alpha,v}U_{\\beta,v}=U_{\\alpha\\beta,v}$.",
+  "proof": "Follows easily from the explicit double coset decomposition proved above.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex"
+}

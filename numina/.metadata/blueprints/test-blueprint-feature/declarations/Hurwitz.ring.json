@@ -1,0 +1,12 @@
+{
+  "label": "Hurwitz.ring",
+  "kind": "lemma",
+  "title": "Hurwitz.ring",
+  "uses": [
+    "Hurwitz"
+  ],
+  "statement": "The Hurwitz quaternions form a ring.",
+  "proof": "\\leanok\n    Follow your nose.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.ring"
+}

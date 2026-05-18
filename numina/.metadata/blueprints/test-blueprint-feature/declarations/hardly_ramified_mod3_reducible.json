@@ -1,0 +1,12 @@
+{
+  "label": "hardly_ramified_mod3_reducible",
+  "kind": "theorem",
+  "title": "hardly_ramified_mod3_reducible",
+  "uses": [
+    "hardly_ramified"
+  ],
+  "statement": "Suppose $k$ is a finite field of characteristic 3, and suppose\n  $\\overline{rho}:\\GQ\\to\\GL_2(k)$ is hardly ramified. Then $\\overline{\\rho}$ is an extension\n  of the cyclotomic character by the trivial representation.",
+  "proof": "Omitted for now. {\\bf TODO}",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex",
+  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified.mod_three"
+}

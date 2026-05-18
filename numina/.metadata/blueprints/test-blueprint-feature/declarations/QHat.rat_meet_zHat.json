@@ -1,0 +1,13 @@
+{
+  "label": "QHat.rat_meet_zHat",
+  "kind": "lemma",
+  "title": "QHat.rat_meet_zHat",
+  "uses": [
+    "QHat",
+    "ZHat.commRing"
+  ],
+  "statement": "The intersection of $\\Q$ and $\\Zhat$ in $\\Qhat$ is $\\Z$.",
+  "proof": "\\leanok\n    Clearly $\\Z\\subseteq\\Q\\cap\\Zhat$. Now suppose that $x\\in\\Q\\cap\\Zhat$.\n    Because $x$ is rational we can write it as $\\frac{A}{B}\\otimes_t1$ for some\n    fraction $A/B$ in lowest terms, and hence $x=A/B$ where now we regard $A\\in\\Zhat$\n    and note that $A/B$ is still in lowest terms. However $x\\in\\Zhat$ implies that\n    $x=x/1$ is in lowest terms, so we deduce that $B=1$ and thus $x=A\\in\\Z$.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "QHat.rat_meet_zHat"
+}

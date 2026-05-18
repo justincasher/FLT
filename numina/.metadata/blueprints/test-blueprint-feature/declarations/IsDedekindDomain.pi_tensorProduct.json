@@ -1,0 +1,12 @@
+{
+  "label": "IsDedekindDomain.pi_tensorProduct",
+  "kind": "corollary",
+  "title": "IsDedekindDomain.pi_tensorProduct",
+  "uses": [
+    "IsDedekindDomain.AKLB.finitePresentation",
+    "pi_tensorProduct_of_finitePresentation"
+  ],
+  "statement": "If $S$ is a finite set of nonzero primes of $A$ then the natural map\n  $B\\otimes((\\prod_{v\\in S}K_v)\\times(\\prod_{v\\notin S}A_v))\\to\n  (\\prod_{v\\in S}(B\\otimes_AK_v))\\times(\\prod_{v\\notin S}(B\\otimes_AA_v))$\n  is an isomorphism.",
+  "proof": "Follows from the previous two theorems.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
+}

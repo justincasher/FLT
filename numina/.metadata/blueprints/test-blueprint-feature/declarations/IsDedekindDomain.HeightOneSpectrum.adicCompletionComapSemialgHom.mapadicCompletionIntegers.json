@@ -1,0 +1,12 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers",
+  "kind": "lemma",
+  "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap"
+  ],
+  "statement": "The map $i_v:K_v\\to L_w$ sends the integer ring $A_v$ into $B_w$.",
+  "proof": "\\leanok\n  The integer ring is defined by $v\\geq0$ (or $v\\leq 1$ in mathlib, which uses multiplicative\n  valuations) so the result follows from \\ref{IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap}.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers"
+}

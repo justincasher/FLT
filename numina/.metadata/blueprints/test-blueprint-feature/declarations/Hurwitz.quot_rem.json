@@ -1,0 +1,13 @@
+{
+  "label": "Hurwitz.quot_rem",
+  "kind": "lemma",
+  "title": "Hurwitz.quot_rem",
+  "uses": [
+    "Hurwitz.norm",
+    "Hurwitz.exists_near"
+  ],
+  "statement": "Given two Hurwitz quaternions $a$ and $b$ with $b$ nonzero, there exists\n    $q$ and $r$ such that $a=qb+r$ and $N(r)<N(b)$.",
+  "proof": "\\leanok\n  Let $q$ be the Hurwitz quaternion obtained by applying Lemma~\\ref{Hurwitz.exists_near}\n  to $a/b := ab^{-1}$; then $N(a/b-q)<1$ and now everything follows after multiplying up.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.quot_rem"
+}

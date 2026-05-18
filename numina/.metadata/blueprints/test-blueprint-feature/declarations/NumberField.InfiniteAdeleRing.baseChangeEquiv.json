@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+  "kind": "theorem",
+  "title": "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+  "uses": [
+    "NumberField.InfiniteAdeleRing.baseChangeEquivAux"
+  ],
+  "statement": "If $K\\to L$ is a ring homomorphism between two number fields then there is a natural isomorphism\n  (both topological and algebraic) $L\\otimes_KK_\\infty\\cong L_\\infty$.",
+  "proof": "Since both sides of the $L$-algebra isomorphism\n  in~\\ref{NumberField.InfiniteAdeleRing.baseChangeEquivAux} have the $K_{\\infty}$-module topology,\n  and since the isomorphism can equivalently be viewed as a $K_{\\infty}$-linear isomorphism,\n  it is also a homeomorphism.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "NumberField.InfiniteAdeleRing.baseChangeEquiv,\n    NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT"
+}

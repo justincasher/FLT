@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset",
+  "kind": "theorem",
+  "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset",
+  "uses": [
+    "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact"
+  ],
+  "statement": "If $U$ is an open subgroup of $(D\\otimes_K \\A_K^\\infty)^\\times$\n  then the double coset space $D^\\times\\backslash(D\\otimes_K \\A_K^\\infty)^\\times/U$ is finite.",
+  "proof": "\\leanok\n  The double cosets give a disjoint open cover of $(D\\otimes_K \\A_K^\\infty)$\n  which descends to a disjoint open cover of the quotient space\n  $D^\\times\\backslash(D\\otimes_K \\A_K^\\infty)^\\times$. However this space is compact\n  by theorem~\\ref{NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact}.",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset"
+}

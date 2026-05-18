@@ -1,0 +1,13 @@
+{
+  "label": "NumberField.AdeleRing.cocompact",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.cocompact",
+  "uses": [
+    "Rat.AdeleRing.cocompact",
+    "NumberField.AdeleRing.baseChangeEquiv"
+  ],
+  "statement": "The quotient $\\A_K/K$ is compact.",
+  "proof": "We proceed as in the discreteness proof above, by reducing to $\\Q$. As before, choosing\n  a $\\Q$-basis of $K$ gives us $\\A_K/K\\cong(\\A_{\\Q}/\\Q)^n$ so the result follows from\n  the previous theorem.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.cocompact"
+}

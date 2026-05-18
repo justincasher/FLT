@@ -1,0 +1,12 @@
+{
+  "label": "Frey_curve_hardly_ramified",
+  "kind": "theorem",
+  "title": "Frey_curve_hardly_ramified",
+  "uses": [
+    "hardly_ramified"
+  ],
+  "statement": "The $\\ell$-torsion $\\rho:\\GQ\\to\\GL_2(\\Z/\\ell\\Z)$ in the Frey curve associated to a Frey\n  package $(a,b,c,\\ell)$ is hardly ramified.",
+  "proof": "This was well-known in the 1980s. A proof sketch is as follows.\n  First note that $\\ell\\geq5>3$ by definition of a Frey package. Let $\\rho$\n  denote the Galois representation on the $\\ell$-torsion of the Frey curve.\n  The fact that $\\rho$ is 2-dimensional is~Corollary\n  III.6.4(b) of~\\cite{silverman1}, and the fact that its determinant is\n  cyclotomic is Proposition~III.8.3 of the same reference. These results hold for elliptic curves\n  in general. The remaining claims are specific to the Frey curve and lie\n  deeper. The fact that $\\rho$ is unramified outside $2\\ell$ is a consequence\n  of (4.1.12) and (4.1.13) of~\\cite{serreconj}. The fact that $\\rho$ at 2\n  has an unramified 1-dimensional quotient of order at most 2 follows from\n  the fact that the Frey curve is semistable at~2 (see (4.1.5) of~\\cite{serreconj})\n  and the theory of the Tate curve. Finally, the claim that $\\rho$ is flat at $\\ell$\n  is Proposition~5 and (4.1.13) of~\\cite{serreconj}.",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex",
+  "leanDeclaration": "FreyCurve.torsion_isHardlyRamified"
+}

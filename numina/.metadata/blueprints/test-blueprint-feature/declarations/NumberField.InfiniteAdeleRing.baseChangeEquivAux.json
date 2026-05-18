@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.InfiniteAdeleRing.baseChangeEquivAux",
+  "kind": "theorem",
+  "title": "NumberField.InfiniteAdeleRing.baseChangeEquivAux",
+  "uses": [
+    "NumberField.InfinitePlace.Completion.baseChangeEquiv"
+  ],
+  "statement": "There is a natural $L$-algebra isomorphism\n  $L \\otimes_K K_{\\infty} \\cong_L L_{\\infty}$.",
+  "proof": "This follows from the following chain of isomorphisms:\n  \\[\n    L \\otimes_K K_{\\infty} \\cong_L \\prod_v (L \\otimes_K K_v) \\cong_L\n      \\prod_v \\prod_{w\\mid v}L_w \\cong_L L_{\\infty} .\n  \\]\n  The first isomorphism is the standard $L$-algebra isomorphism\n  $L \\otimes_K \\prod_v K_v \\cong_L \\prod_v (L \\otimes_K K_v)$.\n  The second isomorphism is given by the component $L$-algebra isomorphisms\n  $L \\otimes_K K_v \\cong_L \\prod_{w\\mid v}L_w$ from\n  Theorem~\\ref{NumberField.InfinitePlace.Completion.baseChangeEquiv}.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "NumberField.InfiniteAdeleRing.baseChangeEquivAux"
+}

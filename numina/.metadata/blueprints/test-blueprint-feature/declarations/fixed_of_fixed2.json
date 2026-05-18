@@ -1,0 +1,9 @@
+{
+  "label": "fixed_of_fixed2",
+  "kind": "proposition",
+  "title": "fixed_of_fixed2",
+  "uses": [],
+  "statement": "\\mathlibok\n  Let $x \\in L$.\n  Suppose that $x$ is fixed by the stabilizer subgroup $D_Q$.\n  Then $x$ is fixed by the automorphism group $\\Aut(L/K)$.",
+  "proof": "Since $(B/Q)/(A/Q)$ is algebraic by~\\ref{Algebra.IsInvariant.isIntegral},\n  ~\\ref{IsAlgebraic.exists_smul_eq_mul} let's us write $x=b/a$ for $b \\in B/Q$ and $a \\in A/P$.\n  Then $b$ is fixed by the stabilizer subgroup $D_Q$, and it suffices to show that\n  $b$ is fixed by the automorphism group $\\Aut(L/K)$.\n  But this is exactly~\\ref{fixed_of_fixed1}.\n  \\mathlibok",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex"
+}

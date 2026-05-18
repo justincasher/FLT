@@ -1,0 +1,13 @@
+{
+  "label": "hardly_ramified_3adic_reducible",
+  "kind": "theorem",
+  "title": "hardly_ramified_3adic_reducible",
+  "uses": [
+    "hardly_ramified",
+    "hardly_ramified_mod3_reducible"
+  ],
+  "statement": "Suppose $L/\\Q_3$ is a finite extension, with integer ring $\\calO_L$, and suppose\n  $\\rho_3:\\GQ\\to\\GL_2(\\calO_L)$ is hardly ramified. Then (considered as a representation\n  to $\\GL_2(L)$) $\\rho_3^{ss}=1\\oplus\\chi_3$\n  where $1$ is the trivial character and $\\chi_3$ is the 3-adic cyclotomic character.",
+  "proof": "Omitted for now {\\bf TODO}",
+  "sourceFile": "blueprint/src/chapter/ch03freyreduction.tex",
+  "leanDeclaration": "GaloisRepresentation.IsHardlyRamified.three_adic"
+}

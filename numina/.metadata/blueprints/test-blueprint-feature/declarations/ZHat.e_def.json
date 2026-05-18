@@ -1,0 +1,12 @@
+{
+  "label": "ZHat.e_def",
+  "kind": "lemma",
+  "title": "ZHat.e_def",
+  "uses": [
+    "ZHat.e"
+  ],
+  "statement": "The collection $(e_N)_N$ is an element of $\\Zhat$.",
+  "proof": "\\leanok\n    This boils down to checking that $D!+(D+1)!+\\cdots+(N-1)!$ is a multiple of~$D$.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "ZHat.e_def"
+}

@@ -1,0 +1,11 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+  "kind": "corollary",
+  "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+  "uses": [
+    "IsDedekindDomain.pi_tensorProduct"
+  ],
+  "statement": "The natural map $B\\otimes_A\\A_K^\\infty\\to R$ is a $B$-algebra isomorphism.",
+  "proof": "This follows from the previous corollary and the fact that\n  tensor products commute with filtered colimits.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
+}

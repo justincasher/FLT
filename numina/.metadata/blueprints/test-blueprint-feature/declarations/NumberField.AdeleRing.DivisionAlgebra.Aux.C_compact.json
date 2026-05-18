@@ -1,0 +1,14 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+  "kind": "lemma",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.C",
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact"
+  ],
+  "statement": "$C$ is compact.",
+  "proof": "\\leanok\n   $X$ is compact and $T$ is finite.",
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact"
+}

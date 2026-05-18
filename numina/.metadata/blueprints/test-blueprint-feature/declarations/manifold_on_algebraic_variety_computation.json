@@ -1,0 +1,11 @@
+{
+  "label": "manifold_on_algebraic_variety_computation",
+  "kind": "theorem",
+  "title": "manifold_on_algebraic_variety_computation",
+  "uses": [
+    "manifold_on_algebraic_variety_points"
+  ],
+  "statement": "\\notready\n    If $X$ is as in the previous definition and $X\\to\\mathbb{A}^n_K$ is a closed immersion, then the induced map from $X(K)$ with its manifold structure to $K^n$ is an embedding of manifolds.",
+  "proof": "I'm assuming this is standard, if true.",
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

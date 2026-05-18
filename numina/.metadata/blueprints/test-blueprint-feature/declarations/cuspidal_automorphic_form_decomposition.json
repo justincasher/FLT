@@ -1,0 +1,12 @@
+{
+  "label": "cuspidal_automorphic_form_decomposition",
+  "kind": "theorem",
+  "title": "cuspidal_automorphic_form_decomposition",
+  "uses": [
+    "cuspidal_automorphic_form",
+    "automorphic_form_actions"
+  ],
+  "statement": "The cusp forms decompose as a (typically infinite) direct sum of irreducible $(G(\\A_N^f)\\times U_\\infty,\\mathfrak{g})$-modules.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

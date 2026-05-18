@@ -1,0 +1,12 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+  "kind": "definition",
+  "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.valuation_comap"
+  ],
+  "statement": "There's a natural ring map $K_v\\to L_w$ extending the map $K\\to L$.\n  It is defined by completing\n  the inclusion $K\\to L$ at the finite places $v$ and $w$ (which can be done\n  because the previous lemma shows that the map is uniformly continuous for the $v$-adic\n  and $w$-adic topologies).",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom"
+}

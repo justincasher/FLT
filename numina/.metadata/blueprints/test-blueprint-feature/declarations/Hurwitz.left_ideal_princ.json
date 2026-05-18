@@ -1,0 +1,12 @@
+{
+  "label": "Hurwitz.left_ideal_princ",
+  "kind": "corollary",
+  "title": "Hurwitz.left_ideal_princ",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "All left ideals of $\\calO$ are principal.",
+  "proof": "\\leanok\n    If the ideal is 0, use 0. Otherwise, choose a nonzero element of smallest norm.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.left_ideal_princ"
+}

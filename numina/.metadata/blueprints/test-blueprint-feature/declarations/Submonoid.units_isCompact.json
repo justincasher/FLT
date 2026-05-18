@@ -1,0 +1,10 @@
+{
+  "label": "Submonoid.units_isCompact",
+  "kind": "lemma",
+  "title": "Submonoid.units_isCompact",
+  "uses": [],
+  "statement": "\\discussion{588}\n  If $M$ is a Hausdorff topological monoid and $U$ is a compact submonoid,\n  then the units $U^\\times$ of $U$ are naturally a compact subgroup of $M^\\times$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "Submonoid.units_isCompact"
+}

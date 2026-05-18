@@ -1,0 +1,10 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient",
+  "kind": "theorem",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient",
+  "uses": [],
+  "statement": "If $D$ is a division algebra then\n  the quotient $D^\\times\\backslash D_{\\A}^{(1)}$\n  with its quotient topology coming from $D_{\\A}^{(1)}$, is compact.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient"
+}

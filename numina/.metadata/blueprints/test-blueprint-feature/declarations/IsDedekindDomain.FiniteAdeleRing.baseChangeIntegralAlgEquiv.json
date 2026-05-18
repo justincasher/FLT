@@ -1,0 +1,13 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+  "kind": "theorem",
+  "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+  "uses": [
+    "RestrictedProduct.relabelIso",
+    "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+    "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2"
+  ],
+  "statement": "The natural map $B\\otimes_A\\A_K^\\infty\\to\\A_L^\\infty$ is a $B$-algebra\n  isomorphism.",
+  "proof": "This map factors through the auxiliary ring~$R$ so the result follows\n  from the previous two constructions.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
+}

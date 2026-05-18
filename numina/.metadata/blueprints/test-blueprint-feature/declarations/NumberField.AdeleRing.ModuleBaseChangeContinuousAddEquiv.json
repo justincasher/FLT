@@ -1,0 +1,10 @@
+{
+  "label": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv",
+  "kind": "corollary",
+  "title": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv",
+  "uses": [],
+  "statement": "If $K$ is a number field and $V$ is an $K$-module, then\n  the natural isomorphism $V\\otimes_K\\A_K=V\\otimes_{\\Q}\\A_{\\Q}$ induced by the natural\n  isomorphism $\\A_K=K\\otimes_K\\A_{\\Q}$ is a homeomorphism if the left hand side has the $\\A_K$-module\n  topology and the right hand side has the $\\A_{\\Q}$-module topology.",
+  "proof": "\\leanok\n  \n  Lemma~\\ref{IsModuleTopology.continuous_bilinear_of_finite_left} tells us that $V\\otimes_K\\A_K$\n  has the $\\A_{\\Q}$-module topology, and it is easily checked that the isomorphism is\n  $\\A_{\\Q}$-linear and hence automatically continuous.\n\n  Note that in the Lean we prove this for a general extension $L/K$ rather than $K/\\Q$.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv"
+}

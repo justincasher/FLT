@@ -1,0 +1,9 @@
+{
+  "label": "moret-bailly",
+  "kind": "theorem",
+  "title": "moret-bailly",
+  "uses": [],
+  "statement": "\\notready Let $K^{\\avoid}/K$ be a Galois extension of number fields. Suppose also\nthat $S$ is a finite set of places of $K$. For $v\\in S$ let $L_v/K_v$ be a finite Galois extension.\nSuppose also that $T /K$ is a smooth, geometrically connected curve and that for each\n$v\\in S$ we are given a nonempty, $\\Gal(L_v/K_v)$-invariant, open subset $\\Omega_v\\subseteq (L_v)$.\nThen there is a finite Galois extension $L/K$ and a point $P ∈ T (L)$ such that\n\\begin{itemize}\n\\item $L/K$ is Galois and linearly disjoint from $K^{\\avoid}$ over $K$;\n\\item if $v\\in S$ and $w$ is a prime of $L$ above $v$ then $L_w /K_v$ is isomorphic to $L_v/K_v$;\n\\item and $P \\in\\Omega_v\\subseteq T (L_v) \\cong (L_w)$ via one such $K_v$-algebra morphism\n(this makes sense as $\\Omega_v$ is $\\Gal(L_v/K v)$-invariant).\n\\end{itemize}",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

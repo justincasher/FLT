@@ -1,0 +1,10 @@
+{
+  "label": "ZHat",
+  "kind": "definition",
+  "title": "ZHat",
+  "uses": [],
+  "statement": "The profinite completion $\\Zhat$ of $\\Z$ is the set of\n    all compatible collections $c=(c_N)_N$ of elements of $\\Z/N\\Z$ indexed by $\\N^+:=\\{1,2,3,\\ldots\\}$.\n    A collection is said to be \\emph{compatible} if for all positive integers\n    $D\\mid N$, we have $c_N$ mod $D$ equals $c_D$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "ZHat"
+}

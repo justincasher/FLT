@@ -1,0 +1,12 @@
+{
+  "label": "Hurwitz.norm",
+  "kind": "definition",
+  "title": "Hurwitz.norm",
+  "uses": [
+    "Hurwitz"
+  ],
+  "statement": "The Hurwitz quaternions come equipped with an integer-valued norm, which is\n    $a^2+b^2+c^2+d^2$ on $a+bi+cj+dk$ but needs to be modified a bit to deal with $\\omega$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.norm"
+}

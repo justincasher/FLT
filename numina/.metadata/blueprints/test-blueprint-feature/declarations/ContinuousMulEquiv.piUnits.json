@@ -1,0 +1,10 @@
+{
+  "label": "ContinuousMulEquiv.piUnits",
+  "kind": "lemma",
+  "title": "ContinuousMulEquiv.piUnits",
+  "uses": [],
+  "statement": "\\discussion{581}\n  If $U_i$ are topological monoids then the canonical\n  group isomorphism $(\\prod_i U_i)^\\times=\\prod_i(U_i^\\times)$ is a homeomorphism.",
+  "proof": "\\leanok\n  We prove that the maps in both directions are continuous. Let's start\n  with the map from left to right.\n\n  A map into a product is continuous when the maps to the factors\n  are continuous. A map into the units of a monoid is continuous when the\n  two projection maps to the monoid (the inclusion and the map $u\\mapsto u^{-1}$)\n  are continuous (because $M^\\times$ has the topology induced from $M\\times M$).\n  This reduces us to checking that the maps $(\\prod_i U_i)^\\times\\to U_j$\n  sending $(u_i)$ to $u_j$ resp $u_j^{-1}$ are continuous. But the former map\n  is the continuous inclusion $(\\prod_i U_i)^\\times\\to\\prod_i U_i$ followed\n  by the continuous projection to $U_j$, and the latter map is the continuous\n  inclusion $(\\prod_i U_i)^\\times\\to\\prod_i U_i$ sending $x$ to $x^{-1}$\n  followed by the projection.\n\n  To go the other way: because the units have the induced topology it suffices\n  to check that the two maps $\\prod_i(U_i^\\times)\\to\\prod_i U_i$\n  sending $(u_i)$ to $(u_i)$ resp $(u_i^{-1})$ are continuous. A map\n  to a product is continuous when the induced maps to the factors are.\n  A projection from a project is continuous, and the identity and inverse are\n  continuous maps $U_j^\\times\\to U_j$, and the maps we're concerned with are composites\n  of these maps and are hence continuous.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "ContinuousMulEquiv.piUnits"
+}

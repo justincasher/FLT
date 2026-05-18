@@ -1,0 +1,15 @@
+{
+  "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+  "kind": "definition",
+  "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+  "uses": [
+    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction",
+    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module"
+  ],
+  "statement": "The quaternionic modular forms of level $U$, with notation $S^D(U;R)$, are the $U$-invariants for the $D_{\\A^\\infty}^\\times$-action on $S^D(R)$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/QuaternionAlgebraProject.tex",
+  "leanDeclaration": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel"
+}

@@ -1,0 +1,10 @@
+{
+  "label": "NumberField.isOpenAdicCompletionIntegers",
+  "kind": "lemma",
+  "title": "NumberField.isOpenAdicCompletionIntegers",
+  "uses": [],
+  "statement": "$\\calO_v$ is an open subring of $K_v$.",
+  "proof": "\\leanok\n  Openness is already in mathlib.",
+  "sourceFile": "blueprint/src/chapter/HeckeOperatorProject.tex",
+  "leanDeclaration": "NumberField.isOpenAdicCompletionIntegers"
+}

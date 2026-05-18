@@ -1,0 +1,10 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_prodCongr",
+  "kind": "lemma",
+  "title": "MeasureTheory.addEquivAddHaarChar_prodCongr",
+  "uses": [],
+  "statement": "\\discussion{520}\n  If $(A,+)$ and $(B,+)$ are locally compact topological abelian groups,\n  and if $\\phi:A\\to A$ and $\\psi:B\\to B$ are additive homeomorphisms,\n  then $\\phi\\times\\psi:A\\times B\\to A\\times B$ is an additive homeomorphism (this is\n  obvious), and\n  $d_{A\\times B}(\\phi\\times\\psi)=d_A(\\phi)d_B(\\psi)$.",
+  "proof": "\\leanok\n  We only need this result in the case where both $A$ and $B$ are second-countable, in which case\n  {\\tt Prod.borelSpace} can be used to show that Haar measure on $A\\times B$ is the product of\n  Haar measures on $A$ and $B$, and in this case the result follows easily. Without this assumption,\n  the product of these measures may not even be a Borel measure and one has to be more careful.\n  The proof in this case is explained by Gou\\\"{e}zel\n  \\href{https://leanprover.zulipchat.com/#narrow/channel/116395-maths/topic/Product.20of.20Borel.20spaces/near/487257981}{here}.\n  Here is the idea. Let $\\rho$ be a Haar measure on $A\\times B$. Fix sets $X\\subseteq A$ and\n  $Y\\subseteq B$ which are compact with nonempty interior. We can now pull back $\\rho$\n  to a measure $\\nu$ on the Borel sigma-algebra of $A$ defined as $\\nu(s)=\\rho(s\\times Y)$\n  and this is easily checked to be a Haar measure on $A$. Then\n  $\\delta_{A\\times B}(a,0)\\nu(X)=\n  \\delta_{A\\times B}(a,0)\\rho(X\\times Y)=\\rho((a,0)(X\\times Y))=\n  \\rho(aX\\times Y)=\\nu(aX)=\\delta_A(a)\\nu(X)$\n  , so $\\delta_{A\\times B}(a,0)=\\delta_A(a)$.\n  Similarly $\\delta_{A\\times B}(0,b)=\\delta_B(b)$ and because $\\delta_{A\\times B}$ is a group\n  homomorphism we're home.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_prodCongr"
+}

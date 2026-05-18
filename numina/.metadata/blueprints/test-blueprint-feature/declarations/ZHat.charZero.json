@@ -1,0 +1,10 @@
+{
+  "label": "ZHat.charZero",
+  "kind": "lemma",
+  "title": "ZHat.charZero",
+  "uses": [],
+  "statement": "The map from the naturals into $\\Zhat$ sending $n$ to $n$ is injective.",
+  "proof": "\\leanok\n    Generalise the above idea. Feel free to write up a LaTeX proof and PR it.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "ZHat.charZero"
+}

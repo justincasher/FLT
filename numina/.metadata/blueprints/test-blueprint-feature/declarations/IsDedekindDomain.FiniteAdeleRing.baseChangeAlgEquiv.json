@@ -1,0 +1,15 @@
+{
+  "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+  "kind": "theorem",
+  "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral",
+    "RestrictedProduct.relabelIso",
+    "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+    "IsDedekindDomain.AKLB.tensorProduct_module_algEquiv"
+  ],
+  "statement": "\\discussion{243}\n  This natural map $L\\otimes_K\\A_{A,K}^\\infty\\to\\A_{B,L}^\\infty$ is an isomorphism.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv"
+}

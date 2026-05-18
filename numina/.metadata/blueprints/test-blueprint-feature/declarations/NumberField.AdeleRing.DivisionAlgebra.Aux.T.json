@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+  "kind": "definition",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.Y"
+  ],
+  "statement": "Let $T:=Y\\cap D^\\times$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.T"
+}

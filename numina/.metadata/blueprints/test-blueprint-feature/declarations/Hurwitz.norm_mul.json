@@ -1,0 +1,12 @@
+{
+  "label": "Hurwitz.norm_mul",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_mul",
+  "uses": [
+    "Hurwitz.norm"
+  ],
+  "statement": "The norm of a product is the product of the norms.",
+  "proof": "\\leanok\n    A calculation.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.norm_mul"
+}

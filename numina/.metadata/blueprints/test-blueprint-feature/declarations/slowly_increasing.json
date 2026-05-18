@@ -1,0 +1,9 @@
+{
+  "label": "slowly_increasing",
+  "kind": "definition",
+  "title": "slowly_increasing",
+  "uses": [],
+  "statement": "\\notready A function $f : G(N_\\infty)\\to\\bbC$ is \\emph{slowly-increasing} if there exists some $C>0$\n    and $n\\geq1$ such that $|f(x)\\leq C||x||_\\rho^n$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

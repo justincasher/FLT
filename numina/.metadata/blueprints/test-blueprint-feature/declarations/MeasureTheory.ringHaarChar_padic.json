@@ -1,0 +1,10 @@
+{
+  "label": "MeasureTheory.ringHaarChar_padic",
+  "kind": "lemma",
+  "title": "MeasureTheory.ringHaarChar_padic",
+  "uses": [],
+  "statement": "If $R=\\Q_p$ then $\\delta_R(u)=|u|_p$, the usual $p$-adic norm.",
+  "proof": "\\leanok\n  Normalise Haar measure so that $\\mu(\\Z_p)=1$.\n  If $u$ is a $p$-adic unit then $u\\Z_p=\\Z_p$ so multiplication by $u$ didn't change\n  Haar measure. If however $u=p$ then $u\\Z_p$ has index $p$ in $\\Z_p$ and, because\n  $\\mu(i+p\\Z_p)=\\mu(p\\Z_p)$ we have that $\\mu(\\Z_p)=p\\mu(p\\Z_p)$ and thus $\\delta(p)=p^{-1}$.\n  These elements generate $\\Q_p^\\times$ and two characters which agree on generators\n  of a group must agree on the group.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.ringHaarChar_padic"
+}

@@ -4,5 +4,1416 @@
   "blueprint_file": "blueprint/src/content.tex",
   "source_type": "",
   "notes": "",
-  "entries": []
+  "entries": [
+    {
+      "label": "FermatLastTheorem.of_odd_primes",
+      "kind": "lemma",
+      "title": "FermatLastTheorem.of_odd_primes",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "fermatLastTheoremThree",
+      "kind": "lemma",
+      "title": "fermatLastTheoremThree",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FermatLastTheorem.of_p_ge_5",
+      "kind": "corollary",
+      "title": "FermatLastTheorem.of_p_ge_5",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FreyPackage",
+      "kind": "definition",
+      "title": "FreyPackage",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FreyPackage.of_not_FermatLastTheorem_p_ge_5",
+      "kind": "lemma",
+      "title": "FreyPackage.of_not_FermatLastTheorem_p_ge_5",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FreyCurve",
+      "kind": "definition",
+      "title": "Frey",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "Mazur_Frey",
+      "kind": "theorem",
+      "title": "Mazur",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "Wiles_Frey",
+      "kind": "theorem",
+      "title": "Wiles,Taylor--Wiles, Ribet,\\ldots",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FreyPackage.false",
+      "kind": "corollary",
+      "title": "FreyPackage.false",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "FLT",
+      "kind": "corollary",
+      "title": "FLT",
+      "source_file": "blueprint/src/chapter/ch02reductions.tex"
+    },
+    {
+      "label": "hardly_ramified",
+      "kind": "definition",
+      "title": "hardly_ramified",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "Frey_curve_hardly_ramified",
+      "kind": "theorem",
+      "title": "Frey_curve_hardly_ramified",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "hardly_ramified_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_reducible",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "Wiles_Frey_again",
+      "kind": "theorem",
+      "title": "Wiles_Frey_again",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "hardly_ramified_lifts",
+      "kind": "theorem",
+      "title": "hardly_ramified_lifts",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "hardly_ramified_spreads_out",
+      "kind": "theorem",
+      "title": "hardly_ramified_spreads_out",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "hardly_ramified_mod3_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_mod3_reducible",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "hardly_ramified_3adic_reducible",
+      "kind": "theorem",
+      "title": "hardly_ramified_3adic_reducible",
+      "source_file": "blueprint/src/chapter/ch03freyreduction.tex"
+    },
+    {
+      "label": "modularity_lifting_theorem",
+      "kind": "theorem",
+      "title": "modularity_lifting_theorem",
+      "source_file": "blueprint/src/chapter/ch04overview.tex"
+    },
+    {
+      "label": "ZHat",
+      "kind": "definition",
+      "title": "ZHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.commRing",
+      "kind": "lemma",
+      "title": "ZHat.commRing",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.nontrivial",
+      "kind": "lemma",
+      "title": "ZHat.nontrivial",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.charZero",
+      "kind": "lemma",
+      "title": "ZHat.charZero",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.e",
+      "kind": "definition",
+      "title": "ZHat.e",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.e_def",
+      "kind": "lemma",
+      "title": "ZHat.e_def",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.e_not_in_Int",
+      "kind": "lemma",
+      "title": "ZHat.e_not_in_Int",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.torsionfree",
+      "kind": "lemma",
+      "title": "ZHat.torsionfree",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "ZHat.multiples",
+      "kind": "lemma",
+      "title": "ZHat.multiples",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat",
+      "kind": "definition",
+      "title": "QHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.canonicalForm",
+      "kind": "lemma",
+      "title": "QHat.canonicalForm",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.IsCoprime",
+      "kind": "definition",
+      "title": "QHat.IsCoprime",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.lowestTerms",
+      "kind": "lemma",
+      "title": "QHat.lowestTerms",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.injective_rat",
+      "kind": "lemma",
+      "title": "QHat.injective_rat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.injective_zHat",
+      "kind": "lemma",
+      "title": "QHat.injective_zHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.rat_meet_zHat",
+      "kind": "lemma",
+      "title": "QHat.rat_meet_zHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.rat_join_zHat",
+      "kind": "lemma",
+      "title": "QHat.rat_join_zHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Qhat.unitsrat_meet_unitszHat",
+      "kind": "lemma",
+      "title": "Qhat.unitsrat_meet_unitszHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "QHat.unitsrat_join_unitszHat",
+      "kind": "lemma",
+      "title": "QHat.unitsrat_join_unitszHat",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz",
+      "kind": "definition",
+      "title": "Hurwitz",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.ring",
+      "kind": "lemma",
+      "title": "Hurwitz.ring",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.starRing",
+      "kind": "definition",
+      "title": "Hurwitz.starRing",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm",
+      "kind": "definition",
+      "title": "Hurwitz.norm",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_eq_mul_conj",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_eq_mul_conj",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_zero",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_zero",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_one",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_one",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_mul",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_mul",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_nonneg",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_nonneg",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.norm_eq_zero",
+      "kind": "lemma",
+      "title": "Hurwitz.norm_eq_zero",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.exists_near",
+      "kind": "lemma",
+      "title": "Hurwitz.exists_near",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.quot_rem",
+      "kind": "lemma",
+      "title": "Hurwitz.quot_rem",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.left_ideal_princ",
+      "kind": "corollary",
+      "title": "Hurwitz.left_ideal_princ",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "Hurwitz.surjective_pnat_quotient",
+      "kind": "theorem",
+      "title": "Hurwitz.surjective_pnat_quotient",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "HurwitzRatHat.canonicalForm",
+      "kind": "lemma",
+      "title": "HurwitzRatHat.canonicalForm",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "HurwitzRatHat.completed_units",
+      "kind": "theorem",
+      "title": "HurwitzRatHat.completed_units",
+      "source_file": "blueprint/src/chapter/ch05automorphicformexample.tex"
+    },
+    {
+      "label": "MatrixRing.isCentralSimple",
+      "kind": "lemma",
+      "title": "MatrixRing.isCentralSimple",
+      "source_file": "blueprint/src/chapter/ch06automorphicrepresentations.tex"
+    },
+    {
+      "label": "IsCentralSimple.baseChange",
+      "kind": "lemma",
+      "title": "IsCentralSimple.baseChange",
+      "source_file": "blueprint/src/chapter/ch06automorphicrepresentations.tex"
+    },
+    {
+      "label": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso",
+      "kind": "lemma",
+      "title": "IsQuaternionAlgebra.exists_quaternionAlgebra_iso",
+      "source_file": "blueprint/src/chapter/ch06automorphicrepresentations.tex"
+    },
+    {
+      "label": "AutomorphicForm.GLn.IsSmooth",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.IsSmooth",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "AutomorphicForm.GLn.IsSlowlyIncreasing",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.IsSlowlyIncreasing",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "AutomorphicForm.GLn.Weight",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.Weight",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "instLieAlgebraAction",
+      "kind": "definition",
+      "title": "instLieAlgebraAction",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "instComplexLieAlgebraAction",
+      "kind": "definition",
+      "title": "instComplexLieAlgebraAction",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "instUniversalEnvelopingAlgebraAction",
+      "kind": "definition",
+      "title": "instUniversalEnvelopingAlgebraAction",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "instCentreAction",
+      "kind": "definition",
+      "title": "instCentreAction",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ",
+      "kind": "definition",
+      "title": "AutomorphicForm.GLn.AutomorphicFormForGLnOverQ",
+      "source_file": "blueprint/src/chapter/ch07exampleGLn.tex"
+    },
+    {
+      "label": "IsFractionRing.stabilizerHom",
+      "kind": "definition",
+      "title": "IsFractionRing.stabilizerHom",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "IsFractionRing.stabilizerHom_surjective",
+      "kind": "theorem",
+      "title": "IsFractionRing.stabilizerHom_surjective",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "MulSemiringAction.charpoly",
+      "kind": "definition",
+      "title": "MulSemiringAction.charpoly",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "MulSemiringAction.monic_charpoly",
+      "kind": "lemma",
+      "title": "MulSemiringAction.monic_charpoly",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "Algebra.IsInvariant.charpoly_mem_lifts",
+      "kind": "lemma",
+      "title": "Algebra.IsInvariant.charpoly_mem_lifts",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "Algebra.IsInvariant.isIntegral",
+      "kind": "theorem",
+      "title": "Algebra.IsInvariant.isIntegral",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "fixed_of_fixed1_aux1",
+      "kind": "lemma",
+      "title": "fixed_of_fixed1_aux1",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "fixed_of_fixed1_aux2",
+      "kind": "lemma",
+      "title": "fixed_of_fixed1_aux2",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "FixedPoints.toAlgAut_surjective",
+      "kind": "theorem",
+      "title": "FixedPoints.toAlgAut_surjective",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "fixed_of_fixed1",
+      "kind": "proposition",
+      "title": "fixed_of_fixed1",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "IsAlgebraic.exists_smul_eq_mul",
+      "kind": "lemma",
+      "title": "IsAlgebraic.exists_smul_eq_mul",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "fixed_of_fixed2",
+      "kind": "proposition",
+      "title": "fixed_of_fixed2",
+      "source_file": "blueprint/src/chapter/FrobeniusProject.tex"
+    },
+    {
+      "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "kind": "theorem",
+      "title": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.locallyCompactSpace",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.locallyCompactSpace",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+      "kind": "definition",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom.mapadicCompletionIntegers",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComap_isModuleTopology",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.Extension.finite",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.HeightOneSpectrum.Extension.finite",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.prodAdicCompletionComap_isModuleTopology",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapContinuousAlgEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapAlgEquiv_integral",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+      "kind": "definition",
+      "title": "IsDedekindDomain.FiniteAdeleRing.mapSemialgHom",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeAlgEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeContinuousAlgEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.dvd_norm",
+      "kind": "lemma",
+      "title": "IsDedekindDomain.dvd_norm",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.surjective_tensorProduct_map",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.AKLB.surjective_tensorProduct_map",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.tensorProduct_algEquiv",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.tensorProduct_algEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.tensorProduct_module_algEquiv",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.AKLB.tensorProduct_module_algEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.AKLB.finitePresentation",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.AKLB.finitePresentation",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "pi_tensorProduct_of_finitePresentation",
+      "kind": "theorem",
+      "title": "pi_tensorProduct_of_finitePresentation",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.pi_tensorProduct",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.pi_tensorProduct",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux1",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "RestrictedProduct.relabelIso",
+      "kind": "definition",
+      "title": "RestrictedProduct.relabelIso",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2",
+      "kind": "corollary",
+      "title": "IsDedekindDomain.FiniteAdeleRing.IntegraltensorProductAlgEquiv_aux2",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+      "kind": "theorem",
+      "title": "IsDedekindDomain.FiniteAdeleRing.baseChangeIntegralAlgEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.denseRange_algebraMap_subtype_pi",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.finrank_pi_eq_finrank_tensorProduct",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.piExtension",
+      "kind": "definition",
+      "title": "NumberField.InfinitePlace.Completion.piExtension",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange",
+      "kind": "definition",
+      "title": "NumberField.InfinitePlace.Completion.baseChange",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange_surjective",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChange_surjective",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChange_injective",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChange_injective",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.instIsModuleTopologyValEqComapAlgebraMap_fLT",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.baseChangeEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfinitePlace.Completion.piEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfinitePlace.Completion.piEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.piEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.piEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.instIsModuleTopology_fLT",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.baseChangeEquivAux",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.baseChangeEquivAux",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.InfiniteAdeleRing.baseChangeEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.baseChangeEquiv",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.baseChangeEquiv",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.baseChange_moduleTopology",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.baseChange_moduleTopology",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "Rat.AdeleRing.zero_discrete",
+      "kind": "theorem",
+      "title": "Rat.AdeleRing.zero_discrete",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.zero_discrete",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.zero_discrete",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.discrete",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.discrete",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "Rat.AdeleRing.cocompact",
+      "kind": "theorem",
+      "title": "Rat.AdeleRing.cocompact",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.cocompact",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.cocompact",
+      "source_file": "blueprint/src/chapter/AdeleMiniproject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar",
+      "kind": "definition",
+      "title": "MeasureTheory.addEquivAddHaarChar",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_eq",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_eq",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_map",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_map",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_comap",
+      "kind": "corollary",
+      "title": "MeasureTheory.addEquivAddHaarChar_comap",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_preimage",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_preimage",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_integral_map",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_integral_map",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_smul_integral_comap",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_refl",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_refl",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_trans",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_trans",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar",
+      "kind": "definition",
+      "title": "MeasureTheory.ringHaarChar",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_mul_integral",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_mul_integral",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_mul_volume",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_mul_volume",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_continuous",
+      "kind": "corollary",
+      "title": "MeasureTheory.ringHaarChar_continuous",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_real",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_real",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_complex",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_complex",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_padic",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_padic",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det",
+      "kind": "corollary",
+      "title": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "IsSimpleRing.mulLeft_det_eq_mulRight_det",
+      "kind": "lemma",
+      "title": "IsSimpleRing.mulLeft_det_eq_mulRight_det",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight",
+      "kind": "corollary",
+      "title": "IsSimpleRing.ringHaarChar_eq_addEquivAddHaarChar_mulRight",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_prodCongr",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_prodCongr",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_piCongrRight",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_piCongrRight",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_prod",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_prod",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_pi",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_pi",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "Topology.IsOpenEmbedding.isHaarMeasure_comap",
+      "kind": "lemma",
+      "title": "Topology.IsOpenEmbedding.isHaarMeasure_comap",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "Topology.IsOpenEmbedding.regular_comap",
+      "kind": "lemma",
+      "title": "Topology.IsOpenEmbedding.regular_comap",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace",
+      "kind": "lemma",
+      "title": "MeasureTheory.mulEquivHaarChar_eq_one_of_compactSpace",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding",
+      "kind": "lemma",
+      "title": "MeasureTheory.addEquivAddHaarChar_eq_addEquivAddHaarChar_of_isOpenEmbedding",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "Continuous.restrictedProduct_congrRight",
+      "kind": "lemma",
+      "title": "Continuous.restrictedProduct_congrRight",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight",
+      "kind": "theorem",
+      "title": "MeasureTheory.addEquivAddHaarChar_restrictedProductCongrRight",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_restrictedProduct",
+      "kind": "corollary",
+      "title": "MeasureTheory.ringHaarChar_restrictedProduct",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "IsModuleTopology.continuous_bilinear_of_finite_left",
+      "kind": "lemma",
+      "title": "IsModuleTopology.continuous_bilinear_of_finite_left",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.ModuleBaseChangeContinuousAddEquiv",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.isCentralSimple_addHaarScalarFactor_left_mul_eq_right_mul",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.isCentralSimple_addHaarScalarFactor_left_mul_eq_right_mul",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_adeles_rat",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_adeles_rat",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.ringHaarChar_adeles_units_rat_eq_one",
+      "kind": "lemma",
+      "title": "MeasureTheory.ringHaarChar_adeles_units_rat_eq_one",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "MeasureTheory.addHaarScalarFactor_tensor_adeles_eq_one",
+      "kind": "theorem",
+      "title": "MeasureTheory.addHaarScalarFactor_tensor_adeles_eq_one",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.units_mem_ringHaarCharacter_ker",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one",
+      "kind": "corollary",
+      "title": "NumberField.AdeleRing.addEquivAddHaarChar_mulRight_unit_eq_one",
+      "source_file": "blueprint/src/chapter/HaarCharacterProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient",
+      "kind": "theorem",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.compact_quotient",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_compact",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y_compact",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X_meets_kernel",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.T_finite",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.C",
+      "kind": "definition",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.C",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.C_compact",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C",
+      "kind": "lemma",
+      "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.antidiag_mem_C",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact",
+      "kind": "theorem",
+      "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.units_cocompact",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset",
+      "kind": "theorem",
+      "title": "NumberField.FiniteAdeleRing.DivisionAlgebra.finiteDoubleCoset",
+      "source_file": "blueprint/src/chapter/FujisakiProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.distribMulAction",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+      "kind": "definition",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicFormOfLevel",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.finiteDimensional",
+      "kind": "theorem",
+      "title": "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.finiteDimensional",
+      "source_file": "blueprint/src/chapter/QuaternionAlgebraProject.tex"
+    },
+    {
+      "label": "AbstractHeckeOperator.HeckeOperator_toFun",
+      "kind": "definition",
+      "title": "AbstractHeckeOperator.HeckeOperator_toFun",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "AbstractHeckeOperator.HeckeOperator",
+      "kind": "lemma",
+      "title": "AbstractHeckeOperator.HeckeOperator",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "AbstractHeckeOperator.comm",
+      "kind": "lemma",
+      "title": "AbstractHeckeOperator.comm",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "QuotientGroup.mk_image_finite_of_compact_of_open",
+      "kind": "lemma",
+      "title": "QuotientGroup.mk_image_finite_of_compact_of_open",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "Homeomorph.restrictedProductProd",
+      "kind": "lemma",
+      "title": "Homeomorph.restrictedProductProd",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "Homeomorph.restrictedProductPi",
+      "kind": "corollary",
+      "title": "Homeomorph.restrictedProductPi",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "Homeomorph.restrictedProductMatrix",
+      "kind": "corollary",
+      "title": "Homeomorph.restrictedProductMatrix",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "Submonoid.units_isOpen",
+      "kind": "lemma",
+      "title": "Submonoid.units_isOpen",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "Submonoid.units_isCompact",
+      "kind": "lemma",
+      "title": "Submonoid.units_isCompact",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "ContinuousMulEquiv.piUnits",
+      "kind": "lemma",
+      "title": "ContinuousMulEquiv.piUnits",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "ContinuousMulEquiv.restrictedProductUnits",
+      "kind": "theorem",
+      "title": "ContinuousMulEquiv.restrictedProductUnits",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "NumberField.isOpenAdicCompletionIntegers",
+      "kind": "lemma",
+      "title": "NumberField.isOpenAdicCompletionIntegers",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "kind": "lemma",
+      "title": "NumberField.instCompactSpaceAdicCompletionIntegers",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "M2.localFullLevel.isOpen",
+      "kind": "lemma",
+      "title": "M2.localFullLevel.isOpen",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "M2.localFullLevel.isCompact",
+      "kind": "lemma",
+      "title": "M2.localFullLevel.isCompact",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "nolean-compactopen-GL2",
+      "kind": "lemma",
+      "title": "nolean-compactopen-GL2",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "nolean-compactopen-U1p",
+      "kind": "lemma",
+      "title": "nolean-compactopen-U1p",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "bijOn_unipotent_mul_diagU1_U1diagU1",
+      "kind": "lemma",
+      "title": "bijOn_unipotent_mul_diagU1_U1diagU1",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "GL2.restrictedProduct",
+      "kind": "theorem",
+      "title": "GL2.restrictedProduct",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "nolean-hecke-algebra-commutative-noetherian",
+      "kind": "theorem",
+      "title": "nolean-hecke-algebra-commutative-noetherian",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "nolean-product-of-U-alpha",
+      "kind": "lemma",
+      "title": "nolean-product-of-U-alpha",
+      "source_file": "blueprint/src/chapter/HeckeOperatorProject.tex"
+    },
+    {
+      "label": "maximal_unramified_extension_of_p-adic_field",
+      "kind": "theorem",
+      "title": "maximal_unramified_extension_of_p-adic_field",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_Weil_group",
+      "kind": "definition",
+      "title": "local_Weil_group",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_class_field_theory",
+      "kind": "theorem",
+      "title": "local_class_field_theory",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_galois_coh_finite",
+      "kind": "theorem",
+      "title": "local_galois_coh_finite",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_galois_coh_dim_two",
+      "kind": "theorem",
+      "title": "\"the dimension is 2\"",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_galois_coh_top_degree",
+      "kind": "theorem",
+      "title": "\"top degree\"",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_galois_coh_poincare",
+      "kind": "theorem",
+      "title": "\"Poincar\\'e duality\"",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "local_galois_coh_euler_poincare",
+      "kind": "theorem",
+      "title": "\"Euler-Poincar\\'e characteristic\"",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "global_class_field_theory",
+      "kind": "theorem",
+      "title": "global_class_field_theory",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "Skinner_Wiles_CFT_trick",
+      "kind": "theorem",
+      "title": "Skinner_Wiles_CFT_trick",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "topology_on_affine_variety_points",
+      "kind": "definition",
+      "title": "topology_on_affine_variety_points",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "topology_on_affine_variety_computation",
+      "kind": "theorem",
+      "title": "topology_on_affine_variety_computation",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "manifold_on_algebraic_variety_points",
+      "kind": "definition",
+      "title": "manifold_on_algebraic_variety_points",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "manifold_on_algebraic_variety_computation",
+      "kind": "theorem",
+      "title": "manifold_on_algebraic_variety_computation",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "lie_group_from_algebraic_group",
+      "kind": "corollary",
+      "title": "lie_group_from_algebraic_group",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "connected_reductive_group",
+      "kind": "definition",
+      "title": "connected_reductive_group",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "slowly_increasing",
+      "kind": "definition",
+      "title": "slowly_increasing",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "slowly_increasing_well_defined",
+      "kind": "theorem",
+      "title": "slowly_increasing_well_defined",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "automorphic_form",
+      "kind": "definition",
+      "title": "automorphic_form",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "cuspidal_automorphic_form",
+      "kind": "definition",
+      "title": "cuspidal_automorphic_form",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "automorphic_form_actions",
+      "kind": "definition",
+      "title": "automorphic_form_actions",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "cuspidal_automorphic_form_decomposition",
+      "kind": "theorem",
+      "title": "cuspidal_automorphic_form_decomposition",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "cuspidal_automorphic_representation",
+      "kind": "definition",
+      "title": "cuspidal_automorphic_representation",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "automorphic_representation",
+      "kind": "definition",
+      "title": "automorphic_representation",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "automorphic_representation_local_decomposition",
+      "kind": "theorem",
+      "title": "automorphic_representation_local_decomposition",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "compatible_family",
+      "kind": "definition",
+      "title": "compatible_family",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "Galois_representation_from_automorphic_representation_on_GL_2_form",
+      "kind": "theorem",
+      "title": "Galois_representation_from_automorphic_representation_on_GL_2_form",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "Shimura_varieties",
+      "kind": "definition",
+      "title": "Shimura_varieties",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    },
+    {
+      "label": "moret-bailly",
+      "kind": "theorem",
+      "title": "moret-bailly",
+      "source_file": "blueprint/src/chapter/chtopbestiary.tex"
+    }
+  ],
+  "included_files": [
+    "blueprint/src/content.tex",
+    "blueprint/src/chapter/ch01introduction.tex",
+    "blueprint/src/chapter/ch02reductions.tex",
+    "blueprint/src/chapter/ch03freyreduction.tex",
+    "blueprint/src/chapter/ch04overview.tex",
+    "blueprint/src/chapter/ch05automorphicformexample.tex",
+    "blueprint/src/chapter/ch06automorphicrepresentations.tex",
+    "blueprint/src/chapter/ch07exampleGLn.tex",
+    "blueprint/src/chapter/FrobeniusProject.tex",
+    "blueprint/src/chapter/AdeleMiniproject.tex",
+    "blueprint/src/chapter/HaarCharacterProject.tex",
+    "blueprint/src/chapter/FujisakiProject.tex",
+    "blueprint/src/chapter/QuaternionAlgebraProject.tex",
+    "blueprint/src/chapter/HeckeOperatorProject.tex",
+    "blueprint/src/chapter/chtopbestiary.tex",
+    "blueprint/src/chapter/biblio.tex"
+  ]
 }

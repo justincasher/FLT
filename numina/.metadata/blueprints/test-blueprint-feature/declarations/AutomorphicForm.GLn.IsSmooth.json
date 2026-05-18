@@ -1,0 +1,10 @@
+{
+  "label": "AutomorphicForm.GLn.IsSmooth",
+  "kind": "definition",
+  "title": "AutomorphicForm.GLn.IsSmooth",
+  "uses": [],
+  "statement": "A function $f:\\GL_n(\\A_{\\Q}^f)\\times\\GL_n(\\R)\\to\\bbC$ is \\emph{smooth}\n  if it has the following three properties.\n\n  \\begin{enumerate}\n    \\item $f$ is continuous.\n    \\item For all $x\\in\\GL_n(\\A_{\\Q}^f)$, the function $y\\mapsto f(x,y)$ is smooth.\n    \\item For all $y\\in\\GL_n(\\R)$, the function $x\\mapsto f(x,y)$ is locally constant.\n  \\end{enumerate}",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch07exampleGLn.tex",
+  "leanDeclaration": "AutomorphicForm.GLn.IsSmooth"
+}

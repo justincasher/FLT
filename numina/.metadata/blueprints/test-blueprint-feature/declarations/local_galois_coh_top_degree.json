@@ -1,0 +1,9 @@
+{
+  "label": "local_galois_coh_top_degree",
+  "kind": "theorem",
+  "title": "\"top degree\"",
+  "uses": [],
+  "statement": "\\notready\n    $H^2(G_K,\\mu_n)$ is ``canonically'' isomorphic to $\\Z/n\\Z$.",
+  "proof": "This is also included in Lemma 2 of section 5.2 of \\cite{serre-galcoh} (Serre just writes that the groups are equal; he clearly is not a Lean user. I can see no explanation in his book of this use of the equality symbol. When the statement of this ``theorem'' is formalised in Lean it may well actually be a definition, giving the map).",
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

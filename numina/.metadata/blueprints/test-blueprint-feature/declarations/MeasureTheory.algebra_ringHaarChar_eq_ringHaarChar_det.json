@@ -1,0 +1,10 @@
+{
+  "label": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det",
+  "kind": "corollary",
+  "title": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det",
+  "uses": [],
+  "statement": "If $u\\in R^\\times$ then $\\delta_R(u)=\\delta_F(\\det(\\ell_u))$.",
+  "proof": "\\leanok\n  Follows immediately from the preceding lemma.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.algebra_ringHaarChar_eq_ringHaarChar_det"
+}

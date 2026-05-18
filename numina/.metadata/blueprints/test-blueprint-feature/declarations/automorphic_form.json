@@ -1,0 +1,14 @@
+{
+  "label": "automorphic_form",
+  "kind": "definition",
+  "title": "automorphic_form",
+  "uses": [
+    "slowly_increasing_well_defined",
+    "connected_reductive_group",
+    "lie_group_from_algebraic_group",
+    "topology_on_affine_variety_computation"
+  ],
+  "statement": "\\notready An \\emph{automorphic form} is a function $\\phi:G(\\A_N)\\to\\bbC$ satisfying the following conditions:\n    \\begin{itemize}\n        \\item $\\phi$ is locally constant on $G(\\A_N^f)$ and $C^\\infty$ on $G(N_\\infty)$. In other words, for every $g_\\infty$, $\\phi(-,g_\\infty)$ is locally constant, and for every $g_f$, $\\phi(g_f,-)$ is smooth.\n        \\item $\\phi$ is left-invariant under $G(N)$;\n        \\item $\\phi$ is right-$U_\\infty$-finite (that is, the space spanned by $x\\mapsto \\phi(xu)$ as $u$ varies over $U_\\infty$ is finite-dimensional);\n        \\item $\\phi$ is right $K_f$-finite, where $K_f$ is one (or equivalently all) compact open subgroups of $G(\\A_N^f)$;\n        \\item $\\phi$ is $\\mathcal{z}$-finite, where $\\mathcal{z}$ is the centre of the universal enveloping algebra of the Lie algebra of $G(N_\\infty)$, acting via differential operators. Equivalently $\\phi$ is annihiliated by a finite index ideal of this centre, so morally $\\phi$ satisfies lots of differential equations of a certain type;\n        \\item For all $g_f$, the function $g_\\infty\\mapsto \\phi(g_f g\\infty)$ is slowly-increasing in the sense above.\n    \\end{itemize}",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/chtopbestiary.tex"
+}

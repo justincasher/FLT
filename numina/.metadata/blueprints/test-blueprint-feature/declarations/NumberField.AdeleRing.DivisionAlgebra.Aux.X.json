@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+  "kind": "definition",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.X",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.E"
+  ],
+  "statement": "Define $X:=E-E:=\\{e-f:e,f\\in E\\}\\subseteq D_{\\A}$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.X"
+}

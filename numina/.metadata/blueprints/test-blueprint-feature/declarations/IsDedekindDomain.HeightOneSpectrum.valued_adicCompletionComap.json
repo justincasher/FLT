@@ -1,0 +1,13 @@
+{
+  "label": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap",
+  "kind": "lemma",
+  "title": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap",
+  "uses": [
+    "IsDedekindDomain.HeightOneSpectrum.valuation_comap",
+    "IsDedekindDomain.HeightOneSpectrum.adicCompletionComapSemialgHom"
+  ],
+  "statement": "If $i_v:K_v\\to L_w$ denotes the map of the previous definition\n  then for $x\\in K_v$ we have\n  $e\\times w(i(k))=v(k)$, where $e$ is the ramification index of $w/v$.",
+  "proof": "\\leanok\n  Follows by continuity from lemma~\\ref{IsDedekindDomain.HeightOneSpectrum.valuation_comap}.",
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex",
+  "leanDeclaration": "IsDedekindDomain.HeightOneSpectrum.valued_adicCompletionComap"
+}

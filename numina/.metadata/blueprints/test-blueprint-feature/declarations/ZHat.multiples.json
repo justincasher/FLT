@@ -1,0 +1,12 @@
+{
+  "label": "ZHat.multiples",
+  "kind": "lemma",
+  "title": "ZHat.multiples",
+  "uses": [
+    "ZHat.commRing"
+  ],
+  "statement": "The multiples of~$N$ in $\\Zhat$ are precisely the compatible collections $(z_i)_i\\in\\Zhat$\n    with $z_N=0$.",
+  "proof": "\\leanok\n    Clearly $z_N=0$ is a necessary condition to be a multiple of~$N$. To see it is sufficient,\n    take a general $(z_i)\\in\\Zhat$ such that $z_N=0$,\n    and now define a new element $(y_j)_j$ of $\\Zhat$\n    by $y_j=z_{Nj}/N$. Just to clarify what this means: $z_{Nj}\\in\\Z/Nj\\Z$ reduces mod~$N$\n    to $z_N=0$ by the compatibility assumption, so it is in the subgroup $N\\Z/Nj\\Z$ of $\\Z/Nj\\Z$,\n    which is isomorphic (via \"division by $N$\") to the group $\\Z/j\\Z$; this is how we construct\n    $y_j$. It is easily checked that the $y_j$ are compatible and that $Ny=z$.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "ZHat.multiples"
+}

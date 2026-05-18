@@ -1,0 +1,10 @@
+{
+  "label": "Hurwitz.norm_eq_mul_conj",
+  "kind": "lemma",
+  "title": "Hurwitz.norm_eq_mul_conj",
+  "uses": [],
+  "statement": "We have $N(x)=x\\overline{x}$.",
+  "proof": "\\leanok\n    Easy calculation.",
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "Hurwitz.norm_eq_mul_conj"
+}

@@ -1,0 +1,12 @@
+{
+  "label": "ZHat.e",
+  "kind": "definition",
+  "title": "ZHat.e",
+  "uses": [
+    "ZHat.commRing"
+  ],
+  "statement": "The infinite sum $0!+1!+2!+3!+4!+5!+\\cdots$ looks\n    like it makes no sense at all; it is the sum of an infinite series of larger and larger\n    positive numbers.\n    However, the sum is \\emph{finite} modulo $N$ for every positive integer $N$, because\n    all the terms from $N!$ onwards are multiples of $N$ and thus are zero in $\\Z/N\\Z$.\n    Thus it makes sense to define $e_N$ to be the value of the finite sum modulo $N$.\n    Explicitly, $e_N=0!+1!+\\cdots+(N-1)!$ modulo $N$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/ch05automorphicformexample.tex",
+  "leanDeclaration": "ZHat.e"
+}

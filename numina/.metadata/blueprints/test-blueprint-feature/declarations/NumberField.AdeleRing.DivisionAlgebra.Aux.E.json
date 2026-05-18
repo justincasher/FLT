@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+  "kind": "definition",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.E",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.existsE"
+  ],
+  "statement": "We let $E$ denote any compact set satisfying the hypothesis of the previous lemma.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.E"
+}

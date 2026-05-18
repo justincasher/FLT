@@ -1,0 +1,10 @@
+{
+  "label": "Continuous.restrictedProduct_congrRight",
+  "kind": "lemma",
+  "title": "Continuous.restrictedProduct_congrRight",
+  "uses": [],
+  "statement": "\\discussion{531}\n  If the $A_i$ and $B_i$ are topological spaces and the $\\phi_i$ are continuous functions,\n  then the restricted product $\\phi = \\prod'_i\\phi_i$ is a continuous function.",
+  "proof": "\\leanok\n  We use the universal property {\\tt RestrictedProduct.continuous\\_dom} of the\n  topology in mathlib to reduce to the claim that for all finite $S$,\n  the induced map $A_S:=\\prod_{i\\in S}A_i\\times\\prod_{i\\notin S}C_i\\to B$ is continuous.\n  Because the inclusion $A_S\\to A_T$ is continuous for $S\\subseteq T$ we are reduced\n  to checking this claim for $S$ sufficiently large that it contains all of the $i$\n  for which $\\phi(C_i)\\not=D_i$. For such $S$, this map $A_S\\to B$ factors as $A_S\\to B_S\\to B$\n  and $B_S\\to B$ is continuous, so it suffices to prove that $A_S\\to B_S$ is continuous, but\n  this is just a product of continuous maps.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "Continuous.restrictedProduct_congrRight"
+}

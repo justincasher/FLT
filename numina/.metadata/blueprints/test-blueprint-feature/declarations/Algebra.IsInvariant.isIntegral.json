@@ -1,0 +1,10 @@
+{
+  "label": "Algebra.IsInvariant.isIntegral",
+  "kind": "theorem",
+  "title": "Algebra.IsInvariant.isIntegral",
+  "uses": [],
+  "statement": "\\mathlibok\n  $B/A$ is integral.",
+  "proof": "\\mathlibok\n  Use $M_b$.",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex",
+  "leanDeclaration": "Algebra.IsInvariant.isIntegral"
+}

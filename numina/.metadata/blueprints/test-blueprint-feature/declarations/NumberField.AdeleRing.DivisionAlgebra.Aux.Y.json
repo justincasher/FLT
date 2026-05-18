@@ -1,0 +1,12 @@
+{
+  "label": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+  "kind": "definition",
+  "title": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y",
+  "uses": [
+    "NumberField.AdeleRing.DivisionAlgebra.Aux.X"
+  ],
+  "statement": "Define $Y:=X.X:=\\{xy:x,y\\in X\\}\\subseteq D_{\\A}$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/FujisakiProject.tex",
+  "leanDeclaration": "NumberField.AdeleRing.DivisionAlgebra.Aux.Y"
+}

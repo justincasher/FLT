@@ -1,0 +1,10 @@
+{
+  "label": "IsAlgebraic.exists_smul_eq_mul",
+  "kind": "lemma",
+  "title": "IsAlgebraic.exists_smul_eq_mul",
+  "uses": [],
+  "statement": "\\mathlibok\n  If $R/S$ is an algebraic extension of integral domains, then any fraction $a/b$ with $a,b\\in R$\n  can be written as $c/d$ with $c\\in R$ and $d\\in S$.",
+  "proof": "If $f\\in S[X]$ satisfies $f(b)=0$, then $f(0)\\in S$ is a multiple of $b$.\n  If $f(0)=bx\\in S$, then $a/b=(ax)/(bx)$ as desired.\n  \\mathlibok",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex",
+  "leanDeclaration": "IsAlgebraic.exists_smul_eq_mul"
+}

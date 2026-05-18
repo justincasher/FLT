@@ -1,0 +1,10 @@
+{
+  "label": "Topology.IsOpenEmbedding.isHaarMeasure_comap",
+  "kind": "lemma",
+  "title": "Topology.IsOpenEmbedding.isHaarMeasure_comap",
+  "uses": [],
+  "statement": "\\discussion{507}\n  Let $A$ and $B$ be locally compact topological groups\n  and let $f:A\\to B$ be both a group homomorphism and open embedding.\n  The pullback along $f$ of a Haar measure on $B$ is a Haar measure on $A$.",
+  "proof": "\\leanok\n  Translation-invariance is easy, compact sets are finite because continuous\n  image of compact is compact, open sets are bounded because image of open is open.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "Topology.IsOpenEmbedding.isHaarMeasure_comap"
+}

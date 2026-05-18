@@ -1,0 +1,12 @@
+{
+  "label": "MeasureTheory.addEquivAddHaarChar_comap",
+  "kind": "corollary",
+  "title": "MeasureTheory.addEquivAddHaarChar_comap",
+  "uses": [
+    "MeasureTheory.addEquivAddHaarChar_smul_map"
+  ],
+  "statement": "If $\\mu$ is any regular Haar measure on $A$ then\n  $d_A(\\phi)\\mu = \\phi^*\\mu.$",
+  "proof": "\\leanok\n  This follows from lemma~\\ref{MeasureTheory.addEquivAddHaarChar_smul_map}\n  applied to the regular Haar measure $\\phi^*\\mu$ and the fact that $\\phi_*\\phi^*\\mu=\\mu$.",
+  "sourceFile": "blueprint/src/chapter/HaarCharacterProject.tex",
+  "leanDeclaration": "MeasureTheory.addEquivAddHaarChar_smul_eq_comap"
+}

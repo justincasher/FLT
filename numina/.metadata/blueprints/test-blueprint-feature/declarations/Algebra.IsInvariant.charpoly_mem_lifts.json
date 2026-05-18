@@ -1,0 +1,12 @@
+{
+  "label": "Algebra.IsInvariant.charpoly_mem_lifts",
+  "kind": "lemma",
+  "title": "Algebra.IsInvariant.charpoly_mem_lifts",
+  "uses": [
+    "MulSemiringAction.charpoly"
+  ],
+  "statement": "\\mathlibok\n  $F_b$ is the lift of some monic polynomial $M_b$ in $A[X]$.",
+  "proof": "\\mathlibok\n  The coefficients of $F_b$ are $G$-invariant, and thus lie in the image of $A$.",
+  "sourceFile": "blueprint/src/chapter/FrobeniusProject.tex",
+  "leanDeclaration": "Algebra.IsInvariant.charpoly_mem_lifts"
+}

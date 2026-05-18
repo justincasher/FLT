@@ -1,0 +1,9 @@
+{
+  "label": "RestrictedProduct.relabelIso",
+  "kind": "definition",
+  "title": "RestrictedProduct.relabelIso",
+  "uses": [],
+  "statement": "Let $V$ and $W$ be index sets, and let $f:W\\to V$ be a map with finite fibres.\n  Let $X_v$ be sets, with subsets $C_v$, let $Y_w$ be sets with subsets $D_w$,\n  and say for all $v\\in V$ we're given a bijection $X_v\\to\\prod_{w|f(w)=v}Y_w$,\n  identifying $C_v$ with $\\prod_{w:f(w)=v}D_w$. Then there's an induced bijection between\n  the restricted products $\\prod'_v(X_v,C_v)$ and $\\prod'_w(Y_w,D_w)$.",
+  "proof": null,
+  "sourceFile": "blueprint/src/chapter/AdeleMiniproject.tex"
+}
