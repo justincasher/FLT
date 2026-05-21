@@ -1,8 +1,10 @@
 {
   "title": "Scheme 3",
   "branch": "numina/scheme-3",
-  "status": "not_started",
   "source_type": "latex",
   "notes": "",
-  "entries": []
+  "entries": [],
+  "included_files": [
+    "numina/blueprints/scheme-3/scheme-3.tex"
+  ]
 }
