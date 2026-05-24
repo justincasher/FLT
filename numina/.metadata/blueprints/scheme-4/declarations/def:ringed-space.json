@@ -1,0 +1,14 @@
+{
+  "label": "def:ringed-space",
+  "kind": "definition",
+  "title": "Ringed Space",
+  "uses": [
+    "def:sheaf"
+  ],
+  "statement": "\\notready\n    A \\textbf{ringed space} is a pair $(X, \\mathcal{O}_X)$ where $X$ is a topological space and $\\mathcal{O}_X$ is a sheaf of rings on $X$, called the \\textbf{structure sheaf}.",
+  "proof": null,
+  "leanDeclaration": "AlgebraicGeometry.RingedSpace",
+  "leanFile": "Mathlib/Geometry/RingedSpace/Basic.lean",
+  "assessment": "ALREADY_IN_MATHLIB",
+  "status": "proved"
+}

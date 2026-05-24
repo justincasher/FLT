@@ -73,10 +73,10 @@ notation "D_𝔸" => (D ⊗[K] AdeleRing (𝓞 K) K)
 -- it is local definitions and lemmas which we don't need. All we need
 -- is the big result at the end.)
 
-namespace NumberField.AdeleRing.DivisionAlgebra.Aux
+namespace NumberField.AdeleRing.DivisionAlgebra.Aux 
 
 /-- Df is notation for D ⊗ 𝔸_K^∞ -/
-abbrev Df := D ⊗[K] (FiniteAdeleRing (𝓞 K) K)
+abbrev Df := D ⊗[K] (FiniteAdeleRing (𝓞 K) K) test
 
 /-- Dfx is notation for (D ⊗ 𝔸_K^∞)ˣ. -/
 abbrev Dfx := (Df K D)ˣ
@@ -89,7 +89,7 @@ abbrev Dinfx := (Dinf K D)ˣ
 
 /-- The inclusion Dˣ → D_𝔸ˣ as a group homomorphism. -/
 abbrev incl : Dˣ →* D_𝔸ˣ :=
-  Units.map Algebra.TensorProduct.includeLeftRingHom.toMonoidHom
+  Units.map Algebra.TensorProduct.includeLeftRingHom. toMonoidHom
 
 /-- The inclusion Dˣ → (D ⊗ 𝔸_K^∞)ˣ as a group homomorphism. -/
 noncomputable abbrev incl₁ : Dˣ →* Dfx K D :=
@@ -121,7 +121,7 @@ instance : MeasurableSpace D_𝔸 := borel _
 
 instance : BorelSpace D_𝔸 := ⟨rfl⟩
 
-instance : Module.Finite ℝ (Dinf K D) :=
+instance : Module.Finite ℝ (Dinf K D) :=  
   Module.Finite.trans (InfiniteAdeleRing K) (Dinf K D)
 
 /-- Dinf K D has the ℝ-module topology. -/

@@ -175,4 +175,5 @@ import FLT.Patching.Utils.StructureFiniteness
 import FLT.Patching.Utils.TopologicallyFG
 import FLT.Patching.VanishingFilter
 import FLT.QuaternionAlgebra.NumberField
+import FLT.Scheme4
 import FLT.TateCurve.TateCurve

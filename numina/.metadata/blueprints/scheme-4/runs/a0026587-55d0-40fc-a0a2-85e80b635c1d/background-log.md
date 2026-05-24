@@ -1,0 +1,2 @@
+- [2026-05-03] Started: quick sanity build of FLT.Scheme4
+- [2026-05-03] Completed: FLT.Scheme4 builds clean (0 errors, 0 warnings)
