@@ -3,6 +3,249 @@
 
 \begin{document}
 
-% Your blueprint will go here.
+\section{Statement of the main result}
+
+Let $G$ be a finite group. The standard result we wish to formalize is
+that the values of any finite-dimensional complex character of $G$ lie
+in the cyclotomic field $\mathbb{Q}(\zeta_n)$, where
+$n = \operatorname{exp}(G)$ is the exponent of $G$. Since
+$\mathbb{Q}(\zeta_n)$ is a number field of characteristic zero, it
+embeds (non-canonically) into $\mathbb{C}$, and we phrase the result
+uniformly in terms of one such embedding.
+
+\begin{theorem}[Character values lie in the cyclotomic field]
+    \label{thm:brauer_character_in_cyclotomic}
+    \uses{lem:trace_in_cyclotomic_range}
+    Let $G$ be a finite group and let
+    $n = \operatorname{exp}(G)$. There exists a ring homomorphism
+    \[
+        \varphi : \operatorname{CyclotomicField}(n,\mathbb{Q})
+            \longrightarrow \mathbb{C}
+    \]
+    such that for every finite-dimensional complex representation
+    $\rho : G \to \operatorname{GL}(V)$ and every $g \in G$,
+    \[
+        \operatorname{tr}\bigl(\rho(g)\bigr) \in \varphi(\operatorname{CyclotomicField}(n,\mathbb{Q})).
+    \]
+\end{theorem}
+\begin{proof}
+    \uses{lem:trace_in_cyclotomic_range, lem:cyclotomic_embeds_in_complex,
+          lem:image_zeta_is_primitive_root, lem:exponent_pos}
+    Let $n := \operatorname{exp}(G)$, which is a positive natural
+    number by Lemma~\ref{lem:exponent_pos}. By
+    Lemma~\ref{lem:cyclotomic_embeds_in_complex} there is a ring
+    homomorphism
+    $\varphi : \operatorname{CyclotomicField}(n,\mathbb{Q}) \to \mathbb{C}$.
+    By Lemma~\ref{lem:image_zeta_is_primitive_root} the image
+    $\zeta := \varphi\bigl(\operatorname{zeta} n\bigr)$ of the
+    distinguished primitive $n$-th root of unity in
+    $\operatorname{CyclotomicField}(n,\mathbb{Q})$ is a primitive
+    $n$-th root of unity in $\mathbb{C}$. Fix such a $\varphi$ and
+    $\zeta$. Now given $\rho$ and $g$, the order of $g$ in $G$
+    divides $n$, so $\rho(g)^n = 1$ in
+    $\operatorname{End}_{\mathbb{C}}(V)$. By
+    Lemma~\ref{lem:trace_in_cyclotomic_range} applied to $\rho(g)$
+    and the primitive $n$-th root $\zeta$, the trace
+    $\operatorname{tr}(\rho(g))$ lies in $\varphi$'s range.
+\end{proof}
+
+\section{Auxiliary results about the cyclotomic field}
+
+\begin{lemma}[Exponent of a finite group is positive]
+    \label{lem:exponent_pos}
+    For any finite group $G$, the exponent $\operatorname{exp}(G)$ is
+    a positive natural number.
+\end{lemma}
+\begin{proof}
+    Immediate from the Mathlib instance
+    \texttt{Monoid.neZero\_exponent\_of\_finite}.
+\end{proof}
+
+\begin{lemma}[Cyclotomic field embeds in $\mathbb{C}$]
+    \label{lem:cyclotomic_embeds_in_complex}
+    \uses{lem:exponent_pos}
+    For any positive natural number $n$, there exists a ring
+    homomorphism
+    \[
+        \varphi : \operatorname{CyclotomicField}(n,\mathbb{Q})
+            \longrightarrow \mathbb{C}.
+    \]
+\end{lemma}
+\begin{proof}
+    The field $\operatorname{CyclotomicField}(n,\mathbb{Q})$ is a
+    number field (Mathlib instance
+    \texttt{CyclotomicField.instNumberField}), hence algebraic over
+    $\mathbb{Q}$ (\texttt{NumberField.isAlgebraic}). Since
+    $\mathbb{C}$ is algebraically closed
+    (\texttt{Complex.isAlgClosed}), Mathlib's
+    \texttt{IsAlgClosed.lift} produces an algebra homomorphism
+    $\operatorname{CyclotomicField}(n,\mathbb{Q}) \to_{\mathbb{Q}}
+    \mathbb{C}$; the underlying ring homomorphism is the desired
+    $\varphi$.
+\end{proof}
+
+\begin{lemma}[Image of $\zeta$ is a primitive $n$-th root of unity]
+    \label{lem:image_zeta_is_primitive_root}
+    \uses{lem:cyclotomic_embeds_in_complex, lem:exponent_pos}
+    Let $n$ be a positive natural number and let
+    $\zeta_0 = \operatorname{zeta}(n,\mathbb{Q},\operatorname{CyclotomicField}(n,\mathbb{Q}))$
+    be the distinguished primitive $n$-th root of unity in
+    $\operatorname{CyclotomicField}(n,\mathbb{Q})$.  For any
+    injective ring homomorphism
+    $\varphi : \operatorname{CyclotomicField}(n,\mathbb{Q}) \to \mathbb{C}$
+    (such as the one of
+    Lemma~\ref{lem:cyclotomic_embeds_in_complex}), the element
+    $\varphi(\zeta_0) \in \mathbb{C}$ is a primitive $n$-th root of
+    unity.
+\end{lemma}
+\begin{proof}
+    By \texttt{IsCyclotomicExtension.zeta\_spec},
+    $\zeta_0$ is a primitive $n$-th root of unity in
+    $\operatorname{CyclotomicField}(n,\mathbb{Q})$. The lemma
+    \texttt{IsPrimitiveRoot.map\_of\_injective} transports a
+    primitive root along any injective ring (or monoid) homomorphism;
+    a ring homomorphism between fields is automatically injective by
+    \texttt{RingHom.injective}.
+\end{proof}
+
+\section{Trace of a finite-order endomorphism}
+
+We isolate the linear-algebra core of the argument: the trace of a
+finite-order $\mathbb{C}$-linear endomorphism on a finite-dimensional
+$\mathbb{C}$-vector space is a sum of $n$-th roots of unity in
+$\mathbb{C}$, and in particular lies in the subring generated by any
+primitive $n$-th root of unity, which contains the image of any ring
+homomorphism from $\operatorname{CyclotomicField}(n,\mathbb{Q})$ into
+$\mathbb{C}$.
+
+\begin{lemma}[$f^n = 1$ implies charpoly splits with roots in
+    $\mu_n$]
+    \label{lem:charpoly_roots_are_roots_of_unity}
+    Let $V$ be a finite-dimensional $\mathbb{C}$-vector space, let
+    $n \geq 1$, and let $f : V \to V$ be a $\mathbb{C}$-linear
+    endomorphism with $f^n = 1$. Then the characteristic polynomial
+    $\operatorname{charpoly}(f) \in \mathbb{C}[X]$ splits, and every
+    multiset-element of $\operatorname{charpoly}(f).\operatorname{roots}$
+    is an $n$-th root of unity in $\mathbb{C}$.
+\end{lemma}
+\begin{proof}
+    \uses{lem:exponent_pos}
+    Since $\mathbb{C}$ is algebraically closed
+    (\texttt{Complex.isAlgClosed}), every polynomial over
+    $\mathbb{C}$ splits (\texttt{IsAlgClosed.splits\_codomain}), so
+    $\operatorname{charpoly}(f)$ splits.
+
+    Let $\mu$ be any root of $\operatorname{charpoly}(f)$.  Then $\mu$
+    is an eigenvalue of $f$
+    (\texttt{Module.End.hasEigenvalue\_iff\_isRoot\_charpoly}). By
+    \texttt{Module.End.HasEigenvalue.pow}, $\mu^n$ is an eigenvalue
+    of $f^n$. But $f^n = 1$, so $\mu^n = 1$, i.e. $\mu$ is an
+    $n$-th root of unity in $\mathbb{C}$ (\texttt{mem\_rootsOfUnity}).
+\end{proof}
+
+\begin{lemma}[Trace of a finite-order endomorphism is a sum of
+    roots of unity]
+    \label{lem:trace_eq_sum_roots_of_unity}
+    \uses{lem:charpoly_roots_are_roots_of_unity}
+    Let $V$ be a finite-dimensional $\mathbb{C}$-vector space, let
+    $n \geq 1$, and let $f : V \to V$ be a $\mathbb{C}$-linear
+    endomorphism with $f^n = 1$. Then there exists a multiset
+    $\mu_1, \ldots, \mu_k$ of $n$-th roots of unity in $\mathbb{C}$
+    such that
+    \[
+        \operatorname{tr}(f) = \sum_{i=1}^{k} \mu_i.
+    \]
+\end{lemma}
+\begin{proof}
+    \uses{lem:charpoly_roots_are_roots_of_unity}
+    By
+    \texttt{Module.End.trace\_eq\_sum\_roots\_charpoly\_of\_splits}
+    and the fact that $\operatorname{charpoly}(f)$ splits
+    (Lemma~\ref{lem:charpoly_roots_are_roots_of_unity}),
+    \[
+        \operatorname{tr}(f) =
+            \operatorname{charpoly}(f).\operatorname{roots}.\operatorname{sum}.
+    \]
+    By Lemma~\ref{lem:charpoly_roots_are_roots_of_unity} every root
+    appearing in this multiset is an $n$-th root of unity, so the
+    multiset itself serves as the required $\mu_1, \ldots, \mu_k$.
+\end{proof}
+
+\begin{lemma}[$n$-th roots of unity lie in the subring generated by
+    a primitive root]
+    \label{lem:nth_root_in_powers}
+    \uses{lem:image_zeta_is_primitive_root}
+    Let $\zeta \in \mathbb{C}$ be a primitive $n$-th root of unity
+    and let $\mu \in \mathbb{C}$ satisfy $\mu^n = 1$. Then there
+    exists $k \in \mathbb{N}$ with $\mu = \zeta^k$.
+\end{lemma}
+\begin{proof}
+    The element $\mu$ lies in $\operatorname{rootsOfUnity}(n)$
+    by \texttt{mem\_rootsOfUnity}, and Mathlib's
+    \texttt{IsPrimitiveRoot.eq\_pow\_of\_mem\_rootsOfUnity} (or the
+    equivalent \texttt{IsPrimitiveRoot.eq\_pow\_of\_pow\_eq\_one})
+    yields the required exponent $k$.
+\end{proof}
+
+\begin{lemma}[Trace lies in the range of $\varphi$]
+    \label{lem:trace_in_cyclotomic_range}
+    \uses{lem:trace_eq_sum_roots_of_unity, lem:image_zeta_is_primitive_root,
+          lem:nth_root_in_powers, lem:cyclotomic_embeds_in_complex,
+          lem:exponent_pos}
+    Let $n \geq 1$, let
+    $\varphi : \operatorname{CyclotomicField}(n,\mathbb{Q}) \to
+    \mathbb{C}$ be a ring homomorphism, and let
+    $\zeta := \varphi(\operatorname{zeta}\,n)$, which is a primitive
+    $n$-th root of unity in $\mathbb{C}$
+    (Lemma~\ref{lem:image_zeta_is_primitive_root}).  For any
+    finite-dimensional $\mathbb{C}$-vector space $V$ and any
+    $\mathbb{C}$-linear endomorphism $f : V \to V$ with $f^n = 1$,
+    \[
+        \operatorname{tr}(f) \in \varphi(\operatorname{CyclotomicField}(n,\mathbb{Q})).
+    \]
+\end{lemma}
+\begin{proof}
+    \uses{lem:trace_eq_sum_roots_of_unity, lem:nth_root_in_powers,
+          lem:image_zeta_is_primitive_root}
+    By Lemma~\ref{lem:trace_eq_sum_roots_of_unity},
+    $\operatorname{tr}(f) = \sum_{i} \mu_i$ for some $n$-th roots of
+    unity $\mu_i \in \mathbb{C}$. By
+    Lemma~\ref{lem:nth_root_in_powers} each $\mu_i$ equals
+    $\zeta^{k_i}$ for some $k_i \in \mathbb{N}$. Since
+    $\zeta = \varphi(\operatorname{zeta}\,n)$ lies in
+    $\varphi$'s range and $\varphi$'s range is a subring
+    (\texttt{RingHom.range}, closed under sums and powers), so does
+    each $\mu_i$, and hence so does $\operatorname{tr}(f)$.
+\end{proof}
+
+\section{Bridging back to representations}
+
+We finally specialize the previous linear-algebra statement to a
+representation $\rho$ of a finite group $G$.
+
+\begin{lemma}[Finite group element raised to the exponent is the
+    identity in any representation]
+    \label{lem:rho_g_pow_exp}
+    \uses{lem:exponent_pos}
+    Let $G$ be a finite group, let $V$ be a complex vector space,
+    and let $\rho : \operatorname{Representation}\,\mathbb{C}\,G\,V$.
+    Let $n := \operatorname{exp}(G)$. Then for every $g \in G$,
+    $(\rho\,g)^n = 1$ in $\operatorname{End}_{\mathbb{C}}(V)$.
+\end{lemma}
+\begin{proof}
+    By \texttt{Monoid.pow\_exponent\_eq\_one}, $g^n = 1$ in $G$.
+    Since $\rho$ is a monoid homomorphism $G \to
+    \operatorname{End}_{\mathbb{C}}(V)$ (\texttt{Representation} is
+    defined as a \texttt{MonoidHom} to the endomorphism monoid),
+    \texttt{MonoidHom.map\_pow} and \texttt{MonoidHom.map\_one} give
+    $(\rho\,g)^n = \rho(g^n) = \rho 1 = 1$.
+\end{proof}
+
+The proof of Theorem~\ref{thm:brauer_character_in_cyclotomic} above
+then assembles
+Lemma~\ref{lem:rho_g_pow_exp} and
+Lemma~\ref{lem:trace_in_cyclotomic_range} (with the
+$\varphi$ produced by
+Lemma~\ref{lem:cyclotomic_embeds_in_complex}).
 
 \end{document}
