@@ -1,8 +1,142 @@
-% Blueprint: Character values of finite groups lie in cyclotomic fields II
+% Blueprint: Character values of finite groups lie in cyclotomic fields, II
 % Created by Numina
 
 \begin{document}
 
-% Your blueprint will go here.
+\section{Overview}
+
+Let $G$ be a finite group of exponent $n$, and let $\rho : G \to \mathrm{GL}(V)$ be a finite-dimensional complex representation of $G$.  Brauer's classical theorem (in the strong form stated by Mathlib's submitter Kim Morrison) asserts that the character values $\chi_\rho(g) = \mathrm{tr}(\rho(g))$ lie in the image of a (single, $G$-uniform) ring embedding
+\[
+  \varphi : \mathbb{Q}(\zeta_n) \hookrightarrow \mathbb{C}.
+\]
+The point of installment II is that we do \emph{not} need the full Brauer induction theorem: the conclusion about character values already follows from the much more elementary fact that the eigenvalues of $\rho(g)$ are $n$-th roots of unity, since $\rho(g)^n = \rho(g^n) = \rho(1) = \mathrm{id}_V$.  This is the route we follow here.
+
+\section{The embedding $\varphi$}
+
+\begin{lemma}[Cyclotomic field is algebraic over $\mathbb{Q}$]
+  \label{lem:cyclotomic-algebraic}
+  For every $n : \mathbb{N}$, the Mathlib field \verb|CyclotomicField n ℚ| is algebraic over $\mathbb{Q}$.
+\end{lemma}
+\begin{proof}
+  When $n = 0$ this is the splitting field of \verb|cyclotomic 0 ℚ = X - 1|, which is just $\mathbb{Q}$ itself.  For $n \geq 1$, Mathlib's \verb|CyclotomicField.instNumberField| (specialised to $K = \mathbb{Q}$, which is itself a number field via \verb|Rat.numberField|) shows that \verb|CyclotomicField n ℚ| is a number field, and \verb|NumberField.isAlgebraic| concludes.  The remaining case $n = 0$ is handled by noting that for $n = 0$ the cyclotomic polynomial is $X - 1$, so the splitting field equals $\mathbb{Q}$, which is trivially algebraic over itself.
+\end{proof}
+
+\begin{lemma}[Existence of the cyclotomic embedding]
+  \label{lem:cyclotomic-embed}
+  \uses{lem:cyclotomic-algebraic}
+  For every $n : \mathbb{N}$ there exists a $\mathbb{Q}$-algebra homomorphism
+  \[
+    \varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \longrightarrow \mathbb{C}.
+  \]
+  In particular, there is a ring homomorphism \verb|CyclotomicField n ℚ →+* ℂ|.
+\end{lemma}
+\begin{proof}
+  \uses{lem:cyclotomic-algebraic}
+  Apply Mathlib's \verb|IsAlgClosed.lift| with source $S = \mathrm{CyclotomicField}\,n\,\mathbb{Q}$, base ring $R = \mathbb{Q}$, and target $M = \mathbb{C}$, using the instance \verb|Complex.isAlgClosed| and Lemma~\ref{lem:cyclotomic-algebraic}.  Coerce the resulting $\mathbb{Q}$-algebra homomorphism to a ring homomorphism via \verb|AlgHom.toRingHom|.
+\end{proof}
+
+\begin{lemma}[Range of $\varphi$ contains $n$-th roots of unity]
+  \label{lem:phi-range-roots-of-unity}
+  \uses{lem:cyclotomic-embed}
+  Let $n : \mathbb{N}$ with $n \neq 0$, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be any ring homomorphism (e.g.\ one obtained from Lemma~\ref{lem:cyclotomic-embed}).  Then for every $\xi \in \mathbb{C}$ with $\xi^n = 1$ we have $\xi \in \varphi.\mathrm{range}$.
+\end{lemma}
+\begin{proof}
+  \uses{lem:cyclotomic-embed}
+  Let $\zeta \in \mathrm{CyclotomicField}\,n\,\mathbb{Q}$ be Mathlib's \verb|IsCyclotomicExtension.zeta n ℚ _|, which by construction is a primitive $n$-th root of unity.  Apply \verb|IsPrimitiveRoot.map_of_injective| to $\zeta$ with the injective ring homomorphism $\varphi$ (injectivity of a ring homomorphism out of a field is automatic via \verb|RingHom.injective|): we obtain that $\varphi(\zeta)$ is a primitive $n$-th root of unity in $\mathbb{C}$.  Now given $\xi \in \mathbb{C}$ with $\xi^n = 1$, apply \verb|IsPrimitiveRoot.eq_pow_of_pow_eq_one| (with the primitive $n$-th root $\varphi(\zeta)$) to obtain an index $i < n$ with $\varphi(\zeta)^i = \xi$.  Then $\xi = \varphi(\zeta^i) \in \varphi.\mathrm{range}$ since ring homomorphisms preserve powers (\verb|map_pow|).
+\end{proof}
+
+\section{Eigenvalues of finite-order endomorphisms are roots of unity}
+
+\begin{lemma}[Representation kills the exponent]
+  \label{lem:rep-pow-exponent}
+  Let $G$ be a finite group, let $V$ be a $\mathbb{C}$-module, let $\rho : G \to V \to_{\ell} V$ be a representation (a monoid homomorphism), and let $n = $ \verb|Monoid.exponent G|.  Then for every $g \in G$,
+  \[
+    (\rho g)^n = \mathrm{id}_V.
+  \]
+\end{lemma}
+\begin{proof}
+  Since $\rho$ is a monoid homomorphism we have $(\rho g)^n = \rho(g^n)$ by \verb|map_pow|, and $g^n = 1$ by \verb|Monoid.pow_exponent_eq_one|.  Finally $\rho(1) = \mathrm{id}_V$ by \verb|map_one|.
+\end{proof}
+
+\begin{lemma}[Eigenvalues of a finite-order endomorphism are $n$-th roots of unity]
+  \label{lem:eig-root-of-unity}
+  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$ be an endomorphism with $f^n = \mathrm{id}_V$ for some $n \geq 1$.  Then for every eigenvalue $\lambda$ of $f$, $\lambda^n = 1$.
+\end{lemma}
+\begin{proof}
+  Let $v \neq 0$ be an eigenvector for $\lambda$.  By \verb|Module.End.HasEigenvalue.pow|, $f^n$ has eigenvalue $\lambda^n$ on the same eigenvector $v$.  But $f^n = \mathrm{id}_V$ has only the eigenvalue $1$ on any nonzero vector.  More concretely: unfolding the definition of an eigenvector gives $f^n v = \lambda^n \cdot v$; on the other hand $f^n v = v$, so $\lambda^n v = v$, i.e.\ $(\lambda^n - 1) \cdot v = 0$, and since $v \neq 0$ over a field this forces $\lambda^n = 1$.
+\end{proof}
+
+\begin{lemma}[Roots of the characteristic polynomial are eigenvalues, over $\mathbb{C}$]
+  \label{lem:charpoly-roots-are-eigenvalues}
+  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$.  Then for every $\lambda \in \mathbb{C}$ in $f.\mathrm{charpoly}.\mathrm{roots}$, $\lambda$ is an eigenvalue of $f$.
+\end{lemma}
+\begin{proof}
+  Membership in \verb|Polynomial.roots| unfolds to \verb|Polynomial.IsRoot| (the polynomial is nonzero because the characteristic polynomial is monic of positive degree when $V$ is nontrivial, by \verb|LinearMap.charpoly_monic|; for the trivial case the multiset of roots is empty, so there is nothing to prove).  Now use \verb|Module.End.hasEigenvalue_iff_isRoot_charpoly| (the equivalence between eigenvalues and roots of the characteristic polynomial, valid over an integral domain such as $\mathbb{C}$).
+\end{proof}
+
+\begin{lemma}[Charpoly roots of a finite-order endomorphism are $n$-th roots of unity]
+  \label{lem:charpoly-roots-root-of-unity}
+  \uses{lem:eig-root-of-unity, lem:charpoly-roots-are-eigenvalues}
+  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$ with $f^n = \mathrm{id}_V$ for some $n \geq 1$.  Then every $\lambda \in f.\mathrm{charpoly}.\mathrm{roots}$ satisfies $\lambda^n = 1$.
+\end{lemma}
+\begin{proof}
+  \uses{lem:eig-root-of-unity, lem:charpoly-roots-are-eigenvalues}
+  Combine Lemma~\ref{lem:charpoly-roots-are-eigenvalues} (the root is an eigenvalue) with Lemma~\ref{lem:eig-root-of-unity} ($n$-th power of an eigenvalue is $1$).
+\end{proof}
+
+\section{Trace as the sum of eigenvalues lies in $\varphi.\mathrm{range}$}
+
+\begin{lemma}[Trace as sum of charpoly roots, over $\mathbb{C}$]
+  \label{lem:trace-sum-roots}
+  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$.  Then
+  \[
+    \mathrm{tr}_{\mathbb{C}}\,V\,f \; = \; f.\mathrm{charpoly}.\mathrm{roots}.\mathrm{sum}.
+  \]
+\end{lemma}
+\begin{proof}
+  This is \verb|Module.End.trace_eq_sum_roots_charpoly_of_splits|, applied with the hypothesis that the characteristic polynomial splits over $\mathbb{C}$.  Splitting is automatic because $\mathbb{C}$ is algebraically closed (\verb|Complex.isAlgClosed| together with \verb|IsAlgClosed.splits_codomain|).
+\end{proof}
+
+\begin{lemma}[Multiset sum lies in a subring containing all its entries]
+  \label{lem:multiset-sum-mem}
+  Let $S$ be a subring of a ring $R$ and let $m$ be a multiset of elements of $R$ with every entry in $S$.  Then $m.\mathrm{sum} \in S$.
+\end{lemma}
+\begin{proof}
+  Direct from Mathlib's \verb|Subring.multiset_sum_mem|.
+\end{proof}
+
+\begin{lemma}[Trace lies in $\varphi.\mathrm{range}$]
+  \label{lem:trace-mem-range}
+  \uses{lem:phi-range-roots-of-unity, lem:charpoly-roots-root-of-unity, lem:trace-sum-roots, lem:multiset-sum-mem}
+  Let $G$ be a finite group, set $n = $ \verb|Monoid.exponent G|, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be a ring homomorphism.  Suppose $n \neq 0$ (this holds whenever $G$ is finite).  Let $V$ be a finite-dimensional complex vector space and $\rho : G \to V \to_{\ell} V$ a representation.  Then for every $g \in G$,
+  \[
+    \mathrm{tr}_{\mathbb{C}}\,V\,(\rho g) \in \varphi.\mathrm{range}.
+  \]
+\end{lemma}
+\begin{proof}
+  \uses{lem:phi-range-roots-of-unity, lem:charpoly-roots-root-of-unity, lem:trace-sum-roots, lem:multiset-sum-mem, lem:rep-pow-exponent}
+  By Lemma~\ref{lem:rep-pow-exponent}, $(\rho g)^n = \mathrm{id}_V$.  By Lemma~\ref{lem:trace-sum-roots},
+  $\mathrm{tr}(\rho g) = (\rho g).\mathrm{charpoly}.\mathrm{roots}.\mathrm{sum}$.
+  By Lemma~\ref{lem:charpoly-roots-root-of-unity}, every $\lambda$ in this multiset of roots satisfies $\lambda^n = 1$.  By Lemma~\ref{lem:phi-range-roots-of-unity}, every such $\lambda$ lies in $\varphi.\mathrm{range}$ (viewed as the subring underlying the \verb|RingHom.range|).  Apply Lemma~\ref{lem:multiset-sum-mem} to conclude that the multiset sum is in $\varphi.\mathrm{range}$.
+\end{proof}
+
+\section{Main theorem}
+
+\begin{theorem}[Character values of finite groups lie in cyclotomic fields, II]
+  \label{thm:brauer-character-in-cyclotomic}
+  \uses{lem:cyclotomic-embed, lem:trace-mem-range}
+  Let $G$ be a finite group.  Then there exists a ring homomorphism
+  \[
+    \varphi : \mathrm{CyclotomicField}\,(\mathrm{Monoid.exponent}\,G)\,\mathbb{Q} \;\longrightarrow\; \mathbb{C}
+  \]
+  such that for every finite-dimensional complex representation $\rho$ of $G$ on a vector space $V$ and every $g \in G$,
+  \[
+    \mathrm{tr}_{\mathbb{C}}\,V\,(\rho g) \in \varphi.\mathrm{range}.
+  \]
+\end{theorem}
+\begin{proof}
+  \uses{lem:cyclotomic-embed, lem:trace-mem-range}
+  Set $n = $ \verb|Monoid.exponent G|; since $G$ is finite, $n \neq 0$ by \verb|Monoid.exponent_ne_zero_of_finite|.  Obtain $\varphi$ from Lemma~\ref{lem:cyclotomic-embed} (instantiated at this $n$).  For any $V$, $\rho$, $g$, Lemma~\ref{lem:trace-mem-range} provides the conclusion.
+\end{proof}
 
 \end{document}
