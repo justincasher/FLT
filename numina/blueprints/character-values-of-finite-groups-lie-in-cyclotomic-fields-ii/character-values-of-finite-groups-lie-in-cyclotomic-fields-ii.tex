@@ -18,7 +18,11 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
   For every $n : \mathbb{N}$, the Mathlib field \verb|CyclotomicField n ℚ| is algebraic over $\mathbb{Q}$.
 \end{lemma}
 \begin{proof}
-  When $n = 0$ this is the splitting field of \verb|cyclotomic 0 ℚ = X - 1|, which is just $\mathbb{Q}$ itself.  For $n \geq 1$, Mathlib's \verb|CyclotomicField.instNumberField| (specialised to $K = \mathbb{Q}$, which is itself a number field via \verb|Rat.numberField|) shows that \verb|CyclotomicField n ℚ| is a number field, and \verb|NumberField.isAlgebraic| concludes.  The remaining case $n = 0$ is handled by noting that for $n = 0$ the cyclotomic polynomial is $X - 1$, so the splitting field equals $\mathbb{Q}$, which is trivially algebraic over itself.
+  Split on whether $n = 0$.
+
+  \emph{Case $n = 0$.}  By \verb|Polynomial.cyclotomic_zero|, the zeroth cyclotomic polynomial is the constant $1$ (not $X - 1$).  Consequently \verb|CyclotomicField 0 ℚ|, being the splitting field of $1$ over $\mathbb{Q}$, is canonically $\mathbb{Q}$-isomorphic to $\mathbb{Q}$ itself.  Thus it is trivially algebraic over $\mathbb{Q}$ (every element of $\mathbb{Q}$ satisfies $X - q = 0$).
+
+  \emph{Case $n \geq 1$.}  Here we have the instance \verb|NeZero n| (from $n \neq 0$, recorded via \verb|haveI : NeZero n := ⟨hn⟩|), which is required by \verb|IsCyclotomicExtension.numberField|.  Specialising that instance to $\{n\} \subseteq \mathbb{N}_{>0}$ with base $K = \mathbb{Q}$ (a number field via \verb|Rat.numberField|) shows that \verb|CyclotomicField n ℚ| is a number field; equivalently, \verb|CyclotomicField.instNumberField| supplies the same conclusion.  Now \verb|NumberField.isAlgebraic| gives \verb|Algebra.IsAlgebraic ℚ (CyclotomicField n ℚ)|.
 \end{proof}
 
 \begin{lemma}[Existence of the cyclotomic embedding]
@@ -32,7 +36,11 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 \end{lemma}
 \begin{proof}
   \uses{lem:cyclotomic-algebraic}
-  Apply Mathlib's \verb|IsAlgClosed.lift| with source $S = \mathrm{CyclotomicField}\,n\,\mathbb{Q}$, base ring $R = \mathbb{Q}$, and target $M = \mathbb{C}$, using the instance \verb|Complex.isAlgClosed| and Lemma~\ref{lem:cyclotomic-algebraic}.  Coerce the resulting $\mathbb{Q}$-algebra homomorphism to a ring homomorphism via \verb|AlgHom.toRingHom|.
+  We split on $n$.
+
+  If $n = 0$, the source $\mathrm{CyclotomicField}\,0\,\mathbb{Q}$ is canonically $\mathbb{Q}$-isomorphic to $\mathbb{Q}$ itself (cf.~the $n = 0$ branch of Lemma~\ref{lem:cyclotomic-algebraic}, which rests on \verb|Polynomial.cyclotomic_zero|).  The required ring/algebra homomorphism is therefore just the algebra map $\mathbb{Q} \to \mathbb{C}$, i.e.\ \verb|algebraMap ℚ ℂ| precomposed with the canonical isomorphism.
+
+  If $n \geq 1$, we introduce the typeclass instance \verb|haveI : NeZero n := ⟨hn⟩| (which is needed for the cyclotomic-extension typeclasses to fire).  Lemma~\ref{lem:cyclotomic-algebraic} then provides \verb|Algebra.IsAlgebraic ℚ (CyclotomicField n ℚ)|, which is the hypothesis required by \verb|IsAlgClosed.lift|.  We apply \verb|IsAlgClosed.lift| with source $S = \mathrm{CyclotomicField}\,n\,\mathbb{Q}$, base ring $R = \mathbb{Q}$, and target $M = \mathbb{C}$, using \verb|Complex.isAlgClosed| to discharge the algebraic-closure instance on $\mathbb{C}$.  Coerce the resulting $\mathbb{Q}$-algebra homomorphism to a ring homomorphism via \verb|AlgHom.toRingHom|.
 \end{proof}
 
 \begin{lemma}[Range of $\varphi$ contains $n$-th roots of unity]
@@ -42,7 +50,11 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 \end{lemma}
 \begin{proof}
   \uses{lem:cyclotomic-embed}
-  Let $\zeta \in \mathrm{CyclotomicField}\,n\,\mathbb{Q}$ be Mathlib's \verb|IsCyclotomicExtension.zeta n ℚ _|, which by construction is a primitive $n$-th root of unity.  Apply \verb|IsPrimitiveRoot.map_of_injective| to $\zeta$ with the injective ring homomorphism $\varphi$ (injectivity of a ring homomorphism out of a field is automatic via \verb|RingHom.injective|): we obtain that $\varphi(\zeta)$ is a primitive $n$-th root of unity in $\mathbb{C}$.  Now given $\xi \in \mathbb{C}$ with $\xi^n = 1$, apply \verb|IsPrimitiveRoot.eq_pow_of_pow_eq_one| (with the primitive $n$-th root $\varphi(\zeta)$) to obtain an index $i < n$ with $\varphi(\zeta)^i = \xi$.  Then $\xi = \varphi(\zeta^i) \in \varphi.\mathrm{range}$ since ring homomorphisms preserve powers (\verb|map_pow|).
+  From the hypothesis $n \neq 0$ we introduce the typeclass instance \verb|haveI : NeZero n := ⟨hn⟩|; this is what allows the cyclotomic-extension API on \verb|CyclotomicField n ℚ| to fire.
+
+  Let $\zeta := $ \verb|IsCyclotomicExtension.zeta n ℚ (CyclotomicField n ℚ)|.  The fact that $\zeta$ is a primitive $n$-th root of unity is exactly \verb|IsCyclotomicExtension.zeta_spec|, which states \verb|IsPrimitiveRoot (zeta n ℚ _) n| (this replaces the previous hand-wave ``by construction'').
+
+  Apply \verb|IsPrimitiveRoot.map_of_injective| to $\zeta$ with the injective ring homomorphism $\varphi$ (injectivity of a ring homomorphism out of a field is automatic via \verb|RingHom.injective|): we obtain that $\varphi(\zeta)$ is a primitive $n$-th root of unity in $\mathbb{C}$.  Now given $\xi \in \mathbb{C}$ with $\xi^n = 1$, apply \verb|IsPrimitiveRoot.eq_pow_of_pow_eq_one| (with the primitive $n$-th root $\varphi(\zeta)$) to obtain an index $i < n$ with $\varphi(\zeta)^i = \xi$.  Then $\xi = \varphi(\zeta^i) \in \varphi.\mathrm{range}$ since ring homomorphisms preserve powers (\verb|map_pow|).
 \end{proof}
 
 \section{Eigenvalues of finite-order endomorphisms are roots of unity}
@@ -60,7 +72,7 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Eigenvalues of a finite-order endomorphism are $n$-th roots of unity]
   \label{lem:eig-root-of-unity}
-  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$ be an endomorphism with $f^n = \mathrm{id}_V$ for some $n \geq 1$.  Then for every eigenvalue $\lambda$ of $f$, $\lambda^n = 1$.
+  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$, let $n : \mathbb{N}$ with $n \neq 0$ (equivalently $0 < n$), and let $f : V \to_{\ell} V$ be an endomorphism with $f^n = \mathrm{id}_V$.  Then for every eigenvalue $\lambda$ of $f$, $\lambda^n = 1$.
 \end{lemma}
 \begin{proof}
   Let $v \neq 0$ be an eigenvector for $\lambda$.  By \verb|Module.End.HasEigenvalue.pow|, $f^n$ has eigenvalue $\lambda^n$ on the same eigenvector $v$.  But $f^n = \mathrm{id}_V$ has only the eigenvalue $1$ on any nonzero vector.  More concretely: unfolding the definition of an eigenvector gives $f^n v = \lambda^n \cdot v$; on the other hand $f^n v = v$, so $\lambda^n v = v$, i.e.\ $(\lambda^n - 1) \cdot v = 0$, and since $v \neq 0$ over a field this forces $\lambda^n = 1$.
@@ -71,7 +83,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
   Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$.  Then for every $\lambda \in \mathbb{C}$ in $f.\mathrm{charpoly}.\mathrm{roots}$, $\lambda$ is an eigenvalue of $f$.
 \end{lemma}
 \begin{proof}
-  Membership in \verb|Polynomial.roots| unfolds to \verb|Polynomial.IsRoot| (the polynomial is nonzero because the characteristic polynomial is monic of positive degree when $V$ is nontrivial, by \verb|LinearMap.charpoly_monic|; for the trivial case the multiset of roots is empty, so there is nothing to prove).  Now use \verb|Module.End.hasEigenvalue_iff_isRoot_charpoly| (the equivalence between eigenvalues and roots of the characteristic polynomial, valid over an integral domain such as $\mathbb{C}$).
+  Membership in \verb|Polynomial.roots| unfolds via \verb|Polynomial.mem_roots| to ``polynomial is nonzero and $\lambda$ is a root''.  Nonzeroness of $f.\mathrm{charpoly}$ is immediate: by \verb|LinearMap.charpoly_monic| the characteristic polynomial is monic, and a monic polynomial is nonzero (\verb|Polynomial.Monic.ne_zero|, i.e.\ the \verb|.ne_zero| projection of \verb|LinearMap.charpoly_monic|).  This is unconditional --- we do not need $V$ to be nontrivial.
+
+  Now we apply \verb|Module.End.hasEigenvalue_iff_isRoot_charpoly| (the equivalence between eigenvalues and roots of the characteristic polynomial, valid over an integral domain such as $\mathbb{C}$).  This lemma requires \verb|Module.Free| and \verb|Module.Finite| instances on $V$ over $\mathbb{C}$; both are derivable from \verb|FiniteDimensional ℂ V|: a finite-dimensional vector space over a field is automatically free (\verb|Module.Free| via \verb|Module.Free.of_basis|) and finite (\verb|Module.Finite.of_finite|), with the typeclass instances supplied by Mathlib.
 \end{proof}
 
 \begin{lemma}[Charpoly roots of a finite-order endomorphism are $n$-th roots of unity]
@@ -88,13 +102,13 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Trace as sum of charpoly roots, over $\mathbb{C}$]
   \label{lem:trace-sum-roots}
-  Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$.  Then
+  Let $V$ be an additive commutative group with a $\mathbb{C}$-module structure satisfying \verb|[FiniteDimensional ℂ V]|, and let $f : V \to_{\ell} V$.  Then
   \[
     \mathrm{tr}_{\mathbb{C}}\,V\,f \; = \; f.\mathrm{charpoly}.\mathrm{roots}.\mathrm{sum}.
   \]
 \end{lemma}
 \begin{proof}
-  This is \verb|Module.End.trace_eq_sum_roots_charpoly_of_splits|, applied with the hypothesis that the characteristic polynomial splits over $\mathbb{C}$.  Splitting is automatic because $\mathbb{C}$ is algebraically closed (\verb|Complex.isAlgClosed| together with \verb|IsAlgClosed.splits_codomain|).
+  This is \verb|Module.End.trace_eq_sum_roots_charpoly_of_splits|, applied with the hypothesis that the characteristic polynomial splits over $\mathbb{C}$.  Splitting is automatic because $\mathbb{C}$ is algebraically closed (\verb|Complex.isAlgClosed| together with \verb|IsAlgClosed.splits_codomain|).  The lemma's signature uses \verb|Module.Free| and \verb|Module.Finite| typeclasses; both follow from the explicit \verb|[FiniteDimensional ℂ V]| hypothesis (a finite-dimensional vector space over a field has a basis, hence is free, and is automatically finite as a module).
 \end{proof}
 
 \begin{lemma}[Multiset sum lies in a subring containing all its entries]
@@ -107,8 +121,8 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Trace lies in $\varphi.\mathrm{range}$]
   \label{lem:trace-mem-range}
-  \uses{lem:phi-range-roots-of-unity, lem:charpoly-roots-root-of-unity, lem:trace-sum-roots, lem:multiset-sum-mem}
-  Let $G$ be a finite group, set $n = $ \verb|Monoid.exponent G|, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be a ring homomorphism.  Suppose $n \neq 0$ (this holds whenever $G$ is finite).  Let $V$ be a finite-dimensional complex vector space and $\rho : G \to V \to_{\ell} V$ a representation.  Then for every $g \in G$,
+  \uses{lem:phi-range-roots-of-unity, lem:charpoly-roots-root-of-unity, lem:trace-sum-roots, lem:multiset-sum-mem, lem:rep-pow-exponent}
+  Let $G$ be a finite group, set $n = $ \verb|Monoid.exponent G|, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be a ring homomorphism.  Suppose $n \neq 0$ (this holds whenever $G$ is finite).  Let $V$ be a finite-dimensional complex vector space (\verb|[AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]|) and $\rho : G \to V \to_{\ell} V$ a representation.  Then for every $g \in G$,
   \[
     \mathrm{tr}_{\mathbb{C}}\,V\,(\rho g) \in \varphi.\mathrm{range}.
   \]
@@ -129,7 +143,11 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
   \[
     \varphi : \mathrm{CyclotomicField}\,(\mathrm{Monoid.exponent}\,G)\,\mathbb{Q} \;\longrightarrow\; \mathbb{C}
   \]
-  such that for every finite-dimensional complex representation $\rho$ of $G$ on a vector space $V$ and every $g \in G$,
+  with the following property: for every complex vector space $V$, i.e.\ \verb|[AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]|, and every representation
+  \[
+    \rho : G \to^\ast (V \to_{\ell[\mathbb{C}]} V)
+  \]
+  (that is, \verb|ρ : G →* (V →ₗ[ℂ] V)|), and every $g \in G$,
   \[
     \mathrm{tr}_{\mathbb{C}}\,V\,(\rho g) \in \varphi.\mathrm{range}.
   \]
