@@ -15,6 +15,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Cyclotomic field is algebraic over $\mathbb{Q}$]
   \label{lem:cyclotomic-algebraic}
+  \lean{FLT.CharacterValuesCyclotomic.cyclotomicField_isAlgebraic}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   For every $n : \mathbb{N}$, the Mathlib field \verb|CyclotomicField n ℚ| is algebraic over $\mathbb{Q}$.
 \end{lemma}
 \begin{proof}
@@ -27,7 +30,10 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Existence of the cyclotomic embedding]
   \label{lem:cyclotomic-embed}
+  \lean{FLT.CharacterValuesCyclotomic.cyclotomicEmbedding}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
   \uses{lem:cyclotomic-algebraic}
+  \leanok
   For every $n : \mathbb{N}$ there exists a $\mathbb{Q}$-algebra homomorphism
   \[
     \varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \longrightarrow \mathbb{C}.
@@ -45,7 +51,10 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Range of $\varphi$ contains $n$-th roots of unity]
   \label{lem:phi-range-roots-of-unity}
+  \lean{FLT.CharacterValuesCyclotomic.mem_range_of_pow_eq_one}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
   \uses{lem:cyclotomic-embed}
+  \leanok
   Let $n : \mathbb{N}$ with $n \neq 0$, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be any ring homomorphism (e.g.\ one obtained from Lemma~\ref{lem:cyclotomic-embed}).  Then for every $\xi \in \mathbb{C}$ with $\xi^n = 1$ we have $\xi \in \varphi.\mathrm{range}$.
 \end{lemma}
 \begin{proof}
@@ -61,6 +70,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Representation kills the exponent]
   \label{lem:rep-pow-exponent}
+  \lean{FLT.CharacterValuesCyclotomic.representation_pow_exponent_eq_one}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   Let $G$ be a finite group, let $V$ be a $\mathbb{C}$-module, let $\rho : G \to V \to_{\ell} V$ be a representation (a monoid homomorphism), and let $n = $ \verb|Monoid.exponent G|.  Then for every $g \in G$,
   \[
     (\rho g)^n = \mathrm{id}_V.
@@ -72,6 +84,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Eigenvalues of a finite-order endomorphism are $n$-th roots of unity]
   \label{lem:eig-root-of-unity}
+  \lean{FLT.CharacterValuesCyclotomic.eigenvalue_pow_eq_one}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   Let $V$ be a finite-dimensional vector space over $\mathbb{C}$, let $n : \mathbb{N}$ with $n \neq 0$ (equivalently $0 < n$), and let $f : V \to_{\ell} V$ be an endomorphism with $f^n = \mathrm{id}_V$.  Then for every eigenvalue $\lambda$ of $f$, $\lambda^n = 1$.
 \end{lemma}
 \begin{proof}
@@ -80,6 +95,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Roots of the characteristic polynomial are eigenvalues, over $\mathbb{C}$]
   \label{lem:charpoly-roots-are-eigenvalues}
+  \lean{FLT.CharacterValuesCyclotomic.hasEigenvalue_of_mem_charpoly_roots}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$.  Then for every $\lambda \in \mathbb{C}$ in $f.\mathrm{charpoly}.\mathrm{roots}$, $\lambda$ is an eigenvalue of $f$.
 \end{lemma}
 \begin{proof}
@@ -90,7 +108,10 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Charpoly roots of a finite-order endomorphism are $n$-th roots of unity]
   \label{lem:charpoly-roots-root-of-unity}
+  \lean{FLT.CharacterValuesCyclotomic.charpoly_roots_pow_eq_one}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
   \uses{lem:eig-root-of-unity, lem:charpoly-roots-are-eigenvalues}
+  \leanok
   Let $V$ be a finite-dimensional vector space over $\mathbb{C}$ and let $f : V \to_{\ell} V$ with $f^n = \mathrm{id}_V$ for some $n \geq 1$.  Then every $\lambda \in f.\mathrm{charpoly}.\mathrm{roots}$ satisfies $\lambda^n = 1$.
 \end{lemma}
 \begin{proof}
@@ -102,6 +123,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Trace as sum of charpoly roots, over $\mathbb{C}$]
   \label{lem:trace-sum-roots}
+  \lean{FLT.CharacterValuesCyclotomic.trace_eq_charpoly_roots_sum}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   Let $V$ be an additive commutative group with a $\mathbb{C}$-module structure satisfying \verb|[FiniteDimensional ℂ V]|, and let $f : V \to_{\ell} V$.  Then
   \[
     \mathrm{tr}_{\mathbb{C}}\,V\,f \; = \; f.\mathrm{charpoly}.\mathrm{roots}.\mathrm{sum}.
@@ -113,6 +137,9 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Multiset sum lies in a subring containing all its entries]
   \label{lem:multiset-sum-mem}
+  \lean{FLT.CharacterValuesCyclotomic.multiset_sum_mem_subring}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
+  \leanok
   Let $S$ be a subring of a ring $R$ and let $m$ be a multiset of elements of $R$ with every entry in $S$.  Then $m.\mathrm{sum} \in S$.
 \end{lemma}
 \begin{proof}
@@ -121,7 +148,10 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{lemma}[Trace lies in $\varphi.\mathrm{range}$]
   \label{lem:trace-mem-range}
+  \lean{FLT.CharacterValuesCyclotomic.trace_mem_range}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
   \uses{lem:phi-range-roots-of-unity, lem:charpoly-roots-root-of-unity, lem:trace-sum-roots, lem:multiset-sum-mem, lem:rep-pow-exponent}
+  \leanok
   Let $G$ be a finite group, set $n = $ \verb|Monoid.exponent G|, and let $\varphi : \mathrm{CyclotomicField}\,n\,\mathbb{Q} \to \mathbb{C}$ be a ring homomorphism.  Suppose $n \neq 0$ (this holds whenever $G$ is finite).  Let $V$ be a finite-dimensional complex vector space (\verb|[AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]|) and $\rho : G \to V \to_{\ell} V$ a representation.  Then for every $g \in G$,
   \[
     \mathrm{tr}_{\mathbb{C}}\,V\,(\rho g) \in \varphi.\mathrm{range}.
@@ -138,7 +168,10 @@ The point of installment II is that we do \emph{not} need the full Brauer induct
 
 \begin{theorem}[Character values of finite groups lie in cyclotomic fields, II]
   \label{thm:brauer-character-in-cyclotomic}
+  \lean{FLT.CharacterValuesCyclotomic.character_values_in_cyclotomic_field}
+  \leanfile{FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean}
   \uses{lem:cyclotomic-embed, lem:trace-mem-range}
+  \leanok
   Let $G$ be a finite group.  Then there exists a ring homomorphism
   \[
     \varphi : \mathrm{CyclotomicField}\,(\mathrm{Monoid.exponent}\,G)\,\mathbb{Q} \;\longrightarrow\; \mathbb{C}

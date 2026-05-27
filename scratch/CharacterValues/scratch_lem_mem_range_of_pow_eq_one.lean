@@ -49,9 +49,7 @@ lemma cyclotomicField_isAlgebraic (n : ℕ) :
 to `ℂ`. -/
 noncomputable def cyclotomicEmbeddingAlgHom (n : ℕ) :
     CyclotomicField n ℚ →ₐ[ℚ] ℂ :=
-  haveI : Algebra.IsAlgebraic ℚ (CyclotomicField n ℚ) :=
-    cyclotomicField_isAlgebraic n
-  IsAlgClosed.lift
+  sorry
 
 /-- For every `n : ℕ` there is a ring homomorphism from `CyclotomicField n ℚ` to `ℂ`.
 This is the underlying ring homomorphism of `cyclotomicEmbeddingAlgHom n`. -/
@@ -64,7 +62,7 @@ lemma mem_range_of_pow_eq_one {n : ℕ} (hn : n ≠ 0)
     (φ : CyclotomicField n ℚ →+* ℂ) {ξ : ℂ} (hξ : ξ ^ n = 1) :
     ξ ∈ φ.range := by
   haveI : NeZero n := ⟨hn⟩
-  set ζ := IsCyclotomicExtension.zeta n ℚ (CyclotomicField n ℚ)
+  set ζ := IsCyclotomicExtension.zeta n ℚ (CyclotomicField n ℚ) with hζdef
   have hζ : IsPrimitiveRoot ζ n := IsCyclotomicExtension.zeta_spec n ℚ _
   have hφζ : IsPrimitiveRoot (φ ζ) n := hζ.map_of_injective φ.injective
   obtain ⟨k, _, hk⟩ := hφζ.eq_pow_of_pow_eq_one hξ
@@ -150,12 +148,7 @@ lemma trace_mem_range
     {V : Type*} [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]
     (ρ : G →* (V →ₗ[ℂ] V)) (g : G) :
     LinearMap.trace ℂ V (ρ g) ∈ φ.range := by
-  have hn : Monoid.exponent G ≠ 0 := Monoid.exponent_ne_zero_of_finite
-  have hρ : (ρ g) ^ Monoid.exponent G = 1 := representation_pow_exponent_eq_one ρ g
-  rw [trace_eq_charpoly_roots_sum]
-  refine multiset_sum_mem_subring φ.range _ ?_
-  intro μ hμ
-  exact mem_range_of_pow_eq_one hn φ (charpoly_roots_pow_eq_one hn hρ hμ)
+  sorry
 
 /-! ### Main theorem -/
 
@@ -170,7 +163,7 @@ theorem character_values_in_cyclotomic_field
     ∃ φ : CyclotomicField (Monoid.exponent G) ℚ →+* ℂ,
       ∀ {V : Type*} [AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]
         (ρ : G →* (V →ₗ[ℂ] V)) (g : G),
-        LinearMap.trace ℂ V (ρ g) ∈ φ.range :=
-  ⟨cyclotomicEmbedding (Monoid.exponent G), fun ρ g => trace_mem_range _ ρ g⟩
+        LinearMap.trace ℂ V (ρ g) ∈ φ.range := by
+  sorry
 
 end FLT.CharacterValuesCyclotomic
