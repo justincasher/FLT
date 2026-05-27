@@ -112,6 +112,7 @@ import FLT.Mathlib.NumberTheory.Padics.HeightOneSpectrum
 import FLT.Mathlib.NumberTheory.Padics.PadicIntegers
 import FLT.Mathlib.Order.Filter.Cofinite
 import FLT.Mathlib.RepresentationTheory.Basic
+import FLT.Mathlib.RepresentationTheory.CharacterValuesCyclotomic
 import FLT.Mathlib.RingTheory.DedekindDomain.AdicValuation
 import FLT.Mathlib.RingTheory.DedekindDomain.FiniteAdeleRing
 import FLT.Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas
