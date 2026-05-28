@@ -1,0 +1,10 @@
+{
+  "label": "lem:charpoly-roots-are-eigenvalues",
+  "kind": "lemma",
+  "title": "Roots of the characteristic polynomial are eigenvalues, over $\\mathbb{C}$",
+  "uses": [],
+  "statement": "Let $V$ be a finite-dimensional vector space over $\\mathbb{C}$ and let $f : V \\to_{\\ell} V$.  Then for every $\\lambda \\in \\mathbb{C}$ in $f.\\mathrm{charpoly}.\\mathrm{roots}$, $\\lambda$ is an eigenvalue of $f$.",
+  "proof": "Membership in \\verb|Polynomial.roots| unfolds via \\verb|Polynomial.mem_roots| to ``polynomial is nonzero and $\\lambda$ is a root''.  Nonzeroness of $f.\\mathrm{charpoly}$ is immediate: by \\verb|LinearMap.charpoly_monic| the characteristic polynomial is monic, and a monic polynomial is nonzero (\\verb|Polynomial.Monic.ne_zero|, i.e.\\ the \\verb|.ne_zero| projection of \\verb|LinearMap.charpoly_monic|).  This is unconditional --- we do not need $V$ to be nontrivial.\n\n  Now we apply \\verb|Module.End.hasEigenvalue_iff_isRoot_charpoly| (the equivalence between eigenvalues and roots of the characteristic polynomial, valid over an integral domain such as $\\mathbb{C}$).  This lemma requires \\verb|Module.Free| and \\verb|Module.Finite| instances on $V$ over $\\mathbb{C}$; both are derivable from \\verb|FiniteDimensional ℂ V|: a finite-dimensional vector space over a field is automatically free (\\verb|Module.Free| via \\verb|Module.Free.of_basis|) and finite (\\verb|Module.Finite.of_finite|), with the typeclass instances supplied by Mathlib.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.hasEigenvalue_of_mem_charpoly_roots",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

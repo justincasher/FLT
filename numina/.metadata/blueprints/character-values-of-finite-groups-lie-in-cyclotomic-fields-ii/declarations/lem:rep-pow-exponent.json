@@ -1,0 +1,10 @@
+{
+  "label": "lem:rep-pow-exponent",
+  "kind": "lemma",
+  "title": "Representation kills the exponent",
+  "uses": [],
+  "statement": "Let $G$ be a finite group, let $V$ be a $\\mathbb{C}$-module, let $\\rho : G \\to V \\to_{\\ell} V$ be a representation (a monoid homomorphism), and let $n = $ \\verb|Monoid.exponent G|.  Then for every $g \\in G$,\n  \\[\n    (\\rho g)^n = \\mathrm{id}_V.\n  \\]",
+  "proof": "Since $\\rho$ is a monoid homomorphism we have $(\\rho g)^n = \\rho(g^n)$ by \\verb|map_pow|, and $g^n = 1$ by \\verb|Monoid.pow_exponent_eq_one|.  Finally $\\rho(1) = \\mathrm{id}_V$ by \\verb|map_one|.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.representation_pow_exponent_eq_one",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

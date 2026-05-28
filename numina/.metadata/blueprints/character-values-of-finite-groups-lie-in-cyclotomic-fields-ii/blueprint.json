@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "label": "lem:cyclotomic-algebraic",
+      "kind": "lemma",
+      "title": "Cyclotomic field is algebraic over $\\mathbb{Q}$"
+    },
+    {
+      "label": "lem:cyclotomic-embed",
+      "kind": "lemma",
+      "title": "Existence of the cyclotomic embedding"
+    },
+    {
+      "label": "lem:phi-range-roots-of-unity",
+      "kind": "lemma",
+      "title": "Range of $\\varphi$ contains $n$-th roots of unity"
+    },
+    {
+      "label": "lem:rep-pow-exponent",
+      "kind": "lemma",
+      "title": "Representation kills the exponent"
+    },
+    {
+      "label": "lem:eig-root-of-unity",
+      "kind": "lemma",
+      "title": "Eigenvalues of a finite-order endomorphism are $n$-th roots of unity"
+    },
+    {
+      "label": "lem:charpoly-roots-are-eigenvalues",
+      "kind": "lemma",
+      "title": "Roots of the characteristic polynomial are eigenvalues, over $\\mathbb{C}$"
+    },
+    {
+      "label": "lem:charpoly-roots-root-of-unity",
+      "kind": "lemma",
+      "title": "Charpoly roots of a finite-order endomorphism are $n$-th roots of unity"
+    },
+    {
+      "label": "lem:trace-sum-roots",
+      "kind": "lemma",
+      "title": "Trace as sum of charpoly roots, over $\\mathbb{C}$"
+    },
+    {
+      "label": "lem:multiset-sum-mem",
+      "kind": "lemma",
+      "title": "Multiset sum lies in a subring containing all its entries"
+    },
+    {
+      "label": "lem:trace-mem-range",
+      "kind": "lemma",
+      "title": "Trace lies in $\\varphi.\\mathrm{range}$"
+    },
+    {
+      "label": "thm:brauer-character-in-cyclotomic",
+      "kind": "theorem",
+      "title": "Character values of finite groups lie in cyclotomic fields, II"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "label": "lem:cyclotomic-algebraic",
+  "kind": "lemma",
+  "title": "Cyclotomic field is algebraic over $\\mathbb{Q}$",
+  "uses": [],
+  "statement": "For every $n : \\mathbb{N}$, the Mathlib field \\verb|CyclotomicField n ℚ| is algebraic over $\\mathbb{Q}$.",
+  "proof": "Split on whether $n = 0$.\n\n  \\emph{Case $n = 0$.}  By \\verb|Polynomial.cyclotomic_zero|, the zeroth cyclotomic polynomial is the constant $1$ (not $X - 1$).  Consequently \\verb|CyclotomicField 0 ℚ|, being the splitting field of $1$ over $\\mathbb{Q}$, is canonically $\\mathbb{Q}$-isomorphic to $\\mathbb{Q}$ itself.  Thus it is trivially algebraic over $\\mathbb{Q}$ (every element of $\\mathbb{Q}$ satisfies $X - q = 0$).\n\n  \\emph{Case $n \\geq 1$.}  Here we have the instance \\verb|NeZero n| (from $n \\neq 0$, recorded via \\verb|haveI : NeZero n := ⟨hn⟩|), which is required by \\verb|IsCyclotomicExtension.numberField|.  Specialising that instance to $\\{n\\} \\subseteq \\mathbb{N}_{>0}$ with base $K = \\mathbb{Q}$ (a number field via \\verb|Rat.numberField|) shows that \\verb|CyclotomicField n ℚ| is a number field; equivalently, \\verb|CyclotomicField.instNumberField| supplies the same conclusion.  Now \\verb|NumberField.isAlgebraic| gives \\verb|Algebra.IsAlgebraic ℚ (CyclotomicField n ℚ)|.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.cyclotomicField_isAlgebraic",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

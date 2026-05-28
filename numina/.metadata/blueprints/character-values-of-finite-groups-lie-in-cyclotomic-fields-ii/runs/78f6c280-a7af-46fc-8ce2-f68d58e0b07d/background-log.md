@@ -1,0 +1,2 @@
+- [2026-05-26] Started: formalize blueprint, review, then prove all declarations.
+- [2026-05-26] Progress: 11 declarations formalized in FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean, project builds with sorries.

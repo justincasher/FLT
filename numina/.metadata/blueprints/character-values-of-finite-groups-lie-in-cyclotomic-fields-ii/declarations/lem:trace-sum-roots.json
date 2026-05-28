@@ -1,0 +1,10 @@
+{
+  "label": "lem:trace-sum-roots",
+  "kind": "lemma",
+  "title": "Trace as sum of charpoly roots, over $\\mathbb{C}$",
+  "uses": [],
+  "statement": "Let $V$ be an additive commutative group with a $\\mathbb{C}$-module structure satisfying \\verb|[FiniteDimensional ℂ V]|, and let $f : V \\to_{\\ell} V$.  Then\n  \\[\n    \\mathrm{tr}_{\\mathbb{C}}\\,V\\,f \\; = \\; f.\\mathrm{charpoly}.\\mathrm{roots}.\\mathrm{sum}.\n  \\]",
+  "proof": "This is \\verb|Module.End.trace_eq_sum_roots_charpoly_of_splits|, applied with the hypothesis that the characteristic polynomial splits over $\\mathbb{C}$.  Splitting is automatic because $\\mathbb{C}$ is algebraically closed (\\verb|Complex.isAlgClosed| together with \\verb|IsAlgClosed.splits_codomain|).  The lemma's signature uses \\verb|Module.Free| and \\verb|Module.Finite| typeclasses; both follow from the explicit \\verb|[FiniteDimensional ℂ V]| hypothesis (a finite-dimensional vector space over a field has a basis, hence is free, and is automatically finite as a module).",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.trace_eq_charpoly_roots_sum",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

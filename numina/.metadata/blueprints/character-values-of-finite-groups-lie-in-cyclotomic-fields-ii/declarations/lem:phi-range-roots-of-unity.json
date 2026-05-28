@@ -1,0 +1,12 @@
+{
+  "label": "lem:phi-range-roots-of-unity",
+  "kind": "lemma",
+  "title": "Range of $\\varphi$ contains $n$-th roots of unity",
+  "uses": [
+    "lem:cyclotomic-embed"
+  ],
+  "statement": "Let $n : \\mathbb{N}$ with $n \\neq 0$, and let $\\varphi : \\mathrm{CyclotomicField}\\,n\\,\\mathbb{Q} \\to \\mathbb{C}$ be any ring homomorphism (e.g.\\ one obtained from Lemma~\\ref{lem:cyclotomic-embed}).  Then for every $\\xi \\in \\mathbb{C}$ with $\\xi^n = 1$ we have $\\xi \\in \\varphi.\\mathrm{range}$.",
+  "proof": "From the hypothesis $n \\neq 0$ we introduce the typeclass instance \\verb|haveI : NeZero n := ⟨hn⟩|; this is what allows the cyclotomic-extension API on \\verb|CyclotomicField n ℚ| to fire.\n\n  Let $\\zeta := $ \\verb|IsCyclotomicExtension.zeta n ℚ (CyclotomicField n ℚ)|.  The fact that $\\zeta$ is a primitive $n$-th root of unity is exactly \\verb|IsCyclotomicExtension.zeta_spec|, which states \\verb|IsPrimitiveRoot (zeta n ℚ _) n| (this replaces the previous hand-wave ``by construction'').\n\n  Apply \\verb|IsPrimitiveRoot.map_of_injective| to $\\zeta$ with the injective ring homomorphism $\\varphi$ (injectivity of a ring homomorphism out of a field is automatic via \\verb|RingHom.injective|): we obtain that $\\varphi(\\zeta)$ is a primitive $n$-th root of unity in $\\mathbb{C}$.  Now given $\\xi \\in \\mathbb{C}$ with $\\xi^n = 1$, apply \\verb|IsPrimitiveRoot.eq_pow_of_pow_eq_one| (with the primitive $n$-th root $\\varphi(\\zeta)$) to obtain an index $i < n$ with $\\varphi(\\zeta)^i = \\xi$.  Then $\\xi = \\varphi(\\zeta^i) \\in \\varphi.\\mathrm{range}$ since ring homomorphisms preserve powers (\\verb|map_pow|).",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.mem_range_of_pow_eq_one",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

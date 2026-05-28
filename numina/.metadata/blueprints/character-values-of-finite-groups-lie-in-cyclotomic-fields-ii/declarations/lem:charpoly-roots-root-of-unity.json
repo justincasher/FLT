@@ -1,0 +1,13 @@
+{
+  "label": "lem:charpoly-roots-root-of-unity",
+  "kind": "lemma",
+  "title": "Charpoly roots of a finite-order endomorphism are $n$-th roots of unity",
+  "uses": [
+    "lem:eig-root-of-unity",
+    "lem:charpoly-roots-are-eigenvalues"
+  ],
+  "statement": "Let $V$ be a finite-dimensional vector space over $\\mathbb{C}$ and let $f : V \\to_{\\ell} V$ with $f^n = \\mathrm{id}_V$ for some $n \\geq 1$.  Then every $\\lambda \\in f.\\mathrm{charpoly}.\\mathrm{roots}$ satisfies $\\lambda^n = 1$.",
+  "proof": "Combine Lemma~\\ref{lem:charpoly-roots-are-eigenvalues} (the root is an eigenvalue) with Lemma~\\ref{lem:eig-root-of-unity} ($n$-th power of an eigenvalue is $1$).",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.charpoly_roots_pow_eq_one",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

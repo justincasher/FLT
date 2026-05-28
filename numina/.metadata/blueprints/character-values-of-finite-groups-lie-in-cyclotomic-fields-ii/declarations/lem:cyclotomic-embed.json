@@ -1,0 +1,12 @@
+{
+  "label": "lem:cyclotomic-embed",
+  "kind": "lemma",
+  "title": "Existence of the cyclotomic embedding",
+  "uses": [
+    "lem:cyclotomic-algebraic"
+  ],
+  "statement": "For every $n : \\mathbb{N}$ there exists a $\\mathbb{Q}$-algebra homomorphism\n  \\[\n    \\varphi : \\mathrm{CyclotomicField}\\,n\\,\\mathbb{Q} \\longrightarrow \\mathbb{C}.\n  \\]\n  In particular, there is a ring homomorphism \\verb|CyclotomicField n ℚ →+* ℂ|.",
+  "proof": "We split on $n$.\n\n  If $n = 0$, the source $\\mathrm{CyclotomicField}\\,0\\,\\mathbb{Q}$ is canonically $\\mathbb{Q}$-isomorphic to $\\mathbb{Q}$ itself (cf.~the $n = 0$ branch of Lemma~\\ref{lem:cyclotomic-algebraic}, which rests on \\verb|Polynomial.cyclotomic_zero|).  The required ring/algebra homomorphism is therefore just the algebra map $\\mathbb{Q} \\to \\mathbb{C}$, i.e.\\ \\verb|algebraMap ℚ ℂ| precomposed with the canonical isomorphism.\n\n  If $n \\geq 1$, we introduce the typeclass instance \\verb|haveI : NeZero n := ⟨hn⟩| (which is needed for the cyclotomic-extension typeclasses to fire).  Lemma~\\ref{lem:cyclotomic-algebraic} then provides \\verb|Algebra.IsAlgebraic ℚ (CyclotomicField n ℚ)|, which is the hypothesis required by \\verb|IsAlgClosed.lift|.  We apply \\verb|IsAlgClosed.lift| with source $S = \\mathrm{CyclotomicField}\\,n\\,\\mathbb{Q}$, base ring $R = \\mathbb{Q}$, and target $M = \\mathbb{C}$, using \\verb|Complex.isAlgClosed| to discharge the algebraic-closure instance on $\\mathbb{C}$.  Coerce the resulting $\\mathbb{Q}$-algebra homomorphism to a ring homomorphism via \\verb|AlgHom.toRingHom|.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.cyclotomicEmbedding",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

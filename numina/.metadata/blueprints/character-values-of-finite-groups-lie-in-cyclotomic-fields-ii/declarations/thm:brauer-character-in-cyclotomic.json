@@ -1,0 +1,13 @@
+{
+  "label": "thm:brauer-character-in-cyclotomic",
+  "kind": "theorem",
+  "title": "Character values of finite groups lie in cyclotomic fields, II",
+  "uses": [
+    "lem:cyclotomic-embed",
+    "lem:trace-mem-range"
+  ],
+  "statement": "Let $G$ be a finite group.  Then there exists a ring homomorphism\n  \\[\n    \\varphi : \\mathrm{CyclotomicField}\\,(\\mathrm{Monoid.exponent}\\,G)\\,\\mathbb{Q} \\;\\longrightarrow\\; \\mathbb{C}\n  \\]\n  with the following property: for every complex vector space $V$, i.e.\\ \\verb|[AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]|, and every representation\n  \\[\n    \\rho : G \\to^\\ast (V \\to_{\\ell[\\mathbb{C}]} V)\n  \\]\n  (that is, \\verb|ρ : G →* (V →ₗ[ℂ] V)|), and every $g \\in G$,\n  \\[\n    \\mathrm{tr}_{\\mathbb{C}}\\,V\\,(\\rho g) \\in \\varphi.\\mathrm{range}.\n  \\]",
+  "proof": "Set $n = $ \\verb|Monoid.exponent G|; since $G$ is finite, $n \\neq 0$ by \\verb|Monoid.exponent_ne_zero_of_finite|.  Obtain $\\varphi$ from Lemma~\\ref{lem:cyclotomic-embed} (instantiated at this $n$).  For any $V$, $\\rho$, $g$, Lemma~\\ref{lem:trace-mem-range} provides the conclusion.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.character_values_in_cyclotomic_field",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

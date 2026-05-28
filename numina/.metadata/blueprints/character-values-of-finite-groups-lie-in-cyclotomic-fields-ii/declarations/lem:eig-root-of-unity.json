@@ -1,0 +1,10 @@
+{
+  "label": "lem:eig-root-of-unity",
+  "kind": "lemma",
+  "title": "Eigenvalues of a finite-order endomorphism are $n$-th roots of unity",
+  "uses": [],
+  "statement": "Let $V$ be a finite-dimensional vector space over $\\mathbb{C}$, let $n : \\mathbb{N}$ with $n \\neq 0$ (equivalently $0 < n$), and let $f : V \\to_{\\ell} V$ be an endomorphism with $f^n = \\mathrm{id}_V$.  Then for every eigenvalue $\\lambda$ of $f$, $\\lambda^n = 1$.",
+  "proof": "Let $v \\neq 0$ be an eigenvector for $\\lambda$.  By \\verb|Module.End.HasEigenvalue.pow|, $f^n$ has eigenvalue $\\lambda^n$ on the same eigenvector $v$.  But $f^n = \\mathrm{id}_V$ has only the eigenvalue $1$ on any nonzero vector.  More concretely: unfolding the definition of an eigenvector gives $f^n v = \\lambda^n \\cdot v$; on the other hand $f^n v = v$, so $\\lambda^n v = v$, i.e.\\ $(\\lambda^n - 1) \\cdot v = 0$, and since $v \\neq 0$ over a field this forces $\\lambda^n = 1$.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.eigenvalue_pow_eq_one",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

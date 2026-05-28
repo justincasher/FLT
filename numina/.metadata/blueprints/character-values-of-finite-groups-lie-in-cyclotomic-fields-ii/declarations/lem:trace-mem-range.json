@@ -1,0 +1,16 @@
+{
+  "label": "lem:trace-mem-range",
+  "kind": "lemma",
+  "title": "Trace lies in $\\varphi.\\mathrm{range}$",
+  "uses": [
+    "lem:phi-range-roots-of-unity",
+    "lem:charpoly-roots-root-of-unity",
+    "lem:trace-sum-roots",
+    "lem:multiset-sum-mem",
+    "lem:rep-pow-exponent"
+  ],
+  "statement": "Let $G$ be a finite group, set $n = $ \\verb|Monoid.exponent G|, and let $\\varphi : \\mathrm{CyclotomicField}\\,n\\,\\mathbb{Q} \\to \\mathbb{C}$ be a ring homomorphism.  Suppose $n \\neq 0$ (this holds whenever $G$ is finite).  Let $V$ be a finite-dimensional complex vector space (\\verb|[AddCommGroup V] [Module ℂ V] [FiniteDimensional ℂ V]|) and $\\rho : G \\to V \\to_{\\ell} V$ a representation.  Then for every $g \\in G$,\n  \\[\n    \\mathrm{tr}_{\\mathbb{C}}\\,V\\,(\\rho g) \\in \\varphi.\\mathrm{range}.\n  \\]",
+  "proof": "By Lemma~\\ref{lem:rep-pow-exponent}, $(\\rho g)^n = \\mathrm{id}_V$.  By Lemma~\\ref{lem:trace-sum-roots},\n  $\\mathrm{tr}(\\rho g) = (\\rho g).\\mathrm{charpoly}.\\mathrm{roots}.\\mathrm{sum}$.\n  By Lemma~\\ref{lem:charpoly-roots-root-of-unity}, every $\\lambda$ in this multiset of roots satisfies $\\lambda^n = 1$.  By Lemma~\\ref{lem:phi-range-roots-of-unity}, every such $\\lambda$ lies in $\\varphi.\\mathrm{range}$ (viewed as the subring underlying the \\verb|RingHom.range|).  Apply Lemma~\\ref{lem:multiset-sum-mem} to conclude that the multiset sum is in $\\varphi.\\mathrm{range}$.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.trace_mem_range",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}

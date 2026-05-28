@@ -1,0 +1,3 @@
+- [2026-05-26] Started: resume proving — leaf lemmas done, now wave 2 (cyclotomicEmbeddingAlgHom, mem_range_of_pow_eq_one, charpoly_roots_pow_eq_one).
+- [2026-05-26] Proved: all 11 declarations, including main theorem character_values_in_cyclotomic_field. Module builds clean, no sorries.
+- [2026-05-26] Completed: all 11 declarations marked proved in blueprint metadata, final build clean.

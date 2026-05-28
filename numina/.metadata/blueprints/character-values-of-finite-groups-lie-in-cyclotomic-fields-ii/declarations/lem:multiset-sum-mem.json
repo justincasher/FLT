@@ -1,0 +1,10 @@
+{
+  "label": "lem:multiset-sum-mem",
+  "kind": "lemma",
+  "title": "Multiset sum lies in a subring containing all its entries",
+  "uses": [],
+  "statement": "Let $S$ be a subring of a ring $R$ and let $m$ be a multiset of elements of $R$ with every entry in $S$.  Then $m.\\mathrm{sum} \\in S$.",
+  "proof": "Direct from Mathlib's \\verb|Subring.multiset_sum_mem|.",
+  "leanDeclaration": "FLT.CharacterValuesCyclotomic.multiset_sum_mem_subring",
+  "leanFile": "FLT/Mathlib/RepresentationTheory/CharacterValuesCyclotomic.lean"
+}
