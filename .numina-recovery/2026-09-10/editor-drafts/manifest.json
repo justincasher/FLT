@@ -1,0 +1,93 @@
+{
+  "note": "Preserved Fuse editor snapshots. Some are older than the current branch; compare before restoring. Original branch contents were not overwritten.",
+  "drafts": [
+    {
+      "workspace_id": "379f48df-8675-40e7-b963-32956e867420",
+      "original_branch": "refs/heads/numina/test-5",
+      "original_blueprint_file": null,
+      "blueprint_name": "test-5",
+      "project_subdir": "",
+      "saved_at": "2026-04-23 20:33:26.520497+00:00",
+      "revision": 1,
+      "audit_status": "branch_absent",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/379f48df-8675-40e7-b963-32956e867420.tex"
+    },
+    {
+      "workspace_id": "f1b70202-307d-40f0-82ae-c895e9cf7915",
+      "original_branch": "refs/heads/numina/fundamental-theorem-of-calculus",
+      "original_blueprint_file": null,
+      "blueprint_name": "fundamental-theorem-of-calculus",
+      "project_subdir": "",
+      "saved_at": "2026-04-09 16:27:30.350963+00:00",
+      "revision": 7,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/f1b70202-307d-40f0-82ae-c895e9cf7915.tex"
+    },
+    {
+      "workspace_id": "3c7d9a19-9d8e-4fae-b4b9-d29c580abd3b",
+      "original_branch": "refs/heads/numina/scheme-4",
+      "original_blueprint_file": null,
+      "blueprint_name": "scheme-4",
+      "project_subdir": "",
+      "saved_at": "2026-05-18 01:08:35.642349+00:00",
+      "revision": 1,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/3c7d9a19-9d8e-4fae-b4b9-d29c580abd3b.tex"
+    },
+    {
+      "workspace_id": "cd5affe7-3e78-4dd5-a845-ff8abe0826b1",
+      "original_branch": "refs/heads/numina/calculus-test",
+      "original_blueprint_file": null,
+      "blueprint_name": "calculus-test",
+      "project_subdir": "",
+      "saved_at": "2026-04-29 14:09:42.656422+00:00",
+      "revision": 1,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/cd5affe7-3e78-4dd5-a845-ff8abe0826b1.tex"
+    },
+    {
+      "workspace_id": "d3b22b96-c1b0-4f42-81b6-d599da8f075e",
+      "original_branch": "refs/heads/numina/test-4",
+      "original_blueprint_file": null,
+      "blueprint_name": "test-4",
+      "project_subdir": "",
+      "saved_at": "2026-04-22 14:05:24.944449+00:00",
+      "revision": 0,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/d3b22b96-c1b0-4f42-81b6-d599da8f075e.tex"
+    },
+    {
+      "workspace_id": "f6dc4a4c-03aa-405d-879b-d808a068b343",
+      "original_branch": "refs/heads/numina/fundamental-group",
+      "original_blueprint_file": null,
+      "blueprint_name": "fundamental-group",
+      "project_subdir": "",
+      "saved_at": "2026-04-25 00:15:29.036964+00:00",
+      "revision": 0,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/f6dc4a4c-03aa-405d-879b-d808a068b343.tex"
+    },
+    {
+      "workspace_id": "657f6799-1dee-40c6-92a5-3512a925ca21",
+      "original_branch": "refs/heads/numina/scheme-2",
+      "original_blueprint_file": null,
+      "blueprint_name": "scheme-2",
+      "project_subdir": "",
+      "saved_at": "2026-05-23 14:53:31.955609+00:00",
+      "revision": 0,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/657f6799-1dee-40c6-92a5-3512a925ca21.tex"
+    },
+    {
+      "workspace_id": "b5eb1a80-2463-417e-ad24-c4d41d6d1ef3",
+      "original_branch": "refs/heads/numina/scheme-6",
+      "original_blueprint_file": null,
+      "blueprint_name": "scheme-6",
+      "project_subdir": "",
+      "saved_at": "2026-04-13 22:22:45.793786+00:00",
+      "revision": 36,
+      "audit_status": "differs_remote",
+      "recovery_file": ".numina-recovery/2026-09-10/editor-drafts/b5eb1a80-2463-417e-ad24-c4d41d6d1ef3.tex"
+    }
+  ]
+}

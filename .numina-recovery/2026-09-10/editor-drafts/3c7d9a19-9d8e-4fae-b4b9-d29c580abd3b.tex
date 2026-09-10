@@ -1,0 +1,109 @@
+% Blueprint: Scheme 4
+% Created by Numina
+
+\begin{document}
+
+\section{Schemes}
+
+\begin{definition}[Presheaf of Rings]
+    \label{def:presheaf}
+    \lean{FLT.Scheme4.RingPresheaf}
+    \notready
+    Let $X$ be a topological space. A \textbf{presheaf} $\mathcal{F}$ of rings on $X$ assigns to each open set $U \subseteq X$ a ring $\mathcal{F}(U)$, and to each inclusion $V \subseteq U$ a restriction homomorphism $\operatorname{res}_{U,V} \colon \mathcal{F}(U) \to \mathcal{F}(V)$, such that: hello
+    \begin{enumerate}
+        \item $\operatorname{res}_{U,U} = \operatorname{id}_{\mathcal{F}(U)}$.
+        \item If $W \subseteq V \subseteq U$, then $\operatorname{res}_{U,W} = \operatorname{res}_{V,W} \circ \operatorname{res}_{U,V}$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Sheaf]
+    \label{def:sheaf}
+    \uses{def:presheaf}
+    \lean{FLT.Scheme4.RingSheaf}
+    \notready
+    A presheaf $\mathcal{F}$ on $X$ is a \textbf{sheaf} if for every open set $U \subseteq X$ and every open cover $\{U_i\}$ of $U$:
+    \begin{enumerate}
+        \item \textbf{(Locality)} If $s, t \in \mathcal{F}(U)$ satisfy $s|_{U_i} = t|_{U_i}$ for all $i$, then $s = t$.
+        \item \textbf{(Gluing)} If $s_i \in \mathcal{F}(U_i)$ satisfy $s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j}$ for all $i, j$, then there exists $s \in \mathcal{F}(U)$ with $s|_{U_i} = s_i$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Ringed Space]
+    \label{def:ringed-space}
+    \uses{def:sheaf}
+    \lean{AlgebraicGeometry.RingedSpace}
+    \notready
+    A \textbf{ringed space} is a pair $(X, \mathcal{O}_X)$ where $X$ is a topological space and $\mathcal{O}_X$ is a sheaf of rings on $X$, called the \textbf{structure sheaf}.
+\end{definition}
+
+\begin{definition}[Stalk]
+    \label{def:stalk}
+    \uses{def:presheaf}
+    \lean{TopCat.Presheaf.stalk}
+    \notready
+    Let $\mathcal{F}$ be a sheaf on $X$ and $p \in X$. The \textbf{stalk} of $\mathcal{F}$ at $p$ is the direct limit
+    \[
+        \mathcal{F}_p = \varinjlim_{U \ni p} \mathcal{F}(U).
+    \]
+\end{definition}
+
+\begin{definition}[Locally Ringed Space]
+    \label{def:locally-ringed-space}
+    \uses{def:ringed-space, def:stalk}
+    \lean{AlgebraicGeometry.LocallyRingedSpace}
+    \notready
+    A ringed space $(X, \mathcal{O}_X)$ is a \textbf{locally ringed space} if for every point $p \in X$, the stalk $\mathcal{O}_{X,p}$ is a local ring (i.e.\ it has a unique maximal ideal $\mathfrak{m}_p$).
+\end{definition}
+
+\begin{definition}[Spectrum of a Ring]
+    \label{def:spectrum}
+    \lean{PrimeSpectrum}
+    \notready
+    Let $A$ be a commutative ring with identity. The \textbf{spectrum} of $A$ is the set
+    \[
+        \operatorname{Spec} A = \{ \mathfrak{p} \subseteq A \mid \mathfrak{p} \text{ is a prime ideal} \}.
+    \]
+    It is equipped with the \textbf{Zariski topology}, whose closed sets are
+    \[
+        V(I) = \{ \mathfrak{p} \in \operatorname{Spec} A \mid I \subseteq \mathfrak{p} \}
+    \]
+    for ideals $I \subseteq A$. The distinguished open sets $D(f) = \operatorname{Spec} A \setminus V(f)$ for $f \in A$ form a basis.
+\end{definition}
+
+\begin{definition}[Structure Sheaf on $\operatorname{Spec} A$]
+    \label{def:structure-sheaf}
+    \uses{def:sheaf, def:spectrum}
+    \lean{AlgebraicGeometry.Spec.structureSheaf}
+    \notready
+    The \textbf{structure sheaf} $\mathcal{O}_{\operatorname{Spec} A}$ is the unique sheaf of rings on $\operatorname{Spec} A$ satisfying
+    \[
+        \mathcal{O}_{\operatorname{Spec} A}(D(f)) = A_f
+    \]
+    for every $f \in A$, where $A_f$ is the localization of $A$ at $f$. The stalk at a prime $\mathfrak{p}$ is the local ring $A_{\mathfrak{p}}$.
+\end{definition}
+
+\begin{definition}[Affine Scheme]
+    \label{def:affine-scheme}
+    \uses{def:locally-ringed-space, def:spectrum, def:structure-sheaf}
+    \lean{FLT.Scheme4.IsAffineScheme}
+    \notready
+    An \textbf{affine scheme} is a locally ringed space that is isomorphic to $(\operatorname{Spec} A, \mathcal{O}_{\operatorname{Spec} A})$ for some commutative ring $A$.
+\end{definition}
+
+\begin{definition}[Scheme]
+    \label{def:scheme}
+    \uses{def:locally-ringed-space, def:affine-scheme}
+    \lean{AlgebraicGeometry.Scheme}
+    \notready
+    A \textbf{scheme} is a locally ringed space $(X, \mathcal{O}_X)$ such that every point $x \in X$ has an open neighbourhood $U$ for which $(U, \mathcal{O}_X|_U)$ is an affine scheme.
+\end{definition}
+
+\begin{definition}[Morphism of Schemes]
+    \label{def:scheme-hom}
+    \uses{def:scheme, def:stalk, def:locally-ringed-space}
+    \lean{AlgebraicGeometry.Scheme.Hom}
+    \notready
+    A \textbf{morphism of schemes} $(X, \mathcal{O}_X) \to (Y, \mathcal{O}_Y)$ is a morphism of locally ringed spaces: a continuous map $f \colon X \to Y$ together with a sheaf homomorphism $f^\sharp \colon \mathcal{O}_Y \to f_*\mathcal{O}_X$ such that for every $x \in X$, the induced map on stalks $f^\sharp_x \colon \mathcal{O}_{Y,f(x)} \to \mathcal{O}_{X,x}$ is a local homomorphism (i.e.\ $f^\sharp_x(\mathfrak{m}_{f(x)}) \subseteq \mathfrak{m}_x$).
+\end{definition}
+
+\end{document}

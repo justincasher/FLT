@@ -1,0 +1,148 @@
+% Blueprint: Fundamental group
+% Created by Numina
+
+\begin{document}
+
+\section{The Fundamental Theorem of Finitely Generated Abelian Groups}
+
+\begin{definition}[Group]
+    \label{def:group}
+    A \emph{group} is a set $G$ equipped with a binary operation
+    $\cdot : G \times G \to G$ satisfying:
+    \begin{enumerate}
+        \item (Associativity) $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ for all $a, b, c \in G$.
+        \item (Identity) There exists $e \in G$ with $e \cdot a = a \cdot e = a$ for all $a \in G$.
+        \item (Inverses) For every $a \in G$ there exists $a^{-1} \in G$ with
+        $a \cdot a^{-1} = a^{-1} \cdot a = e$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Abelian group]
+    \label{def:abelian-group}
+    \uses{def:group}
+    A group $(G, \cdot)$ is \emph{abelian} if $a \cdot b = b \cdot a$ for all $a, b \in G$.
+    We typically write the operation additively as $a + b$, with identity $0$ and inverse $-a$.
+\end{definition}
+
+\begin{definition}[Subgroup and homomorphism]
+    \label{def:subgroup-homomorphism}
+    \uses{def:abelian-group}
+    A subset $H \subseteq G$ is a \emph{subgroup} if it is closed under the operation and
+    inverses and contains $0$. A \emph{homomorphism} $\varphi : G \to H$ of abelian groups is
+    a map satisfying $\varphi(a + b) = \varphi(a) + \varphi(b)$. An \emph{isomorphism} is a
+    bijective homomorphism, written $G \cong H$.
+\end{definition}
+
+\begin{definition}[Direct sum]
+    \label{def:direct-sum}
+    \uses{def:abelian-group}
+    Given abelian groups $A_1, \dots, A_n$, their \emph{direct sum} is
+    \[
+        A_1 \oplus \cdots \oplus A_n
+        = \{ (a_1, \dots, a_n) : a_i \in A_i \},
+    \]
+    with componentwise addition $(a_i) + (b_i) = (a_i + b_i)$.
+\end{definition}
+
+\begin{definition}[Cyclic group]
+    \label{def:cyclic-group}
+    \uses{def:abelian-group, def:subgroup-homomorphism}
+    An abelian group $G$ is \emph{cyclic} if there exists $g \in G$ such that
+    $G = \{ ng : n \in \mathbb{Z} \}$. Every cyclic group is isomorphic to either $\mathbb{Z}$
+    (infinite order) or $\mathbb{Z}/n\mathbb{Z}$ for some $n \ge 1$ (finite order $n$).
+\end{definition}
+
+\begin{definition}[Finitely generated]
+    \label{def:finitely-generated}
+    \uses{def:abelian-group}
+    An abelian group $G$ is \emph{finitely generated} if there exist $g_1, \dots, g_n \in G$
+    such that every element can be written as $k_1 g_1 + \cdots + k_n g_n$ with
+    $k_i \in \mathbb{Z}$.
+\end{definition}
+
+\begin{definition}[Torsion and free part]
+    \label{def:torsion-free-part}
+    \uses{def:abelian-group, def:subgroup-homomorphism}
+    An element $g \in G$ is a \emph{torsion element} if $ng = 0$ for some $n \ge 1$. The set
+    of torsion elements forms a subgroup $T(G) \subseteq G$, called the \emph{torsion subgroup}.
+    A group is \emph{torsion-free} if $T(G) = 0$, and \emph{free abelian of rank $r$} if it is
+    isomorphic to $\mathbb{Z}^r$.
+\end{definition}
+
+\begin{theorem}[Fundamental Theorem, Invariant Factor Form]
+    \label{thm:invariant-factor-form}
+    \uses{def:abelian-group, def:direct-sum, def:cyclic-group, def:finitely-generated,
+        def:torsion-free-part, def:subgroup-homomorphism}
+    Let $G$ be a finitely generated abelian group. Then there exist a unique integer
+    $r \ge 0$ and unique integers $1 < d_1 \mid d_2 \mid \cdots \mid d_k$ such that
+    \[
+        G \;\cong\; \mathbb{Z}^r \;\oplus\; \mathbb{Z}/d_1\mathbb{Z} \;\oplus\;
+        \mathbb{Z}/d_2\mathbb{Z} \;\oplus\; \cdots \;\oplus\; \mathbb{Z}/d_k\mathbb{Z}.
+    \]
+    The integer $r$ is the \emph{rank} (or \emph{Betti number}) of $G$, and
+    $d_1, \dots, d_k$ are the \emph{invariant factors}.
+\end{theorem}
+\begin{proof}
+    \uses{def:torsion-free-part, def:direct-sum, def:finitely-generated, def:cyclic-group}
+    The torsion subgroup $T(G)$ of a finitely generated abelian group is itself finitely
+    generated, hence finite, and the quotient $G / T(G)$ is finitely generated and torsion-free,
+    hence free abelian of some rank $r \ge 0$. The short exact sequence $0 \to T(G) \to G
+    \to G/T(G) \to 0$ splits because $G/T(G)$ is free, giving $G \cong \mathbb{Z}^r \oplus T(G)$.
+    Applying the structure theorem for finitely generated modules over the principal ideal
+    domain $\mathbb{Z}$ (via Smith normal form) to $T(G)$ produces a decomposition
+    $T(G) \cong \mathbb{Z}/d_1\mathbb{Z} \oplus \cdots \oplus \mathbb{Z}/d_k\mathbb{Z}$ with
+    $1 < d_1 \mid d_2 \mid \cdots \mid d_k$. Uniqueness of $r$ and of the invariant factors
+    follows from the uniqueness part of Smith normal form.
+\end{proof}
+
+\begin{theorem}[Fundamental Theorem, Elementary Divisor Form]
+    \label{thm:elementary-divisor-form}
+    \uses{def:abelian-group, def:direct-sum, def:cyclic-group, def:finitely-generated,
+        def:torsion-free-part, def:subgroup-homomorphism}
+    Let $G$ be a finitely generated abelian group. Then there exist an integer $r \ge 0$,
+    primes $p_1, \dots, p_s$ (not necessarily distinct), and positive integers
+    $e_1, \dots, e_s$ such that
+    \[
+        G \;\cong\; \mathbb{Z}^r \;\oplus\; \bigoplus_{i=1}^{s} \mathbb{Z}/p_i^{e_i}\mathbb{Z},
+    \]
+    and the multiset of prime powers $\{p_i^{e_i}\}$ is uniquely determined by $G$. These are
+    the \emph{elementary divisors} of $G$.
+\end{theorem}
+\begin{proof}
+    \uses{thm:invariant-factor-form, lem:passage-between-forms}
+    Start from the invariant factor decomposition
+    $G \cong \mathbb{Z}^r \oplus \mathbb{Z}/d_1\mathbb{Z} \oplus \cdots
+    \oplus \mathbb{Z}/d_k\mathbb{Z}$ given by \cref{thm:invariant-factor-form}. By
+    \cref{lem:passage-between-forms}, each factor $\mathbb{Z}/d_j\mathbb{Z}$ splits as a
+    direct sum $\bigoplus_\ell \mathbb{Z}/p_{j,\ell}^{a_{j,\ell}}\mathbb{Z}$ over the prime
+    factorization of $d_j$. Concatenating these decompositions gives the claimed elementary
+    divisor form. Uniqueness of the multiset of prime powers follows from the uniqueness of
+    invariant factors together with the uniqueness of the prime factorization of each $d_j$.
+\end{proof}
+
+\begin{lemma}[Passage between the two forms]
+    \label{lem:passage-between-forms}
+    \uses{def:direct-sum, def:cyclic-group}
+    If $d = p_1^{a_1} \cdots p_m^{a_m}$ is a prime factorization with the $p_i$ distinct
+    primes and each $a_i \ge 1$, then
+    \[
+        \mathbb{Z}/d\mathbb{Z} \;\cong\; \mathbb{Z}/p_1^{a_1}\mathbb{Z} \;\oplus\; \cdots
+        \;\oplus\; \mathbb{Z}/p_m^{a_m}\mathbb{Z}.
+    \]
+    Splitting each invariant factor in this way yields the elementary divisors; conversely,
+    grouping the elementary divisors by taking, for each prime, the largest power into $d_k$,
+    the next largest into $d_{k-1}$, and so on, recovers the invariant factors.
+\end{lemma}
+\begin{proof}
+    \uses{def:direct-sum, def:cyclic-group}
+    The isomorphism is a direct application of the Chinese Remainder Theorem: since the
+    prime powers $p_i^{a_i}$ are pairwise coprime and their product equals $d$, the natural
+    ring homomorphism
+    $\mathbb{Z}/d\mathbb{Z} \to \prod_{i=1}^m \mathbb{Z}/p_i^{a_i}\mathbb{Z}$
+    is an isomorphism of rings, and in particular of abelian groups. Reversing the grouping
+    as described recovers the original invariant factors because, for each prime $p$, the
+    divisibility chain $d_1 \mid d_2 \mid \cdots \mid d_k$ forces the $p$-parts of the $d_j$
+    to form an increasing sequence of prime powers.
+\end{proof}
+
+\end{document}
